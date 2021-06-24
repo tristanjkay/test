@@ -4,7 +4,7 @@ var dropdown = document.getElementById("countriesDropdown");
 
 //POPULATE DROPDOWN
         $.ajax({
-            url: "starter-template\geojson-fileget.php",
+            url: "geojson-fileget.php",
             type: 'POST',  
             dataType: 'json',
             data: {
