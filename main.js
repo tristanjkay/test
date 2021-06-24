@@ -26,7 +26,7 @@ var selectedCountry;
                        
                     
                     });
-                    localStorage.setItem('data', JSON.stringify(result['data']));
+                    localStorage.setItem('test', JSON.stringify(result['data']));
                      
                 }
                  
