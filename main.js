@@ -43,7 +43,7 @@ var selectedCountry;
             console.log(item);
             /* console.log(geojsonResult[number]);
             if(dropdown.iso_a2 == item.properties.iso_a2){
-                return selectedCountry = {"name": dropdown.text, "iso_a2": dropdown.value};
+                
             };
             return number++ */
     
@@ -54,10 +54,11 @@ var selectedCountry;
 
 
         
-    
+        selectedCountry = {"name": dropdown.text, "iso_a2": dropdown.value};
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         console.log(localStorage.getItem("selectedCountry"));
         window.location.replace("loading.html");
+        
     });
 
 //LOAD DATA FROM APIS
