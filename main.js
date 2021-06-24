@@ -32,7 +32,7 @@ var dropdown = document.getElementById("countriesDropdown");
 
 //GET VALUE FROM DROPDOWN
     dropdown.addEventListener("change", function() {
-        var selectedCountry = {"name": dropdown.value};
+        var selectedCountry = {"name": dropdown.text};
     
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         console.log(localStorage.getItem("selectedCountry"));
