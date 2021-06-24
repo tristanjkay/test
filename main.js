@@ -23,10 +23,10 @@ var selectedCountry;
                         option.text = element.properties.name;
                         option.value = element.properties.iso_a2;
                         dropdown.add(option);
-                        geojsonResult.push(element);  
+                       
                     
                     });
-                    //return geojsonResult = result['data'];
+                    return geojsonResult = result['data'];
                 }
             },
             error: function(jqXHR, textStatus, errorThrown) {
