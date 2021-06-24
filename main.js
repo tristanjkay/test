@@ -55,7 +55,7 @@ var selectedCountry;
 
         selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry};
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
-        //window.location.replace("loading.html");
+        window.location.replace("loading.html");
         
     });
 
