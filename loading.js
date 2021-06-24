@@ -1,4 +1,5 @@
 var selectedCountry = {};
+var mycountry = JSON.parse(localStorage.selectedCountry).iso2;
 
 //Geonames
 $.ajax({
