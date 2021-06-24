@@ -40,12 +40,12 @@ var selectedCountry;
         var number = 0;
         
         for(item in geojsonResult) {
-            console.log(number);
-            console.log(geojsonResult[number]);
-            /* if(dropdown.iso_a2 == item.properties.iso_a2){
+            console.log(item);
+            /* console.log(geojsonResult[number]);
+            if(dropdown.iso_a2 == item.properties.iso_a2){
                 return selectedCountry = {"name": dropdown.text, "iso_a2": dropdown.value};
-            }; */
-            return number++
+            };
+            return number++ */
     
         
         };
