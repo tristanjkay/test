@@ -41,7 +41,7 @@ var selectedCountry;
             console.log(geojsonResult[geojsonResult.indexOf(item)]);
             if(dropdown.iso_a2 == item.properties.iso_a2){
                 return selectedCountry = {"name": dropdown.text, "iso_a2": dropdown.value};
-            }       
+            }
     
         
         };
