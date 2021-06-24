@@ -22,7 +22,7 @@ var dropdown = document.getElementById("countriesDropdown");
                     option.text = element.name;
                     option.value = element.iso2;
                     dropdown.add(option);
-                    console.log(element["name"]);
+                    console.log(element.properties.name);
                     });
                 }
             },
