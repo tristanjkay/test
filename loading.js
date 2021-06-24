@@ -1,5 +1,6 @@
 var selectedCountry = {};
 var mycountry = JSON.parse(localStorage.selectedCountry).iso2;
+var mycountryname = JSON.parse(localStorage.selectedCountry).name;
 
 //Geonames
 $.ajax({
@@ -81,7 +82,7 @@ url: "php/climate/weather.php",
 type: 'POST',
 dataType: 'json',
 data: {
-    country: selectedCountry.name,
+    country: mycountryname,
 },
 success: function(result) {
 
@@ -346,7 +347,7 @@ url: "php/general/dictionary.php",
 type: 'POST',
 dataType: 'json',
 data: {
-    country: selectedCountry.name,
+    country: mycountryname,
 },
 success: function(result) {
 
@@ -380,7 +381,7 @@ success: function(result) {
 
     if (result.status.name == "ok") {
         result['data'].forEach(element => {
-        if(element.Country == selectedCountry.name){
+        if(element.Country == mycountryname){
             selectedCountry.airports.push(element);
 
             
@@ -485,7 +486,7 @@ url: "php/events/news.php",
 type: 'POST',
 dataType: 'json',
 data: {
-    country: selectedCountry.name,
+    country: mycountryname,
 },
 success: function(result) {
 
@@ -532,7 +533,7 @@ url: "php/culture/pointsofinterest.php",
 type: 'POST',
 dataType: 'json',
 data: {
-    country: selectedCountry.name,
+    country: mycountryname,
 },
 beforeSend: function(xhr){xhr.setRequestHeader('x-api-key', 'WeEOSzCLt3vmpbsXBjEc9ZRmh57ToW126jJau9Mf');},
 success: function(result) {
