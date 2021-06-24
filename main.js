@@ -2,6 +2,7 @@
 //VARIABLES
 var dropdown = document.getElementById("countriesDropdown");
 var geojsonResult;
+var selectedCountry;
 
 //POPULATE DROPDOWN
         $.ajax({
@@ -37,7 +38,7 @@ var geojsonResult;
     dropdown.addEventListener("change", function() {
         geojsonResult.forEach(element => {
             if(dropdown.iso_a2 == element.properties.iso_a2){
-                var selectedCountry = {"name": dropdown.text, "iso_a2": dropdown.value};
+                return selectedCountry = {"name": dropdown.text, "iso_a2": dropdown.value};
             }       
     
         
