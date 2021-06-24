@@ -27,6 +27,11 @@ var selectedCountry;
                     
                     });
                     localStorage.setItem('test', JSON.stringify(result['data']));
+                    result['data'].forEach(element => {
+                        if(element.properties.name = "Haiti"){
+                            console.log("hi")
+                        }
+                    });
                      
                 }
                  
