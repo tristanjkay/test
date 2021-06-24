@@ -46,13 +46,12 @@ var selectedCountry;
             if(element.properties.name == name){
                 var name = element.properties.name;
                 var iso_a2 = element.properties.iso_a2;
-                selectedCountry = {"name": name, "iso_a2": iso_a2};
-                localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
+                return selectedCountry = {"name": name, "iso_a2": iso_a2};
             }
         });
 
-        
-        
+        //selectedCountry = {"name": name, "iso_a2": iso_a2};
+        localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         //window.location.replace("loading.html");
         
     });
