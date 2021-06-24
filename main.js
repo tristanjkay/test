@@ -42,7 +42,7 @@ var selectedCountry;
         var geometry = selectedElement.geometry;
         selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry};
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
-        console.log(localStorage.selectedCountry);
+        console.log(JSON.parse(localStorage.selectedCountry));
         //window.location.replace("loading.html");
     });
 
