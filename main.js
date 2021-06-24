@@ -47,6 +47,7 @@ var selectedCountry;
 
         geojsonResult.forEach(element => {
             if(element.properties.name = name){
+                console.log(element);
                 return selectedElement = element;
             }
         });
