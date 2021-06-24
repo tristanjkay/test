@@ -23,13 +23,12 @@ var selectedCountry;
                         option.text = element.properties.name;
                         option.value = element.properties.iso_a2;
                         dropdown.add(option);
+                        console.log(element);
                        
                     
                     });
                     localStorage.setItem('test', JSON.stringify(result['data']));
-                    result['data'].forEach(element => {
-                        console.log(element);
-                    });
+                    
                      
                 }
                  
