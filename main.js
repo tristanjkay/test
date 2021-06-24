@@ -1,6 +1,7 @@
 
 //VARIABLES
 var dropdown = document.getElementById("countriesDropdown");
+var geojsonResult;
 
 //POPULATE DROPDOWN
         $.ajax({
@@ -13,7 +14,7 @@ var dropdown = document.getElementById("countriesDropdown");
             success: function(result) {
                 
                 if (result.status.name == "ok") {
-                    console.log("OK");
+                    
                     result['data'].forEach(element => {
                         console.log(element);
     
@@ -23,6 +24,7 @@ var dropdown = document.getElementById("countriesDropdown");
                         dropdown.add(option);
                     
                     });
+                    return geojsonResult = result;
                 }
             },
             error: function(jqXHR, textStatus, errorThrown) {
@@ -33,7 +35,7 @@ var dropdown = document.getElementById("countriesDropdown");
 
 //GET VALUE FROM DROPDOWN
     dropdown.addEventListener("change", function() {
-        var selectedCountry = {"name": dropdown.value};
+        var selectedCountry = {"name": dropdown.text};
     
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         console.log(localStorage.getItem("selectedCountry"));
