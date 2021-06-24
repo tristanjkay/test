@@ -26,7 +26,7 @@ var selectedCountry;
                         
                     
                     });
-                    return geojsonResult = result;
+                    return geojsonResult = result['data'];
                 }
             },
             error: function(jqXHR, textStatus, errorThrown) {
@@ -37,7 +37,7 @@ var selectedCountry;
 
 //GET VALUE AND DATA FROM DROPDOWN/GEOJSON
     dropdown.addEventListener("change", function() {
-        for(item in geojsonResult["data"]) {
+        for(item in geojsonResult) {
             console.log(item.properties.name);
             if(dropdown.iso_a2 == item.properties.iso_a2){
                 return selectedCountry = {"name": dropdown.text, "iso_a2": dropdown.value};
