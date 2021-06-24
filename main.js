@@ -43,7 +43,7 @@ var selectedCountry;
 //GET VALUE AND DATA FROM DROPDOWN/GEOJSON
     dropdown.addEventListener("change", function() {
         var name = dropdown.options[dropdown.selectedIndex].text;;
-        var iso_a2 = dropdown.value;
+        var iso_a2 = dropdown.options[dropdown.selectedIndex].value;
 
         geojsonResult.forEach(element => {
             if(element.properties.name = name){
