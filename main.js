@@ -23,7 +23,7 @@ var selectedCountry;
                         option.text = element.properties.name;
                         option.value = element.properties.iso_a2;
                         dropdown.add(option);
-                        geojsonResult.push(element);
+                        geojsonResult[indexOf(element)] = element;
                         console.log(element);
                        
                     
