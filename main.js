@@ -26,7 +26,7 @@ var selectedCountry;
                        
                     
                     });
-                    return geojsonResult = result['data'];
+                    return geojsonResult = result;   
                 }
             },
             error: function(jqXHR, textStatus, errorThrown) {
