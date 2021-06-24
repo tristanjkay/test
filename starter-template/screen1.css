@@ -1,0 +1,171 @@
+/* Monitors with screen width 1366px or above */
+
+html,body{height:100%;}
+
+.bg-purple {
+
+}
+.bg-gray {
+  background: rgb(74,74,74);
+}
+
+.bg-red {
+
+}
+
+select {
+  background-color: #F7F8F9;
+  padding: 1rem;
+  margin: 1rem;
+  margin-bottom: 3rem;
+  border-color: #F7F8F9;
+  border-radius: 20px;
+  color: #B0B4BB;
+  text-align-last:center;
+  font-size:large;
+  width:60rem;
+}
+
+option {
+  text-align: center;
+}
+
+#dropdownDiv {
+  position: fixed;
+  top:0px;
+}
+
+.bg-blue {
+  /* background: rgb(50,101,196); */
+  padding: 0rem;
+}
+
+#map{
+
+  background-color: lightgrey;
+  border-radius: 0px;
+
+}
+
+
+
+/* Normalize */
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+
+
+
+
+
+/*  Tablets in landscape mode, older desktop monitors */
+
+@media only screen and (min-width: 1024px) and (max-width: 1365px) {
+  select {
+    width: 51rem;
+  }
+  
+  #dropdownDiv {
+    position: fixed;
+    top:0px;
+  }
+
+  .bg-blue {
+
+    padding: 0rem;
+  }
+
+  #map{
+
+    background-color: lightgrey;
+    border-radius: 0px;
+  }
+
+}
+
+/*  Tablets in portrait mode, large display smartphones landscape mode */
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  select {
+    width: 80vw;
+  }
+  #dropdownDiv {
+    position: fixed;
+    top:0px;
+  }
+
+  .bg-blue {
+
+    padding: 0rem;
+  }
+
+  #map{
+
+    background-color: lightgrey;
+    border-radius: 0px;
+  }
+}
+
+/*  Smartphones in landscape mode */
+
+@media only screen and (min-width: 421px) and (max-width: 767px) {
+  select {
+    width: -webkit-fill-available;
+  }
+  #dropdownDiv {
+    position: inherit;
+    top:inherit;
+  }
+
+  #map{
+
+    background-color: lightgrey;
+    border-radius: 20px;
+  }
+  
+  .bg-blue {
+
+    padding: 2rem;
+  }
+}
+
+/*  Smartphones in portrait mode  */
+
+@media only screen and (max-width: 420px) {
+  select {
+    width: -webkit-fill-available;
+  }
+
+  #dropdownDiv {
+    position: inherit;
+    top:inherit;
+  }
+
+  #map{
+
+    background-color: lightgrey;
+    border-radius: 20px;
+  }
+  
+  .bg-blue {
+
+    padding: 2rem;
+  }
+}

@@ -1,0 +1,263 @@
+/* Monitors with screen width 1366px or above */
+
+html,body{height:100%;}
+
+a {
+  font-weight: bold;
+  color:#a75fe2 !important;
+}
+
+button {
+  border-radius: 10px;
+  padding: .5rem;
+  position: absolute;
+  margin: 1rem;
+  background: #ffffff59;
+  border: none;
+  width: 62px;
+  font-weight: 900;
+  font-size: 31px;
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+  align-self: center;
+
+}
+
+.bg-purple {
+
+}
+.bg-gray {
+  background: rgb(74,74,74);
+}
+
+.bg-red {
+
+}
+
+.greyblock {
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: #F4F4F4;
+}
+
+select {
+  background-color: #F7F8F9;
+  padding: 1rem;
+  margin: 1rem;
+  margin-bottom: 3rem;
+  border-color: #F7F8F9;
+  border-radius: 20px;
+  color: #B0B4BB;
+  text-align-last:center;
+  font-size:large;
+  width:60rem;
+}
+
+option {
+  text-align: center;
+}
+
+/* #content {
+  position: fixed;
+  top:0px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+} */
+
+#content {
+  position: fixed;
+  right: 0px;
+  width: 90vw;
+  overflow: scroll;
+  height: 100vh;
+  overflow-x: hidden;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background-color: white;
+}
+
+.bg-blue {
+  /* background: rgb(50,101,196); */
+  padding: 0rem;
+}
+
+#map{
+
+  background-color: lightgrey;
+  border-radius: 0px;
+
+}
+
+
+
+.col-6 {
+  padding: .5rem;
+}
+
+img {
+  border-radius: 20px;
+}
+
+
+
+/* Normalize */
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+.temp-text {
+  font-size: 460%;
+}
+
+
+
+
+
+
+/*  Tablets in landscape mode, older desktop monitors */
+
+@media only screen and (min-width: 1024px) and (max-width: 1365px) {
+  select {
+    width: 51rem;
+  }
+  
+  #content {
+    position: fixed;
+    right: 0px;
+    width: 90vw;
+    overflow: scroll;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+  .bg-blue {
+
+    padding: 0rem;
+  }
+
+  #map{
+
+    background-color: lightgrey;
+    border-radius: 0px;
+  }
+  .temp-text {
+    font-size: 460%;
+  }
+
+}
+
+/*  Tablets in portrait mode, large display smartphones landscape mode */
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  select {
+    width: 80vw;
+  }
+  #content {
+    position: fixed;
+    right: 0px;
+    width: 90vw;
+    overflow: scroll;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+  .bg-blue {
+
+    padding: 0rem;
+  }
+
+  #map{
+
+    background-color: lightgrey;
+    border-radius: 0px;
+  }
+
+  .temp-text {
+    font-size: 460%;
+  }
+}
+
+/*  Smartphones in landscape mode */
+
+@media only screen and (min-width: 421px) and (max-width: 767px) {
+  select {
+    width: -webkit-fill-available;
+  }
+  #content {
+    position: inherit;
+    top:inherit;
+    right: inherit;
+    width: inherit;
+    overflow: inherit;
+    height: 60vh;
+    overflow-x: inherit;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  #map{
+
+    background-color: lightgrey;
+  }
+  
+  .bg-blue {
+  }
+  .weather-icon{
+    display:none;
+  }
+
+  .temp-text {
+    font-size: 370%;
+  }
+}
+
+/*  Smartphones in portrait mode  */
+
+@media only screen and (max-width: 420px) {
+  select {
+    width: -webkit-fill-available;
+  }
+
+  #content {
+    position: inherit;
+    top:inherit;
+    right: inherit;
+    width: inherit;
+    overflow: inherit;
+    height: 60vh;
+    overflow-x: inherit;
+  }
+
+  #map{
+
+    background-color: lightgrey;
+  }
+  
+  .bg-blue {
+
+  }
+
+  /* Weather */
+  .weather-icon{
+    display:none;
+  }
+  .temp-text {
+    font-size: 370%;
+  }
+}
