@@ -12,6 +12,7 @@ var dropdown = document.getElementById("countriesDropdown");
             },
             success: function(result) {
                 console.log(result);
+                console.log(result[0].name)
                 
     
                 if (result.status.name == "ok") {
