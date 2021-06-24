@@ -42,18 +42,17 @@ var selectedCountry;
 
 //GET VALUE AND DATA FROM DROPDOWN/GEOJSON
     dropdown.addEventListener("change", function() {
-        geojsonResult.forEach(element => {
-            if(element.properties.name != name){
-                var name = element.properties.name;
-                var iso_a2 = element.properties.iso_a2;
-                console.log(element.properties.name);
-                selectedCountry = {"name": name, "iso_a2": iso_a2};
-                localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
+        var name = dropdown.options[dropdown.selectedIndex].text;;
+        var iso_a2 = dropdown.value;
 
+        geojsonResult.forEach(element => {
+            if(element.properties.name = name){
+                console.log(name);
             }
         });
 
-     
+        selectedCountry = {"name": name, "iso_a2": iso_a2};
+        localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         //window.location.replace("loading.html");
         
     });
