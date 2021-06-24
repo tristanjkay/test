@@ -1,7 +1,7 @@
 
 //VARIABLES
 var dropdown = document.getElementById("countriesDropdown");
-var geojsonResult;
+var geojsonResult = [];
 var selectedCountry;
 
 //POPULATE DROPDOWN
@@ -23,10 +23,10 @@ var selectedCountry;
                         option.text = element.properties.name;
                         option.value = element.properties.iso_a2;
                         dropdown.add(option);
-                        
+                        return geojsonResult.push(element);  
                     
                     });
-                    return geojsonResult = result['data'];
+                    //return geojsonResult = result['data'];
                 }
             },
             error: function(jqXHR, textStatus, errorThrown) {
