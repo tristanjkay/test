@@ -47,8 +47,7 @@ var selectedCountry;
                 var name = element.properties.name;
                 var iso_a2 = element.properties.iso_a2;
                 console.log(element.properties.name);
-                console.log(element.properties.iso_a2);
-                console.log(element.properties.iso_a3);
+
             }
         });
 
