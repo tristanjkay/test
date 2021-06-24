@@ -26,8 +26,9 @@ var selectedCountry;
                        
                     
                     });
-                    return geojsonResult = result;   
+                     
                 }
+                return geojsonResult = result;  
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log("ERROR: geojson-fileget.php")
