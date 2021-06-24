@@ -11,19 +11,16 @@ var dropdown = document.getElementById("countriesDropdown");
     
             },
             success: function(result) {
-                console.log(result);
-                console.log(result[0].name)
                 
-    
                 if (result.status.name == "ok") {
                     console.log("OK");
                     result['data'].forEach(element => {
     
                     var option = document.createElement("option");
-                    option.text = element.name;
-                    option.value = element.iso2;
+                    option.text = element.properties.name;
+                    option.value = element.properties.iso2;
                     dropdown.add(option);
-                    console.log(element.properties.name);
+                    
                     });
                 }
             },
