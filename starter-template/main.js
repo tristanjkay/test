@@ -3,8 +3,6 @@
 var dropdown = document.getElementById("countriesDropdown");
 
 //POPULATE DROPDOWN
-
-if(window.location.pathname.includes("screen1.html")){
         $.ajax({
             url: "starter-template\geojson-fileget.php",
             type: 'POST',  
@@ -32,11 +30,9 @@ if(window.location.pathname.includes("screen1.html")){
                 console.log("ERROR: geojson-fileget.php")
             }
         })
-    }
 
 
 //GET VALUE FROM DROPDOWN
-if(window.location.pathname.includes("screen1.html")){
     dropdown.addEventListener("change", function() {
         var selectedCountry = {"name": dropdown.value};
     
@@ -44,7 +40,6 @@ if(window.location.pathname.includes("screen1.html")){
         console.log(localStorage.getItem("selectedCountry"));
         window.location.replace("loading.html");
     });
-}
 
 //LOAD DATA FROM APIS
 
