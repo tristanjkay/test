@@ -47,12 +47,13 @@ var selectedCountry;
                 var name = element.properties.name;
                 var iso_a2 = element.properties.iso_a2;
                 console.log(element.properties.name);
+                selectedCountry = {"name": name, "iso_a2": iso_a2};
+                localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
 
             }
         });
 
-        selectedCountry = {"name": name, "iso_a2": iso_a2};
-        localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
+     
         //window.location.replace("loading.html");
         
     });
