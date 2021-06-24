@@ -15,11 +15,12 @@ var dropdown = document.getElementById("countriesDropdown");
                 if (result.status.name == "ok") {
                     console.log("OK");
                     result['data'].forEach(element => {
+                        console.log(element);
     
-                    var option = document.createElement("option");
-                    option.text = element.properties.name;
-                    option.value = element.properties.iso2;
-                    dropdown.add(option);
+                        var option = document.createElement("option");
+                        option.text = element.properties.name;
+                        option.value = element.properties.iso2;
+                        dropdown.add(option);
                     
                     });
                 }
