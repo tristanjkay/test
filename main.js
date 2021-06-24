@@ -43,7 +43,7 @@ var selectedCountry;
         selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry};
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         console.log(JSON.parse(localStorage.selectedCountry).name);
-        //window.location.replace("loading.html");
+        window.location.replace("loading.html");
     });
 
 //LOAD DATA FROM APIS
