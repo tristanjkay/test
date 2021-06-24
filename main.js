@@ -37,8 +37,10 @@ var selectedCountry;
 
 //GET VALUE AND DATA FROM DROPDOWN/GEOJSON
     dropdown.addEventListener("change", function() {
+        var name = dropdown.options[dropdown.selectedIndex].text;;
+        var iso_a2 = dropdown.value;
 
-        selectedCountry = {"name": dropdown.innerHTML, "iso_a2": dropdown.value};
+        selectedCountry = {"name": name, "iso_a2": iso_a2};
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         console.log(localStorage.getItem("selectedCountry"));
         window.location.replace("loading.html");
