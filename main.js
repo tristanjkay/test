@@ -24,7 +24,7 @@ var selectedCountry;
                         option.value = element.properties.iso_a2;
                         dropdown.add(option);
                         geojsonResult[result['data'].indexOf(element)] = element;
-                        console.log(element);
+                        //console.log(element);
                        
                     
                     });
@@ -47,10 +47,10 @@ var selectedCountry;
 
         geojsonResult.forEach(element => {
             if(element.properties.name = name){
-                console.log(name);
+                return selectedElement = element;
             }
         });
-
+        console.log(selectedElement);
         selectedCountry = {"name": name, "iso_a2": iso_a2};
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         //window.location.replace("loading.html");
