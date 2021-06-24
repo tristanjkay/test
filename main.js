@@ -24,11 +24,11 @@ var selectedCountry;
                         option.value = element.properties.iso_a2;
                         dropdown.add(option);
                         geojsonResult[result['data'].indexOf(element)] = element;
-                        //console.log(element);
+                       
                        
                     
                     });
-                    localStorage.setItem('test', JSON.stringify(result['data']));
+                    
                     
                      
                 }
@@ -50,7 +50,7 @@ var selectedCountry;
                 return selectedElement = element;
             }
         });
-        //console.log(selectedElement);
+        console.log(selectedElement);
         var iso_a3 = selectedElement.properties.iso_a3;
 
         selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3};
