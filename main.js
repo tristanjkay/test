@@ -1,7 +1,7 @@
 
 //VARIABLES
 var dropdown = document.getElementById("countriesDropdown");
-var geojsonResult;
+var geojsonResult = [];
 var selectedCountry;
 
 //POPULATE DROPDOWN
@@ -23,6 +23,7 @@ var selectedCountry;
                         option.text = element.properties.name;
                         option.value = element.properties.iso_a2;
                         dropdown.add(option);
+                        geojsonResult.push(element);
                         console.log(element);
                        
                     
