@@ -16,7 +16,7 @@ var geojsonResult;
                 if (result.status.name == "ok") {
                     
                     result['data'].forEach(element => {
-                        console.log(element);
+                        
     
                         var option = document.createElement("option");
                         option.text = element.properties.name;
@@ -33,9 +33,20 @@ var geojsonResult;
         })
 
 
-//GET VALUE FROM DROPDOWN
+//GET VALUE AND DATA FROM DROPDOWN/GEOJSON
     dropdown.addEventListener("change", function() {
-        var selectedCountry = {"name": dropdown.text};
+        geojsonResult.forEach(element => {
+            if(dropdown.iso_a2 == element.properties.iso_a2){
+                var selectedCountry = {"name": dropdown.text, "iso_a2": dropdown.value};
+            }       
+    
+        
+        });
+
+
+
+
+        
     
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         console.log(localStorage.getItem("selectedCountry"));
