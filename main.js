@@ -50,8 +50,10 @@ var selectedCountry;
                 return selectedElement = element;
             }
         });
-        console.log(selectedElement);
-        selectedCountry = {"name": name, "iso_a2": iso_a2};
+        //console.log(selectedElement);
+        var iso_a3 = selectedElement.properties.iso_a3;
+
+        selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3};
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         //window.location.replace("loading.html");
         
