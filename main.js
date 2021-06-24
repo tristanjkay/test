@@ -19,7 +19,7 @@ var dropdown = document.getElementById("countriesDropdown");
     
                         var option = document.createElement("option");
                         option.text = element.properties.name;
-                        option.value = element.properties.iso2;
+                        option.value = element.properties.iso_a2;
                         dropdown.add(option);
                     
                     });
