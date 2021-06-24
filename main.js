@@ -36,7 +36,7 @@ var selectedCountry;
 
 //GET VALUE AND DATA FROM DROPDOWN/GEOJSON
     dropdown.addEventListener("change", function() {
-        geojsonResult.forEach(element => {
+        geojsonResult['data'].forEach(element => {
             if(dropdown.iso_a2 == element.properties.iso_a2){
                 return selectedCountry = {"name": dropdown.text, "iso_a2": dropdown.value};
             }       
