@@ -46,7 +46,7 @@ var selectedCountry;
         var iso_a2 = dropdown.options[dropdown.selectedIndex].value;
 
         geojsonResult.forEach(element => {
-            if(element.properties.name = name){
+            if(element.properties.name == name){
                 console.log(element);
                 return selectedElement = element;
             }
