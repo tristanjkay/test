@@ -1,4 +1,4 @@
-var selectedCountry = {};
+selectedCountry = {"name": JSON.parse(localStorage.selectedCountry).name, "iso_a2": JSON.parse(localStorage.selectedCountry).iso_a2, "iso_a3": JSON.parse(localStorage.selectedCountry).iso_a3, "geometry": JSON.parse(localStorage.selectedCountry).geometry};
 var mycountry = JSON.parse(localStorage.selectedCountry).iso2;
 var mycountryname = JSON.parse(localStorage.selectedCountry).name;
 
@@ -12,22 +12,16 @@ $.ajax({
     },
     success: function(result) {
 
-        //console.log("GeoNames Success")
-
 
         if (result.status.name == "ok") {
-
+            localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
             selectedCountry.continent = result['data'][0]['continentName'];
             selectedCountry.area = result['data'][0]['areaInSqKm'];
             
-            $(".continent-title").html(selectedCountry.continent);
-            
-
         }
     
     },
     error: function(jqXHR, textStatus, errorThrown) {
-        //console.log("GeoNames Fail")
 
     }
     
