@@ -134,7 +134,7 @@ success: function(result) {
         
         
         //Weather icon
-        switch(selectedCountry.capital.weather.description) {
+        switch(selectedCountry.weather.description) {
             
             case "Sunny":
               // code block
