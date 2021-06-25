@@ -1,7 +1,7 @@
 selectedCountry = {"name": JSON.parse(localStorage.selectedCountry).name, "iso_a2": JSON.parse(localStorage.selectedCountry).iso_a2, "iso_a3": JSON.parse(localStorage.selectedCountry).iso_a3, "geometry": JSON.parse(localStorage.selectedCountry).geometry};
 var mycountry = JSON.parse(localStorage.selectedCountry).iso_a2;
 var mycountryname = JSON.parse(localStorage.selectedCountry).name;
-localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
+
 
 function replaceAccents(str){
 
@@ -97,3 +97,4 @@ $.ajax({
     }
     
 });
+localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
