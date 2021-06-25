@@ -109,8 +109,8 @@ success: function(result) {
     
 
     if (result.status.name == "ok") {
-        
-        //Set Data to Country Object
+        try {
+            //Set Data to Country Object
 
         //Capital
         //Current Weather
@@ -337,6 +337,10 @@ success: function(result) {
               selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/clearsky_day.svg"
 
           }
+        } catch (error) {
+            
+        }
+        
 
         //Location
         selectedCountry.location = [result['data']['location']['lat'],result['data']['location']['lon']];
