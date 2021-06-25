@@ -69,7 +69,7 @@ $.ajax({
         if (result.status.name == "ok") {
 
             //Set Data to Country Object
-            selectedCountry.capital.name = replaceAccents(result['data']['capital']);
+            selectedCountry.capital = replaceAccents(result['data']['capital']);
             selectedCountry.region = result['data']['region'];
             //selectedCountry.continent = result['data']['subregion'];
             selectedCountry.population = result['data']['population'];
