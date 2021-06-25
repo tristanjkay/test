@@ -363,3 +363,28 @@ $.ajax({
     }
     
 });
+
+//DictionaryAPI
+$.ajax({
+    url: "php/general/dictionary.php",
+    type: 'POST',
+    dataType: 'json',
+    data: {
+        country: selectedCountry.name,
+    },
+    success: function(result) {
+
+        //console.log("Dictionary Success");
+
+        if (result.status.name == "ok") {
+            selectedCountry.description = result['data'][0]['meanings'][0]['definitions'][0]['definition']
+            //$("#description-text").html(selectedCountry.description);
+            
+            
+    }
+},
+    error: function(jqXHR, textStatus, errorThrown) {
+        //console.log("Dictionary Fail")
+    }
+    
+});
