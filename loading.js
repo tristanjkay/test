@@ -2,6 +2,10 @@ selectedCountry = {"name": JSON.parse(localStorage.selectedCountry).name, "iso_a
 var mycountry = JSON.parse(localStorage.selectedCountry).iso_a2;
 var mycountryname = JSON.parse(localStorage.selectedCountry).name;
 
+$(document).ajaxStop(function() {
+    // place code to be executed on completion of last outstanding ajax call here
+    localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
+  });
 
 function replaceAccents(str){
 
@@ -97,4 +101,3 @@ $.ajax({
     }
     
 });
-localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
