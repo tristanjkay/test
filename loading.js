@@ -40,7 +40,7 @@ $.ajax({
 
 
         if (result.status.name == "ok") {
-            localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
+            //localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
             selectedCountry.continent = result['data'][0]['continentName'];
             selectedCountry.area = result['data'][0]['areaInSqKm'];
             
