@@ -119,239 +119,239 @@ $.ajax({
 
             //Capital
             //Current Weather
-            selectedCountry.capital.weather.temperature = result['data']['current']['temp_c'];
-            selectedCountry.capital.weather.description = result['data']['current']['condition']['text'];
-            selectedCountry.capital.weather.windSpeed = result['data']['current']['wind_mph'];
-            selectedCountry.capital.weather.windDirection = result['data']['current']['wind_dir'];
-            selectedCountry.capital.weather.precipitation = result['data']['current']['precip_mm'];
+            selectedCountry.weather.temperature = result['data']['current']['temp_c'];
+            selectedCountry.weather.description = result['data']['current']['condition']['text'];
+            selectedCountry.weather.windSpeed = result['data']['current']['wind_mph'];
+            selectedCountry.weather.windDirection = result['data']['current']['wind_dir'];
+            selectedCountry.weather.precipitation = result['data']['current']['precip_mm'];
 
-            selectedCountry.capital.weather.humidity = result['data']['current']['humidity'];
-            selectedCountry.capital.weather.cloudcover = result['data']['current']['cloud'];
-            selectedCountry.capital.weather.feelslike = result['data']['current']['feelslike_c'];
-            selectedCountry.capital.weather.uvIndex = result['data']['current']['uv'];
-            selectedCountry.capital.weather.visibility = result['data']['current']['vis_km'];
-            selectedCountry.capital.weather.isDay = result['data']['current']['is_day'];
-            selectedCountry.capital.weather.barPressure = result['data']['current']['pressure_mb'];
+            selectedCountry.weather.humidity = result['data']['current']['humidity'];
+            selectedCountry.weather.cloudcover = result['data']['current']['cloud'];
+            selectedCountry.weather.feelslike = result['data']['current']['feelslike_c'];
+            selectedCountry.weather.uvIndex = result['data']['current']['uv'];
+            selectedCountry.weather.visibility = result['data']['current']['vis_km'];
+            selectedCountry.weather.isDay = result['data']['current']['is_day'];
+            selectedCountry.weather.barPressure = result['data']['current']['pressure_mb'];
 
             //Forecast for the Week
-            selectedCountry.capital.weather.forecast = result['data']['forecast']['forecastday'];
+            selectedCountry.weather.forecast = result['data']['forecast']['forecastday'];
 
             
             
             //Weather icon
-            switch(selectedCountry.capital.weather.description) {
+            switch(selectedCountry.weather.description) {
                 
                 case "Sunny":
                   // code block
-                  selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/clearsky_day.svg"
+                  selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/clearsky_day.svg"
                   break;
                 case "Partly cloudy":
                   // code block
-                  selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/fair_day.svg"
+                  selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/fair_day.svg"
                   break;
                 case "Cloudy":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/cloudy.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/cloudy.svg"
                   break;
                 case "Overcast":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/partlycloudy_day.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/partlycloudy_day.svg"
                   break;
                 case "Mist":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/fog.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/fog.svg"
                   break;
                 case "Patchy rain possible":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/lightrain.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/lightrain.svg"
                   break;
                 case "Patchy snow possible":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/lightsnow.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/lightsnow.svg"
                   break;
                 case "Patchy sleet possible":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
                   break;
                 case "Patchy freezing drizzle possible":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/lightsleet.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/lightsleet.svg"
                   break;
                 case "Thundery outbreaks possible":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/lightrainshowersandthunder_day.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/lightrainshowersandthunder_day.svg"
                   break;
                 case "Blowing snow":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
                   break;
                 case "Blizzard":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
                   break;
                 case "Fog":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/fog.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/fog.svg"
                   break;
                 case "Freezing fog":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
                   break;
                 case "Patchy light drizzle":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/lightrain.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/lightrain.svg"
                   break;
                 case "Light drizzle":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/lightrain.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/lightrain.svg"
                   break;
                 case "Freezing drizzle":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/lightsnow.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/lightsnow.svg"
                   break;
                 case "Heavy freezing drizzle":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/lightsnow.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/lightsnow.svg"
                   break;
                 case "Patchy light rain":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/lightrain.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/lightrain.svg"
                   break;
                 case "Light Rain":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/lightrain.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/lightrain.svg"
                   break;
                 case "Moderate rain at times":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/rain.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/rain.svg"
                   break;
                 case "Moderate rain":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/rain.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/rain.svg"
                   break;
                 case "Heavy rain at times":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/rain.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/rain.svg"
                   break;
                 case "Heavy rain":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/rain.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/rain.svg"
                   break;
                 case "Light freezing rain":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
                   break;
                 case "Moderate or heavy freezing rain":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
                   break;
                 case "Light sleet":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/lightsnow.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/lightsnow.svg"
                   break;
                 case "Moderate or heavy sleet":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
                   break;
                 case "Patchy light snow":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/lightsnow.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/lightsnow.svg"
                   break;
                 case "Light snow":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/lightsnow.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/lightsnow.svg"
                   break;
                 case "Patchy moderate snow":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
                   break;
                 case "Moderate snow":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
                   break;
                 case "Patchy heavy snow":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
                   break;
                 case "Heavy snow":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
                   break;
                 case "Ice pellets":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/snow.svg"
                   break;
                 case "Light rain shower":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/lightrain.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/lightrain.svg"
                   break;
                 case "Moderate or heavy rain shower":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/rain.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/rain.svg"
                   break;
                 case "Torrential rain shower":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/heavyrain.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/heavyrain.svg"
                   break;
                 case "Light sleet showers":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
                   break;
                 case "Moderate or heavy sleet showers":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
                   break;
                 case "Light snow showers":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/lightsnow.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/lightsnow.svg"
                   break;
                 case "Moderate or heavy snow showers":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/snowshowers_day.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/snowshowers_day.svg"
                   break;
                 case "Light showers of ice pellets":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
                   break;
                 case "Moderate or heavy showers of ice pellets":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/sleet.svg"
                   break;
                 case "Patchy light rain with thunder":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/rainandthunder.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/rainandthunder.svg"
                   break;
                 case "Moderate or heavy rain with thunder":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/rainandthunder.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/rainandthunder.svg"
                   break;
                 case "Patchy light snow with thunder":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/snowandthunder.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/snowandthunder.svg"
                   break;
                 case "Moderate or heavy snow with thunder":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/snowandthunder.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/snowandthunder.svg"
                   break;
                 case "Clear":
                     // code block
-                    selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/clearsky_day.svg"
+                    selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/clearsky_day.svg"
                   break;
                 default:
                   // code block
-                  selectedCountry.capital.weather.icon = "https://api.met.no/images/weathericons/svg/clearsky_day.svg"
+                  selectedCountry.weather.icon = "https://api.met.no/images/weathericons/svg/clearsky_day.svg"
 
               }
 
             //Location
-            selectedCountry.capital.location = [result['data']['location']['lat'],result['data']['location']['lon']];
+            selectedCountry.location = [result['data']['location']['lat'],result['data']['location']['lon']];
 
             //Update UI
             
-            $('#climate-icon').html('<img src="' + selectedCountry.capital.weather.icon + '" alt="Weathericon">');
-            $('#climate-description').html(selectedCountry.capital.weather.description);
-            $('#climate-temperature').html(selectedCountry.capital.weather.temperature + "&deg");
-            $('#climate-feelslike').html("Feels like " + selectedCountry.capital.weather.feelslike + "&deg");
+            $('#climate-icon').html('<img src="' + selectedCountry.weather.icon + '" alt="Weathericon">');
+            $('#climate-description').html(selectedCountry.weather.description);
+            $('#climate-temperature').html(selectedCountry.weather.temperature + "&deg");
+            $('#climate-feelslike').html("Feels like " + selectedCountry.weather.feelslike + "&deg");
 
         }
     
