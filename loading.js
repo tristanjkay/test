@@ -415,7 +415,7 @@ $.ajax({
             });
 
             //Flights
-$.ajax({
+/* $.ajax({
 url: "php/flights/flights.php",
 type: 'POST',
 dataType: 'json',
@@ -447,7 +447,7 @@ error: function(jqXHR, textStatus, errorThrown) {
     //console.log("Dictionary Fail")
 }
 
-});
+}); */
             
             
     }
