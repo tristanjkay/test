@@ -410,7 +410,7 @@ $.ajax({
                 
             }
             if(element.City == selectedCountry.capital.name){
-                selectedCountry.capital.airport = element;
+                selectedCountry.airport = element;
             }
             });
 
@@ -420,7 +420,7 @@ url: "php/flights/flights.php",
 type: 'POST',
 dataType: 'json',
 data: {
-    country: selectedCountry.capital.airport.name,
+    country: selectedCountry.airport.name,
 },
 success: function(result) {
     selectedCountry.flights = [];
@@ -434,8 +434,8 @@ success: function(result) {
                 selectedCountry.flights.push(element);
 
 
-                if(element.city == selectedCountry.capital.name){
-                    selectedCountry.capital.airport = element.name;
+                if(element.city == selectedCountry.name){
+                    selectedCountry.airport = element.name;
                 }	
             });
         }
@@ -651,8 +651,8 @@ success: function(result) {
         }
         
         
-        $("#climate-title").html("<b>Today (" + selectedCountry.capital.name + ")</b>");
-        $("#gdp_value").html(selectedCountry.gdp['string']);
+        //$("#climate-title").html("<b>Today (" + selectedCountry.capital.name + ")</b>");
+        //$("#gdp_value").html(selectedCountry.gdp['string']);
 
     }
 
