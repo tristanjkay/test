@@ -119,6 +119,8 @@ $.ajax({
 
             //Capital
             //Current Weather
+            selectedCountry.weather = {};
+
             selectedCountry.weather.temperature = result['data']['current']['temp_c'];
             selectedCountry.weather.description = result['data']['current']['condition']['text'];
             selectedCountry.weather.windSpeed = result['data']['current']['wind_mph'];
