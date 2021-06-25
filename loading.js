@@ -5,7 +5,8 @@ var mycountryname = JSON.parse(localStorage.selectedCountry).name;
 $(document).ajaxStop(function() {
     // place code to be executed on completion of last outstanding ajax call here
     localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
-    console.log("Finished!")
+    console.log("Finished!");
+    window.location.replace("screen2.html");
   });
 
 function replaceAccents(str){
