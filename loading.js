@@ -105,7 +105,7 @@ data: {
 },
 success: function(result) {
 
-    //console.log("Weather Current Success");
+    console.log("Weather Current Success");
     
 
     if (result.status.name == "ok") {
@@ -374,7 +374,7 @@ success: function(result) {
 
     if (result.status.name == "ok") {
         selectedCountry.description = result['data'][0]['meanings'][0]['definitions'][0]['definition']
-        //$("#description-text").html(selectedCountry.description);
+        ////$("#description-text").html(selectedCountry.description);
         
         
 }
@@ -647,8 +647,8 @@ var thousands = (length/3).toFixed();
     }
     
     
-    $("#climate-title").html("<b>Today (" + selectedCountry.capital.name + ")</b>");
-    $("#gdp_value").html(selectedCountry.gdp['string']);
+    //$("#climate-title").html("<b>Today (" + selectedCountry.capital.name + ")</b>");
+    //$("#gdp_value").html(selectedCountry.gdp['string']);
 
 }
 
@@ -732,7 +732,7 @@ var thousands = (length/3).toFixed();
     };
     
     
-    $("#inf_value").html(selectedCountry.inflation['string']);
+    //$("#inf_value").html(selectedCountry.inflation['string']);
 
 }
 
@@ -765,7 +765,7 @@ if (result.status.name == "ok") {
     };
     
     
-    //$("#bud_value").html(selectedCountry.budget['value']);
+    ////$("#bud_value").html(selectedCountry.budget['value']);
 
 }
 
@@ -795,7 +795,7 @@ if (result.status.name == "ok") {
     selectedCountry.budget.total = ((selectedCountry.budget['value'])*100)/(result['data'][1][0]['value'])
 
     
-    $("#bud_value").html(selectedCountry.budget['total']);
+    //$("#bud_value").html(selectedCountry.budget['total']);
 
 }
 
@@ -855,7 +855,7 @@ if (result.status.name == "ok") {
         "description": result['data'][1][0]['indicator']['value']
     };
 
-    $("#education_ph").html(selectedCountry.education['value']);
+    //$("#education_ph").html(selectedCountry.education['value']);
 
     
     
@@ -913,7 +913,7 @@ if (result.status.name == "ok") {
         "description": result['data'][1][0]['indicator']['value']
     };
 
-    $("#govedexpense_ph").html(selectedCountry.edExpense['value']);
+    //$("#govedexpense_ph").html(selectedCountry.edExpense['value']);
     
 
 }
@@ -941,7 +941,7 @@ if (result.status.name == "ok") {
         "value": result['data'][1][0]['value'],
         "description": result['data'][1][0]['indicator']['value']
     };
-    $("#infantmortality_ph").html(selectedCountry.infantMortality['value']);
+    //$("#infantmortality_ph").html(selectedCountry.infantMortality['value']);
 
 }
 
@@ -969,7 +969,7 @@ if (result.status.name == "ok") {
         "description": result['data'][1][0]['indicator']['value']
     };
 
-    $("#literacy_ph").html(selectedCountry.literacy['value']);
+    //$("#literacy_ph").html(selectedCountry.literacy['value']);
     
 
 }
@@ -1189,7 +1189,7 @@ if (result.status.name == "ok") {
         "description": result['data'][1][0]['indicator']['value']
     };
 
-    $("#lifeexpectancy_ph").html(selectedCountry.lifeexpectancy['value']);
+    //$("#lifeexpectancy_ph").html(selectedCountry.lifeexpectancy['value']);
     
 
 }
@@ -1218,7 +1218,7 @@ if (result.status.name == "ok") {
         "value": result['data'][1][0]['value'],
         "description": result['data'][1][0]['indicator']['value']
     };
-    $("#hospitalbeds_ph").html(selectedCountry.hospitalbeds['value']);
+    //$("#hospitalbeds_ph").html(selectedCountry.hospitalbeds['value']);
 
 }
 
@@ -1781,7 +1781,7 @@ if (result.status.co2ouput == "ok") {
         "description": result['data'][1][0]['indicator']['value']
     };
 
-    $("#co2output_ph").html(selectedCountry.co2ouput['value']);
+    //$("#co2output_ph").html(selectedCountry.co2ouput['value']);
     
 
 }
@@ -1811,7 +1811,7 @@ if (result.status.name == "ok") {
         "description": result['data'][1][0]['indicator']['value']
     };
 
-    $("#airpollution_ph").html(selectedCountry.airpollution['value']);
+    //$("#airpollution_ph").html(selectedCountry.airpollution['value']);
     
 
 }
@@ -1841,7 +1841,7 @@ if (result.status.name == "ok") {
         "description": result['data'][1][0]['indicator']['value']
     };
 
-    $("#energyfromrenewables_ph").html(selectedCountry.electricityfromrenewables['value']);
+    //$("#energyfromrenewables_ph").html(selectedCountry.electricityfromrenewables['value']);
     
 
 }
@@ -2122,7 +2122,7 @@ if (result.status.name == "ok") {
         "value": result['data'][1][0]['value'],
         "description": result['data'][1][0]['indicator']['value']
     };
-    $("#arrivals_ph").html(selectedCountry.arrivals['value']);
+    //$("#arrivals_ph").html(selectedCountry.arrivals['value']);
 
 }
 
@@ -2151,7 +2151,7 @@ if (result.status.name == "ok") {
         "description": result['data'][1][0]['indicator']['value']
     };
 
-    $("#departures_ph").html(selectedCountry.departures['value']);
+    //$("#departures_ph").html(selectedCountry.departures['value']);
     
 
 }
@@ -2181,7 +2181,7 @@ if (result.status.name == "ok") {
         "description": result['data'][1][0]['indicator']['value']
     };
 
-    $("#tourismincome_ph").html(selectedCountry.tourismincome['value']);
+    //$("#tourismincome_ph").html(selectedCountry.tourismincome['value']);
     
 
 }
