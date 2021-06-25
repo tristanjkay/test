@@ -558,7 +558,7 @@ $.ajax({
     data: {
         country: selectedCountry.name,
     },
-    beforeSend: function(xhr){xhr.setRequestHeader('x-api-key', 'WeEOSzCLt3vmpbsXBjEc9ZRmh57ToW126jJau9Mf');},
+    
     success: function(result) {
 
         //console.log("POI Success")
