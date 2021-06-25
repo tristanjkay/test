@@ -517,10 +517,10 @@ $.ajax({
 
         if (result.status.name == "ok") {
             //console.log("News Success");
-            document.getElementById('newsarticles').innerHTML = "";
+            //document.getElementById('newsarticles').innerHTML = "";
             selectedCountry.news = result['data']['articles'];
-            selectedCountry.news.forEach(article => {
-                if(selectedCountry.news.indexOf(article) <=2){
+            /* selectedCountry.news.forEach(article => {
+                 if(selectedCountry.news.indexOf(article) <=2){
                     var articlediv = document.createElement('div');
                     articlediv.id = 'article' + selectedCountry.news.indexOf(article);
                     //articlediv.className = 'null';
@@ -536,11 +536,11 @@ $.ajax({
                 articlebody.innerHTML = article['description'];
                 document.getElementById('article' + selectedCountry.news.indexOf(article)).appendChild(articlebody);
 
-                }
+                } 
                 
 
             }
-            )}
+            ) */}
 },
     error: function(jqXHR, textStatus, errorThrown) {
 
