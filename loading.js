@@ -350,12 +350,7 @@ $.ajax({
             //Location
             selectedCountry.location = [result['data']['location']['lat'],result['data']['location']['lon']];
 
-            //Update UI
-            
-            $('#climate-icon').html('<img src="' + selectedCountry.weather.icon + '" alt="Weathericon">');
-            $('#climate-description').html(selectedCountry.weather.description);
-            $('#climate-temperature').html(selectedCountry.weather.temperature + "&deg");
-            $('#climate-feelslike').html("Feels like " + selectedCountry.weather.feelslike + "&deg");
+
 
         }
     
@@ -738,7 +733,6 @@ success: function(result) {
         };
         
         
-        $("#inf_value").html(selectedCountry.inflation['string']);
 
     }
 
