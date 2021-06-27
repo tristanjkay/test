@@ -24,5 +24,5 @@ $('#ph_weathericon').attr("src", JSON.parse(localStorage.selectedCountry).weathe
 //Tourism
 
 $('#ph_tourismincome').html(JSON.parse(localStorage.selectedCountry).tourismincome.value);
-
+$('#ph_flights').html(JSON.parse(localStorage.selectedCountry).arrivals);
 
