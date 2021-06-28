@@ -33,7 +33,7 @@ JSON.parse(localStorage.selectedCountry).weather.forecast.forEach(element => {
 //Weather Chart
 
 
-                // chart colors
+// chart colors
 var colors = ['#007bff','#28a745','#333333','#c3e6cb','#dc3545','#6c757d'];
 
 /* large line chart */
