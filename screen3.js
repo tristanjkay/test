@@ -26,21 +26,20 @@ $('#ph_winddirection').html(JSON.parse(localStorage.selectedCountry).weather.win
 $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 
 var index = 0;
-//Forecast
-JSON.parse(localStorage.selectedCountry).weather.forecast.forEach(element => {
-    $('#forecast').html('<div class="row" style="margin-top: 2rem;"> <h3 style = "margin-bottom: 1rem;">This Week</h3> </div> <canvas id="myChart" width="0" style="padding-bottom:1rem"></canvas><div class="row "> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-right:.5rem; text-align: center;"> <h2>83</h2> <h6>Temperature</h6> </div> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: center;"> <h2>0</h2> <h6>Humidity</h6> </div> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: center;"> <h2>WSW</h2> <h6>Wind Speed</h6> </div> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: center;"> <h2>5.6</h2> <h6>Precipitation</h6> </div> </div>');
-
-    console.log(index); 
-    index++;
-});
-
-//Weather Chart
-
-
+var daytemps = [];
 // chart colors
 var colors = ['#007bff','#28a745','#333333','#c3e6cb','#dc3545','#6c757d'];
+//Forecast
+JSON.parse(localStorage.selectedCountry).weather.forecast.forEach(element => {
+    
+    
+    var string = "day[" +index+"]";
+    daytemps.push([element.hour[0].temp_c, element.hour[2].temp_c, element.hour[5].temp_c, element.hour[8].temp_c, element.hour[11].temp_c, element.hour[14].temp_c, element.hour[17].temp_c, element.hour[20].temp_c, element.hour[23].temp_c]);
+    index++;
 
-/* large line chart */
+    $('#forecast').html('<div class="row" style="margin-top: 2rem;"> <h3 style = "margin-bottom: 1rem;">This Week</h3> </div> <canvas id=' + string + 'width="0" style="padding-bottom:1rem"></canvas><div class="row "> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-right:.5rem; text-align: center;"> <h2>83</h2> <h6>Temperature</h6> </div> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: center;"> <h2>0</h2> <h6>Humidity</h6> </div> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: center;"> <h2>WSW</h2> <h6>Wind Speed</h6> </div> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: center;"> <h2>5.6</h2> <h6>Precipitation</h6> </div> </div>');
+
+    /* large line chart */
 var chLine = document.getElementById("myChart");
 var chartData = {
   labels: ["S", "M", "T", "W", "T", "F", "S"],
@@ -86,6 +85,17 @@ if (chLine) {
   }
   });
 }
+    //console.log(index);
+    
+    
+});
+
+//Weather Chart
+
+
+
+
+
 
 
 
