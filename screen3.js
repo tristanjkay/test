@@ -19,11 +19,11 @@ $('#ph_currencycode').html(JSON.parse(localStorage.selectedCountry).currencycode
 $('#ph_temperature').html(JSON.parse(localStorage.selectedCountry).weather.temperature + "&deg");
 $('#ph_feelslike').html("Feels like "+ JSON.parse(localStorage.selectedCountry).weather.feelslike + "&deg");
 $('#ph_weathericon').attr("src", JSON.parse(localStorage.selectedCountry).weather.icon);
-$('#ph_humidity').attr("src", JSON.parse(localStorage.selectedCountry).weather.icon);
-$('#ph_precipitation').attr("src", JSON.parse(localStorage.selectedCountry).weather.icon);
-$('#ph_windspeed').attr("src", JSON.parse(localStorage.selectedCountry).weather.icon);
-$('#ph_winddirection').attr("src", JSON.parse(localStorage.selectedCountry).weather.icon);
-$('#ph_uvindex').attr("src", JSON.parse(localStorage.selectedCountry).weather.icon);
+$('#ph_humidity').html(JSON.parse(localStorage.selectedCountry).weather.humidity);
+$('#ph_precipitation').html(JSON.parse(localStorage.selectedCountry).weather.precipitation);
+$('#ph_windspeed').html(JSON.parse(localStorage.selectedCountry).weather.windSpeed);
+$('#ph_winddirection').html(JSON.parse(localStorage.selectedCountry).weather.windDirection);
+$('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 
 
 //Tourism
