@@ -40,12 +40,12 @@ JSON.parse(localStorage.selectedCountry).weather.forecast.forEach(element => {
     $('#forecast').append('<div class="row" style="margin-top: 2rem;"> <h3 style = "margin-bottom: 1rem;">This Week</h3> </div> <canvas id=' + string + ' width="0" style="padding-bottom:1rem"></canvas><div class="row "> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-right:.5rem; text-align: center;"> <h2>83</h2> <h6>Temperature</h6> </div> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: center;"> <h2>0</h2> <h6>Humidity</h6> </div> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: center;"> <h2>WSW</h2> <h6>Wind Speed</h6> </div> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: center;"> <h2>5.6</h2> <h6>Precipitation</h6> </div> </div>');
 
     /* large line chart */
-var chLine = document.getElementById(string);
-var chartData = {
-  labels: ["S", "M", "T", "W", "T", "F", "S"],
-  datasets: [{
+    var chLine = document.getElementById(string);
+    var chartData = {
+    labels: ["0:00", "02:00", "05:00", "08:00", "11:00", "14:00", "17:00", "20:00", "23:00"],
+    datasets: [{
     label: "Temperature",
-    data: [589, 445, 483, 503, 689, 692, 634],
+    data: [daytemps[index][0], daytemps[index][1], daytemps[index][2], daytemps[index][3], daytemps[index][4], daytemps[index][5], daytemps[index][6], daytemps[index][7], daytemps[index][8]],
     backgroundColor: 'transparent',
     borderColor: colors[0],
     borderWidth: 4,
