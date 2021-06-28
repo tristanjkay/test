@@ -25,6 +25,11 @@ $('#ph_windspeed').html(JSON.parse(localStorage.selectedCountry).weather.windSpe
 $('#ph_winddirection').html(JSON.parse(localStorage.selectedCountry).weather.windDirection);
 $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 
+//Forecast
+JSON.parse(localStorage.selectedCountry).weather.forecast.forEach(element => {
+    console.log(element);
+});
+
 
 //Tourism
 
