@@ -27,8 +27,10 @@ $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 
 //Forecast
 JSON.parse(localStorage.selectedCountry).weather.forecast.forEach(element => {
-    console.log(element);
+    $('#forecast').html('<div class="row" style="margin-top: 2rem;"> <h3 style = "margin-bottom: 1rem;">This Week</h3> </div> <canvas id="myChart" width="0" style="padding-bottom:1rem"></canvas> <script> // chart colors var colors = ["#007bff","#28a745","#333333","#c3e6cb","#dc3545","#6c757d"]; var chLine = document.getElementById("myChart"); var chartData = { labels: ["S", "M", "T", "W", "T", "F", "S"], datasets: [{ label: "Temperature", data: [589, 445, 483, 503, 689, 692, 634], backgroundColor: "transparent", borderColor: colors[0], borderWidth: 4, pointBackgroundColor: colors[0] } ] }; if (chLine) { new Chart(chLine, { type: "line", data: chartData, options: { scales: { xAxes: [{ gridLines: { display: false, drawBorder: false, }, drawBorder: false, ticks: { fontColor: "#fff", display:false }, }], yAxes: [{ display: false, gridLines: { display: false, }, }], }, legend: { display: false }, responsive: true } }); } </script> <div class="row "> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-right:.5rem; text-align: center;"> <h2>83</h2> <h6>Temperature</h6> </div> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: center;"> <h2>0</h2> <h6>Humidity</h6> </div> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: center;"> <h2>WSW</h2> <h6>Wind Speed</h6> </div> <div class="col greyblock" style = "margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: center;"> <h2>5.6</h2> <h6>Precipitation</h6> </div> </div>');
 });
+
+
 
 
 //Tourism
