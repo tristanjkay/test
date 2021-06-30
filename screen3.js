@@ -106,5 +106,5 @@ if (chLine) {
 $('#ph_tourismincome').html(JSON.parse(localStorage.selectedCountry).tourismincome.value);
 $('#ph_flightarrivals').html(JSON.parse(localStorage.selectedCountry).arrivals.value);
 $('#ph_flightdepartures').html(JSON.parse(localStorage.selectedCountry).departures.value);
-$('#ph_tourisminvestment').html(JSON.parse(localStorage.selectedCountry).departures.value);//NOPE
+//$('#ph_tourisminvestment').html(JSON.parse(localStorage.selectedCountry).departures.value); //NOPE
 
