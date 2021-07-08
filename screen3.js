@@ -30,7 +30,7 @@ var news = JSON.parse(localStorage.selectedCountry).news;
 Object.keys(news).forEach(key => {
   var thisarticle = news[key];
   Object.keys(thisarticle).forEach(key => {
-    console.log(key);
+    console.log(thisarticle[key]);
   })
   console.log(thisarticle);
   console.log(news[key]);
