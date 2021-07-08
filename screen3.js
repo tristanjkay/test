@@ -25,6 +25,15 @@ $('#ph_windspeed').html(JSON.parse(localStorage.selectedCountry).weather.windSpe
 $('#ph_winddirection').html(JSON.parse(localStorage.selectedCountry).weather.windDirection);
 $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 
+//News
+
+selectedCountry.news.forEach(article => {
+  
+ 
+
+}
+)
+
 var index = 0;
 
 // chart colors
