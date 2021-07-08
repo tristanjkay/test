@@ -518,7 +518,7 @@ $.ajax({
     type: 'POST',
     dataType: 'json',
     data: {
-        country: selectedCountry.iso2,
+        country: selectedCountry.name,
     },
     success: function(result) {
 
