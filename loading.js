@@ -510,7 +510,7 @@ $.ajax({
     dataType: 'json',
     data: {
         country: selectedCountry.name,
-        date: 
+        date: sevendaysago
     },
     success: function(result) {
 
