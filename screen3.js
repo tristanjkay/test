@@ -31,7 +31,8 @@ var newsArray = [];
 //Date folder
 Object.keys(news).forEach(key => {
   var thisDateFolder = news[key];
-  newsArray.push(key);
+  var array = key[""];
+  newsArray.push(array);
   var thisDateFolderName = key;
   
   //Articles in date folders
