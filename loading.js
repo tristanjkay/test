@@ -527,7 +527,7 @@ $.ajax({
         if (result.status.name == "ok") {
             //console.log("News Success");
 
-            selectedCountry.news = result['data']['results'];
+            selectedCountry.news = result['data']['response']['results'];
              }
 },
     error: function(jqXHR, textStatus, errorThrown) {
