@@ -529,7 +529,14 @@ $.ajax({
 
             selectedCountry.news = result['data']['response']['results'];
             selectedCountry.news.forEach(article => {
-                $.get(article.webUrl, function(data){localStorage.setItem(article.webTitle, data);})                
+                $.ajax({
+                    type:     "GET",
+                    url:      article.webTitle, // <-- Here
+                    dataType: "jsonp",
+                    success: function(data){
+                        console.log(data);
+                    }
+                });               
             });
              }
 },
