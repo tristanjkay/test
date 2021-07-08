@@ -531,9 +531,10 @@ $.ajax({
             selectedCountry.news.forEach(article => {
                 $.ajax({
                     type:     "GET",
-                    url:      article.webTitle,
+                    url:      article.webUrl,
                     dataType: "jsonp",
                     success: function(data){
+                        console.log("test");
                         localStorage.setItem(article.webTitle, data);
                     }
                 });               
