@@ -528,7 +528,7 @@ $.ajax({
             //console.log("News Success");
 
             selectedCountry.news = result['data']['response']['results'];
-            selectedCountry.news.forEach(article => {
+            /* selectedCountry.news.forEach(article => {
                 
                 $.ajax({
                     url: "php/events/article-getcontents.php",
@@ -554,7 +554,7 @@ $.ajax({
                     }
                     
                 });               
-            });
+            }); */
              }
 },
     error: function(jqXHR, textStatus, errorThrown) {

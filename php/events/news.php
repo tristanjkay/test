@@ -2,7 +2,7 @@
 	//TODO: Get Latest Date Dynamically
 	$executionStartTime = microtime(true) / 1000;
 
-    $url='https://content.guardianapis.com/search?q='. $_REQUEST['country'] . '&api-key=1ce21f5e-a609-49f3-aa72-abbf06cbeea9';
+    $url='https://content.guardianapis.com/search?q='. $_REQUEST['country'] . '&show-blocks=all&api-key=1ce21f5e-a609-49f3-aa72-abbf06cbeea9';
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
