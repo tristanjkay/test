@@ -523,7 +523,7 @@ $.ajax({
         
 
         if (result.status.name == "ok") {
-            console.log("News Success");
+            //console.log("News Success");
 
             selectedCountry.news = result['data']['articles'];
              }
