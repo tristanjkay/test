@@ -543,7 +543,7 @@ $.ajax({
                        
                 
                         if (result.status.name == "ok") {
-                            localStorage.setItem("article.webTitle", "new");
+                            localStorage.setItem("article.webTitle", result['data']);
                             
                             
                     }
