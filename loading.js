@@ -531,13 +531,27 @@ $.ajax({
             selectedCountry.news.forEach(article => {
                 localStorage.setItem("article.webTitle", "data");
                 $.ajax({
-                    type:     "GET",
-                    url:      "https://google.com",
-                    dataType: "jsonp",
-                    success: function(data){
-                        console.log("test");
-                        localStorage.setItem("article.webTitle", "data");
+                    url: "php/events/article-getcontents.php",
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        article: article.webUrl,
+                    },
+                    
+                    success: function(result) {
+                
+                       
+                
+                        if (result.status.name == "ok") {
+                            
+                            
                     }
+                },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        
+                
+                    }
+                    
                 });               
             });
              }
