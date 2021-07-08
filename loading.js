@@ -528,7 +528,7 @@ $.ajax({
             //console.log("News Success");
             var thenews = result['data']['response']['results'];
             var sortedNews = {};
-            thenews.news.forEach(article => {
+            thenews.forEach(article => {
                 sortedNews[article.webPublicationDate.split("T")[0]] = {};
                 /* sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle] = {};
                 sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle] = {}; */
