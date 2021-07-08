@@ -47,8 +47,6 @@ function replaceAccents(str){
   };
 
 //Geonames
-
-//test
 $.ajax({
     url: "php/general/geonames.php",
     type: 'POST',
