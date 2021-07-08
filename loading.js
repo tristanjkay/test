@@ -534,7 +534,7 @@ $.ajax({
             var thenews = result['data']['response']['results'];
             var sortedNews = {};
             thenews.forEach(article => {
-                sortedNews[article.webPublicationDate.split("T")[0]] = {};
+                sortedNews[article.webPublicationDate.split("T")[0]] = [];
                 sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle] = article;
                 sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle]['textBody'] = (article.blocks.body[0].bodyTextSummary).split(" ").slice(0, 65).join(" ") + "...";
                 sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle]['shortDate'] = article.webPublicationDate.split("T")[0];
