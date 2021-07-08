@@ -546,9 +546,7 @@ $.ajax({
                 {}
               );
             localStorage.setItem('sortedNews', JSON.stringify(sortedNews));
-            sortedNews.forEach(item => {
-                selectedCountry.news.Add(item);
-            });
+            selectedCountry.news = sortedNews;
             
              }
 },
