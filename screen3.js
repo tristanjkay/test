@@ -29,12 +29,14 @@ $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 var news = JSON.parse(localStorage.selectedCountry).news;
 
 Object.keys(news).forEach(key => {
-  console.log(key);
-  console.log(localStorage.todaysDateMinus);
+
+
   if(key == localStorage.todaysDateMinus){
-    console.log(news[key])
-  }
-  ; // the value of the current key.
+    //Today's News
+  }else{
+    console.log(key);
+  };
+
 });
 /* news.forEach(article => {
     //var formattedTime = (article.webPublicationDate.split("T")[1]).slice(0, -4);
