@@ -480,7 +480,10 @@ $.ajax({
 
         if (result.status.name == "ok") {
             //console.log(selectedCountry.currencycode);
-            selectedCountry.exchangerate = result['data']['rates'][selectedCountry.currencycode].toFixed(2);
+            if(typeof selectedCountry.currencycode != 'undefined'){
+                selectedCountry.exchangerate = result['data']['rates'][selectedCountry.currencycode].toFixed(2);
+            }
+            
             //console.log(selectedCountry.exchangerate);
             selectedCountry.othercurrencies = result['data']['rates'];
 
