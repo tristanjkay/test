@@ -30,7 +30,7 @@ var news = JSON.parse(localStorage.selectedCountry).news;
 
 Object.keys(news).forEach(key => {
   if(key == "2021-04-27"){
-    console.log(myObj[key])
+    console.log(news[key])
   }
   ; // the value of the current key.
 });
