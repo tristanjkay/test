@@ -529,7 +529,9 @@ $.ajax({
 
             selectedCountry.news = result['data']['response']['results'];
             selectedCountry.news.forEach(article => {
-                article['text'] = (article.blocks.body[0].bodyTextSummary).substring(0, 300) + "...";
+                article['text'] = (article.blocks.body[0].bodyTextSummary).split(" ").slice(0, 65).join(" ");
+                //(article.blocks.body[0].bodyTextSummary).split(" ").slice(0, 65).join(" ");
+                //(article.blocks.body[0].bodyTextSummary).substring(0, 300) + "...";
                 //article.text = article.blocks.body[0].bodyTextSummary
             });
              }
