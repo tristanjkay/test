@@ -518,8 +518,7 @@ $.ajax({
     type: 'POST',
     dataType: 'json',
     data: {
-        country: selectedCountry.name,
-        date: sevendaysago
+        country: selectedCountry.iso2,
     },
     success: function(result) {
 
