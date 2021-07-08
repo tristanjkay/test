@@ -548,10 +548,8 @@ $.ajax({
                 {}
               );
             localStorage.setItem('sortedNews', JSON.stringify(sortedNews));
-            selectedCountry.news = [];
-            Object.keys(sortedNews).forEach(key => {
-                selectedCountry.news.Add(news[key])
-            })
+            selectedCountry.news = JSON.parse(localStorage.getItem('sortedNews'));
+           
             
              }
 },
