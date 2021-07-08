@@ -540,6 +540,7 @@ $.ajax({
                 }, 
                 {}
               );
+              sortedNews.reverse();
             localStorage.setItem('sortedNews', JSON.stringify(sortedNews));
             selectedCountry.news = result['data']['response']['results'];
             selectedCountry.news.forEach(article => {
