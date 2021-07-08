@@ -542,17 +542,8 @@ $.ajax({
                 {}
               );
             localStorage.setItem('sortedNews', JSON.stringify(sortedNews));
-            selectedCountry.news = result['data']['response']['results'];
-            selectedCountry.news.forEach(article => {
-                var webtitle = article.webTitle;
-                selectedCountry.news[article.webPublicationDate.split("T")[0]] = [];
-                selectedCountry.news[article.webPublicationDate.split("T")[0]][webtitle] = article;
-                selectedCountry.news[article.webPublicationDate.split("T")[0]][article.webTitle]['text'] = (article.blocks.body[0].bodyTextSummary).split(" ").slice(0, 65).join(" ") + "...";
-                //article['text'] = (article.blocks.body[0].bodyTextSummary).split(" ").slice(0, 65).join(" ") + "...";
-                //(article.blocks.body[0].bodyTextSummary).split(" ").slice(0, 65).join(" ");
-                //(article.blocks.body[0].bodyTextSummary).substring(0, 300) + "...";
-                //article.text = article.blocks.body[0].bodyTextSummary
-            });
+            selectedCountry.news = sortedNews;
+            
              }
 },
     error: function(jqXHR, textStatus, errorThrown) {
