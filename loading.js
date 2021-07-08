@@ -531,7 +531,7 @@ $.ajax({
             selectedCountry.news.forEach(article => {
                 $.ajax({
                     type:     "GET",
-                    url:      article.webTitle, // <-- Here
+                    url:      article.webTitle,
                     dataType: "jsonp",
                     success: function(data){
                         console.log(data);
