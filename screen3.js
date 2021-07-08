@@ -26,26 +26,27 @@ $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 
 //News
 var news = JSON.parse(localStorage.selectedCountry).news;
+var newsArray = [];
 
 //Date folder
 Object.keys(news).forEach(key => {
   var thisDateFolder = news[key];
+  newsArray.append(key);
   
   //Articles in date folder
   Object.keys(thisDateFolder).forEach(key => {
-    console.log(thisDateFolder[key].webPublicationDate);
+    var article = thisDateFolder[key];
+    
+    var day = article.webPublicationDate.split("T")[0].split("-")[2];
+    var thisDay = localStorage.todaysDateMinus.split("-")[2];
+    var formattedTime = (article.webPublicationDate.split("T")[1]).slice(0, -4);
+    
   })
-  console.log(thisarticle);
-  console.log(news[key]);
-  console.log(key);
+  
 
 
-/*   var article = news[key];
-  console.log(article['isHosted'].toString());
-  var day = key.split("-")[2];
+/* 
 
-  var thisDay = localStorage.todaysDateMinus.split("-")[2];
-  var formattedTime = (news[key].webPublicationDate.split("T")[1]).slice(0, -4);
 
   if(key == localStorage.todaysDateMinus){
     //Today's News
