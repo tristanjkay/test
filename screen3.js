@@ -14,7 +14,6 @@ $('#ph_description').html(JSON.parse(localStorage.selectedCountry).description);
 $('#ph_currencyvalue').html(JSON.parse(localStorage.selectedCountry).currencycode);
 $('#ph_currencycode').html(JSON.parse(localStorage.selectedCountry).currencycode);
 
-
 //Weather
 $('#ph_temperature').html(JSON.parse(localStorage.selectedCountry).weather.temperature + "&deg");
 $('#ph_feelslike').html("Feels like "+ JSON.parse(localStorage.selectedCountry).weather.feelslike + "&deg");
@@ -30,6 +29,7 @@ var news = JSON.parse(localStorage.selectedCountry).news;
 
 Object.keys(news).forEach(key => {
   console.log(news[key]);
+  console.log(key);
 /*   var article = news[key];
   console.log(article['isHosted'].toString());
   var day = key.split("-")[2];
