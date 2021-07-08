@@ -7,6 +7,8 @@ sevendaysago.setDate(date.getDate() - 7);
 
 $(document).ajaxStop(function() {
     // place code to be executed on completion of last outstanding ajax call here
+    localStorage.setItem('todaysDate', date);
+    localStorage.setItem('sevendaysago', sevendaysago);
     localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
     console.log("Finished!");
     window.location.replace("screen2.html");
