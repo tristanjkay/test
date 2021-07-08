@@ -38,7 +38,7 @@ Object.keys(news).forEach(key => {
   //Articles in date folders
   Object.keys(thisDateFolder).forEach(key => {
     var article = thisDateFolder[key];
-    newsArray[key].push(article);
+    //newsArray[key].push(article);
 
     var day = article.webPublicationDate.split("T")[0].split("-")[2];
     var thisDay = localStorage.todaysDateMinus.split("-")[2];
