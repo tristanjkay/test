@@ -30,11 +30,10 @@ var news = JSON.parse(localStorage.selectedCountry).news;
 
 Object.keys(news).forEach(key => {
   console.log(news[key]);
-  var article = news[key];
+/*   var article = news[key];
   console.log(article['isHosted'].toString());
   var day = key.split("-")[2];
-  //var month = key.split("-")[1];
-  //var year = key.split("-")[0];
+
   var thisDay = localStorage.todaysDateMinus.split("-")[2];
   var formattedTime = (news[key].webPublicationDate.split("T")[1]).slice(0, -4);
 
@@ -49,7 +48,7 @@ Object.keys(news).forEach(key => {
         //Others
         $('#articles_other').append("<div class='col greyblock' id='" + article.webPublicationDate + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem; min-height:12rem'>"+ article.webTitle +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem; min-height:17rem;'>"+ article.text +"</p><b style='margin-left: 1rem;'>"+ formattedTime +"</b></div>");
     }
-  };
+  }; */
 
 });
 /* news.forEach(article => {
