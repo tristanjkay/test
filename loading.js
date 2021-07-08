@@ -529,8 +529,8 @@ $.ajax({
 
             selectedCountry.news = result['data']['response']['results'];
             selectedCountry.news.forEach(article => {
-                article['text'] = article.blocks.body[0].bodyTextSummary
-                article.text = article.blocks.body[0].bodyTextSummary
+                selectedCountry.news[news.indexOf(article)]['text'] = article.blocks.body[0].bodyTextSummary
+                selectedCountry.news[news.indexOf(article)].text = article.blocks.body[0].bodyTextSummary
             });
              }
 },
