@@ -793,7 +793,7 @@ success: function(result) {
     //console.log("WorldBank BUD% Success")
 
     if (result.status.name == "ok") {
-        if(result['data'][1][0]['value'] != 'undefined'){
+        if(result['data'][1][0]['value'] != 'null'){
             selectedCountry.budget.percent = result['data'][1][0]['value']
         }
         
