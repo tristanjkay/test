@@ -535,7 +535,7 @@ $.ajax({
             });
             sortedNews = Object.keys(sortedNews).sort().reduce(
                 (obj, key) => { 
-                  obj[key] = unordered[key]; 
+                  obj[key] = sortedNews[key]; 
                   return obj;
                 }, 
                 {}
