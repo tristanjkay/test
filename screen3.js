@@ -26,43 +26,45 @@ $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 
 //News
 var news = JSON.parse(localStorage.selectedCountry).news;
-var newsArray = [];
 
 //Date folder
 Object.keys(news).forEach(key => {
   var thisDateFolder = news[key];
-  var array = [key]["value"];
-  newsArray.push(array);
   var thisDateFolderName = key;
+
   
   //Articles in date folders
   Object.keys(thisDateFolder).forEach(key => {
     var article = thisDateFolder[key];
-    //newsArray[key].push(article);
-
+    var articleDate = article.webPublicationDate.split("T")[0];
     var day = article.webPublicationDate.split("T")[0].split("-")[2];
     var thisDay = localStorage.todaysDateMinus.split("-")[2];
     var formattedTime = (article.webPublicationDate.split("T")[1]).slice(0, -4);
     
-  })
+    if(articleDate == localStorage.todaysDateMinus){
+      //Today's News
+      $('#articles_today').append("<div class='col greyblock' id='" + article.webPublicationDate + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem; min-height:12rem'>"+ article.webTitle +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem; min-height:17rem;'>"+ article.textBody +"</p><b style='margin-left: 1rem;'>"+ formattedTime +"</b></div>");
+    }else{
+      if(thisDay > 7 && day > (thisDay-7) && day < thisDay){
+        //This Weeks
+        $('#articles_thisweek').append("<div class='col greyblock' id='" + article.webPublicationDate + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem; min-height:12rem'>"+ article.webTitle +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem; min-height:17rem;'>"+ article.textBody +"</p><b style='margin-left: 1rem;'>"+ formattedTime +"</b></div>");
+      }else{
+        if(thisDay > 7 && day > (thisDay-7) && day < thisDay){
+          //This Weeks
+          $('#articles_thisweek').append("<div class='col greyblock' id='" + article.webPublicationDate + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem; min-height:12rem'>"+ article.webTitle +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem; min-height:17rem;'>"+ article.text +"</p><b style='margin-left: 1rem;'>"+ formattedTime +"</b></div>");
+        } else{
+            //Others
+            $('#articles_other').append("<div class='col greyblock' id='" + article.webPublicationDate + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem; min-height:12rem'>"+ article.webTitle +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem; min-height:17rem;'>"+ article.text +"</p><b style='margin-left: 1rem;'>"+ formattedTime +"</b></div>");
+        }
+      };
+  }})
   
 
 
 /* 
 
 
-  if(key == localStorage.todaysDateMinus){
-    //Today's News
-    $('#articles_today').append("<div class='col greyblock' id='" + news[key].webPublicationDate + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem; min-height:12rem'>"+ news[key].webTitle +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem; min-height:17rem;'>"+ news[key].text +"</p><b style='margin-left: 1rem;'>"+ formattedTime +"</b></div>");
-  }else{
-    if(thisDay > 7 && day > (thisDay-7) && day < thisDay){
-      //This Weeks
-      $('#articles_thisweek').append("<div class='col greyblock' id='" + article.webPublicationDate + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem; min-height:12rem'>"+ article.webTitle +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem; min-height:17rem;'>"+ article.text +"</p><b style='margin-left: 1rem;'>"+ formattedTime +"</b></div>");
-    } else{
-        //Others
-        $('#articles_other').append("<div class='col greyblock' id='" + article.webPublicationDate + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem; min-height:12rem'>"+ article.webTitle +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem; min-height:17rem;'>"+ article.text +"</p><b style='margin-left: 1rem;'>"+ formattedTime +"</b></div>");
-    }
-  }; */
+   */
 
 });
 /* news.forEach(article => {
