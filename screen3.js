@@ -30,7 +30,7 @@ $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 JSON.parse(localStorage.selectedCountry).news.forEach(article => {
   var formattedTime = (article.publishedAt.split("T")[1]).slice(0, -4);
   console.log(formattedTime);
-$('#articles_today').append("<div class='col greyblock' id='" + article.publishedAt + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem;'>"+ article.title +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem;'>"+ article.description +"</p><p style='margin-left: 1rem;'>"+ formattedTime +"</p></div>");
+$('#articles_today').append("<div class='col greyblock' id='" + article.publishedAt + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem;'>"+ article.title +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem;'>"+ article.description +"</p><b style='margin-left: 1rem;'>"+ formattedTime +"</b></div>");
 }
 )
 
