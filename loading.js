@@ -528,6 +528,9 @@ $.ajax({
             //console.log("News Success");
 
             selectedCountry.news = result['data']['response']['results'];
+            selectedCountry.news.forEach(article => {
+                $.get(article.webUrl, function(data){selectedCountry[article].content = data})                
+            });
              }
 },
     error: function(jqXHR, textStatus, errorThrown) {
