@@ -7,7 +7,7 @@ var date = new Date();
 var sevendaysago = new Date();
 sevendaysago.setDate(date.getDate() - 7);
 date = date.toLocaleDateString();
-date = date.split("").reverse().join("");
+date = date.split("/").reverse().join("/");
 sevendaysago = sevendaysago.toLocaleDateString();
 sevendaysago = sevendaysago.split("/").reverse().join("/");
 
