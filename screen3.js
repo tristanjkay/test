@@ -29,6 +29,8 @@ $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 var news = JSON.parse(localStorage.selectedCountry).news;
 
 Object.keys(news).forEach(key => {
+  console.log(key);
+  console.log(localStorage.todaysDateMinus);
   if(key == localStorage.todaysDateMinus){
     console.log(news[key])
   }
