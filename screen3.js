@@ -29,6 +29,7 @@ $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 var news = JSON.parse(localStorage.selectedCountry).news;
 
 Object.keys(news).forEach(key => {
+  console.log(news[key]);
   var day = key.split("-")[2];
   //var month = key.split("-")[1];
   //var year = key.split("-")[0];
