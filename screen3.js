@@ -31,7 +31,7 @@ var news = JSON.parse(localStorage.selectedCountry).news;
 Object.keys(news).forEach(key => {
   console.log(news[key]);
   var article = news[key];
-  console.log(article.type);
+  console.log(article.isHosted.toString());
   var day = key.split("-")[2];
   //var month = key.split("-")[1];
   //var year = key.split("-")[0];
