@@ -7,6 +7,7 @@ var date = new Date();
 var sevendaysago = new Date();
 sevendaysago.setDate(date.getDate() - 7);
 date = date.toLocaleDateString();
+dateminus = date.split("/").reverse().join("-");
 date = date.split("/").reverse().join("/");
 sevendaysago = sevendaysago.toLocaleDateString();
 sevendaysagominus = sevendaysago.split("/").reverse().join("-");
@@ -16,6 +17,7 @@ sevendaysago = sevendaysago.split("/").reverse().join("/");
 $(document).ajaxStop(function() {
     // place code to be executed on completion of last outstanding ajax call here
     localStorage.setItem('todaysDate', date);
+    localStorage.setItem('todaysDateMinus', dateminus);
     localStorage.setItem('sevendaysago', sevendaysago);
     localStorage.setItem('sevendaysagominus', sevendaysagominus);
     localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
