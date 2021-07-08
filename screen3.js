@@ -30,7 +30,7 @@ var news = JSON.parse(localStorage.selectedCountry).news;
 
 Object.keys(news).forEach(key => {
   console.log(news[key]);
-  var article = news[key];
+  var article = JSON.parse(news[key]);
   console.log(article.webPublicationDate);
   var day = key.split("-")[2];
   //var month = key.split("-")[1];
