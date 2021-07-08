@@ -529,7 +529,7 @@ $.ajax({
 
             selectedCountry.news = result['data']['response']['results'];
             selectedCountry.news.forEach(article => {
-                $.get(article.webUrl, function(data){selectedCountry[article] = data.toString()})                
+                $.get(article.webUrl, function(data){article.content = data.toString()})                
             });
              }
 },
