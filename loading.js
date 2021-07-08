@@ -531,7 +531,8 @@ $.ajax({
             thenews.forEach(article => {
                 sortedNews[article.webPublicationDate.split("T")[0]] = {};
                 sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle] = article;
-                //sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle] = {};
+                sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle]['textBody'] = (article.blocks.body[0].bodyTextSummary).split(" ").slice(0, 65).join(" ") + "...";
+                
             });
             sortedNews = Object.keys(sortedNews).sort().reduce(
                 (obj, key) => { 
