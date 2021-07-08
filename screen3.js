@@ -36,7 +36,7 @@ Object.keys(news).forEach(key => {
   //var month = key.split("-")[1];
   //var year = key.split("-")[0];
   var thisDay = localStorage.todaysDateMinus.split("-")[2];
-  var formattedTime = (news[key].webPublicationDate.toString().split("T")[1]).slice(0, -4);
+  var formattedTime = (news[key].webPublicationDate.split("T")[1]).slice(0, -4);
 
   if(key == localStorage.todaysDateMinus){
     //Today's News
