@@ -40,6 +40,10 @@ Object.keys(news).forEach(key => {
     var day = article.webPublicationDate.split("T")[0].split("-")[2];
     var thisDay = localStorage.todaysDateMinus.split("-")[2];
     var formattedTime = (article.webPublicationDate.split("T")[1]).slice(0, -4);
+    console.log(articleDate);
+    console.log(day);
+    console.log(thisDay);
+    console.log(formattedTime);
     
     if(articleDate == localStorage.todaysDateMinus){
       //Today's News
