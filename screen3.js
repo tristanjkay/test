@@ -62,15 +62,18 @@ Object.keys(news).forEach(key => {
   })
 
   if(articleCount[0] == 0){
+    console.log("Today Removed");
     $('#articles_today').remove;
     $('#articles_today_title').remove;
   }
   if(articleCount[1] == 0){
+    console.log("This Week Removed");
     $('#articles_thisweek').remove;
     $('#articles_thisweek_title').remove;
   }
 
   if(articleCount[2] == 0){
+    console.log("Other Removed");
     $('#articles_other').remove;
     $('#articles_other_title').remove;
   }
