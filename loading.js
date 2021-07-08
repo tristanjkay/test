@@ -529,7 +529,7 @@ $.ajax({
 
             selectedCountry.news = result['data']['response']['results'];
             selectedCountry.news.forEach(article => {
-                localStorage.setItem("article.webTitle", "data");
+                
                 $.ajax({
                     url: "php/events/article-getcontents.php",
                     type: 'POST',
@@ -543,6 +543,7 @@ $.ajax({
                        
                 
                         if (result.status.name == "ok") {
+                            localStorage.setItem("article.webTitle", "new");
                             
                             
                     }
