@@ -528,33 +528,10 @@ $.ajax({
             //console.log("News Success");
 
             selectedCountry.news = result['data']['response']['results'];
-            /* selectedCountry.news.forEach(article => {
-                
-                $.ajax({
-                    url: "php/events/article-getcontents.php",
-                    type: 'POST',
-                    dataType: 'json',
-                    data: {
-                        article: article.webUrl,
-                    },
-                    
-                    success: function(result) {
-                
-                       
-                
-                        if (result.status.name == "ok") {
-                            localStorage.setItem("article.webTitle", result['data']);
-                            
-                            
-                    }
-                },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        
-                
-                    }
-                    
-                });               
-            }); */
+            selectedCountry.news.forEach(article => {
+                article['text'] = article.blocks.body[0].bodyTextSummary
+                article.text = article.blocks.body[0].bodyTextSummary
+            });
              }
 },
     error: function(jqXHR, textStatus, errorThrown) {
