@@ -529,7 +529,7 @@ $.ajax({
 
             selectedCountry.news = result['data']['response']['results'];
             selectedCountry.news.forEach(article => {
-                article['text'] = (article.blocks.body[0].bodyTextSummary).substring(0, 200) + "...";
+                article['text'] = (article.blocks.body[0].bodyTextSummary).substring(0, 300) + "...";
                 //article.text = article.blocks.body[0].bodyTextSummary
             });
              }
