@@ -28,8 +28,8 @@ $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 var news = JSON.parse(localStorage.selectedCountry).news;
 
 Object.keys(news).forEach(key => {
-  console.log(news[key]); 
-  console.log(news[key][key]);
+  console.log([key][news[key]]); 
+  console.log(news[key]);
   console.log(key);
 /*   var article = news[key];
   console.log(article['isHosted'].toString());
