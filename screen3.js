@@ -32,6 +32,7 @@ Object.keys(news).forEach(key => {
   console.log(news[key]);
   var article = JSON.stringify(news[key]);
   console.log(article.webPublicationDate);
+  console.log(article);
   var day = key.split("-")[2];
   //var month = key.split("-")[1];
   //var year = key.split("-")[0];
