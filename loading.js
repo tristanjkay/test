@@ -415,7 +415,7 @@ $.ajax({
 
                 
             }
-            if(element.City == selectedCountry.capital.name){
+            if(element.City == selectedCountry.capital){
                 selectedCountry.airport = element;
             }
             });
@@ -524,7 +524,7 @@ $.ajax({
 
         if (result.status.name == "ok") {
             //console.log("News Success");
-            //document.getElementById('newsarticles').innerHTML = "";
+
             selectedCountry.news = result['data']['articles'];
              }
 },
@@ -637,8 +637,7 @@ success: function(result) {
         }
         
         
-        //$("#climate-title").html("<b>Today (" + selectedCountry.capital.name + ")</b>");
-        //$("#gdp_value").html(selectedCountry.gdp['string']);
+
 
     }
 
