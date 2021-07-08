@@ -6,7 +6,7 @@
 
 	$result = file_get_contents($url);
 
-	$decode = htmlspecialchars($result);	
+	$decode = $result;	
 
 	$output['status']['code'] = "200";
 	$output['status']['name'] = "ok";
