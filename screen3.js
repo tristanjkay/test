@@ -29,9 +29,7 @@ $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 
 JSON.parse(localStorage.selectedCountry).news.forEach(article => {
   console.log(article);
-$('#articles_today').append("<div class='col greyblock' id='" + article.publishedAt + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><img src='" + article.urlToImage + "' alt='' style='width: 100%; object-fit: cover;'><h2 style='padding-left: 1rem; padding-bottom: 2rem;'>UK starts talks to join Asia-Pacific free trade pact</h2><p style='padding-left: 1rem; padding-bottom: 1rem;'>Britain is to start negotiations to join a free trade area which could grant businesses access to 'some of the biggest economies of the present and future', the government has said.</p><cite style='margin-left: 1rem;'>22 June 2021</cite></div>");
-
-
+$('#articles_today').append("<div class='col greyblock' id='" + article.publishedAt + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem;'>"+ article.title +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem;'>"+ article.description +"</p><cite style='margin-left: 1rem;'>"+ article.publishedAt +"</cite></div>");
 }
 )
 
