@@ -534,13 +534,12 @@ $.ajax({
                 //sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle] = {};
             });
             sortedNews = Object.keys(sortedNews).sort().reduce(
-                (obj, key) => { 
+                (key, obj) => { 
                   obj[key] = sortedNews[key]; 
                   return obj;
                 }, 
                 {}
               );
-              sortedNews.reverse();
             localStorage.setItem('sortedNews', JSON.stringify(sortedNews));
             selectedCountry.news = result['data']['response']['results'];
             selectedCountry.news.forEach(article => {
