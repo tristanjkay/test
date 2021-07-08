@@ -31,6 +31,7 @@ var news = JSON.parse(localStorage.selectedCountry).news;
 Object.keys(news).forEach(key => {
   var thisDateFolder = news[key];
   var thisDateFolderName = key;
+  var articleCount = [0,0,0];
 
   
   //Articles in date folders
@@ -40,24 +41,35 @@ Object.keys(news).forEach(key => {
     var day = article.webPublicationDate.split("T")[0].split("-")[2];
     var thisDay = localStorage.todaysDateMinus.split("-")[2];
     var formattedTime = (article.webPublicationDate.split("T")[1]).slice(0, -4);
-    console.log(articleDate);
-    console.log(day);
-    console.log(thisDay);
-    console.log(formattedTime);
+    
     
     if(articleDate == localStorage.todaysDateMinus){
       //Today's News
       $('#articles_today').append("<div class='col greyblock' id='" + article.webPublicationDate + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem; min-height:12rem'>"+ article.webTitle +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem; min-height:17rem;'>"+ article.textBody +"</p><b style='margin-left: 1rem;'>"+ formattedTime +"</b></div>");
+      articleCount[0]++;
     }else{
       if(thisDay > 7 && day > (thisDay-7) && day < thisDay){
         //This Weeks
         $('#articles_thisweek').append("<div class='col greyblock' id='" + article.webPublicationDate + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem; min-height:12rem'>"+ article.webTitle +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem; min-height:17rem;'>"+ article.textBody +"</p><b style='margin-left: 1rem;'>"+ formattedTime +"</b></div>");
+        articleCount[1]++;
       }else{
             //Others
             $('#articles_other').append("<div class='col greyblock' id='" + article.webPublicationDate + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem; min-height:12rem'>"+ article.webTitle +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem; min-height:17rem;'>"+ article.textBody +"</p><b style='margin-left: 1rem;'>"+ formattedTime +"</b></div>");
+            articleCount[2]++;
         }
       };
   })
+
+  if(articleCount[0] = 0){
+    $('#articles_today').remove;
+  }
+  if(articleCount[1] = 0){
+    $('#articles_thisweek').remove;
+  }
+
+  if(articleCount[2] = 0){
+    $('#articles_other').remove;
+  }
   
 
 
