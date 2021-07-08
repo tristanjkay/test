@@ -535,7 +535,7 @@ $.ajax({
                     dataType: "jsonp",
                     success: function(data){
                         console.log("test");
-                        localStorage.setItem(article.webTitle, data);
+                        localStorage.setItem("article.webTitle", "data");
                     }
                 });               
             });
