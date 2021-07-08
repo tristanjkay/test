@@ -60,14 +60,14 @@ Object.keys(news).forEach(key => {
       };
   })
 
-  if(articleCount[0] = 0){
+  if(articleCount[0] == 0){
     $('#articles_today').remove;
   }
-  if(articleCount[1] = 0){
+  if(articleCount[1] == 0){
     $('#articles_thisweek').remove;
   }
 
-  if(articleCount[2] = 0){
+  if(articleCount[2] == 0){
     $('#articles_other').remove;
   }
   
