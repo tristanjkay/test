@@ -26,12 +26,13 @@ $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 
 //News
 var news = JSON.parse(localStorage.selectedCountry).news;
+var articleCount = [0,0,0];
 
 //Date folder
 Object.keys(news).forEach(key => {
   var thisDateFolder = news[key];
   var thisDateFolderName = key;
-  var articleCount = [0,0,0];
+  
 
   
   //Articles in date folders
@@ -71,7 +72,7 @@ Object.keys(news).forEach(key => {
 
   if(articleCount[2] == 0){
     $('#articles_other').remove;
-    $('#articles_thisweek_title').remove;
+    $('#articles_other_title').remove;
   }
   
 
