@@ -9,12 +9,15 @@ sevendaysago.setDate(date.getDate() - 7);
 date = date.toLocaleDateString();
 date = date.split("/").reverse().join("/");
 sevendaysago = sevendaysago.toLocaleDateString();
+sevendaysagominus = sevendaysago.split("/").reverse().join("-");
 sevendaysago = sevendaysago.split("/").reverse().join("/");
+
 
 $(document).ajaxStop(function() {
     // place code to be executed on completion of last outstanding ajax call here
     localStorage.setItem('todaysDate', date);
     localStorage.setItem('sevendaysago', sevendaysago);
+    localStorage.setItem('sevendaysagominus', sevendaysagominus);
     localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
     console.log("Finished!");
     window.location.replace("screen2.html");
