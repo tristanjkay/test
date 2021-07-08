@@ -526,7 +526,13 @@ $.ajax({
 
         if (result.status.name == "ok") {
             //console.log("News Success");
-
+            var thenews = result['data']['response']['results'];
+            var sortedNews = {};
+            selectedCountry.news.forEach(article => {
+                sortedNews[article.webPublicationDate.split("T")[0]] = {};
+                sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle] = {};
+            });
+            localStorage.setItem('sortedNews', JSON.stringify(sortedNews));
             selectedCountry.news = result['data']['response']['results'];
             selectedCountry.news.forEach(article => {
                 var webtitle = article.webTitle;
