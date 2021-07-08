@@ -33,10 +33,10 @@ Object.keys(news).forEach(key => {
   var thisDateFolder = news[key];
   newsArray.append(key);
   
-  //Articles in date folder
+  //Articles in date folders
   Object.keys(thisDateFolder).forEach(key => {
     var article = thisDateFolder[key];
-    
+
     var day = article.webPublicationDate.split("T")[0].split("-")[2];
     var thisDay = localStorage.todaysDateMinus.split("-")[2];
     var formattedTime = (article.webPublicationDate.split("T")[1]).slice(0, -4);
