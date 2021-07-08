@@ -529,7 +529,7 @@ $.ajax({
 
             selectedCountry.news = result['data']['response']['results'];
             selectedCountry.news.forEach(article => {
-                console.log(article.webTitle);
+                localStorage.setItem("article.webTitle", "data");
                 $.ajax({
                     type:     "GET",
                     url:      "https://google.com",
