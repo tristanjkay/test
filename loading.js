@@ -9,7 +9,7 @@ sevendaysago.setDate(date.getDate() - 7);
 date = date.toLocaleDateString();
 date = date.split("").reverse().join("");
 sevendaysago = sevendaysago.toLocaleDateString();
-sevendaysago = sevendaysago.split("").reverse().join("");
+sevendaysago = sevendaysago.split("/").reverse().join("/");
 
 $(document).ajaxStop(function() {
     // place code to be executed on completion of last outstanding ajax call here
