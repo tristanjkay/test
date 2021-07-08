@@ -27,10 +27,13 @@ $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 //News
 var news = JSON.parse(localStorage.selectedCountry).news;
 
+//Date folder
 Object.keys(news).forEach(key => {
   var thisarticle = news[key];
+  
+  //Articles in date folder
   Object.keys(thisarticle).forEach(key => {
-    console.log(thisarticle[key]);
+    console.log(thisarticle[key].webPublicationDate);
   })
   console.log(thisarticle);
   console.log(news[key]);
