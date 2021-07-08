@@ -29,17 +29,17 @@ var news = JSON.parse(localStorage.selectedCountry).news;
 
 //Date folder
 Object.keys(news).forEach(key => {
-  var thisarticle = news[key];
+  var thisDateFolder = news[key];
   
   //Articles in date folder
-  Object.keys(thisarticle).forEach(key => {
+  Object.keys(thisDateFolder).forEach(key => {
     console.log(thisarticle[key].webPublicationDate);
   })
   console.log(thisarticle);
   console.log(news[key]);
   console.log(key);
 
-  
+
 /*   var article = news[key];
   console.log(article['isHosted'].toString());
   var day = key.split("-")[2];
