@@ -33,7 +33,7 @@ Object.keys(news).forEach(key => {
   
   //Articles in date folder
   Object.keys(thisDateFolder).forEach(key => {
-    console.log(thisarticle[key].webPublicationDate);
+    console.log(thisDateFolder[key].webPublicationDate);
   })
   console.log(thisarticle);
   console.log(news[key]);
