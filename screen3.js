@@ -61,40 +61,26 @@ Object.keys(news).forEach(key => {
       };
   })
 
-  if(articleCount[0] == 0){
-    console.log("Today Removed");
-    $('#articles_today').remove();
-    $('#articles_today_title').remove();
-  }
-  if(articleCount[1] == 0){
-    console.log("This Week Removed");
-    $('#articles_thisweek').remove();
-    $('#articles_thisweek_title').remove();
-  }
-
-  if(articleCount[2] == 0){
-    console.log("Other Removed");
-    $('#articles_other').remove();
-    $('#articles_other_title').remove();
-  }
-  
-
-
-/* 
-
-
-   */
-
 });
-/* news.forEach(article => {
-    //var formattedTime = (article.webPublicationDate.split("T")[1]).slice(0, -4);
-    var formattedTime = article.webPublicationDate;
-    $('#articles_today').append("<div class='col greyblock' id='" + article.webPublicationDate + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem; min-height:12rem'>"+ article.webTitle +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem; min-height:17rem;'>"+ article.text +"</p><b style='margin-left: 1rem;'>"+ formattedTime +"</b></div>");
 
 
-  
+if(articleCount[0] == 0){
+  console.log("Today Removed");
+  $('#articles_today').remove();
+  $('#articles_today_title').remove();
 }
-) */
+if(articleCount[1] == 0){
+  console.log("This Week Removed");
+  $('#articles_thisweek').remove();
+  $('#articles_thisweek_title').remove();
+}
+
+if(articleCount[2] == 0){
+  console.log("Other Removed");
+  $('#articles_other').remove();
+  $('#articles_other_title').remove();
+}
+// ----------- News END--------------------//
 
 var index = 0;
 
