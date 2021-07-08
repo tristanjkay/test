@@ -26,7 +26,7 @@ $('#ph_winddirection').html(JSON.parse(localStorage.selectedCountry).weather.win
 $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 
 //News
-var news = JSON.parse(localStorage.selectedCountry.news);
+var news = JSON.parse(localStorage.selectedCountry).news;
 news.forEach(article => {
     //var formattedTime = (article.webPublicationDate.split("T")[1]).slice(0, -4);
     var formattedTime = article.webPublicationDate;
