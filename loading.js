@@ -530,7 +530,8 @@ $.ajax({
             var sortedNews = {};
             selectedCountry.news.forEach(article => {
                 sortedNews[article.webPublicationDate.split("T")[0]] = {};
-                sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle] = {};
+                /* sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle] = {};
+                sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle] = {}; */
             });
             localStorage.setItem('sortedNews', JSON.stringify(sortedNews));
             selectedCountry.news = result['data']['response']['results'];
