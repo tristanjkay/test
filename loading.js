@@ -581,7 +581,7 @@ $.ajax({
     }
 },
     error: function(jqXHR, textStatus, errorThrown) {
-        //console.log("POI Fail")
+        console.log("POI Fail")
 
     }
     
