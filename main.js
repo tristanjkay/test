@@ -40,7 +40,7 @@ var selectedCountry;
         });
         var iso_a3 = selectedElement.properties.iso_a3;
         var geometry = selectedElement.geometry;
-        var coordinates = geometry.coordinates;
+        var coordinates = geometry.coordinates[0];
         var lat = [];
         var long = [];
 
