@@ -120,30 +120,7 @@ $.ajax({
     
 });
 
-//Photos
-$.ajax({
-    url: "php/general/photos.php",
-    type: 'GET',
-    dataType: 'json',
-    data: {
-        
-    },
-    success: function(result) {
-    
 
-
-    
-            selectedCountry.photos = result['data'];
-            
-            
-
-    
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-    
-    }
-    
-    });
 
 
 
