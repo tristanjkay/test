@@ -27,10 +27,13 @@ var selectedCountry;
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log("ERROR: geojson-fileget.php")
             }
-        })
+        });
+        
+        
 
 //GET VALUE AND DATA FROM DROPDOWN/GEOJSON
     dropdown.addEventListener("change", function() {
+
         var name = dropdown.options[dropdown.selectedIndex].text;;
         var iso_a2 = dropdown.options[dropdown.selectedIndex].value;
         geojsonResult.forEach(element => {
@@ -40,37 +43,33 @@ var selectedCountry;
         });
         var iso_a3 = selectedElement.properties.iso_a3;
         var geometry = selectedElement.geometry;
-        var coordinates = geometry.coordinates[0];
-        var lat = [];
-        var long = [];
+        var capital;
+        var capitalLocation;
 
-        coordinates.forEach(element => {
-            lat.push(element[0]);
-            long.push(element[1]);
+        $.ajax({
+            url: "capital-fileget.php",
+            type: 'POST',  
+            dataType: 'json',
+            data: {
+            },
+            success: function(result) {
+                
+                if (result.status.name == "ok") {
+                    
+                    result['data'].forEach(element => {
+                        if(element.name == name){
+                            capital = element.capital;
+                            capitalLocation = latlng;
+                        }
+                    });
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log("ERROR: geojson-fileget.php")
+            }
         });
-
-        var latTotal = 0;
-        for(var i = 0; i < lat.length; i++) {
-        latTotal += lat[i];
-        }
-        var latAvg = latTotal / lat.length;
-
-        var longTotal = 0;
-        for(var i = 0; i < long.length; i++) {
-        longTotal += long[i];
-        }
-        var longAvg = longTotal / long.length;
-        finalCoords = [latAvg, longAvg];
-
-
-        localStorage.setItem('coordinates', coordinates);
-        localStorage.setItem('latlngAvg', finalCoords);
-        localStorage.setItem('latTotal', latTotal);
-        localStorage.setItem('longTotal', longTotal);
-        localStorage.setItem('latLength', lat.length);
-        localStorage.setItem('longLength', long.length);
     
-        selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry, "centralPoint": coordinates};
+        selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry, "capitalLatLng": capitalLocation};
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         window.location.replace("loading.html");
     });
