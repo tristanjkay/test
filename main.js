@@ -40,6 +40,7 @@ var selectedCountry;
         });
         var iso_a3 = selectedElement.properties.iso_a3;
         var geometry = selectedElement.geometry;
+        localStorage.setItem('coordinates', geometry.coordinates);
         var countryCentralPoint = getCenter(geometry.coordinates);
         selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry, "centralPoint": countryCentralPoint};
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
