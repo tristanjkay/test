@@ -131,14 +131,12 @@ $.ajax({
     success: function(result) {
     
 
-    
-        if (result.status.name == "ok") {
+
     
             selectedCountry.photos = result['data'];
             
             
-    
-        }
+
     
     },
     error: function(jqXHR, textStatus, errorThrown) {
