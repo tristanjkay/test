@@ -420,8 +420,7 @@ $.ajax({
         //console.log("Dictionary Success");
 
         if (result.status.name == "ok") {
-            selectedCountry.description = result['data'][0]['meanings'][0]['definitions'][0]['definition']
-            //$("#description-text").html(selectedCountry.description);
+            selectedCountry.pois = result['data'];
             
             
     }
