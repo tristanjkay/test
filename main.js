@@ -42,16 +42,13 @@ var selectedCountry;
         var geometry = selectedElement.geometry;
         var coordinates = geometry.coordinates;
         console.log(coordinates);
-        var lat;
-        var long;
+        var lat = [];
+        var long = [];
 
-        for (var i = 0; i < coordinates.length; i++) {
-            if(i % 2 === 0) { // index is even
-                lat.push(coordinates[i]);
-            }else{
-                long.push(coordinates[i])
-            }
-        }
+        coordinates.forEach(element => {
+            lat.push(element[0]);
+            long.push(element[1]);
+        });
 
         var latTotal = 0;
         for(var i = 0; i < lat.length; i++) {
