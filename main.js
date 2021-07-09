@@ -59,7 +59,7 @@ var selectedCountry;
                     result['data'].forEach(element => {
                         if(element.name == name){
                             capital = element.capital;
-                            capitalLocation = latlng;
+                            capitalLocation = element.latlng;
                         }
                     });
                 }
