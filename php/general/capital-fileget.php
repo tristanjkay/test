@@ -2,7 +2,7 @@
 
 	$executionStartTime = microtime(true) / 1000;
 
-    $url='https://gist.githubusercontent.com/erdem/8c7d26765831d0f9a8c62f02782ae00d/raw/248037cd701af0a4957cce340dabb0fd04e38f4c/countries.json';
+    $url='https://raw.githubusercontent.com/tristanjkay/gazetteer/main/countryInfoRaw.json';
 
 	$result = file_get_contents($url);
 
@@ -13,7 +13,7 @@
 	$output['status']['description'] = "success";
 	$output['status']['returnedIn'] = (microtime(true) - $executionStartTime) / 1000 . " ms";
 
-    $output['data'] = $decode;
+    $output['data'] = $decode['features'];
 	
 	header('Content-Type: application/json; charset=UTF-8');
 
