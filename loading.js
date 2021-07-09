@@ -407,6 +407,7 @@ $.ajax({
 });
 
 //POI
+//https://developer.here.com/projects/PROD-c73b5ead-94a4-4a04-8c87-01143e6e4189
 $.ajax({
     url: "php/culture/pointsofinterest.php",
     type: 'POST',
