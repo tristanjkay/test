@@ -41,7 +41,7 @@ var selectedCountry;
         var iso_a3 = selectedElement.properties.iso_a3;
         var geometry = selectedElement.geometry;
         var centroid = turf.centroid(geometry);
-        var coordinates = [centroid.geometry.coordinates[0], centroid.geometry.coordinates[1]]
+        var coordinates = [centroid.geometry.coordinates]
         localStorage.setItem('coordinates', coordinates);
     
         selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry, "centralPoint": coordinates};
