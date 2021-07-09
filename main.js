@@ -67,7 +67,7 @@ var selectedCountry;
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log("ERROR: geojson-fileget.php")
-                localStorage.setItem("capitalfileget", "none");
+                localStorage.setItem("capitalfileget", errorThrown);
             }
         });
     
