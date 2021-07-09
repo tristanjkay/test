@@ -2193,8 +2193,7 @@ $.ajax({
     type: 'POST',
     dataType: 'json',
     data: {
-        lat: selectedCountry.location[0],
-        long: selectedCountry.location[1]
+        country: mycountry,
     },
     
     success: function(result) {
