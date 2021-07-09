@@ -61,7 +61,7 @@ var selectedCountry;
         longTotal += long[i];
         }
         var longAvg = longTotal / long.length;
-        finalCoords = [latAvg, longAvg];
+        finalCoords = latAvg;
 
 
         localStorage.setItem('coordinates', finalCoords);
