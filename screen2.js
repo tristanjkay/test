@@ -22,7 +22,7 @@ $('#ph_weathericon').attr("src", JSON.parse(localStorage.selectedCountry).weathe
 $('#ph_weathertitle').html("Today (" + JSON.parse(localStorage.selectedCountry).capital + ")")
 
 
-//Tourism
+//Tourism 
 
 $('#ph_tourismincome').html(JSON.parse(localStorage.selectedCountry).tourismincome.value);
 $('#ph_flights').html(JSON.parse(localStorage.selectedCountry).arrivals.value);
