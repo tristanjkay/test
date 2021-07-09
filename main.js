@@ -41,6 +41,7 @@ var selectedCountry;
         var iso_a3 = selectedElement.properties.iso_a3;
         var geometry = selectedElement.geometry;
         var coordinates = geometry.coordinates;
+        console.log(coordinates);
         var lat;
         var long;
 
