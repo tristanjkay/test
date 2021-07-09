@@ -67,6 +67,8 @@ var selectedCountry;
         localStorage.setItem('coordinates', finalCoords);
         localStorage.setItem('latTotal', latTotal);
         localStorage.setItem('longTotal', longTotal);
+        localStorage.setItem('latLength', lat.length);
+        localStorage.setItem('longLength', long.length);
     
         selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry, "centralPoint": coordinates};
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
