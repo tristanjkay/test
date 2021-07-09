@@ -42,6 +42,7 @@ Object.keys(news).forEach(key => {
   Object.keys(thisDateFolder).forEach(key => {
     var article = thisDateFolder[key];
     var articleDate = article.webPublicationDate.split("T")[0];
+    var shortArticleDate = article.webPublicationDate.split("-")[1] + "/" + article.webPublicationDate.split("-")[2];
     var day = article.webPublicationDate.split("T")[0].split("-")[2];
     var thisDay = localStorage.todaysDateMinus.split("-")[2];
     var formattedTime = (article.webPublicationDate.split("T")[1]).slice(0, -4);
@@ -56,12 +57,12 @@ Object.keys(news).forEach(key => {
       if(thisDay > 7 && day > (thisDay-7) && day < thisDay){
         //This Weeks
         if(top3newsitems.length < 3){
-            top3newsitems.push([article.webTitle, articleDate]);
+            top3newsitems.push([article.webTitle, shortArticleDate]);
         }
       }else{
             //Others
             if(top3newsitems.length < 3){
-                top3newsitems.push([article.webTitle, articleDate]);
+                top3newsitems.push([article.webTitle, shortArticleDate]);
             }
         }
       };
