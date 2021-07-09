@@ -55,10 +55,11 @@ var selectedCountry;
             success: function(result) {
                 localStorage.setItem("capitalfileget", result.status.name);
                 if (result.status.name == "ok") {
-                    localStorage.setItem("capitalfileget", "success");
+                    
                     result['data'].forEach(element => {
                         
                         if(element.name == name){
+                            localStorage.setItem("capitalfileget", "success");
                             capital = element.capital;
                             capitalLocation = element.latlng;
                         }
