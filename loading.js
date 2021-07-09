@@ -13,7 +13,6 @@ sevendaysago = sevendaysago.toLocaleDateString();
 sevendaysagominus = sevendaysago.split("/").reverse().join("-");
 sevendaysago = sevendaysago.split("/").reverse().join("/");
 var capitalLatLng = localStorage.getItem("capitalLocation").split(",");
-localStorage.setItem('capitalLocation', capitalLatLng[0]);
 
 
 
@@ -413,7 +412,8 @@ $.ajax({
     type: 'POST',
     dataType: 'json',
     data: {
-        country: selectedCountry.name,
+        lat: capitalLatLng[0],
+        long: capitalLatLng[1]
     },
     success: function(result) {
 
