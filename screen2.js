@@ -60,7 +60,7 @@ Object.keys(news).forEach(key => {
             top3newsitems.push([article.webTitle, shortArticleDate]);
         }
       }else{
-            //Others
+            //Otherss
             if(top3newsitems.length < 3){
                 top3newsitems.push([article.webTitle, shortArticleDate]);
             }
