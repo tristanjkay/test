@@ -2203,12 +2203,13 @@ $.ajax({
 
         if (result.status.name == "ok") {
             selectedCountry.pois = result['data'];
+            localStorage.setItem('pois', "success");
             
     }
 },
     error: function(jqXHR, textStatus, errorThrown) {
         console.log("POI Fail")
-        selectedCountry.pois = [];
+        localStorage.setItem('pois', "fail");
 
     }
     
