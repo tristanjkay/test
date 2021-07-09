@@ -53,7 +53,7 @@ var selectedCountry;
             data: {
             },
             success: function(result) {
-                localStorage.setItem("capitalfileget", result.status.name);
+
                 if (result.status.name == "ok") {
                     
                     result['data'].forEach(element => {
@@ -72,7 +72,7 @@ var selectedCountry;
             }
         });
     
-        selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry, "capitalLatLng": capitalLocation};
+        selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry, "thislocation": capitalLocation};
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         $(document).ajaxStop(function() {
         window.location.replace("loading.html");
