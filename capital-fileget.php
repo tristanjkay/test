@@ -13,7 +13,7 @@
 	$output['status']['description'] = "success";
 	$output['status']['returnedIn'] = (microtime(true) - $executionStartTime) / 1000 . " ms";
 
-    $output['data'] = $decode;
+    $output['data'] = $decode['features'];
 	
 	header('Content-Type: application/json; charset=UTF-8');
 
