@@ -39,7 +39,7 @@ var selectedCountry;
             }
         });
         var iso_a3 = selectedElement.properties.iso_a3;
-        var geometry = selectedElement.geometry;
+        var geometry = selectedElement.geometry.coordinates;
         var centroid = turf.centroid(geometry);
         var coordinates = [centroid.geometry.coordinates]
         localStorage.setItem('coordinates', coordinates);
