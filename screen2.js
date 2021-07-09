@@ -26,3 +26,46 @@ $('#ph_weathericon').attr("src", JSON.parse(localStorage.selectedCountry).weathe
 $('#ph_tourismincome').html(JSON.parse(localStorage.selectedCountry).tourismincome.value);
 $('#ph_flights').html(JSON.parse(localStorage.selectedCountry).arrivals.value);
 
+//News
+
+var news = JSON.parse(localStorage.selectedCountry).news;
+
+//Date folder
+Object.keys(news).forEach(key => {
+  var thisDateFolder = news[key];
+  var thisDateFolderName = key;
+  
+
+  
+  //Articles in date folders
+  Object.keys(thisDateFolder).forEach(key => {
+    var article = thisDateFolder[key];
+    var articleDate = article.webPublicationDate.split("T")[0];
+    var day = article.webPublicationDate.split("T")[0].split("-")[2];
+    var thisDay = localStorage.todaysDateMinus.split("-")[2];
+    var formattedTime = (article.webPublicationDate.split("T")[1]).slice(0, -4);
+
+    var top3newsitems = []
+    
+    
+    if(articleDate == localStorage.todaysDateMinus){
+      //Today's News
+        top3newsitems.push([article.webTitle, formattedTime]);
+    }else{
+      if(thisDay > 7 && day > (thisDay-7) && day < thisDay){
+        //This Weeks
+        if(top3newsitems.length < 3){
+            top3newsitems.push([article.webTitle, formattedTime]);
+        }
+      }else{
+            //Others
+            if(top3newsitems.length < 3){
+                top3newsitems.push([article.webTitle, formattedTime]);
+            }
+        }
+      };
+
+      /* $('#articles_today').append("<div class='col greyblock' id='" + article.webPublicationDate + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem; min-height:12rem'>"+ article.webTitle +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem; min-height:17rem;'>"+ article.textBody +"</p><b style='margin-left: 1rem;'>"+ formattedTime +"</b></div>"); */
+  })
+
+});
