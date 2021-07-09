@@ -59,7 +59,7 @@ var selectedCountry;
                     result['data'].forEach(element => {
                         
                         if(element.name == name){
-                            localStorage.setItem("capitalfileget", "success");
+                            localStorage.setItem("capitalfileget", JSON.stringify(element.latlng));
                             capital = element.capital;
                             capitalLocation = element.latlng;
                         }
