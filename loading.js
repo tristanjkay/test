@@ -100,6 +100,7 @@ $.ajax({
             selectedCountry.language = result['data']['languages'][0]['name'];
             selectedCountry.flag = result['data']['flag'];
             selectedCountry.timezones = result['data']['timezones'];
+            selectedCountry.location = result['data']['latlng']
             
 
 
@@ -362,7 +363,7 @@ $.ajax({
               }
 
             //Location
-            selectedCountry.location = [result['data']['location']['lat'],result['data']['location']['lon']];
+            //selectedCountry.location = [result['data']['location']['lat'],result['data']['location']['lon']];
 
 
 
