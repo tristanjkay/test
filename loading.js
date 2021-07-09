@@ -12,6 +12,9 @@ date = date.split("/").reverse().join("/");
 sevendaysago = sevendaysago.toLocaleDateString();
 sevendaysagominus = sevendaysago.split("/").reverse().join("-");
 sevendaysago = sevendaysago.split("/").reverse().join("/");
+var capitalLatLng = localStorage.getItem("capitalLocation").split(",");
+localStorage.setItem('capitalLocation', capitalLatLng[0]);
+
 
 
 $(document).ajaxStop(function() {
@@ -382,6 +385,31 @@ $.ajax({
 //DictionaryAPI
 $.ajax({
     url: "php/general/dictionary.php",
+    type: 'POST',
+    dataType: 'json',
+    data: {
+        country: selectedCountry.name,
+    },
+    success: function(result) {
+
+        //console.log("Dictionary Success");
+
+        if (result.status.name == "ok") {
+            selectedCountry.description = result['data'][0]['meanings'][0]['definitions'][0]['definition']
+            //$("#description-text").html(selectedCountry.description);
+            
+            
+    }
+},
+    error: function(jqXHR, textStatus, errorThrown) {
+        //console.log("Dictionary Fail")
+    }
+    
+});
+
+//POI
+$.ajax({
+    url: "php/culture/pointsofinterest.php",
     type: 'POST',
     dataType: 'json',
     data: {
