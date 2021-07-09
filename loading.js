@@ -562,7 +562,7 @@ $.ajax({
 });
 
 //POIs
-/*  $.ajax({
+  $.ajax({
     url: "php/culture/pointsofinterest.php",
     type: 'POST',
     dataType: 'json',
@@ -585,7 +585,7 @@ $.ajax({
 
     }
     
-});  */
+});  
 
 //WorldBank
 //GDP
