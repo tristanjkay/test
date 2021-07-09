@@ -41,7 +41,6 @@ var selectedCountry;
         var iso_a3 = selectedElement.properties.iso_a3;
         var geometry = selectedElement.geometry;
         var coordinates = geometry.coordinates;
-        console.log(coordinates);
         var lat = [];
         var long = [];
 
@@ -64,7 +63,8 @@ var selectedCountry;
         finalCoords = [latAvg, longAvg];
 
 
-        localStorage.setItem('coordinates', finalCoords);
+        localStorage.setItem('coordinates', coordinates);
+        localStorage.setItem('latlngAvg', finalCoords);
         localStorage.setItem('latTotal', latTotal);
         localStorage.setItem('longTotal', longTotal);
         localStorage.setItem('latLength', lat.length);
