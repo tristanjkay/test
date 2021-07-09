@@ -53,7 +53,7 @@ var selectedCountry;
             data: {
             },
             success: function(result) {
-                
+                localStorage.setItem("capitalfileget", result.status.name);
                 if (result.status.name == "ok") {
                     localStorage.setItem("capitalfileget", "success");
                     result['data'].forEach(element => {
