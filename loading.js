@@ -16,6 +16,33 @@ sevendaysago = sevendaysago.split("/").reverse().join("/");
 
 $(document).ajaxStop(function() {
     // place code to be executed on completion of last outstanding ajax call here
+    //POIs
+$.ajax({
+    url: "php/culture/pointsofinterest.php",
+    type: 'POST',
+    dataType: 'json',
+    data: {
+        lat: selectedCountry.location[0],
+        long: selectedCountry.location[1],
+    },
+    
+    success: function(result) {
+
+        console.log("POI Success")
+
+        if (result.status.name == "ok") {
+            selectedCountry.pois = result['data'];
+            localStorage.setItem('pois', "success");
+            
+    }
+},
+    error: function(jqXHR, textStatus, errorThrown) {
+        console.log("POI Fail")
+        localStorage.setItem('pois', "fail");
+
+    }
+    
+});
     localStorage.setItem('todaysDate', date);
     localStorage.setItem('todaysDateMinus', dateminus);
     localStorage.setItem('sevendaysago', sevendaysago);
@@ -2187,30 +2214,4 @@ error: function(jqXHR, textStatus, errorThrown) {
 
 });
 
-//POIs
-$.ajax({
-    url: "php/culture/pointsofinterest.php",
-    type: 'POST',
-    dataType: 'json',
-    data: {
-        lat: selectedCountry.location[0],
-        long: selectedCountry.location[1],
-    },
-    
-    success: function(result) {
-
-        console.log("POI Success")
-
-        if (result.status.name == "ok") {
-            selectedCountry.pois = result['data'];
-            localStorage.setItem('pois', "success");
-            
-    }
-},
-    error: function(jqXHR, textStatus, errorThrown) {
-        console.log("POI Fail")
-        localStorage.setItem('pois', "fail");
-
-    }
-    
-});  
+  
