@@ -2208,6 +2208,7 @@ $.ajax({
 },
     error: function(jqXHR, textStatus, errorThrown) {
         console.log("POI Fail")
+        selectedCountry.pois = [];
 
     }
     
