@@ -562,7 +562,7 @@ $.ajax({
 });
 
 //POIs
-/* $.ajax({
+ $.ajax({
     url: "php/culture/pointsofinterest.php",
     type: 'POST',
     dataType: 'json',
@@ -573,7 +573,7 @@ $.ajax({
     
     success: function(result) {
 
-        //console.log("POI Success")
+        console.log("POI Success")
 
         if (result.status.name == "ok") {
             selectedCountry.pois = result['data'];
@@ -585,7 +585,7 @@ $.ajax({
 
     }
     
-}); */
+}); 
 
 //WorldBank
 //GDP
