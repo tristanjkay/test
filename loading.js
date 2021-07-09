@@ -128,11 +128,11 @@ $.ajax({
     data: {
         
     },
-    success: function(response) {
+    success: function(result) {
     
 
     
-        if (response.status.name == "ok") {
+        if (result.status.name == "ok") {
     
             selectedCountry.photos = result['data'];
             
