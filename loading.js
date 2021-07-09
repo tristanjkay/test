@@ -120,6 +120,33 @@ $.ajax({
     
 });
 
+//Photos
+$.ajax({
+    url: "php/general/photos.php",
+    type: 'GET',
+    dataType: 'json',
+    data: {
+        
+    },
+    success: function(result) {
+    
+
+    
+        if (result.status.name == "ok") {
+    
+            selectedCountry.photos = result['data'];
+            
+            
+    
+        }
+    
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+    
+    }
+    
+    });
+
 
 
 //Weather
@@ -862,6 +889,8 @@ error: function(jqXHR, textStatus, errorThrown) {
 }
 
 });
+
+
 $.ajax({
 url: "php/worldbank/worldbankeducation.php",
 type: 'POST',

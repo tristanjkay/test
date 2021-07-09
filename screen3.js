@@ -24,6 +24,9 @@ $('#ph_windspeed').html(JSON.parse(localStorage.selectedCountry).weather.windSpe
 $('#ph_winddirection').html(JSON.parse(localStorage.selectedCountry).weather.windDirection);
 $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 
+//POIs
+
+
 //News
 var news = JSON.parse(localStorage.selectedCountry).news;
 var articleCount = [0,0,0];

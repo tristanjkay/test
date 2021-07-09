@@ -21,6 +21,14 @@ $('#ph_feelslike').html("Feels like "+ JSON.parse(localStorage.selectedCountry).
 $('#ph_weathericon').attr("src", JSON.parse(localStorage.selectedCountry).weather.icon);
 $('#ph_weathertitle').html("Today (" + JSON.parse(localStorage.selectedCountry).capital + ")")
 
+//POIs
+$('#art1description').html(top3newsitems[0][0]);
+$('#art2description').html(top3newsitems[1][0]);
+$('#art3description').html(top3newsitems[2][0]);
+$('#art1date').html(top3newsitems[0][1]);
+$('#art2date').html(top3newsitems[1][1]);
+$('#art3date').html(top3newsitems[2][1]);
+
 
 //Tourism 
 
