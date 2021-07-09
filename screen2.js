@@ -67,9 +67,11 @@ Object.keys(news).forEach(key => {
       };
       
 
-      /* $('#articles_today').append("<div class='col greyblock' id='" + article.webPublicationDate + "' style = 'margin:1rem; margin-top:.5rem; margin-left:.5rem; text-align: left; min-width: 330px;'><h2 style='padding-left: 1rem; padding-bottom: 2rem; min-height:12rem'>"+ article.webTitle +"</h2><p style='padding-left: 1rem; padding-bottom: 1rem; min-height:17rem;'>"+ article.textBody +"</p><b style='margin-left: 1rem;'>"+ formattedTime +"</b></div>"); */
+      
   })
 
 });
+
+$('#art1description').html(top3newsitems[0][0]);
 
 console.log(top3newsitems);
