@@ -2,7 +2,7 @@
 
 	$executionStartTime = microtime(true) / 1000;
 
-	$url ='https://www.triposo.com/api/20210317/poi.json?location_id=' . $_REQUEST['country'] . '&count=1&fields=id,name,score,intro,tag_labels,best_for&order_by=-score&account=5H84J8Q3&token=kkuxteg67z108qmihlu82c7vks8mhfw3'
+	$url ='https://discover.search.hereapi.com/v1/discover?at=' . $_REQUEST['lat'] . ',' . $_REQUEST['long'] . '&q=sight&apiKey=oIGAfvp5boWBRjRXCf4qu3fWYr_2tHmgej12Rg6hQOU'
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
