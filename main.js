@@ -74,7 +74,9 @@ var selectedCountry;
         selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry, "capitalLatLng": capitalLocation};
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         localStorage.setItem('latlng', JSON.stringify(capitalLocation));
+        $(document).ajaxStop(function() {
         window.location.replace("loading.html");
+        });
     });
 
 
