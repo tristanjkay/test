@@ -119,32 +119,7 @@ $.ajax({
     
 });
 
-$.ajax({
-    url: "php/culture/pointsofinterest.php",
-    type: 'POST',
-    dataType: 'json',
-    data: {
-        lat: selectedCountry.location[0],
-        long: selectedCountry.location[1],
-    },
-    
-    success: function(result) {
 
-        console.log("POI Success")
-
-        if (result.status.name == "ok") {
-            selectedCountry.pois = result['data'];
-            localStorage.setItem('pois', "success");
-            
-    }
-},
-    error: function(jqXHR, textStatus, errorThrown) {
-        console.log("POI Fail")
-        localStorage.setItem('pois', "fail");
-
-    }
-    
-});
 
 //Weather
 $.ajax({
