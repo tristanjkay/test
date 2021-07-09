@@ -73,5 +73,8 @@ Object.keys(news).forEach(key => {
 });
 
 $('#art1description').html(top3newsitems[0][0]);
+$('#art2description').html(top3newsitems[1][0]);
+$('#art3description').html(top3newsitems[2][0]);
+$('#art1date').html(top3newsitems[0][1]);
 
 console.log(top3newsitems);
