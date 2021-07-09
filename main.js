@@ -55,7 +55,7 @@ var selectedCountry;
             success: function(result) {
                 
                 if (result.status.name == "ok") {
-                    localStorage.setItem("capitalfileget", JSON.stringify(result['data']));
+                    localStorage.setItem("capitalfileget", "success");
                     result['data'].forEach(element => {
                         localStorage.setItem(element.name, JSON.stringify(element));
                         if(element.name == name){
