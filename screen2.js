@@ -56,12 +56,12 @@ Object.keys(news).forEach(key => {
       if(thisDay > 7 && day > (thisDay-7) && day < thisDay){
         //This Weeks
         if(top3newsitems.length < 3){
-            top3newsitems.push([article.webTitle, formattedTime]);
+            top3newsitems.push([article.webTitle, article.webPublicationDate]);
         }
       }else{
             //Others
             if(top3newsitems.length < 3){
-                top3newsitems.push([article.webTitle, formattedTime]);
+                top3newsitems.push([article.webTitle, article.webPublicationDate]);
             }
         }
       };
