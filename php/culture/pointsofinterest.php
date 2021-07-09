@@ -2,10 +2,10 @@
 
 	$executionStartTime = microtime(true) / 1000;
 
-    $url='https://restcountries.eu/rest/v2/alpha/' . $_REQUEST['country'];
+	$url ='https://discover.search.hereapi.com/v1/discover?at=' . $_REQUEST['lat'] . ',' . $_REQUEST['long'] . '&q=sight&apiKey=oIGAfvp5boWBRjRXCf4qu3fWYr_2tHmgej12Rg6hQOU';
 
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_URL,$url);
 
@@ -19,10 +19,10 @@
 	$output['status']['name'] = "ok";
 	$output['status']['description'] = "success";
 	$output['status']['returnedIn'] = (microtime(true) - $executionStartTime) / 1000 . " ms";
-	$output['data'] = $decode;
+	$output['data'] = $decode['items'];
 	
 	header('Content-Type: application/json; charset=UTF-8');
 
-	echo json_encode($output); 
+	echo json_encode($output);
 
-?>
+?> 
