@@ -40,8 +40,33 @@ var selectedCountry;
         });
         var iso_a3 = selectedElement.properties.iso_a3;
         var geometry = selectedElement.geometry;
-        var coordinates = geometry.coordinates.toString();
-        localStorage.setItem('coordinates', coordinates);
+        var coordinates = geometry.coordinates;
+        var lat;
+        var long;
+
+        for (var i = 0; i < coordinates.length; i++) {
+            if(i % 2 === 0) { // index is even
+                lat.push(coordinates[i]);
+            }else{
+                long.push(coordinates[i])
+            }
+        }
+
+        var latTotal = 0;
+        for(var i = 0; i < lat.length; i++) {
+        latTotal += lat[i];
+        }
+        var latAvg = latTotal / lat.length;
+
+        var longTotal = 0;
+        for(var i = 0; i < long.length; i++) {
+        longTotal += long[i];
+        }
+        var longAvg = longTotal / long.length;
+        finalCoords = [latAvg, longAvg];
+
+
+        localStorage.setItem('coordinates', finalCoords);
     
         selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry, "centralPoint": coordinates};
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
