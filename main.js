@@ -49,20 +49,6 @@ var selectedCountry;
         window.location.replace("loading.html");
     });
 
-//GET CENTRAL POINT OF GEOMETRY
-
-var getCenter = function (arr) {
-    var minX, maxX, minY, maxY;
-    for (var i = 0; i < arr.length; i++)
-    {
-        var x = arr[i][0], y = arr[i][1];
-        minX = (x < minX || minX == null) ? x : minX;
-        maxX = (x > maxX || maxX == null) ? x : maxX;
-        minY = (y < minY || minY == null) ? y : minY;
-        maxY = (y > maxY || maxY == null) ? y : maxY;
-    }
-    return [(minX + maxX) / 2, (minY + maxY) / 2];
-};
 
 
 
