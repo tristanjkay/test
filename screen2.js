@@ -29,6 +29,7 @@ $('#ph_flights').html(JSON.parse(localStorage.selectedCountry).arrivals.value);
 //News
 
 var news = JSON.parse(localStorage.selectedCountry).news;
+var top3newsitems = [];
 
 //Date folder
 Object.keys(news).forEach(key => {
@@ -45,7 +46,7 @@ Object.keys(news).forEach(key => {
     var thisDay = localStorage.todaysDateMinus.split("-")[2];
     var formattedTime = (article.webPublicationDate.split("T")[1]).slice(0, -4);
 
-    var top3newsitems = []
+    
     
     
     if(articleDate == localStorage.todaysDateMinus){
