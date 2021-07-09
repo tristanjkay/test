@@ -61,18 +61,18 @@ var selectedCountry;
                         if(element.name == name){
 
                             capital = element.capital;
-                            return capitalLocation = element.latlng;
+                            localStorage.setItem("capitalLocation", element.latlng);
                         }
                     });
                 }
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log("ERROR: geojson-fileget.php")
-                localStorage.setItem("capitalfileget", errorThrown);
+                
             }
         });
     
-        selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry, "thislocation": capitalLocation};
+        selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry};
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         $(document).ajaxStop(function() {
         window.location.replace("loading.html");
