@@ -61,10 +61,12 @@ var selectedCountry;
         longTotal += long[i];
         }
         var longAvg = longTotal / long.length;
-        finalCoords = longTotal;
+        finalCoords = [latAvg, longAvg];
 
 
         localStorage.setItem('coordinates', finalCoords);
+        localStorage.setItem('latTotal', latTotal);
+        localStorage.setItem('longTotal', longTotal);
     
         selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry, "centralPoint": coordinates};
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
