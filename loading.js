@@ -13,6 +13,8 @@ sevendaysago = sevendaysago.toLocaleDateString();
 sevendaysagominus = sevendaysago.split("/").reverse().join("-");
 sevendaysago = sevendaysago.split("/").reverse().join("/");
 var capitalLatLng = localStorage.getItem("capitalLocation").split(",");
+localStorage.setItem("capitalLat", localStorage.getItem("capitalLocation").split(",")[0]);
+localStorage.setItem("capitalLong", localStorage.getItem("capitalLocation").split(",")[1]);
 
 
 
@@ -421,7 +423,7 @@ $.ajax({
     },
     success: function(result) {
 
-        //console.log("Dictionary Success");
+        console.log("Dictionary Success");
 
         if (result.status.name == "ok") {
             selectedCountry.pois = result['data'];
@@ -430,7 +432,8 @@ $.ajax({
     }
 },
     error: function(jqXHR, textStatus, errorThrown) {
-        //console.log("Dictionary Fail")
+        console.log("Dictionary Fail")
+
     }
     
 }); 
