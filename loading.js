@@ -408,8 +408,9 @@ $.ajax({
     
 });
 
-//POI
+/* //POI
 //https://developer.here.com/projects/PROD-c73b5ead-94a4-4a04-8c87-01143e6e4189
+//API Expires
 $.ajax({
     url: "php/culture/pointsofinterest.php",
     type: 'POST',
@@ -432,7 +433,7 @@ $.ajax({
         //console.log("Dictionary Fail")
     }
     
-});
+}); */
 
 //Airports
 $.ajax({
