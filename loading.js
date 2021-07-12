@@ -415,7 +415,7 @@ $.ajax({
 //API Expires
 $.ajax({
     url: "php/culture/pointsofinterest.php",
-    type: 'POST',
+    type: 'GET',
     dataType: 'json',
     data: {
         lat: localStorage.getItem("capitalLat"),
