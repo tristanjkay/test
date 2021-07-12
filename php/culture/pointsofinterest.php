@@ -2,7 +2,7 @@
 
 	$executionStartTime = microtime(true) / 1000;
 
-	$url ="https://api.opentripmap.com/0.1/en/places/radius?apikey=5ae2e3f221c38a28845f05b6ba3b9f7c5108d831ebd99127fed1acbb&lang=en&radius=400&lon=" . $_REQUEST['lat'] . "&lat=" . $_REQUEST['lat'];
+	$url ="https://api.opentripmap.com/0.1/en/places/radius?apikey=5ae2e3f221c38a28845f05b6ba3b9f7c5108d831ebd99127fed1acbb&lang=en&radius=20000&lon=" . $_REQUEST['lat'] . "&lat=" . $_REQUEST['lat'];
 	
 
 	$ch = curl_init();
