@@ -2,7 +2,8 @@
 
 	$executionStartTime = microtime(true) / 1000;
 
-	$url ='https://discover.search.hereapi.com/v1/discover?at=' . $_REQUEST['lat'] . ',' . $_REQUEST['long'] . '&q=sight&apiKey=1tEmNhKao39wYt3pKUJrSLnlqAA2QpM1Motr_IvEm-Y';
+	$url ="https://api.opentripmap.com/0.1/en/places/radius?apikey=5ae2e3f221c38a28845f05b6ba3b9f7c5108d831ebd99127fed1acbb&lang=en&radius=400&lon=" . $_REQUEST['lat'] . "&lat=" . $_REQUEST['lat'];
+	
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
