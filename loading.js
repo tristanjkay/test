@@ -435,7 +435,7 @@ $.ajax({
     
 }); 
 
-//Airports
+//Airportss
 $.ajax({
     url: "php/flights/airports-fileget.php",
     type: 'POST',
