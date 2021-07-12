@@ -418,8 +418,8 @@ $.ajax({
     type: 'POST',
     dataType: 'json',
     data: {
-        lat: localStorage.getItem(capitalLat),
-        long: localStorage.getItem(capitalLong),
+        lat: localStorage.getItem("capitalLat"),
+        long: localStorage.getItem("capitalLong"),
     },
     success: function(result) {
 
