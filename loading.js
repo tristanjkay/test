@@ -427,6 +427,7 @@ $.ajax({
 
         if (result.status.name == "ok") {
             selectedCountry.pois = result['data'];
+            localStorage.setItem("pois", result['data']);
             
             
     }
