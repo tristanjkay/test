@@ -34,6 +34,7 @@ $(document).ajaxStop(function() {
     localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
     localStorage.setItem('ajaxTotal', ajaxCount);
     localStorage.setItem('ajaxSuccess', ajaxSuccess);
+    localStorage.setItem('ProgressValue',  $('#intProgress').html());
     window.location.replace("screen2.html");
     
   });
@@ -75,7 +76,7 @@ $.ajax({
     success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").text(ajaxSuccess);
+$("#intProgress").text(ajaxSuccess.toString());
 
         
         if (result.status.name == "ok") {
