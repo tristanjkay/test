@@ -4,7 +4,8 @@ var ajaxCount = 0;
 var ajaxSuccess = 0;
 
 //Update progress bar
-$("#intProgress").change(function () {    
+$("#intProgress").change(function () {
+    console.log("test");  
     $('.progress-bar').css('width', percentLoaded);
     });
     
