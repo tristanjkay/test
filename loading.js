@@ -10,6 +10,7 @@ var ajaxSuccess = 0;
     
 
 window.addEventListener('DOMContentLoaded', () => {
+    console.log("Dom content loaded");
     const intProgress = document.getElementById('intProgress');
     intProgress.addEventListener('change', () => {
         console.log(intProgress);
