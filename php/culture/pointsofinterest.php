@@ -2,7 +2,7 @@
 
 	$executionStartTime = microtime(true) / 1000;
 
-	$url ="https://api.tomtom.com/search/2/nearbySearch/.json?key=HgoXvjsElSIjqwNjk4tGjAU2tDD7cVZv&lat=-17&lon=-65&radius=10000";
+	$url ="https://api.tomtom.com/search/2/categorySearch/tourist+attraction.json?key=HgoXvjsElSIjqwNjk4tGjAU2tDD7cVZv&lat=" . $_REQUEST['lat'] . "&lon=" . $_REQUEST['long'];
 	
 
 	$ch = curl_init();
