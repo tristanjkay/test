@@ -4,12 +4,9 @@ var ajaxCount = 0;
 var ajaxSuccess = 0;
 
 //Update progress bar
-$(function(ready){
-    $('#intProgress').change(function() {
-        console.log($(this).val());  
-
-    });
-});
+$('body').on('DOMSubtreeModified', '#intProgress', function(){
+    console.log('changed');
+  });
 
     
 
