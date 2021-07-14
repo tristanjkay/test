@@ -49,7 +49,7 @@ option {
 
 .progress{
   width: 90%;
-  margin-top: auto;
+  margin-top: auto-(10%);
   margin-bottom: auto;
 }
 
