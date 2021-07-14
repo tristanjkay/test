@@ -49,8 +49,7 @@ option {
 
 .progress{
   width: 90%;
-  margin-top: auto-(10%);
-  margin-bottom: auto;
+  max-height: max-content;
 }
 
 .progress-bar{
