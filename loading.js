@@ -5,7 +5,8 @@ var ajaxSuccess = 0;
 
 //Update progress bar
 $('body').on('DOMSubtreeModified', '#intProgress', function(){
-    $('.progress-bar').css("width", percentLoaded);
+    var percentLoadedPercent = percentLoaded.toString() + "%";
+    $('.progress-bar').css("width", percentLoadedPercent);
   });
 
     
