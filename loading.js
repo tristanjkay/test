@@ -1,3 +1,9 @@
+//Loading Progress (62 requests)
+var percentLoaded = 0;
+var ajaxCount = 0;
+var ajaxSuccess = 0;
+
+
 selectedCountry = {"name": JSON.parse(localStorage.selectedCountry).name, "iso_a2": JSON.parse(localStorage.selectedCountry).iso_a2, "iso_a3": JSON.parse(localStorage.selectedCountry).iso_a3, "geometry": JSON.parse(localStorage.selectedCountry).geometry};
 var mycountry = JSON.parse(localStorage.selectedCountry).iso_a2;
 var mycountryname = JSON.parse(localStorage.selectedCountry).name;
@@ -26,8 +32,10 @@ $(document).ajaxStop(function() {
     localStorage.setItem('sevendaysago', sevendaysago);
     localStorage.setItem('sevendaysagominus', sevendaysagominus);
     localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
-    console.log("Finished!");
+    localStorage.setItem('ajaxTotal', ajaxCount);
+    localStorage.setItem('ajaxSuccess', ajaxSuccess);
     window.location.replace("screen2.html");
+    
   });
 
 function replaceAccents(str){
@@ -65,8 +73,10 @@ $.ajax({
         country: mycountry,
     },
     success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
-
+        
         if (result.status.name == "ok") {
             selectedCountry.continent = result['data'][0]['continentName']; //NOPE
             selectedCountry.area = result['data'][0]['areaInSqKm']; //NOPE
@@ -75,7 +85,8 @@ $.ajax({
     
     },
     error: function(jqXHR, textStatus, errorThrown) {
-
+ajaxCount++;
+        ajaxCount++;
     }
     
 });
@@ -89,6 +100,8 @@ $.ajax({
         country: mycountry,
     },
     success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
         //console.log("RESTCountries Success");
 
@@ -116,6 +129,7 @@ $.ajax({
     
     },
     error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
         //console.log("RESTCountries Fail")
 
     }
@@ -135,6 +149,8 @@ $.ajax({
         country: selectedCountry.name,
     },
     success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
         //console.log("Weather Current Success");
         
@@ -380,6 +396,7 @@ $.ajax({
     
     },
     error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
         //console.log("Weather Current Fail")
     }
     
@@ -394,6 +411,8 @@ $.ajax({
         country: selectedCountry.name,
     },
     success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
         //console.log("Dictionary Success");
 
@@ -405,6 +424,7 @@ $.ajax({
     }
 },
     error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
         //console.log("Dictionary Fail")
     }
     
@@ -422,6 +442,8 @@ $.ajax({
         long: localStorage.getItem("capitalLong"),
     },
     success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
         console.log("Dictionary Success");
 
@@ -433,6 +455,7 @@ $.ajax({
     }
 },
     error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
         console.log("Dictionary Fail")
 
     }
@@ -448,6 +471,8 @@ $.ajax({
         country: selectedCountry.iso2,
     },
     success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
         selectedCountry.airports = [];
 
         //console.log("Airports Success");
@@ -473,6 +498,8 @@ data: {
     country: selectedCountry.airport.name,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
     selectedCountry.flights = [];
 
     //console.log("Flights Success");
@@ -494,6 +521,7 @@ success: function(result) {
 }
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
     //console.log("Dictionary Fail")
 }
 
@@ -503,6 +531,7 @@ error: function(jqXHR, textStatus, errorThrown) {
     }
 },
     error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
         //console.log("Dictionary Fail")
     }
     
@@ -519,6 +548,8 @@ $.ajax({
         country: selectedCountry.currencycode,
     },
     success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
         //console.log("Exchange Rate Success");
 
@@ -550,6 +581,7 @@ $.ajax({
     }
 },
     error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
         //console.log("Exchange Rate Fail")
 
     }
@@ -565,6 +597,8 @@ $.ajax({
         country: selectedCountry.name,
     },
     success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
         
 
@@ -593,6 +627,7 @@ $.ajax({
              }
 },
     error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
         //console.log("News Fail")
 
@@ -612,6 +647,8 @@ data: {
     country: mycountry,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
     //console.log("WorldBank Success")
 
@@ -684,6 +721,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
     //console.log("WorldBank Fail")
 
@@ -700,6 +738,8 @@ data: {
     country: mycountry,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
     //console.log("WorldBank INF Success")
 
@@ -767,6 +807,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
     //console.log("WorldBank Fail")
 
@@ -783,6 +824,8 @@ data: {
     country: mycountry,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
     //console.log("WorldBank BUD Success")
 
@@ -800,6 +843,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
     //console.log("WorldBank Failed")
 
@@ -816,6 +860,8 @@ data: {
     country: mycountry,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
     //console.log("WorldBank BUD% Success")
 
@@ -833,6 +879,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
     //console.log("WorldBank Fail")
 
@@ -849,6 +896,8 @@ data: {
     country: mycountry,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
     ////console.log(result);
 
@@ -865,6 +914,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -879,6 +929,8 @@ data: {
     country: mycountry,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
     ////console.log(result);
 
@@ -898,6 +950,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -910,6 +963,8 @@ data: {
     country: mycountry,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
     ////console.log(result);
 
@@ -925,6 +980,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -937,6 +993,8 @@ data: {
     country: mycountry,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
     ////console.log(result);
 
@@ -954,6 +1012,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -966,6 +1025,8 @@ data: {
     country: mycountry,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
     ////console.log(result);
 
@@ -981,6 +1042,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -993,6 +1055,8 @@ data: {
     country: mycountry,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
     ////console.log(result);
 
@@ -1010,6 +1074,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1022,6 +1087,8 @@ data: {
     country: mycountry,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
     ////console.log(result);
 
@@ -1037,6 +1104,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1049,6 +1117,8 @@ data: {
     country: mycountry,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
     ////console.log(result);
 
@@ -1064,6 +1134,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1076,6 +1147,8 @@ data: {
     country: mycountry,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
     ////console.log(result);
 
@@ -1091,6 +1164,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1103,6 +1177,8 @@ data: {
     country: mycountry,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
     ////console.log(result);
 
@@ -1118,6 +1194,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1130,6 +1207,8 @@ data: {
     country: mycountry,
 },
 success: function(result) {
+ajaxCount++;
+ajaxSuccess++;
 
     ////console.log(result);
 
@@ -1145,6 +1224,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1156,7 +1236,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1172,6 +1254,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1184,7 +1267,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1200,6 +1285,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1212,7 +1298,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1230,6 +1318,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1242,7 +1331,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1258,6 +1349,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1270,7 +1362,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1286,6 +1380,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1298,7 +1393,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1314,6 +1411,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1326,7 +1424,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1342,6 +1442,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1354,7 +1455,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1370,6 +1473,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1382,7 +1486,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1398,6 +1504,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1410,7 +1517,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1426,6 +1535,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1438,7 +1548,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1454,6 +1566,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1466,7 +1579,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1482,6 +1597,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1494,7 +1610,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1510,6 +1628,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1522,7 +1641,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1538,6 +1659,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1550,7 +1672,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1566,6 +1690,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1578,7 +1703,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1594,6 +1721,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1606,7 +1734,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1622,6 +1752,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1634,7 +1765,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1650,6 +1783,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1662,7 +1796,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1678,6 +1814,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1690,7 +1827,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1706,6 +1845,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1718,7 +1858,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1734,6 +1876,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1746,7 +1889,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1762,6 +1907,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1774,7 +1920,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1790,6 +1938,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1802,7 +1951,9 @@ dataType: 'json',
 data: {
     country: selectedCountry.iso3,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     //BUG: NOT RETURNING AS "OK"
 
@@ -1822,6 +1973,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1834,7 +1986,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1852,6 +2006,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1864,7 +2019,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1882,6 +2039,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1894,7 +2052,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1910,6 +2070,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1922,7 +2083,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1938,6 +2101,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1950,7 +2114,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1966,6 +2132,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -1978,7 +2145,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -1994,6 +2163,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -2006,7 +2176,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -2022,6 +2194,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -2034,7 +2207,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -2050,6 +2225,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -2062,7 +2238,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -2078,6 +2256,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -2090,7 +2269,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -2106,6 +2287,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -2118,7 +2300,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -2134,6 +2318,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -2146,7 +2331,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -2162,6 +2349,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -2174,7 +2362,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -2192,6 +2382,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
@@ -2204,7 +2395,9 @@ dataType: 'json',
 data: {
     country: mycountry,
 },
-success: function(result) { 
+success: function(result) {
+ajaxCount++;
+ajaxSuccess++; 
 
     ////console.log(result);
 
@@ -2222,6 +2415,7 @@ success: function(result) {
 
 },
 error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
 
 }
 
