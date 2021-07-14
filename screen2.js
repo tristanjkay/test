@@ -38,6 +38,7 @@ $('#ph_flights').html(JSON.parse(localStorage.selectedCountry).arrivals.value);
 //News
 
 var news = JSON.parse(localStorage.selectedCountry).news;
+var sortedNews = JSON.parse(localStorage.sortedNews);
 var top3newsitems = [];
 
 //Date folder
@@ -59,7 +60,7 @@ Object.keys(news).forEach(key => {
     
     
     
-    if(articleDate == localStorage.todaysDateMinus){
+    /* if(articleDate == localStorage.todaysDateMinus){
       //Today's News
         top3newsitems.push([article.webTitle, formattedTime]);
     }else{
@@ -74,13 +75,17 @@ Object.keys(news).forEach(key => {
                 top3newsitems.push([article.webTitle, shortArticleDate]);
             }
         }
-      };
+      }; */
       
 
       
   })
 
 });
+
+top3newsitems[0]= sortedNews[sortedNews.length-1];
+top3newsitems[1]= sortedNews[sortedNews.length-2];
+top3newsitems[2]= sortedNews[sortedNews.length-3];
 
 $('#art1description').html(top3newsitems[0][0]);
 $('#art2description').html(top3newsitems[1][0]);
