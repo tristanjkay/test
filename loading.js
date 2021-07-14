@@ -9,14 +9,10 @@ var ajaxSuccess = 0;
     }); */
     
 
-window.addEventListener('DOMContentLoaded', () => {
-    console.log("Dom content loaded");
-    const intProgress = document.getElementById('intProgress');
-    intProgress.addEventListener('change', () => {
-        console.log(intProgress);
-        $('.progress-bar').css('width', percentLoaded);
-    });
-});
+while (percentLoaded < 100) {
+    $('.progress-bar').css('width', percentLoaded);
+}
+        
 
 
 selectedCountry = {"name": JSON.parse(localStorage.selectedCountry).name, "iso_a2": JSON.parse(localStorage.selectedCountry).iso_a2, "iso_a3": JSON.parse(localStorage.selectedCountry).iso_a3, "geometry": JSON.parse(localStorage.selectedCountry).geometry};
