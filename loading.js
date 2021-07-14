@@ -5,7 +5,7 @@ var ajaxSuccess = 0;
 
 //Update progress bar
 $('body').on('DOMSubtreeModified', '#intProgress', function(){
-    var percentLoadedPercent = percentLoaded.toString() + "%";
+    var percentLoadedPercent = (percentLoaded+10).toString() + "%";
     $('.progress-bar').css("width", percentLoadedPercent);
   });
 
@@ -46,7 +46,6 @@ $(document).ajaxStop(function() {
     localStorage.setItem('ajaxTotal', ajaxCount);
     localStorage.setItem('ajaxSuccess', ajaxSuccess);
     localStorage.setItem('ProgressValue',  $('#intProgress').html());
-    $('.progress-bar').css("width", "100%");
     window.location.replace("screen2.html");
     
   });
