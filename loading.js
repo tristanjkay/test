@@ -104,7 +104,7 @@ $.ajax({
     success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").text(ajaxSuccess);
+$('#intProgress').text(ajaxSuccess);
 
         //console.log("RESTCountries Success");
 
