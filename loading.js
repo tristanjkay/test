@@ -9,7 +9,9 @@ $('body').on('DOMSubtreeModified', '#intProgress', function(){
     $('.progress-bar').css("width", percentLoadedPercent);
   });
 
-    
+//Globe
+
+
 
 
         
