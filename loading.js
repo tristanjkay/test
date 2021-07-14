@@ -12,7 +12,7 @@ var ajaxSuccess = 0;
 window.addEventListener('DOMContentLoaded', () => {
     const intProgress = document.getElementById('intProgress');
     intProgress.addEventListener('change', () => { 
-        $('.progress').css('width', percentLoaded);
+        $('.progress-bar').css('width', percentLoaded);
     });
 });
 
