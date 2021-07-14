@@ -4,9 +4,9 @@ var ajaxCount = 0;
 var ajaxSuccess = 0;
 
 //Update progress bar
-/* $("#intProgress").change(function () {    
-    $('.progress').css('width', percentLoaded);
-    }); */
+$("#intProgress").change(function () {    
+    $('.progress-bar').css('width', percentLoaded);
+    });
     
 
 
