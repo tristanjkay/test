@@ -46,6 +46,7 @@ $(document).ajaxStop(function() {
     localStorage.setItem('ajaxTotal', ajaxCount);
     localStorage.setItem('ajaxSuccess', ajaxSuccess);
     localStorage.setItem('ProgressValue',  $('#intProgress').html());
+    $('.progress-bar').css("width", "100%");
     window.location.replace("screen2.html");
     
   });
