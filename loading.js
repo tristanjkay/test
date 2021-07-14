@@ -74,7 +74,8 @@ $.ajax({
     },
     success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
         
         if (result.status.name == "ok") {
@@ -101,7 +102,8 @@ $.ajax({
     },
     success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
         //console.log("RESTCountries Success");
 
@@ -150,7 +152,8 @@ $.ajax({
     },
     success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
         //console.log("Weather Current Success");
         
@@ -412,7 +415,8 @@ $.ajax({
     },
     success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
         //console.log("Dictionary Success");
 
@@ -443,7 +447,8 @@ $.ajax({
     },
     success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
         console.log("Dictionary Success");
 
@@ -472,7 +477,8 @@ $.ajax({
     },
     success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
         selectedCountry.airports = [];
 
         //console.log("Airports Success");
@@ -499,7 +505,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
     selectedCountry.flights = [];
 
     //console.log("Flights Success");
@@ -549,7 +556,8 @@ $.ajax({
     },
     success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
         //console.log("Exchange Rate Success");
 
@@ -598,7 +606,8 @@ $.ajax({
     },
     success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
         
 
@@ -648,7 +657,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
     //console.log("WorldBank Success")
 
@@ -739,7 +749,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
     //console.log("WorldBank INF Success")
 
@@ -825,7 +836,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
     //console.log("WorldBank BUD Success")
 
@@ -861,7 +873,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
     //console.log("WorldBank BUD% Success")
 
@@ -897,7 +910,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
     ////console.log(result);
 
@@ -930,7 +944,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
     ////console.log(result);
 
@@ -964,7 +979,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
     ////console.log(result);
 
@@ -994,7 +1010,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
     ////console.log(result);
 
@@ -1026,7 +1043,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
     ////console.log(result);
 
@@ -1056,7 +1074,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
     ////console.log(result);
 
@@ -1088,7 +1107,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
     ////console.log(result);
 
@@ -1118,7 +1138,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
     ////console.log(result);
 
@@ -1148,7 +1169,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
     ////console.log(result);
 
@@ -1178,7 +1200,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
     ////console.log(result);
 
@@ -1208,7 +1231,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++;
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);;
 
     ////console.log(result);
 
@@ -1238,7 +1262,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1269,7 +1294,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1300,7 +1326,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1333,7 +1360,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1364,7 +1392,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1395,7 +1424,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1426,7 +1456,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1457,7 +1488,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1488,7 +1520,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1519,7 +1552,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1550,7 +1584,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1581,7 +1616,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1612,7 +1648,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1643,7 +1680,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1674,7 +1712,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1705,7 +1744,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1736,7 +1776,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1767,7 +1808,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1798,7 +1840,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1829,7 +1872,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1860,7 +1904,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1891,7 +1936,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1922,7 +1968,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -1953,7 +2000,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     //BUG: NOT RETURNING AS "OK"
 
@@ -1988,7 +2036,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -2021,7 +2070,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -2054,7 +2104,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -2085,7 +2136,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -2116,7 +2168,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -2147,7 +2200,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -2178,7 +2232,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -2209,7 +2264,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -2240,7 +2296,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -2271,7 +2328,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -2302,7 +2360,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -2333,7 +2392,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -2364,7 +2424,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
@@ -2397,7 +2458,8 @@ data: {
 },
 success: function(result) {
 ajaxCount++;
-ajaxSuccess++; 
+ajaxSuccess++
+$("#intProgress").html(ajaxSuccess);; 
 
     ////console.log(result);
 
