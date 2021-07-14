@@ -75,7 +75,7 @@ $.ajax({
     success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
         
         if (result.status.name == "ok") {
@@ -103,7 +103,7 @@ $.ajax({
     success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
         //console.log("RESTCountries Success");
 
@@ -153,7 +153,7 @@ $.ajax({
     success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
         //console.log("Weather Current Success");
         
@@ -416,7 +416,7 @@ $.ajax({
     success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
         //console.log("Dictionary Success");
 
@@ -448,7 +448,7 @@ $.ajax({
     success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
         console.log("Dictionary Success");
 
@@ -478,7 +478,7 @@ $.ajax({
     success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
         selectedCountry.airports = [];
 
         //console.log("Airports Success");
@@ -506,7 +506,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
     selectedCountry.flights = [];
 
     //console.log("Flights Success");
@@ -557,7 +557,7 @@ $.ajax({
     success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
         //console.log("Exchange Rate Success");
 
@@ -607,7 +607,7 @@ $.ajax({
     success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
         
 
@@ -658,7 +658,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
     //console.log("WorldBank Success")
 
@@ -750,7 +750,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
     //console.log("WorldBank INF Success")
 
@@ -837,7 +837,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
     //console.log("WorldBank BUD Success")
 
@@ -874,7 +874,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
     //console.log("WorldBank BUD% Success")
 
@@ -911,7 +911,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
     ////console.log(result);
 
@@ -945,7 +945,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
     ////console.log(result);
 
@@ -980,7 +980,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
     ////console.log(result);
 
@@ -1011,7 +1011,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
     ////console.log(result);
 
@@ -1044,7 +1044,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
     ////console.log(result);
 
@@ -1075,7 +1075,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
     ////console.log(result);
 
@@ -1108,7 +1108,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
     ////console.log(result);
 
@@ -1139,7 +1139,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
     ////console.log(result);
 
@@ -1170,7 +1170,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
     ////console.log(result);
 
@@ -1201,7 +1201,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
     ////console.log(result);
 
@@ -1232,7 +1232,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);;
+$("#intProgress").text(ajaxSuccess);
 
     ////console.log(result);
 
@@ -1263,7 +1263,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1295,7 +1295,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1327,7 +1327,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1361,7 +1361,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1393,7 +1393,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1425,7 +1425,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1457,7 +1457,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1489,7 +1489,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1521,7 +1521,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1553,7 +1553,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1585,7 +1585,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1617,7 +1617,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1649,7 +1649,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1681,7 +1681,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1713,7 +1713,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1745,7 +1745,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1777,7 +1777,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1809,7 +1809,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1841,7 +1841,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1873,7 +1873,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1905,7 +1905,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1937,7 +1937,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -1969,7 +1969,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -2001,7 +2001,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     //BUG: NOT RETURNING AS "OK"
 
@@ -2037,7 +2037,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -2071,7 +2071,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -2105,7 +2105,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -2137,7 +2137,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -2169,7 +2169,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -2201,7 +2201,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -2233,7 +2233,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -2265,7 +2265,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -2297,7 +2297,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -2329,7 +2329,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -2361,7 +2361,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -2393,7 +2393,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -2425,7 +2425,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
@@ -2459,7 +2459,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$("#intProgress").html(ajaxSuccess);; 
+$("#intProgress").text(ajaxSuccess); 
 
     ////console.log(result);
 
