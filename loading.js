@@ -4,9 +4,17 @@ var ajaxCount = 0;
 var ajaxSuccess = 0;
 
 //Update progress bar
-$("#intProgress").change(function () {    
+/* $("#intProgress").change(function () {    
     $('.progress').css('width', percentLoaded);
-    });  
+    }); */
+    
+
+window.addEventListener('DOMContentLoaded', () => {
+    const intProgress = document.getElementById('intProgress');
+    intProgress.addEventListener('change', () => { 
+        $('.progress').css('width', percentLoaded);
+    });
+});
 
 
 selectedCountry = {"name": JSON.parse(localStorage.selectedCountry).name, "iso_a2": JSON.parse(localStorage.selectedCountry).iso_a2, "iso_a3": JSON.parse(localStorage.selectedCountry).iso_a3, "geometry": JSON.parse(localStorage.selectedCountry).geometry};
