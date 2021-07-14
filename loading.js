@@ -9,9 +9,7 @@ var ajaxSuccess = 0;
     }); */
     
 
-while (percentLoaded < 100) {
-    $('.progress-bar').css('width', percentLoaded);
-}
+
         
 
 
