@@ -27,8 +27,8 @@ var poiArray = [];
 var poiFinalArray = [];
 poiArray = localStorage.images.split(",");
 poiArray.forEach(element => {
-  element.split("^");
-  poiFinalArray.push(element);
+  var elemarray = element.split("^");
+  poiFinalArray.push(elemarray);
 });
 console.log(poiFinalArray);
 $('#place1').attr(poiArray[0][1]);
