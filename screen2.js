@@ -22,12 +22,17 @@ $('#ph_weathericon').attr("src", JSON.parse(localStorage.selectedCountry).weathe
 $('#ph_weathertitle').html("Today (" + JSON.parse(localStorage.selectedCountry).capital + ")")
 
 //POIs
-/* $('#place1description').html(top3newsitems[0][0]);
-$('#place2description').html(top3newsitems[1][0]);
-$('#place3description').html(top3newsitems[2][0]);
-$('#place1date').html(top3newsitems[0][1]);
-$('#place2date').html(top3newsitems[1][1]);
-$('#place3date').html(top3newsitems[2][1]); */
+
+var poiArray = [];
+poiArray = localStorage.images.split(",");
+poiArray.forEach(element => {
+  element.split("^");
+});
+$('#place1').attr(poiArray[0][1]);
+$('#place2').attr(poiArray[1][1]);
+$('#place3').attr(poiArray[2][1]);
+$('#place4').attr(poiArray[3][1]);
+
 
 
 //Tourism 
