@@ -499,6 +499,7 @@ selectedCountry.pois.forEach(element => {
             if (result.status.name == "ok") {
                 var pair = element['poi']['name'] + "^" + "test";
                 imagesArray.push(pair)
+                console.log(imagesArray);
                 
                 
                 
