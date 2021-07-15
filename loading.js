@@ -474,20 +474,7 @@ percentLoaded = (ajaxSuccess/62)*100;
         if (result.status.name == "ok") {
             selectedCountry.pois = result['data'];
             localStorage.setItem("pois", result['data']);
-            
-            
-    }
-},
-    error: function(jqXHR, textStatus, errorThrown) {
-ajaxCount++;
-        console.log("Dictionary Fail")
-
-    }
-    
-}); 
-
-
-//Images Array
+            //Images Array
 imagesArray = [];
 
 //Images
@@ -526,6 +513,19 @@ selectedCountry.pois.forEach(element => {
 
 });
 localStorage.setItem("images", imagesArray.toString());
+            
+    }
+},
+    error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
+        console.log("Dictionary Fail")
+
+    }
+    
+}); 
+
+
+
 
 
 //Airportss
