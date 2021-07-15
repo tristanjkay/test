@@ -512,7 +512,7 @@ selectedCountry.pois.forEach(element => {
     });
 
 });
-localStorage.setItem("images", imagesArray.toString());
+localStorage.setItem("images", imagesArray);
             
     }
 },
