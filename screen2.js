@@ -28,6 +28,7 @@ poiArray = localStorage.images.split(",");
 poiArray.forEach(element => {
   element.split("^");
 });
+console.log(poiArray);
 $('#place1').attr(poiArray[0][1]);
 $('#place2').attr(poiArray[1][1]);
 $('#place3').attr(poiArray[2][1]);
