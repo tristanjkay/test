@@ -487,37 +487,45 @@ ajaxCount++;
 }); 
 
 
+//Images Array
+imagesArray = [];
+
 //Images
 //https://serpapi.com/
-$.ajax({
-    url: "php/general/photos.php",
-    type: 'GET',
-    dataType: 'json',
-    data: {
-        place: "london",
-    },
-    success: function(result) {
-ajaxCount++;
-ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
-percentLoaded = (ajaxSuccess/62)*100;
-
-        //console.log("Dictionary Success");
-
-        if (result.status.name == "ok") {
-            selectedCountry.images = result['data'];
-            localStorage.setItem("images", result['data']);
-            
-            
-    }
-},
-    error: function(jqXHR, textStatus, errorThrown) {
-ajaxCount++;
-        console.log("Dictionary Fail")
-
-    }
+selectedCountry.pois.forEach(element => {
+    // element['poi']['name']
+    $.ajax({
+        url: "php/general/photos.php",
+        type: 'GET',
+        dataType: 'json',
+        data: {
+            place: element['poi']['name'],
+        },
+        success: function(result) {
+    ajaxCount++;
+    ajaxSuccess++
+    $('#intProgress').text((ajaxSuccess/62)*100);
+    percentLoaded = (ajaxSuccess/62)*100;
     
+
+    
+            if (result.status.name == "ok") {
+                imagesArray.push([element['poi']['name'], result['data']['thumbnail']])
+                
+                
+                
+        }
+    },
+        error: function(jqXHR, textStatus, errorThrown) {
+    ajaxCount++;
+            console.log("Dictionary Fail")
+    
+        }
+        
+    });
+
 });
+localStorage.setItem("images", imagesArray.toString());
 
 
 //Airportss
