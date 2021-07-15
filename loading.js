@@ -486,7 +486,7 @@ selectedCountry.pois.forEach(element => {
         type: 'GET',
         dataType: 'json',
         data: {
-            place: element['poi']['name'],
+            place: encodeURI(element['poi']['name']),
         },
         success: function(result) {
     ajaxCount++;
