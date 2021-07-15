@@ -31,10 +31,10 @@ poiArray.forEach(element => {
   poiFinalArray.push(elemarray);
 });
 console.log(poiFinalArray);
-$('#place1').attr(poiArray[0][1]);
-$('#place2').attr(poiArray[1][1]);
-$('#place3').attr(poiArray[2][1]);
-$('#place4').attr(poiArray[3][1]);
+$('#place1').attr(poiFinalArray[0][1]);
+$('#place2').attr(poiFinalArray[1][1]);
+$('#place3').attr(poiFinalArray[2][1]);
+$('#place4').attr(poiFinalArray[3][1]);
 
 
 
