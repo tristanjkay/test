@@ -500,6 +500,10 @@ selectedCountry.pois.forEach(element => {
                 var pair = element['poi']['name'] + "^" + "test";
                 imagesArray.push(pair)
                 console.log(imagesArray);
+                if(imagesArray.length == selectedCountry.pois.length){
+                    console.log(imagesArray);
+                    localStorage.setItem("images", imagesArray.toString());    
+                }
                 
                 
                 
@@ -514,8 +518,7 @@ selectedCountry.pois.forEach(element => {
     });
 
 });
-console.log(imagesArray);
-localStorage.setItem("images", imagesArray);
+
             
     }
 },
