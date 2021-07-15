@@ -3,7 +3,7 @@
 	$executionStartTime = microtime(true) / 1000;
 
 	//$url ="https://serpapi.com/search.json?engine=google&q=" . $_REQUEST['place'] . "&google_domain=google.com&hl=en&tbm=isch&api_key=9857bf72198a7758691a19611aebf78912e0f5506068c2cf9afbd837da701b9b";
-	$url ="https://serpapi.com/search.json?engine=google&q=london&google_domain=google.com&hl=en&tbm=isch&api_key=9857bf72198a7758691a19611aebf78912e0f5506068c2cf9afbd837da701b9b";
+	$url ="https://serpapi.com/search.json?engine=google&q=" . $_REQUEST['place'] . "&google_domain=google.com&hl=en&tbm=isch&api_key=9857bf72198a7758691a19611aebf78912e0f5506068c2cf9afbd837da701b9b";
 
 
 	$ch = curl_init();
