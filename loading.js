@@ -497,7 +497,7 @@ selectedCountry.pois.forEach(element => {
 
     
             if (result.status.name == "ok") {
-                imagesArray.push([element['poi']['name'], result['data'][0]['thumbnail']])
+                imagesArray.push([element['poi']['name'], result['data']])
                 
                 
                 
