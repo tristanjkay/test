@@ -27,6 +27,7 @@ var poiArray = [];
 poiArray = localStorage.images.split(",");
 poiArray.forEach(element => {
   element.split("^");
+  return poiArray;
 });
 console.log(poiArray);
 $('#place1').attr(poiArray[0][1]);
