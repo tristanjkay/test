@@ -480,7 +480,7 @@ imagesArray = [];
 //Images
 //https://serpapi.com/
 selectedCountry.pois.forEach(element => {
-    // element['poi']['name']
+    console.log("The name is" + element['poi']['name']);
     $.ajax({
         url: "php/general/photos.php",
         type: 'GET',
