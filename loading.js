@@ -486,6 +486,40 @@ ajaxCount++;
     
 }); 
 
+
+//Images
+//https://serpapi.com/
+$.ajax({
+    url: "php/general/photos.php",
+    type: 'GET',
+    dataType: 'json',
+    data: {
+        place: "london",
+    },
+    success: function(result) {
+ajaxCount++;
+ajaxSuccess++
+$('#intProgress').text((ajaxSuccess/62)*100);
+percentLoaded = (ajaxSuccess/62)*100;
+
+        //console.log("Dictionary Success");
+
+        if (result.status.name == "ok") {
+            selectedCountry.images = result['data'];
+            localStorage.setItem("images", result['data']);
+            
+            
+    }
+},
+    error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
+        console.log("Dictionary Fail")
+
+    }
+    
+});
+
+
 //Airportss
 $.ajax({
     url: "php/flights/airports-fileget.php",
