@@ -1,8 +1,7 @@
-
 //VARIABLES
-var dropdown = document.getElementById("countriesDropdown");
-var geojsonResult = [];
-var selectedCountry;
+    var dropdown = document.getElementById("countriesDropdown");
+    var geojsonResult = [];
+    var selectedCountry;
 
 //POPULATE DROPDOWN
         $.ajax({
@@ -45,7 +44,7 @@ var selectedCountry;
         var geometry = selectedElement.geometry;
         var capital;
         var capitalLocation;
-
+        
         $.ajax({
             url: "capital-fileget.php",
             type: 'POST',  

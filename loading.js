@@ -1,56 +1,49 @@
 //Loading Progress (62 requests)
-var percentLoaded = 0;
-var ajaxCount = 0;
-var ajaxSuccess = 0;
+    var percentLoaded = 0;
+    var ajaxCount = 0;
+    var ajaxSuccess = 0;
 
-//Update progress bar
-$('body').on('DOMSubtreeModified', '#intProgress', function(){
-    var percentLoadedPercent = (percentLoaded+10).toString() + "%";
-    $('.progress-bar').css("width", percentLoadedPercent);
-  });
+//Update progress bar    
+    $('body').on('DOMSubtreeModified', '#intProgress', function(){
+        var percentLoadedPercent = (percentLoaded+10).toString() + "%";
+        $('.progress-bar').css("width", percentLoadedPercent);
+    });
 
 //Globe
-
-
-
-
-        
-
-
-selectedCountry = {"name": JSON.parse(localStorage.selectedCountry).name, "iso_a2": JSON.parse(localStorage.selectedCountry).iso_a2, "iso_a3": JSON.parse(localStorage.selectedCountry).iso_a3, "geometry": JSON.parse(localStorage.selectedCountry).geometry};
-var mycountry = JSON.parse(localStorage.selectedCountry).iso_a2;
-var mycountryname = JSON.parse(localStorage.selectedCountry).name;
+    selectedCountry = {"name": JSON.parse(localStorage.selectedCountry).name, "iso_a2": JSON.parse(localStorage.selectedCountry).iso_a2, "iso_a3": JSON.parse(localStorage.selectedCountry).iso_a3, "geometry": JSON.parse(localStorage.selectedCountry).geometry};
+    var mycountry = JSON.parse(localStorage.selectedCountry).iso_a2;
+    var mycountryname = JSON.parse(localStorage.selectedCountry).name;
 
 //Dates for lookups
-var date = new Date();
-var sevendaysago = new Date();
-sevendaysago.setDate(date.getDate() - 7);
-date = date.toLocaleDateString();
-dateminus = date.split("/").reverse().join("-");
-date = date.split("/").reverse().join("/");
-sevendaysago = sevendaysago.toLocaleDateString();
-sevendaysagominus = sevendaysago.split("/").reverse().join("-");
-sevendaysago = sevendaysago.split("/").reverse().join("/");
-var capitalLatLng = localStorage.getItem("capitalLocation").split(",");
-localStorage.setItem("capitalLat", localStorage.getItem("capitalLocation").split(",")[0]);
-localStorage.setItem("capitalLong", localStorage.getItem("capitalLocation").split(",")[1]);
+    var date = new Date();
+    var sevendaysago = new Date();
+    sevendaysago.setDate(date.getDate() - 7);
+    date = date.toLocaleDateString();
+    dateminus = date.split("/").reverse().join("-");
+    date = date.split("/").reverse().join("/");
+    sevendaysago = sevendaysago.toLocaleDateString();
+    sevendaysagominus = sevendaysago.split("/").reverse().join("-");
+    sevendaysago = sevendaysago.split("/").reverse().join("/");
+    var capitalLatLng = localStorage.getItem("capitalLocation").split(",");
+    localStorage.setItem("capitalLat", localStorage.getItem("capitalLocation").split(",")[0]);
+    localStorage.setItem("capitalLong", localStorage.getItem("capitalLocation").split(",")[1]);
 
 
-
-$(document).ajaxStop(function() {
+//
+    $(document).ajaxStop(function() {    
     // place code to be executed on completion of last outstanding ajax call here
+        localStorage.setItem('todaysDate', date);
+        localStorage.setItem('todaysDateMinus', dateminus);
+        localStorage.setItem('sevendaysago', sevendaysago);
+        localStorage.setItem('sevendaysagominus', sevendaysagominus);
+        localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
+        localStorage.setItem('ajaxTotal', ajaxCount);
+        localStorage.setItem('ajaxSuccess', ajaxSuccess);
+        localStorage.setItem('ProgressValue',  $('#intProgress').html());
+        window.location.replace("screen2.html");
+        
+    });
 
-    localStorage.setItem('todaysDate', date);
-    localStorage.setItem('todaysDateMinus', dateminus);
-    localStorage.setItem('sevendaysago', sevendaysago);
-    localStorage.setItem('sevendaysagominus', sevendaysagominus);
-    localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
-    localStorage.setItem('ajaxTotal', ajaxCount);
-    localStorage.setItem('ajaxSuccess', ajaxSuccess);
-    localStorage.setItem('ProgressValue',  $('#intProgress').html());
-    window.location.replace("screen2.html");
-    
-  });
 
 function replaceAccents(str){
 
@@ -479,7 +472,7 @@ imagesArray = [];
 
 //Images
 //https://serpapi.com/
-selectedCountry.pois.forEach(element => {
+/* selectedCountry.pois.forEach(element => {
     console.log("The name is" + encodeURI(element['poi']['name']));
     $.ajax({
         url: "php/general/photos.php",
@@ -519,7 +512,7 @@ selectedCountry.pois.forEach(element => {
     });
 
 });
-
+ */
             
     }
 },
@@ -1372,7 +1365,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbanklogisticspi.php",
 type: 'POST',
@@ -1405,7 +1397,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbanklifeexpectancy.php",
 type: 'POST',
@@ -1440,7 +1431,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankhospitalbeds.php",
 type: 'POST',
@@ -1473,7 +1463,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbanksurgicalprocedures.php",
 type: 'POST',
@@ -1506,7 +1495,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankcommdeaths.php",
 type: 'POST',
@@ -1539,7 +1527,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankdeathrate.php",
 type: 'POST',
@@ -1572,7 +1559,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankdiabetes.php",
 type: 'POST',
@@ -1605,7 +1591,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankunderweight.php",
 type: 'POST',
@@ -1638,7 +1623,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankroaddeaths.php",
 type: 'POST',
@@ -1671,7 +1655,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankhiv.php",
 type: 'POST',
@@ -1704,7 +1687,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankunderoverweight.php",
 type: 'POST',
@@ -1737,7 +1719,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankundernourishment.php",
 type: 'POST',
@@ -1770,7 +1751,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankcontraception.php",
 type: 'POST',
@@ -1803,7 +1783,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankprenatal.php",
 type: 'POST',
@@ -1836,7 +1815,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbanktotalpowerconsumption.php",
 type: 'POST',
@@ -1869,7 +1847,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankrenewableelectricoutput.php",
 type: 'POST',
@@ -1902,7 +1879,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankelectricoilgascoal.php",
 type: 'POST',
@@ -1935,7 +1911,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankdeathspollution.php",
 type: 'POST',
@@ -1968,7 +1943,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankendangeredbirds.php",
 type: 'POST',
@@ -2001,7 +1975,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankendangeredfish.php",
 type: 'POST',
@@ -2034,7 +2007,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankendangeredmammal.php",
 type: 'POST',
@@ -2067,7 +2039,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankendangeredplant.php",
 type: 'POST',
@@ -2100,7 +2071,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankco2.php",
 type: 'POST',
@@ -2137,7 +2107,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankairpollution.php",
 type: 'POST',
@@ -2172,7 +2141,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankelectricityfromrenewables.php",
 type: 'POST',
@@ -2207,7 +2175,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankgovedexpensesecondary.php",
 type: 'POST',
@@ -2240,7 +2207,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankgovedexpensetertiary.php",
 type: 'POST',
@@ -2273,7 +2239,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankprimaryedcompletion.php",
 type: 'POST',
@@ -2306,7 +2271,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankprimaryteacherpupilratio.php",
 type: 'POST',
@@ -2339,7 +2303,6 @@ ajaxCount++;
 }
 
 });
-
 $.ajax({
 url: "php/worldbank/worldbankenrollmentpreprimary.php",
 type: 'POST',
