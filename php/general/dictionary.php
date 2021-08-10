@@ -2,7 +2,7 @@
 
 	$executionStartTime = microtime(true) / 1000;
 
-    $url='https://en.wikipedia.org/w/api.php?action=parse&page=' . $_REQUEST['country'] . '&prop=wikitext&formatversion=2&format=json';
+    $url='https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=' . $_REQUEST['country'];
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -19,7 +19,7 @@
 	$output['status']['name'] = "ok";
 	$output['status']['description'] = "success";
 	$output['status']['returnedIn'] = (microtime(true) - $executionStartTime) / 1000 . " ms";
-	$output['data'] = $decode['parse']['wikitext'];
+	$output['data'] = $decode['query']['pages'];
 	
 	header('Content-Type: application/json; charset=UTF-8');
 

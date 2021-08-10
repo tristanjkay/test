@@ -436,7 +436,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 
         if (result.status.name == "ok") {
             var rawWikiData = result['data'];
-            const rawWikiDataArray = rawWikiData.split("\n");
+           /*  const rawWikiDataArray = rawWikiData.split("\n");
             var rawWikiDataIndex = 0;
              rawWikiDataArray.forEach(element => {
                  if(rawWikiDataArray[rawWikiDataIndex].includes('{{')){
@@ -458,9 +458,9 @@ percentLoaded = (ajaxSuccess/62)*100;
                 }
                 rawWikiDataIndex++;
                 return rawWikiDataArray;
-            });
+            }); */
             
-            selectedCountry.description = rawWikiDataArray;
+            selectedCountry.description = rawWikiData;
             console.log(rawWikiDataArray);
             
             
