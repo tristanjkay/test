@@ -441,7 +441,7 @@ percentLoaded = (ajaxSuccess/62)*100;
              rawWikiDataArray.forEach(element => {
                 rawWikiDataArray[rawWikiDataIndex] = element.replace('{{','');
                 rawWikiDataArray[rawWikiDataIndex] = element.replace('}}','');
-                //console.log(rawWikiDataArray[rawWikiDataIndex]);
+                console.log(rawWikiDataArray[rawWikiDataIndex]);
                 rawWikiDataIndex++;
             });
             
