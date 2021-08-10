@@ -415,7 +415,7 @@ ajaxCount++;
     
 });
 
-//DictionaryAPI
+//WikiAPI
 $.ajax({
     url: "php/general/dictionary.php",
     type: 'POST',
@@ -432,7 +432,7 @@ percentLoaded = (ajaxSuccess/62)*100;
         //console.log("Dictionary Success");
 
         if (result.status.name == "ok") {
-            selectedCountry.description = result['data'][0]['meanings'][0]['definitions'][0]['definition']
+            selectedCountry.description = result['data'];
             //$("#description-text").html(selectedCountry.description);
             
             
