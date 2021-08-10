@@ -104,7 +104,7 @@ for (const [key, value] of Object.entries(top3newsitems[0])) {
       $('#art1description').text(value)
     }
     if(key == "shortDate"){
-      $('#art1date').text(value.substring(5))
+      $('#art1date').text((value.substring(5)).replace("-", "/"));
     }  
   }
 }
@@ -116,7 +116,7 @@ for (const [key, value] of Object.entries(top3newsitems[1])) {
       $('#art2description').text(value)
     }
     if(key == "shortDate"){
-      $('#art2date').text(value.substring(5))
+      $('#art2date').text((value.substring(5)).replace("-", "/"));
     }  
   }
 }
@@ -128,7 +128,7 @@ for (const [key, value] of Object.entries(top3newsitems[2])) {
       $('#art3description').text(value)
     }
     if(key == "shortDate"){
-      $('#art3date').text(value.substring(5))
+      $('#art3date').text((value.substring(5)).replace("-", "/"));
     }  
   }
 }
