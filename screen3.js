@@ -9,7 +9,7 @@
 $('#ph_name').html(JSON.parse(localStorage.selectedCountry).name);
 $('#ph_capital').html(JSON.parse(localStorage.selectedCountry).capital);
 $('#ph_description').html(JSON.parse(localStorage.selectedCountry).description);
-$('#ph_descriptionfull').html(JSON.parse(localStorage.selectedCountry).descriptionfull);
+$('#ph_descriptionfull').html(JSON.parse(localStorage.selectedCountry).descriptionfull.join('\n'));
 
 //Economy
 $('#ph_currencyvalue').html(JSON.parse(localStorage.selectedCountry).currencycode);
