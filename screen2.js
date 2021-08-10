@@ -97,11 +97,15 @@ top3newsitems[2]= Object.values(sortedNews)[(Object.keys(sortedNews).length)-3];
 
 
 for (const [key, value] of Object.entries(top3newsitems[0])) {
-  console.log(top3newsitems[key]);
+  var newobject =  value;
+  for (const [key, value] of Object.entries(newobject)) {
+    console.log(`${key}: ${value}`);
+    
+  }
 }
 
 //$('#art1description').text(top3newsitems[0][Object.keys(sortedNews)[0]]);
-$('#art2description').text(top3newsitems[1].webTitle);
+$('#art2description').text(top3newsitems[1]);
 $('#art3description').text(top3newsitems[2]);
 $('#art1date').html(top3newsitems[0][1]);
 $('#art2date').html(top3newsitems[1][1]);
