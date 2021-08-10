@@ -83,7 +83,7 @@ Object.keys(news).forEach(key => {
                 top3newsitems.push([article.webTitle, shortArticleDate]);
             }
         }
-      }; */
+      };1 */
       
 
       
