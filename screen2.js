@@ -91,7 +91,7 @@ Object.keys(news).forEach(key => {
 
 });
 
-top3newsitems[0]= sortedNews[sortedNews.length-1];
+top3newsitems[0]= JSON.parse(localStorage.sortedNews)[sortedNews.length-1];
 top3newsitems[1]= sortedNews[sortedNews.length-2];
 top3newsitems[2]= sortedNews[sortedNews.length-3];
 
