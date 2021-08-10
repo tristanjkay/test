@@ -463,7 +463,7 @@ percentLoaded = (ajaxSuccess/62)*100;
             }); */
             
             selectedCountry.description = Object.entries(rawWikiData)[0][1]['extract'].split('.')[0] + ".";
-            selectedCountry.fulldescription = Object.entries(rawWikiData)[0][1]['extract'];
+            selectedCountry.descriptionfull = Object.entries(rawWikiData)[0][1]['extract'];
             console.log(rawWikiData);
             
             
