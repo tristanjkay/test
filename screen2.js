@@ -95,9 +95,13 @@ top3newsitems[0]= Object.values(sortedNews)[(Object.keys(sortedNews).length)-1];
 top3newsitems[1]= Object.values(sortedNews)[(Object.keys(sortedNews).length)-2];
 top3newsitems[2]= Object.values(sortedNews)[(Object.keys(sortedNews).length)-3];
 
-$('#art1description').text(top3newsitems[0][0].webTitle);
-$('#art2description').text(top3newsitems[1][0].webTitle);
-$('#art3description').text(top3newsitems[2][0].webTitle);
+top3newsitems[0].forEach(element => {
+  console.log(element);
+});
+
+//$('#art1description').text(top3newsitems[0][Object.keys(sortedNews)[0]]);
+$('#art2description').text(top3newsitems[1]);
+$('#art3description').text(top3newsitems[2]);
 $('#art1date').html(top3newsitems[0][1]);
 $('#art2date').html(top3newsitems[1][1]);
 $('#art3date').html(top3newsitems[2][1]); 
