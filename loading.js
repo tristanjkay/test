@@ -442,10 +442,13 @@ percentLoaded = (ajaxSuccess/62)*100;
                  if(rawWikiDataArray[rawWikiDataIndex].includes('{{')){
                     rawWikiDataArray[rawWikiDataIndex] = element.split('{{')[1];
                  }
+                 if(rawWikiDataArray[rawWikiDataIndex].includes('}}')){
+                    rawWikiDataArray[rawWikiDataIndex] = element.split('}}')[1];
+                 }
                 
-                /* if(rawWikiDataArray[rawWikiDataIndex] == null){
+                if(rawWikiDataArray[rawWikiDataIndex] == null){
                     rawWikiDataArray.remove(rawWikiDataIndex);
-                } */
+                }
                 rawWikiDataIndex++;
                 return rawWikiDataArray;
             });
