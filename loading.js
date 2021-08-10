@@ -443,7 +443,7 @@ percentLoaded = (ajaxSuccess/62)*100;
                     rawWikiDataArray[rawWikiDataIndex] = element.split('{{')[1];
                  }
                  if(rawWikiDataArray[rawWikiDataIndex].includes('}}')){
-                    rawWikiDataArray[rawWikiDataIndex] = element.split('}}')[1];
+                    rawWikiDataArray[rawWikiDataIndex] = element.split('}}')[0];
                  }
                 
                 if(rawWikiDataArray[rawWikiDataIndex] == null){
