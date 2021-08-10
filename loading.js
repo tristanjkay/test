@@ -436,10 +436,12 @@ percentLoaded = (ajaxSuccess/62)*100;
 
         if (result.status.name == "ok") {
             var rawWikiData = result['data'];
-            const rawWikiDataArray = rawWikiData.split("}");
+            const rawWikiDataArray = rawWikiData.split("\n");
             var rawWikiDataIndex = 0;
             rawWikiDataArray.forEach(element => {
-                rawWikiDataArray[rawWikiDataIndex] = element.split("{")[1];
+                rawWikiDataArray[rawWikiDataIndex] = element.split("{{")[1];
+                rawWikiDataArray[rawWikiDataIndex] = element.split("}}")[0];
+                console.log(rawWikiDataArray[rawWikiDataIndex]);
                 rawWikiDataIndex++;
             });
 
