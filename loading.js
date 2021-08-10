@@ -460,7 +460,7 @@ percentLoaded = (ajaxSuccess/62)*100;
                 return rawWikiDataArray;
             }); */
             
-            selectedCountry.description = Object.entries(rawWikiData)[0];
+            selectedCountry.description = Object.entries(rawWikiData)[0][1]['extract'];
             console.log(rawWikiData);
             
             
