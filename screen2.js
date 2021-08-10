@@ -133,8 +133,3 @@ for (const [key, value] of Object.entries(top3newsitems[2])) {
   }
 }
 
-$('#art2description').text(top3newsitems[1]);
-$('#art3description').text(top3newsitems[2]);
-$('#art1date').html(top3newsitems[0][1]);
-$('#art2date').html(top3newsitems[1][1]);
-$('#art3date').html(top3newsitems[2][1]); 
