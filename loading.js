@@ -431,6 +431,15 @@ percentLoaded = (ajaxSuccess/62)*100;
 
         //console.log("Dictionary Success");
 
+        var rawWikiData = result['data'];
+        const rawWikiDataArray = rawWikiData.split("}");
+        var rawWikiDataIndex = 0;
+        rawWikiDataArray.forEach(element => {
+            rawWikiDataArray[rawWikiDataIndex] = element.split("{")[1];
+            rawWikiDataIndex++;
+        });
+
+
         if (result.status.name == "ok") {
             Object.values(result['data']).forEach(val => {
                 console.log(val);
