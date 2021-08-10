@@ -438,12 +438,12 @@ percentLoaded = (ajaxSuccess/62)*100;
             var rawWikiData = result['data'];
             const rawWikiDataArray = rawWikiData.split("\n");
             var rawWikiDataIndex = 0;
-/*             rawWikiDataArray.forEach(element => {
-                rawWikiDataArray[rawWikiDataIndex] = element.split("{{")[1];
-                rawWikiDataArray[rawWikiDataIndex] = element.split("}}")[0];
-                console.log(rawWikiDataArray[rawWikiDataIndex]);
+             rawWikiDataArray.forEach(element => {
+                rawWikiDataArray[rawWikiDataIndex] = element.replace('{{','');
+                rawWikiDataArray[rawWikiDataIndex] = element.replace('}}','');
+                //console.log(rawWikiDataArray[rawWikiDataIndex]);
                 rawWikiDataIndex++;
-            }); */
+            });
             
             selectedCountry.description = rawWikiDataArray;
             console.log(rawWikiDataArray);
