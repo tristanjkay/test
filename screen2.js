@@ -11,7 +11,7 @@ $('#ph_capital').html(JSON.parse(localStorage.selectedCountry).capital);
 $('#ph_description').html(JSON.parse(localStorage.selectedCountry).description);
 
 //Economy
-$('#ph_currencyvalue').html(JSON.parse(localStorage.selectedCountry).currencycode);
+$('#ph_currencyvalue').html(JSON.parse(localStorage.selectedCountry).exchangerate);
 $('#ph_currencycode').html(JSON.parse(localStorage.selectedCountry).currencycode);
 
 
