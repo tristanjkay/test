@@ -432,6 +432,9 @@ percentLoaded = (ajaxSuccess/62)*100;
         //console.log("Dictionary Success");
 
         if (result.status.name == "ok") {
+            Object.values(result['data']).forEach(val => {
+                console.log(val);
+              });
             selectedCountry.description = result['data'];
             
             
