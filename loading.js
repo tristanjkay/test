@@ -433,7 +433,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 
         if (result.status.name == "ok") {
             selectedCountry.description = result['data'];
-            //$("#description-text").html(selectedCountry.description);
+            
             
             
     }
