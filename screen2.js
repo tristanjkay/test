@@ -95,9 +95,10 @@ top3newsitems[0]= Object.values(sortedNews)[(Object.keys(sortedNews).length)-1];
 top3newsitems[1]= Object.values(sortedNews)[(Object.keys(sortedNews).length)-2];
 top3newsitems[2]= Object.values(sortedNews)[(Object.keys(sortedNews).length)-3];
 
-top3newsitems[0].forEach(element => {
-  console.log(element);
-});
+
+for (const [key, value] of Object.entries(top3newsitems[0])) {
+  console.log(`${key}: ${value}`);
+}
 
 //$('#art1description').text(top3newsitems[0][Object.keys(sortedNews)[0]]);
 $('#art2description').text(top3newsitems[1]);
