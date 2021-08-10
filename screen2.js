@@ -23,7 +23,7 @@ $('#ph_weathertitle').html("Today (" + JSON.parse(localStorage.selectedCountry).
 
 //POIs
 
-var poiArray = [];
+/* var poiArray = [];
 var poiFinalArray = [];
 poiArray = localStorage.images.split(",");
 poiArray.forEach(element => {
@@ -35,7 +35,7 @@ $('#place1').attr("src", poiFinalArray[0][1]);
 $('#place2').attr("src", poiFinalArray[1][1]);
 $('#place3').attr("src", poiFinalArray[2][1]);
 $('#place4').attr("src", poiFinalArray[3][1]);
-
+ */
 
 
 //Tourism 
