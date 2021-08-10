@@ -98,6 +98,7 @@ top3newsitems[2]= Object.values(sortedNews)[(Object.keys(sortedNews).length)-3];
 
 for (const [key, value] of Object.entries(top3newsitems[0])) {
   var newobject =  value;
+  console.log(Object.entries(newobject)[0].value)
   for (const [key, value] of Object.entries(newobject)) {
     console.log(`${key}: ${value}`);
     
