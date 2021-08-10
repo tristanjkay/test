@@ -439,8 +439,13 @@ percentLoaded = (ajaxSuccess/62)*100;
             const rawWikiDataArray = rawWikiData.split("\n");
             var rawWikiDataIndex = 0;
              rawWikiDataArray.forEach(element => {
-                rawWikiDataArray[rawWikiDataIndex] = element.split('{{')[1];
-                console.log(rawWikiDataArray[rawWikiDataIndex]);
+                 if(rawWikiDataArray[rawWikiDataIndex].includes('{{')){
+                    rawWikiDataArray[rawWikiDataIndex] = element.split('{{')[1];
+                 }
+                
+                /* if(rawWikiDataArray[rawWikiDataIndex] == null){
+                    rawWikiDataArray.remove(rawWikiDataIndex);
+                } */
                 rawWikiDataIndex++;
                 return rawWikiDataArray;
             });
