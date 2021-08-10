@@ -443,6 +443,7 @@ percentLoaded = (ajaxSuccess/62)*100;
                 rawWikiDataArray[rawWikiDataIndex] = element.replace('}}','');
                 console.log(rawWikiDataArray[rawWikiDataIndex]);
                 rawWikiDataIndex++;
+                return rawWikiDataArray;
             });
             
             selectedCountry.description = rawWikiDataArray;
