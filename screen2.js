@@ -91,9 +91,9 @@ Object.keys(news).forEach(key => {
 
 });
 
-top3newsitems[0]= sortedNews[sortedNews.length-1];
-top3newsitems[1]= sortedNews[sortedNews.length-2];
-top3newsitems[2]= sortedNews[sortedNews.length-3];
+top3newsitems[0]= Object.values(sortedNews)[(Object.keys(sortedNews).length)-1];
+top3newsitems[1]= Object.values(sortedNews)[(Object.keys(sortedNews).length)-2];
+top3newsitems[2]= Object.values(sortedNews)[(Object.keys(sortedNews).length)-3];
 
 $('#art1description').html(top3newsitems[0][0]);
 $('#art2description').html(top3newsitems[1][0]);
