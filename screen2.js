@@ -103,11 +103,36 @@ for (const [key, value] of Object.entries(top3newsitems[0])) {
     if(key == "webTitle"){
       $('#art1description').text(value)
     }
-    
+    if(key == "shortDate"){
+      $('#art1date').text(value)
+    }  
+  }
+}
+for (const [key, value] of Object.entries(top3newsitems[1])) {
+  var newobject =  value;
+  console.log(Object.entries(newobject)[0].value)
+  for (const [key, value] of Object.entries(newobject)) {
+    if(key == "webTitle"){
+      $('#art2description').text(value)
+    }
+    if(key == "shortDate"){
+      $('#art2date').text(value)
+    }  
+  }
+}
+for (const [key, value] of Object.entries(top3newsitems[2])) {
+  var newobject =  value;
+  console.log(Object.entries(newobject)[0].value)
+  for (const [key, value] of Object.entries(newobject)) {
+    if(key == "webTitle"){
+      $('#art3description').text(value)
+    }
+    if(key == "shortDate"){
+      $('#art3date').text(value)
+    }  
   }
 }
 
-//$('#art1description').text(top3newsitems[0][Object.keys(sortedNews)[0]]);
 $('#art2description').text(top3newsitems[1]);
 $('#art3description').text(top3newsitems[2]);
 $('#art1date').html(top3newsitems[0][1]);
