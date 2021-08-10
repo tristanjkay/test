@@ -430,6 +430,8 @@ $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
         //console.log("Dictionary Success");
+        //https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Chile
+        //https://en.wikipedia.org/w/api.php?action=parse&page=Chile&prop=wikitext&formatversion=2&format=json
 
 
 
