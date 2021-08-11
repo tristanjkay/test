@@ -516,7 +516,7 @@ imagesArray = [];
             place: "text",
         },
         success: function(result) {
-            console.log(result);
+            console.log(result.value);
     ajaxCount++;
     ajaxSuccess++
     $('#intProgress').text((ajaxSuccess/62)*100);
