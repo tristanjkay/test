@@ -498,7 +498,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 
         if (result.status.name == "ok") {
             selectedCountry.pois = result['data'];
-            localStorage.setItem("pois", result['data']);
+
             //Images Array
 imagesArray = [];
 
