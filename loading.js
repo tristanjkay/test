@@ -506,6 +506,7 @@ imagesArray = [];
 //http://api.scraperapi.com?
 /* selectedCountry.pois.forEach(element => {
     //console.log("The name is" + encodeURI(element['poi']['name']));
+    */
     $.ajax({
         url: "php/general/photos.php",
         type: 'GET',
@@ -523,13 +524,13 @@ imagesArray = [];
     
             if (result.status.name == "ok") {
                 console.log("The data is" + result['data']);
-                var pair = element['poi']['name'] + "^" + result['data'][0]['thumbnail'];
+                /*var pair = element['poi']['name'] + "^" + result['data'][0]['thumbnail'];
                 imagesArray.push(pair)
                 console.log(imagesArray);
-                if(imagesArray.length == selectedCountry.pois.length){
+                 if(imagesArray.length == selectedCountry.pois.length){
                     console.log(imagesArray);
                     localStorage.setItem("images", imagesArray.toString());    
-                }
+                } */
                 
                 
                 
@@ -542,7 +543,7 @@ imagesArray = [];
         }
         
     });
-
+/*
 }); */
  
             
