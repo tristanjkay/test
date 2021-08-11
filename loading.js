@@ -516,6 +516,7 @@ imagesArray = [];
             place: "text",
         },
         success: function(result) {
+            console.log(result);
     ajaxCount++;
     ajaxSuccess++
     $('#intProgress').text((ajaxSuccess/62)*100);
@@ -524,7 +525,7 @@ imagesArray = [];
 
     
             if (result.status.name == "ok") {
-                console.log("The data is" + result);
+                //console.log("The data is" + result[data]);
                 /*var pair = element['poi']['name'] + "^" + result['data'][0]['thumbnail'];
                 imagesArray.push(pair)
                 console.log(imagesArray);
