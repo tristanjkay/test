@@ -503,9 +503,9 @@ percentLoaded = (ajaxSuccess/62)*100;
 imagesArray = [];
 
 //Images
-//https://serpapi.com/
+//http://api.scraperapi.com?
 /* selectedCountry.pois.forEach(element => {
-    console.log("The name is" + encodeURI(element['poi']['name']));
+    //console.log("The name is" + encodeURI(element['poi']['name']));
     $.ajax({
         url: "php/general/photos.php",
         type: 'GET',
@@ -543,8 +543,8 @@ imagesArray = [];
         
     });
 
-});
- */
+}); */
+ 
             
     }
 },
