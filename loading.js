@@ -512,7 +512,8 @@ imagesArray = [];
         type: 'GET',
         dataType: 'json',
         data: {
-            place: encodeURI(element['poi']['name']),
+            //place: encodeURI(element['poi']['name']),
+            place: "text",
         },
         success: function(result) {
     ajaxCount++;
