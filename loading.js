@@ -525,7 +525,9 @@ imagesArray = [];
 
     
             if (result) {
-                    console.log(imagesArray);
+                    result.value.forEach(element => {
+                      console.log(element);  
+                    });
                     localStorage.setItem("images", result['value'].toString());    
                 
                 
