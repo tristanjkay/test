@@ -524,7 +524,7 @@ imagesArray = [];
     
 
     
-            if (result.status.name == "ok") {
+            if (result) {
                 //console.log("The data is" + result[data]);
                 /*var pair = element['poi']['name'] + "^" + result['data'][0]['thumbnail'];
                 imagesArray.push(pair)
