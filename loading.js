@@ -503,17 +503,15 @@ percentLoaded = (ajaxSuccess/62)*100;
 imagesArray = [];
 
 //Images
-//http://api.scraperapi.com?
-/* selectedCountry.pois.forEach(element => {
-    //console.log("The name is" + encodeURI(element['poi']['name']));
-    */
+//https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=" . $_REQUEST['country'] . "&pageNumber=1&pageSize=10&autoCorrect=true
+selectedCountry.pois.forEach(element => {
+
     $.ajax({
         url: "php/general/photos.php",
         type: 'GET',
         dataType: 'json',
         data: {
-            //place: encodeURI(element['poi']['name']),
-            place: "text",
+            place: encodeURI(element['poi']['name']),
         },
         success: function(result) {
             console.log(result.value);
@@ -542,8 +540,8 @@ imagesArray = [];
         }
         
     });
-/*
-}); */
+
+}); 
  
             
     }
