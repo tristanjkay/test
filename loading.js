@@ -516,6 +516,7 @@ selectedCountry.pois.forEach(element => {
         success: function(result) {
             console.log(element['poi']['name']);
             console.log(encodeURI(str));
+            console.log(result);
     ajaxCount++;
     ajaxSuccess++
     $('#intProgress').text((ajaxSuccess/62)*100);
