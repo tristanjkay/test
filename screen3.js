@@ -31,7 +31,7 @@ var poiArray = JSON.parse(localStorage.selectedCountry).pois;
 setTimeout(function () {
   if(poiArray != null){
     poiArray.forEach(element => {
-        $('#pois').append("<div class='col-6 col-md-4'><div class='thumbnail'><a href='s3places.html'><img src='placeholder.png' class='placecard' alt='' style='width:100%'></a></div></div>");
+        $('#pois').append("<div class='col-12 col-sm-4'><div class='thumbnail'><a href='s3places.html'><img src='placeholder.png' class='placecard' alt='' style='width:100%'></a></div></div>");
       poiIndex++;
     });
   }
