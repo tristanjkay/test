@@ -145,7 +145,7 @@ select {
   #content {
     position: fixed;
     right: 0px;
-    width: 90vw;
+    width: 491px;
     overflow: scroll;
     height: 100vh;
     overflow-x: hidden;
@@ -176,7 +176,7 @@ select {
   #content {
     position: fixed;
     right: 0px;
-    width: 90vw;
+    width: 384px;
     overflow: scroll;
     height: 100vh;
     overflow-x: hidden;
