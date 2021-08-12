@@ -26,7 +26,19 @@ $('#ph_winddirection').html(JSON.parse(localStorage.selectedCountry).weather.win
 $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 
 //POIs
+var poiIndex = 0;
+var poiArray = JSON.parse(localStorage.selectedCountry).pois;
+setTimeout(function () {
+  if(poiArray != null){
+    poiArray.forEach(element => {
+      if(poiIndex <= 5){
+        $('#pois').append("<div class='col-6 col-md-4'><div class='thumbnail'><a href='s3places.html'><img src='placeholder.png' class='placecard' alt='' style='width:100%'></a></div></div>");
+      }
+      poiIndex++;
+    });
+  }
 
+}, 1000);
 
 //News
 var news = JSON.parse(localStorage.selectedCountry).news;
