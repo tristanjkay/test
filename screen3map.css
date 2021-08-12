@@ -203,7 +203,7 @@ select {
 
   .temp-text {
     font-size: 460%;
-    line-height: 0;
+    line-height: 2;
   }
 }
 
