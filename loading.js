@@ -505,17 +505,17 @@ imagesArray = [];
 //Images
 //https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=" . $_REQUEST['country'] . "&pageNumber=1&pageSize=10&autoCorrect=true
 selectedCountry.pois.forEach(element => {
-
+    const str = element['poi']['name'].normalize("NFD").replace(/\p{Diacritic}/gu, "");
     $.ajax({
         url: "php/general/photos.php",
         type: 'GET',
         dataType: 'json',
         data: {
-            place: encodeURI(element['poi']['name']),
+            place: str,
         },
         success: function(result) {
             console.log(element['poi']['name']);
-            console.log(encodeURI(element['poi']['name']));
+            console.log(str);
     ajaxCount++;
     ajaxSuccess++
     $('#intProgress').text((ajaxSuccess/62)*100);
