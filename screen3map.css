@@ -232,9 +232,7 @@ select {
   
   .bg-blue {
   }
-  .weather-icon{
-    display:none;
-  }
+
 
   .temp-text {
     font-size: 370%;
@@ -269,9 +267,7 @@ select {
   }
 
   /* Weather */
-  .weather-icon{
-    display:none;
-  }
+
   .temp-text {
     font-size: 370%;
     line-height: 0;
