@@ -31,7 +31,7 @@ var poiArray = JSON.parse(localStorage.selectedCountry).pois;
 setTimeout(function () {
   if(poiArray != null){
     poiArray.forEach(element => {
-        $('#pois').append("<a href='s3news.html' style='text-decoration: none; color: black !important;'> <div class='greyblock' style='margin-top: 1rem; padding: 0px;'> <div class='row' style='text-align: left; padding-left: 1rem; padding-top: 1rem; padding-bottom: .5rem; padding-right: 2rem;'> <div class='col-4' style='margin-top: auto; margin-bottom: auto;'> <h6 id='art2description'>Finding fangs: new film exposes illicit trade killing off Bolivia’s iconic jaguar</h6> </div> <div class='col-8' style='vertical-align: middle; margin-top: 2rem; margin-bottom: 2rem;'> <h6 id='art2date'>06/12</h6> </div> </div> </div> </a>");
+        $('#pois').append("<a href='s3news.html' style='text-decoration: none; color: black !important;'> <div class='greyblock' style='margin-top: 1rem; padding: 0px;'> <div class='row' style='text-align: left; padding-left: 1rem; padding-top: 1rem; padding-bottom: .5rem; padding-right: 2rem;'> <div class='col-4' style='margin-top: auto; margin-bottom: auto;'> <img src='placeholder.png' class='placecard' alt='' style='width:100%'> </div> <div class='col-8' style='vertical-align: middle; margin-top: 2rem; margin-bottom: 2rem;'> <h6 id='art2date'>06/12</h6> </div> </div> </div> </a>");
       poiIndex++;
     });
   }
