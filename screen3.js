@@ -31,7 +31,7 @@ var poiArray = JSON.parse(localStorage.selectedCountry).pois;
 setTimeout(function () {
   if(poiArray != null){
     poiArray.forEach(element => {
-        $('#pois').append("<div class='col-lg-12'><div class='row card card-outline-success m-x-auto m-b-2'><div class='col-md-7 text-xs-center bg-success p-y-1'><h1>Tags</h1></div></div></div>");
+        $('#pois').append("<a href='s3news.html' style='text-decoration: none; color: black !important;'> <div class='greyblock' style='margin-top: 1rem; padding: 0px;'> <div class='row' style='text-align: left; padding-left: 1rem; padding-top: 1rem; padding-bottom: .5rem; padding-right: 2rem;'> <div class='col-3' style='margin-top: auto; margin-bottom: auto;'> <h6 id='art2description'>Finding fangs: new film exposes illicit trade killing off Bolivia’s iconic jaguar</h6> </div> <div class='col-9' style='vertical-align: middle; margin-top: 2rem; margin-bottom: 2rem;'> <h6 id='art2date'>06/12</h6> </div> </div> </div> </a>");
       poiIndex++;
     });
   }
