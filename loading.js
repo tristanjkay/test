@@ -981,6 +981,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 
     if (result.status.name == "ok") {
         if(result['data'][1][0]['value'] != 'null'){
+            selectedCountry.budget = {};
             selectedCountry.budget.percent = result['data'][1][0]['value']
         }
         
