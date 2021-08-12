@@ -31,7 +31,7 @@ var poiArray = JSON.parse(localStorage.selectedCountry).pois;
 setTimeout(function () {
   if(poiArray != null){
     poiArray.forEach(element => {
-        $('#pois').append("<div class='col-lg-12 col-md-12 col-sm-4'><div class='thumbnail'><a href='s3places.html'><img src='placeholder.png' class='placecard' alt='' style='width:100%; padding-bottom:2rem;'></a></div></div>");
+        $('#pois').append("<div class='col-lg-12 col-md-12 col-sm-4'><div class='row'><div class='col-lg-6 col-md-6 col-sm-12'><div class='card'><a href='s3places.html'><img src='placeholder.png' class='placecard' alt='' style='width:100%; padding-bottom:2rem;'></a></div></div><div class='col-lg-6 col-md-6 col-sm-12'><div class='thumbnail'><a href='s3places.html'><img src='placeholder.png' class='placecard' alt='' style='width:100%; padding-bottom:2rem;'></a></div></div></div></div>");
       poiIndex++;
     });
   }
