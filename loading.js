@@ -511,7 +511,7 @@ selectedCountry.pois.forEach(element => {
         type: 'GET',
         dataType: 'json',
         data: {
-            place: str,
+            place: encodeURI(str),
         },
         success: function(result) {
             console.log(element['poi']['name']);
