@@ -103,6 +103,12 @@ option {
 img {
   border-radius: 20px;
 }
+.placecard {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+}
 
 
 
