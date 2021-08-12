@@ -525,6 +525,7 @@ selectedCountry.pois.forEach(element => {
     
             if (result) {
                     result.forEach(element => {
+                        console.log(result);
                       imagesArray.push(element);  
                     });
                     localStorage.setItem("images", imagesArray.toString());    
