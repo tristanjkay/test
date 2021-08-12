@@ -134,6 +134,7 @@ select {
 }
 .temp-text {
   font-size: 460%;
+  line-height: 2;
 }
 
 
@@ -169,6 +170,7 @@ select {
   }
   .temp-text {
     font-size: 460%;
+    line-height: 2;
   }
 
 }
@@ -201,6 +203,7 @@ select {
 
   .temp-text {
     font-size: 460%;
+    line-height: 0;
   }
 }
 
@@ -235,6 +238,7 @@ select {
 
   .temp-text {
     font-size: 370%;
+    line-height: 1;
   }
 }
 
@@ -270,5 +274,6 @@ select {
   }
   .temp-text {
     font-size: 370%;
+    line-height: 0;
   }
 }
