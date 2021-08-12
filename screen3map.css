@@ -35,6 +35,11 @@ button {
 
 }
 
+.container{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .greyblock {
   padding: 1rem;
   border-radius: 20px;
