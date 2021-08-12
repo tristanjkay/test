@@ -514,7 +514,7 @@ selectedCountry.pois.forEach(element => {
             place: encodeURI(element['poi']['name']),
         },
         success: function(result) {
-            console.log(result.value);
+            console.log(element['poi']['name']);
             console.log(encodeURI(element['poi']['name']));
     ajaxCount++;
     ajaxSuccess++
