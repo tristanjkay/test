@@ -10,6 +10,7 @@ $('#ph_name').html(JSON.parse(localStorage.selectedCountry).name);
 $('#ph_capital').html(JSON.parse(localStorage.selectedCountry).capital);
 $('#ph_description').html(JSON.parse(localStorage.selectedCountry).description);
 $('#ph_descriptionfull').html(JSON.parse(localStorage.selectedCountry).descriptionfull.join('<br><br>'));
+$('#ph_flag').attr("src", JSON.parse(localStorage.selectedCountry).flag);
 
 //Economy
 $('#ph_currencyvalue').html(JSON.parse(localStorage.selectedCountry).currencycode);
