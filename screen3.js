@@ -19,6 +19,9 @@ $('#ph_flag').attr("src", JSON.parse(localStorage.selectedCountry).flag);
 //Economy
 $('#ph_currencyvalue').html(JSON.parse(localStorage.selectedCountry).currencycode);
 $('#ph_currencycode').html(JSON.parse(localStorage.selectedCountry).currencycode);
+$('#ph_gdp').html(JSON.parse(localStorage.selectedCountry).currencycode);
+$('#ph_inflationrate').html(JSON.parse(localStorage.selectedCountry).currencycode);
+$('#ph_annualbudget').html(JSON.parse(localStorage.selectedCountry).currencycode);
 
 //Weather
 $('#ph_temperature').html(JSON.parse(localStorage.selectedCountry).weather.temperature + "&deg");
