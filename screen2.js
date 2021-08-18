@@ -2,7 +2,11 @@
 //VARIABLES
 
 
+//URL Rewrite
+window.history.replaceState('','','/');
+
 //POPULATE PAGE WITH DATA
+
 
 
 //General
