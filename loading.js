@@ -3,6 +3,9 @@
     var ajaxCount = 0;
     var ajaxSuccess = 0;
 
+//URL Rewrite
+window.history.replaceState('','','/');
+
 //Update progress bar    
     $('body').on('DOMSubtreeModified', '#intProgress', function(){
         var percentLoadedPercent = (percentLoaded+10).toString() + "%";

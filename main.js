@@ -3,6 +3,9 @@
     var geojsonResult = [];
     var selectedCountry;
 
+//URL Rewrite
+window.history.replaceState('','','/');
+
 //POPULATE DROPDOWN
         $.ajax({
             url: "geojson-fileget.php",
