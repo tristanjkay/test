@@ -17,11 +17,11 @@ $('#ph_descriptionfull').html(JSON.parse(localStorage.selectedCountry).descripti
 $('#ph_flag').attr("src", JSON.parse(localStorage.selectedCountry).flag);
 
 //Economy
-$('#ph_currencyvalue').html(JSON.parse(localStorage.selectedCountry).currencycode);
+$('#ph_currencyvalue').html(JSON.parse(localStorage.selectedCountry).exchangerate);
 $('#ph_currencycode').html(JSON.parse(localStorage.selectedCountry).currencycode);
-$('#ph_gdp').html(JSON.parse(localStorage.selectedCountry).currencycode);
-$('#ph_inflationrate').html(JSON.parse(localStorage.selectedCountry).currencycode);
-$('#ph_annualbudget').html(JSON.parse(localStorage.selectedCountry).currencycode);
+$('#ph_gdp').html(JSON.parse(localStorage.selectedCountry).gdp.value);
+$('#ph_inflationrate').html(JSON.parse(localStorage.selectedCountry).inflation.value);
+$('#ph_annualbudget').html(JSON.parse(localStorage.selectedCountry).budget.total);
 
 //Weather
 $('#ph_temperature').html(JSON.parse(localStorage.selectedCountry).weather.temperature + "&deg");
