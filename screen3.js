@@ -23,7 +23,7 @@ $('#ph_gdp').html(JSON.parse(localStorage.selectedCountry).gdp.value);
 $('#ph_inflationrate').html(JSON.parse(localStorage.selectedCountry).inflation.value);
 $('#ph_annualbudget').html(JSON.parse(localStorage.selectedCountry).budget.total);
 $('#ph_low10').html(JSON.parse(localStorage.selectedCountry).worldbanklow10dist.value + "%");
-$('#ph_top10').html(JSON.parse(localStorage.selectedCountry).budget.worldbanktop10dist.value + "%");
+$('#ph_top10').html(JSON.parse(localStorage.selectedCountry).worldbanktop10dist.value + "%");
 
 //Weather
 $('#ph_temperature').html(JSON.parse(localStorage.selectedCountry).weather.temperature + "&deg");
