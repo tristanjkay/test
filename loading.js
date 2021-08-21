@@ -596,7 +596,7 @@ percentLoaded = (ajaxSuccess/62)*100;
             });
 
             //Flights
-/* $.ajax({
+$.ajax({
 url: "php/flights/flights.php",
 type: 'POST',
 dataType: 'json',
@@ -614,18 +614,9 @@ percentLoaded = (ajaxSuccess/62)*100;
 
     if (result.status.name == "ok") {
 
-        if(selectedCountry.airports.length > 0){
-            selectedCountry.airports.forEach(element => {
-                selectedCountry.flights.push(element);
-
-
-                if(element.city == selectedCountry.name){
-                    selectedCountry.airport = element.name;
-                }	
-            });
-        }
+        selectedCountry.flights = result;
         
-        //console.log(result['data']);
+        console.log(result);
 }
 },
 error: function(jqXHR, textStatus, errorThrown) {
@@ -633,7 +624,7 @@ ajaxCount++;
     //console.log("Dictionary Fail")
 }
 
-}); */
+});
             
             
     }

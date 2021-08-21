@@ -1,27 +1,29 @@
 <?php
-	$epochTime = time();
-	$executionStartTime = microtime(true) / 1000;
 
-    $url='https://opensky-network.org/api/flights/departure?airport=' . $_REQUEST['country'] . '&begin=1616315812&end=1616761412'
+$curl = curl_init();
 
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($ch, CURLOPT_URL,$url);
+curl_setopt_array($curl, [
+	CURLOPT_URL => "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/US/GBP/en-US/LOND-sky/BSB-sky/anytime?inboundpartialdate=anytime",
+	CURLOPT_RETURNTRANSFER => true,
+	CURLOPT_FOLLOWLOCATION => true,
+	CURLOPT_ENCODING => "",
+	CURLOPT_MAXREDIRS => 10,
+	CURLOPT_TIMEOUT => 30,
+	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+	CURLOPT_CUSTOMREQUEST => "GET",
+	CURLOPT_HTTPHEADER => [
+		"x-rapidapi-host: skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+		"x-rapidapi-key: 459184f5c5mshec4ad720a01f413p1b89c7jsn7258217e5ff6"
+	],
+]);
 
-	$result=curl_exec($ch);
+$result = curl_exec($curl);
+$err = curl_error($curl);
 
-	curl_close($ch);
+curl_close($curl);
 
-	$decode = json_decode($result,true);	
-
-	$output['status']['code'] = "200";
-	$output['status']['name'] = "ok";
-	$output['status']['description'] = "success";
-	$output['status']['returnedIn'] = (microtime(true) - $executionStartTime) / 1000 . " ms";
-	$output['data'] = $decode;
-	
-	header('Content-Type: application/json; charset=UTF-8');
-	echo json_encode($output); 
-
-?>
+if ($err) {
+	echo "cURL Error #:" . $err;
+} else {
+	echo $result;
+}
