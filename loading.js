@@ -612,7 +612,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 
     //console.log("Flights Success");
 
-    if (result.status.name == "ok") {
+    if (result) {
 
         selectedCountry.flights = result;
         
