@@ -47,6 +47,9 @@ setTimeout(function () {
 
 $('#ph_tourismincome').html(JSON.parse(localStorage.selectedCountry).tourismincome.value);
 $('#ph_flights').html(JSON.parse(localStorage.selectedCountry).arrivals.value);
+$('#ph_departtime').html(JSON.parse(localStorage.selectedCountry).arrivals.value);
+$('#ph_arrivalto').html(JSON.parse(localStorage.selectedCountry).name);
+$('#ph_arrivaltime').html(JSON.parse(localStorage.selectedCountry).arrivals.value);
 
 //News
 
