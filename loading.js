@@ -616,7 +616,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 
         selectedCountry.flights = result;
         
-        console.log(result);
+        //console.log(result);
 }
 },
 error: function(jqXHR, textStatus, errorThrown) {
