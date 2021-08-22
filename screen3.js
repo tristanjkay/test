@@ -40,7 +40,7 @@ var gdpstringlength = ((JSON.parse(localStorage.selectedCountry).gdp.value).toSt
       //Trillions
       gdpvalueabbrev = gdpvalue.toString().charAt(0) + "." + gdpvalue.toString().charAt(1) + gdpvalue.toString().charAt(2) + "T";
     }
-$('#ph_gdp').html(JSON.parse(localStorage.selectedCountry).gdp.value);
+$('#ph_gdp').html(gdpvalueabbrev);
 $('#ph_inflationrate').html(Math.round((JSON.parse(localStorage.selectedCountry).inflation.value) * 100) / 100 + "%");
 $('#ph_annualbudget').html(JSON.parse(localStorage.selectedCountry).budget.total);
 $('#ph_low10').html(JSON.parse(localStorage.selectedCountry).worldbanklow10dist.value + "%");
