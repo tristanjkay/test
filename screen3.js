@@ -29,16 +29,16 @@ var gdpstringlength = ((JSON.parse(localStorage.selectedCountry).gdp.value).toSt
       gdpvalueabbrev = gdpvalue;
     } else if(gdpstringlength < 7) {
       //Thousands
-      gdpvalueabbrev = gdpvalue.charAt(0) + "." + gdpvalue.charAt(1) + gdpvalue.charAt(2) + "K";
+      gdpvalueabbrev = gdpvalue.toString().charAt(0) + "." + gdpvalue.toString().charAt(1) + gdpvalue.toString().charAt(2) + "K";
     } else if(gdpstringlength < 10) {
       //Millions
-      gdpvalueabbrev = gdpvalue.charAt(0) + "." + gdpvalue.charAt(1) + gdpvalue.charAt(2) + "M";
+      gdpvalueabbrev = gdpvalue.toString().charAt(0) + "." + gdpvalue.toString().charAt(1) + gdpvalue.toString().charAt(2) + "M";
     }  else if(gdpstringlength < 13) {
       //Billions
-      gdpvalueabbrev = gdpvalue.charAt(0) + "." + gdpvalue.charAt(1) + gdpvalue.charAt(2) + "B";
+      gdpvalueabbrev = gdpvalue.toString().charAt(0) + "." + gdpvalue.toString().charAt(1) + gdpvalue.toString().charAt(2) + "B";
     } else if(gdpstringlength < 16) {
       //Trillions
-      gdpvalueabbrev = gdpvalue.charAt(0) + "." + gdpvalue.charAt(1) + gdpvalue.charAt(2) + "T";
+      gdpvalueabbrev = gdpvalue.toString().charAt(0) + "." + gdpvalue.toString().charAt(1) + gdpvalue.toString().charAt(2) + "T";
     }
 $('#ph_gdp').html(JSON.parse(localStorage.selectedCountry).gdp.value);
 $('#ph_inflationrate').html(Math.round((JSON.parse(localStorage.selectedCountry).inflation.value) * 100) / 100 + "%");
