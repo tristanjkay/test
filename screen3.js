@@ -20,7 +20,7 @@ $('#ph_flag').attr("src", JSON.parse(localStorage.selectedCountry).flag);
 $('#ph_currencyvalue').html(JSON.parse(localStorage.selectedCountry).exchangerate);
 $('#ph_currencycode').html(JSON.parse(localStorage.selectedCountry).currencycode);
 $('#ph_gdp').html(JSON.parse(localStorage.selectedCountry).gdp.value);
-$('#ph_inflationrate').html(JSON.parse(localStorage.selectedCountry).inflation.value);
+$('#ph_inflationrate').html(Math.round((JSON.parse(localStorage.selectedCountry).inflation.value) * 100) / 100 + "%");
 $('#ph_annualbudget').html(JSON.parse(localStorage.selectedCountry).budget.total);
 $('#ph_low10').html(JSON.parse(localStorage.selectedCountry).worldbanklow10dist.value + "%");
 $('#ph_top10').html(JSON.parse(localStorage.selectedCountry).worldbanktop10dist.value + "%");
