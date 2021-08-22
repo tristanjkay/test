@@ -19,6 +19,27 @@ $('#ph_flag').attr("src", JSON.parse(localStorage.selectedCountry).flag);
 //Economy
 $('#ph_currencyvalue').html(JSON.parse(localStorage.selectedCountry).exchangerate);
 $('#ph_currencycode').html(JSON.parse(localStorage.selectedCountry).currencycode);
+
+//Calculate how much
+var gdpvalue = JSON.parse(localStorage.selectedCountry).gdp.value;
+var gdpvalueabbrev;
+var gdpstringlength = ((JSON.parse(localStorage.selectedCountry).gdp.value).split('.')[0]).length;
+    if (gdpstringlength < 4) {
+      //Less than 1000
+      gdpvalueabbrev = gdpvalue;
+    } else if(gdpstringlength < 7) {
+      //Thousands
+      gdpvalueabbrev = gdpvalue.charAt(0) + "." + gdpvalue.charAt(1) + gdpvalue.charAt(2) + "K";
+    } else if(gdpstringlength < 10) {
+      //Millions
+      gdpvalueabbrev = gdpvalue.charAt(0) + "." + gdpvalue.charAt(1) + gdpvalue.charAt(2) + "M";
+    }  else if(gdpstringlength < 13) {
+      //Billions
+      gdpvalueabbrev = gdpvalue.charAt(0) + "." + gdpvalue.charAt(1) + gdpvalue.charAt(2) + "B";
+    } else if(gdpstringlength < 16) {
+      //Trillions
+      gdpvalueabbrev = gdpvalue.charAt(0) + "." + gdpvalue.charAt(1) + gdpvalue.charAt(2) + "T";
+    }
 $('#ph_gdp').html(JSON.parse(localStorage.selectedCountry).gdp.value);
 $('#ph_inflationrate').html(Math.round((JSON.parse(localStorage.selectedCountry).inflation.value) * 100) / 100 + "%");
 $('#ph_annualbudget').html(JSON.parse(localStorage.selectedCountry).budget.total);
