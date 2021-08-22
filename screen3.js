@@ -23,7 +23,7 @@ $('#ph_currencycode').html(JSON.parse(localStorage.selectedCountry).currencycode
 //Calculate how much
 var gdpvalue = JSON.parse(localStorage.selectedCountry).gdp.value;
 var gdpvalueabbrev;
-var gdpstringlength = ((JSON.parse(localStorage.selectedCountry).gdp.value).split('.')[0]).length;
+var gdpstringlength = ((JSON.parse(localStorage.selectedCountry).gdp.value).toString().split('.')[0]).length;
     if (gdpstringlength < 4) {
       //Less than 1000
       gdpvalueabbrev = gdpvalue;
