@@ -122,7 +122,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 
         if (result.status.name == "ok") {
             
-            console.log(result['data'][0]['currencies']["'" + mycountry3 + "'"])
+            console.log(mycountry3)
 
             //Set Data to Country Object
             selectedCountry.capital = result['data'][0]['capital'][0];
