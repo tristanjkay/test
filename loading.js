@@ -566,7 +566,7 @@ ajaxCount++;
 
 
 
-//Airportss
+//Airports
 $.ajax({
     url: "php/flights/airports-fileget.php",
     type: 'POST',
@@ -1717,7 +1717,7 @@ ajaxCount++;
 }
 
 });
-$.ajax({
+/* $.ajax({
 url: "php/worldbank/worldbankunderoverweight.php",
 type: 'POST',
 dataType: 'json',
@@ -1748,7 +1748,7 @@ ajaxCount++;
 
 }
 
-});
+}); */
 $.ajax({
 url: "php/worldbank/worldbankundernourishment.php",
 type: 'POST',
