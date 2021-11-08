@@ -122,7 +122,7 @@ percentLoaded = (ajaxSuccess/62)*100;
         if (result.status.name == "ok") {
 
             //Set Data to Country Object
-            selectedCountry.capital = replaceAccents(result['data']['capital']);
+            selectedCountry.capital = replaceAccents(result['data']['capital'][0]);
             selectedCountry.region = result['data']['region'];
             selectedCountry.population = result['data']['population'];
             selectedCountry.currency = result['data']['currencies'][0]['name'];
