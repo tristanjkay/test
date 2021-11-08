@@ -596,7 +596,7 @@ percentLoaded = (ajaxSuccess/62)*100;
             });
 
             //Flights
-$.ajax({
+/* $.ajax({
 url: "php/flights/flights.php",
 type: 'POST',
 dataType: 'json',
@@ -624,7 +624,7 @@ ajaxCount++;
     //console.log("Dictionary Fail")
 }
 
-});
+}); */
             
             
     }
