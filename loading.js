@@ -121,7 +121,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 
         if (result.status.name == "ok") {
 
-            console.log(result['data'][0]['currencies'][JSON.parse(localStorage.selectedCountry).iso_a3])
+            console.log(result['data'][0]['currencies'][JSON.parse(localStorage.selectedCountry).iso_a3.toString()])
 
             //Set Data to Country Object
             selectedCountry.capital = result['data'][0]['capital'][0];
