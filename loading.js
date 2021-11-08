@@ -125,16 +125,16 @@ percentLoaded = (ajaxSuccess/62)*100;
 
             //Set Data to Country Object
             selectedCountry.capital = result['data'][0]['capital'][0];
-            selectedCountry.region = result['data']['region'];
-            selectedCountry.population = result['data']['population'];
-            selectedCountry.currency = result['data']['currencies'][0]['name'];
-            selectedCountry.currencycode = result['data']['currencies'][0]['code'];
-            selectedCountry.currencysymbol = result['data']['currencies'][0]['symbol'];
-            selectedCountry.currencies = result['data']['currencies'];
-            selectedCountry.language = result['data']['languages'][0]['name'];
-            selectedCountry.flag = result['data']['flag'];
-            selectedCountry.timezones = result['data']['timezones'];
-            selectedCountry.location = result['data']['latlng']
+            selectedCountry.region = result['data'][0]['region'];
+            selectedCountry.population = result['data'][0]['population'];
+            selectedCountry.currency = result['data'][0]['currencies'][0]['name'];
+            selectedCountry.currencycode = result['data'][0]['currencies'][0]['code'];
+            selectedCountry.currencysymbol = result['data'][0]['currencies'][0]['symbol'];
+            selectedCountry.currencies = result['data'][0]['currencies'];
+            selectedCountry.language = result['data'][0]['languages'][0]['name'];
+            selectedCountry.flag = result['data'][0]['flag'];
+            selectedCountry.timezones = result['data'][0]['timezones'];
+            selectedCountry.location = result['data'][0]['latlng']
             
 
 
