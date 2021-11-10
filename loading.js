@@ -135,6 +135,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 
 for (const [key, value] of Object.entries(selectedCountry.currencycode)) {
     if (key == "symbol") {
+        console.log("This is the value: ", key, ": ", value)
         return [selectedCountry.currencysymbol = value, selectedCountry.currencycode = selectedCountry.currencycodemyObj.constructor.name]
     }
     return [selectedCountry.currencysymbol, selectedCountry.currencycode]
