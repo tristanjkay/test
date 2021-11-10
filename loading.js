@@ -131,7 +131,7 @@ percentLoaded = (ajaxSuccess/62)*100;
             selectedCountry.currency = result['data'][0]['currencies'];
             //selectedCountry.currency = result['data'][0]['currencies'][mycountry3]['name'];
             selectedCountry.currencycode = result['data'][0]['currencies'];
-            selectedCountry.currencycode = [selectedCountry.currencycode].flat()[0]['name'];
+            selectedCountry.currencycode = [selectedCountry.currencycode].flat()[0];
             console.log(selectedCountry.currencycode);
             //selectedCountry.currencycode = result['data'][0]['currencies'][mycountry3]['code'];
             selectedCountry.currencysymbol = result['data'][0]['currencies'];
