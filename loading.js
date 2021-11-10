@@ -122,7 +122,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 
         if (result.status.name == "ok") {
             
-            console.log(mycountry3)
+           
 
             //Set Data to Country Object
             selectedCountry.capital = result['data'][0]['capital'][0];
@@ -674,7 +674,7 @@ percentLoaded = (ajaxSuccess/62)*100;
         if (result.status.name == "ok") {
             //console.log(selectedCountry.currencycode);
             if(typeof selectedCountry.currencycode != 'undefined'){
-                selectedCountry.exchangerate = result['data']['rates'][selectedCountry.currencycode].toFixed(2);
+                selectedCountry.exchangerate = result['data']['rates'][selectedCountry.currencycode[['BRL']['symbol']]].toFixed(2);
             }
             
             //console.log(selectedCountry.exchangerate);
