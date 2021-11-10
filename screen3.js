@@ -17,7 +17,7 @@ $('#ph_descriptionfull').html(JSON.parse(localStorage.selectedCountry).descripti
 $('#ph_flag').attr("src", JSON.parse(localStorage.selectedCountry).flag);
 
 //Economy
-$('#ph_currencyvalue').html(Number.parseFloat(JSON.parse(localStorage.selectedCountry).exchangerate)).toFixed(2);
+$('#ph_currencyvalue').html(Number.parseInt(JSON.parse(localStorage.selectedCountry).exchangerate)).toFixed(2);
 $('#ph_currencycode').html(JSON.parse(localStorage.selectedCountry).currencyabbrev);
 $('#ph_currencyvalue_gbp').html(JSON.parse(localStorage.selectedCountry).othercurrencies['GBP']);
 $('#ph_currencyvalue_usd').html(JSON.parse(localStorage.selectedCountry).othercurrencies['USD']);
