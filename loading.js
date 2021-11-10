@@ -132,7 +132,7 @@ percentLoaded = (ajaxSuccess/62)*100;
             //selectedCountry.currency = result['data'][0]['currencies'][mycountry3]['name'];
             selectedCountry.currencycode = result['data'][0]['currencies'];
             selectedCountry.currencycode = [[selectedCountry.currencycode].flat()][0][0];
-            selectedCountry.currencycode = [selectedCountry.currencycode].flat();
+            selectedCountry.currencycode = [[selectedCountry.currencycode].flat()]['name'];
 
 for (const [key, value] of Object.entries(selectedCountry.currencycode)) {
     console.log
