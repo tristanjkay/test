@@ -134,6 +134,7 @@ percentLoaded = (ajaxSuccess/62)*100;
             selectedCountry.currencycode = [[selectedCountry.currencycode].flat()][0][0];
 
 for (const [key, value] of Object.entries(selectedCountry.currencycode)) {
+    console.log
     if (key == "symbol") {
         console.log("This is the value: ", key, ": ", value);
         return [selectedCountry.currencysymbol = value, selectedCountry.currencycode = selectedCountry.currencycodemyObj.constructor.name]
@@ -996,7 +997,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 
     if (result.status.name == "ok") {
         if(result['data'][1][0]['value'] != 'null'){
-            selectedCountry.budget = {};
+            //selectedCountry.budget = {};
             selectedCountry.budget.percent = result['data'][1][0]['value']
         }
         

@@ -55,7 +55,6 @@ $('#ph_arrivaltime').html(JSON.parse(localStorage.selectedCountry).flights.Place
 
 var news = JSON.parse(localStorage.selectedCountry).news;
 var sortedNews = JSON.parse(localStorage.sortedNews);
-console.log("sortedNews: ", sortedNews);
 var top3newsitems = [];
 
 //Date folder
