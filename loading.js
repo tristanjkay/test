@@ -137,7 +137,7 @@ for (const [key, value] of Object.entries(selectedCountry.currencycode)) {
     console.log("This is the value: ",value);
 
   }
-            console.log(selectedCountry.currencycode, ": ", selectedCountry.currencysymbol);
+    
             //selectedCountry.currencycode = result['data'][0]['currencies'][mycountry3]['code'];
             //selectedCountry.currencysymbol = result['data'][0]['currencies'];
             //selectedCountry.currencysymbol = result['data'][0]['currencies'][mycountry3]['symbol'];
