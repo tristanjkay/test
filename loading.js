@@ -130,8 +130,8 @@ percentLoaded = (ajaxSuccess/62)*100;
             selectedCountry.population = result['data'][0]['population'];
             selectedCountry.currency = result['data'][0]['currencies'];
             //selectedCountry.currency = result['data'][0]['currencies'][mycountry3]['name'];
-            selectedCountry.currencycode = result['data'][0]['currencies'][0];
-            selectedCountry.currencyabbrev = [[selectedCountry.currencycode].flat()].constructor.name
+            selectedCountry.currencycode = result['data'][0]['currencies'];
+            selectedCountry.currencyabbrev = [[selectedCountry.currencycode].flat()][0].constructor.name
             selectedCountry.currencycode = [[selectedCountry.currencycode].flat()][0][0];
 
 for (const [key, value] of Object.entries(selectedCountry.currency)) {
