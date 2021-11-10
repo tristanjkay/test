@@ -674,7 +674,7 @@ percentLoaded = (ajaxSuccess/62)*100;
         if (result.status.name == "ok") {
             //console.log(selectedCountry.currencycode);
             if(typeof selectedCountry.currencycode != 'undefined'){
-                selectedCountry.exchangerate = result['data']['rates'][selectedCountry.currencycode[['BRL']['symbol']]].toFixed(2);
+                selectedCountry.exchangerate = result['data']['rates'][selectedCountry.currencycode[['BRL']['symbol']]];
             }
             
             //console.log(selectedCountry.exchangerate);
