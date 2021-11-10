@@ -673,7 +673,7 @@ percentLoaded = (ajaxSuccess/62)*100;
         if (result.status.name == "ok") {
             //console.log(selectedCountry.currencycode);
             if(typeof selectedCountry.currencycode != 'undefined'){
-                selectedCountry.exchangerate = result['data']['rates'][selectedCountry.currencycode[['BRL']['symbol']]];
+                selectedCountry.exchangerate = result['data']['rates'][selectedCountry.currencyabbrev];
             }
             
             //console.log(selectedCountry.exchangerate);
