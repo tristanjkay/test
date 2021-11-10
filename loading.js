@@ -137,6 +137,7 @@ for (const [key, value] of Object.entries(selectedCountry.currencycode)) {
     if (key == "symbol") {
         return [selectedCountry.currencysymbol = value, selectedCountry.currencycode = selectedCountry.currencycodemyObj.constructor.name]
     }
+    return [selectedCountry.currencysymbol, selectedCountry.currencycode]
     
     //console.log(`${key}: ${value}`);
   }
