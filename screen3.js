@@ -18,7 +18,7 @@ $('#ph_flag').attr("src", JSON.parse(localStorage.selectedCountry).flag);
 
 //Economy
 $('#ph_currencyvalue').html(JSON.parse(localStorage.selectedCountry).exchangerate);
-$('#ph_currencycode').html(JSON.parse(localStorage.selectedCountry).currencycode);
+$('#ph_currencycode').html(JSON.parse(localStorage.selectedCountry).currencyabbrev);
 
 //Calculate how much
 var gdpvalue = JSON.parse(localStorage.selectedCountry).gdp.value;
