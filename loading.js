@@ -131,10 +131,11 @@ percentLoaded = (ajaxSuccess/62)*100;
             selectedCountry.currency = result['data'][0]['currencies'];
             //selectedCountry.currency = result['data'][0]['currencies'][mycountry3]['name'];
             selectedCountry.currencycode = result['data'][0]['currencies'];
+            selectedCountry.currencyabbrev = [[selectedCountry.currencycode].flat()][0][0].constructor.name
             selectedCountry.currencycode = [[selectedCountry.currencycode].flat()][0][0];
 
 for (const [key, value] of Object.entries(selectedCountry.currency)) {
-    return [selectedCountry.currencycode = (value['name'] + " (" + value['symbol'] + ")") , selectedCountry.currencyname = value['name']]
+    return [selectedCountry.currencycode = (selectedCountry.currencyabbrev + " (" + value['symbol'] + ")") , selectedCountry.currencyname = value['name']]
     //console.log("This is the value: ",value['name']);
 
   }
