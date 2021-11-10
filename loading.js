@@ -139,7 +139,7 @@ for (const [key, value] of Object.entries(selectedCountry.currency)) {
     return [selectedCountry.currencyabbrev = Object.getOwnPropertyNames(result['data'][0]['currencies'])[0], selectedCountry.currencycode = value['symbol'] , selectedCountry.currencyname = value['name']]
     //console.log("This is the value: ",value['name']);
 
-  }
+  };
     
             //selectedCountry.currencycode = result['data'][0]['currencies'][mycountry3]['code'];
             //selectedCountry.currencysymbol = result['data'][0]['currencies'];
@@ -674,6 +674,7 @@ percentLoaded = (ajaxSuccess/62)*100;
             //console.log(selectedCountry.currencycode);
             if(typeof selectedCountry.currencycode != 'undefined'){
                 selectedCountry.exchangerate = result['data']['rates'][selectedCountry.currencyabbrev];
+                
             }
             
             //console.log(selectedCountry.exchangerate);

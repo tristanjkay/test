@@ -19,6 +19,10 @@ $('#ph_flag').attr("src", JSON.parse(localStorage.selectedCountry).flag);
 //Economy
 $('#ph_currencyvalue').html(JSON.parse(localStorage.selectedCountry).exchangerate);
 $('#ph_currencycode').html(JSON.parse(localStorage.selectedCountry).currencyabbrev);
+$('#ph_currencyvalue_gbp').html(JSON.parse(localStorage.selectedCountry).othercurrencies['GBP']);
+$('#ph_currencyvalue_usd').html(JSON.parse(localStorage.selectedCountry).othercurrencies['USD']);
+$('#ph_currencyvalue_jpy').html(JSON.parse(localStorage.selectedCountry).othercurrencies['JPY']);
+$('#ph_currencyvalue_cny').html(JSON.parse(localStorage.selectedCountry).othercurrencies['CNY']);
 
 //Calculate how much
 var gdpvalue = JSON.parse(localStorage.selectedCountry).gdp.value;
