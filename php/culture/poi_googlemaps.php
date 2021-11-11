@@ -2,7 +2,7 @@
 
 	$executionStartTime = microtime(true) / 1000;
 
-	$url ='https://discover.search.hereapi.com/v1/discover?at=' . $_REQUEST['lat'] . ',' . $_REQUEST['long'] . '&q=sight&apiKey=oIGAfvp5boWBRjRXCf4qu3fWYr_2tHmgej12Rg6hQOU';
+	$url ='https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBueIu23lPtas0qJpu5hjdpe4nkYE_nnoo&location=' . $_REQUEST['lat'] . ',' . $_REQUEST['long'] . '&radius=5000&type=tourist_attraction';
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);

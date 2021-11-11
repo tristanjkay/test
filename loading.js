@@ -500,7 +500,7 @@ ajaxCount++;
 //https://api.opentripmap.com/
 //API Expires
 $.ajax({
-    url: "php/culture/pointsofinterest.php",
+    url: "php/culture/poi_googlemaps.php",
     type: 'GET',
     dataType: 'json',
     data: {
