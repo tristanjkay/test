@@ -549,6 +549,7 @@ selectedCountry.pois.forEach(element => {
 
     
             if (result != null) {
+                //FIX
                     result.forEach(element => {
                         console.log(element);
                       //imagesArray.push(element);  
