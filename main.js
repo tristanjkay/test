@@ -85,10 +85,9 @@ $.ajax({
         country: selectedCountry.iso_a2,
     },
     success: function(result) {
-ajaxCount++;
-ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
-percentLoaded = (ajaxSuccess/62)*100;
+
+
+
 
         //console.log("RESTCountries Success");
 
