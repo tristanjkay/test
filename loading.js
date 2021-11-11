@@ -169,88 +169,7 @@ ajaxCount++;
 
     }
     
-}).done(//POI
-    //https://api.opentripmap.com/
-    //API Expires
-    $.ajax({
-        url: "php/culture/poi_googlemaps.php",
-        type: 'GET',
-        dataType: 'json',
-        data: {
-            lat: localStorage.getItem("capitalLocationLat"),
-            long: localStorage.getItem("capitalLocationLong"),
-        },
-        success: function(result) {
-    ajaxCount++;
-    ajaxSuccess++
-    $('#intProgress').text((ajaxSuccess/62)*100);
-    percentLoaded = (ajaxSuccess/62)*100;
-    
-            console.log("Maps POI Returned")
-    
-            if (result.status.name == "ok") {
-                console.log(result['data']);
-                selectedCountry.pois = result['data'];
-    
-    
-    
-    //Images
-    //https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=" . $_REQUEST['country'] . "&pageNumber=1&pageSize=10&autoCorrect=true
-    /* 
-    //Images Array
-    imagesArray = [];
-    selectedCountry.pois.forEach(element => {
-        const str = element['poi']['name'].normalize("NFD").replace(/\p{Diacritic}/gu, "");
-        $.ajax({
-            url: "php/general/photos.php",
-            type: 'GET',
-            dataType: 'json',
-            data: {
-                place: encodeURI(str),
-            },
-            success: function(result) {
-                console.log(element['poi']['name']);
-                console.log(encodeURI(str));
-                console.log(result);
-        ajaxCount++;
-        ajaxSuccess++
-        $('#intProgress').text((ajaxSuccess/62)*100);
-        percentLoaded = (ajaxSuccess/62)*100;
-        
-    
-        
-                if (result != null) {
-                        result.value.forEach(element => {
-                            console.log(result.value);
-                          imagesArray.push(element);  
-                        });
-                        localStorage.setItem("images", imagesArray.toString());    
-                    
-                    
-                    
-                    
-            }
-        },
-            error: function(jqXHR, textStatus, errorThrown) {
-        ajaxCount++;
-                console.log("Dictionary Fail")
-        
-            }
-            
-        });
-    
-    });  */
-     
-                
-        }
-    },
-        error: function(jqXHR, textStatus, errorThrown) {
-    ajaxCount++;
-            console.log("Dictionary Fail")
-    
-        }
-        
-    }));
+});
 
 
 
@@ -582,7 +501,88 @@ ajaxCount++;
     
 });
 
+//POI
+//https://api.opentripmap.com/
+//API Expires
+$.ajax({
+    url: "php/culture/poi_googlemaps.php",
+    type: 'GET',
+    dataType: 'json',
+    data: {
+        lat: localStorage.getItem("capitalLocationLat"),
+        long: localStorage.getItem("capitalLocationLong"),
+    },
+    success: function(result) {
+ajaxCount++;
+ajaxSuccess++
+$('#intProgress').text((ajaxSuccess/62)*100);
+percentLoaded = (ajaxSuccess/62)*100;
 
+        console.log("Maps POI Returned")
+
+        if (result.status.name == "ok") {
+            console.log(result['data']);
+            selectedCountry.pois = result['data'];
+
+
+
+//Images
+//https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=" . $_REQUEST['country'] . "&pageNumber=1&pageSize=10&autoCorrect=true
+/* 
+//Images Array
+imagesArray = [];
+selectedCountry.pois.forEach(element => {
+    const str = element['poi']['name'].normalize("NFD").replace(/\p{Diacritic}/gu, "");
+    $.ajax({
+        url: "php/general/photos.php",
+        type: 'GET',
+        dataType: 'json',
+        data: {
+            place: encodeURI(str),
+        },
+        success: function(result) {
+            console.log(element['poi']['name']);
+            console.log(encodeURI(str));
+            console.log(result);
+    ajaxCount++;
+    ajaxSuccess++
+    $('#intProgress').text((ajaxSuccess/62)*100);
+    percentLoaded = (ajaxSuccess/62)*100;
+    
+
+    
+            if (result != null) {
+                    result.value.forEach(element => {
+                        console.log(result.value);
+                      imagesArray.push(element);  
+                    });
+                    localStorage.setItem("images", imagesArray.toString());    
+                
+                
+                
+                
+        }
+    },
+        error: function(jqXHR, textStatus, errorThrown) {
+    ajaxCount++;
+            console.log("Dictionary Fail")
+    
+        }
+        
+    });
+
+});  */
+ 
+            
+    }
+},
+    error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
+        console.log("Dictionary Fail")
+
+    }
+    
+}); 
 
 
 
