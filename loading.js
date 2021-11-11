@@ -506,7 +506,7 @@ $.ajax({
     dataType: 'json',
     data: {
         lat: localStorage.getItem("selectedCountry")["capitallocation"][0],
-        long: localStorage.getItem("selectedCountry")["capitallocation"][1],
+        long: localStorage.getItem("capitalLong"),
     },
     success: function(result) {
 ajaxCount++;
