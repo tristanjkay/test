@@ -32,7 +32,7 @@ setTimeout(function () {
   if(poiArray != null){
     poiArray.forEach(element => {
       if(poiIndex <= 5){
-        $('#pois').append("<div class='col-6 col-md-4'><div class='thumbnail'><a href='s3places.html'><img src='https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photo_reference=Aap_uEA7vb0DDYVJWEaX3O-AtYp77AaswQKSGtDaimt3gt7QCNpdjp1BkdM6acJ96xTec3tsV_ZJNL_JP-lqsVxydG3nh739RE_hepOOL05tfJh2_ranjMadb3VoBYFvF0ma6S24qZ6QJUuV6sSRrhCskSBP5C1myCzsebztMfGvm7ij3gZT&key=AIzaSyBueIu23lPtas0qJpu5hjdpe4nkYE_nnoo' class='placecard' alt='' style='width:100%'></a></div></div>");
+        $('#pois').append("<div class='col-6 col-md-4'><div class='thumbnail'><a href='s3places.html'><img src='https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photo_reference=" + element['photos'][0]["photo_reference"] +"&key=AIzaSyBueIu23lPtas0qJpu5hjdpe4nkYE_nnoo' class='placecard' alt='' style='width:100%'></a></div></div>");
       }
       poiIndex++;
     });
