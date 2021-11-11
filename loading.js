@@ -126,7 +126,6 @@ percentLoaded = (ajaxSuccess/62)*100;
 
             //Set Data to Country Object
             selectedCountry.capital = result['data'][0]['capital'][0];
-            selectedCountry.capitallocation = [result['data'][0]['capitalInfo']['latlng'][0], result['data'][0]['capitalInfo']['latlng'][1]] 
             selectedCountry.region = result['data'][0]['region'];
             selectedCountry.population = result['data'][0]['population'];
             selectedCountry.currency = result['data'][0]['currencies'];
@@ -149,7 +148,8 @@ for (const [key, value] of Object.entries(selectedCountry.currency)) {
             selectedCountry.language = result['data'][0]['languages'];
             selectedCountry.flag = result['data'][0]['flags']['png'];
             selectedCountry.timezones = result['data'][0]['timezones'];
-            selectedCountry.location = result['data'][0]['latlng']
+            selectedCountry.location = result['data'][0]['latlng'];
+            selectedCountry.capitallocation = [result['data'][0]['capitalInfo']['latlng'][0], result['data'][0]['capitalInfo']['latlng'][1]]
             
 
 
