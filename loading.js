@@ -549,8 +549,8 @@ selectedCountry.pois.forEach(element => {
 
     
             if (result != null) {
-                    result.value.forEach(element => {
-                        console.log(result.value);
+                    result.forEach(element => {
+                        console.log(element);
                       //imagesArray.push(element);  
                     });
                     //localStorage.setItem("images", imagesArray.toString());    
