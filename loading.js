@@ -513,7 +513,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-        
+        console.log("Maps POI Returned")
 
         if (result.status.name == "ok") {
             console.log(result['data']);
