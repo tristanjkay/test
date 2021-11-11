@@ -504,7 +504,6 @@ ajaxCount++;
 //POI
 //https://api.opentripmap.com/
 //API Expires
-localStorage.getItem("capitalLocationLat") !=null ?
 $.ajax({
     url: "php/culture/poi_googlemaps.php",
     type: 'GET',
@@ -583,7 +582,7 @@ ajaxCount++;
 
     }
     
-}) : console.log("Not found"); 
+}); 
 
 
 
