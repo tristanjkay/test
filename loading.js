@@ -527,21 +527,19 @@ percentLoaded = (ajaxSuccess/62)*100;
 
 //Images
 //https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=" . $_REQUEST['country'] . "&pageNumber=1&pageSize=10&autoCorrect=true
-/* 
+
 //Images Array
 imagesArray = [];
 selectedCountry.pois.forEach(element => {
-    const str = element['poi']['name'].normalize("NFD").replace(/\p{Diacritic}/gu, "");
+    
     $.ajax({
         url: "php/general/photos.php",
         type: 'GET',
         dataType: 'json',
         data: {
-            place: encodeURI(str),
+            ref: element['photos'][0]['photo_reference'],
         },
         success: function(result) {
-            console.log(element['poi']['name']);
-            console.log(encodeURI(str));
             console.log(result);
     ajaxCount++;
     ajaxSuccess++
@@ -553,9 +551,9 @@ selectedCountry.pois.forEach(element => {
             if (result != null) {
                     result.value.forEach(element => {
                         console.log(result.value);
-                      imagesArray.push(element);  
+                      //imagesArray.push(element);  
                     });
-                    localStorage.setItem("images", imagesArray.toString());    
+                    //localStorage.setItem("images", imagesArray.toString());    
                 
                 
                 
@@ -570,7 +568,7 @@ selectedCountry.pois.forEach(element => {
         
     });
 
-});  */
+});  
  
             
     }
