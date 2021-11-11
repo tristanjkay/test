@@ -149,7 +149,7 @@ for (const [key, value] of Object.entries(selectedCountry.currency)) {
             selectedCountry.flag = result['data'][0]['flags']['png'];
             selectedCountry.timezones = result['data'][0]['timezones'];
             selectedCountry.location = result['data'][0]['latlng'];
-            selectedCountry.capitallocation = [result['data'][0]['capitalInfo']['latlng'][0], result['data'][0]['capitalInfo']['latlng'][1]]
+            //selectedCountry.capitallocation = [result['data'][0]['capitalInfo']['latlng'][0], result['data'][0]['capitalInfo']['latlng'][1]]
             
 
 
