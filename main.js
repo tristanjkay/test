@@ -104,7 +104,6 @@ $.ajax({
             selectedCountry.currencycode = result['data'][0]['currencies'];
             
             selectedCountry.currencycode = [[selectedCountry.currencycode].flat()][0][0];
-            console.log("LatLong: ", result['data'][0]['capitalInfo']['latlng'][0]);
             localStorage.setItem("capitalLocationLat", result['data'][0]['capitalInfo']['latlng'][0]);
             localStorage.setItem("capitalLocationLong", result['data'][0]['capitalInfo']['latlng'][1]);
 
