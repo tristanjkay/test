@@ -134,6 +134,7 @@ percentLoaded = (ajaxSuccess/62)*100;
             
             selectedCountry.currencycode = [[selectedCountry.currencycode].flat()][0][0];
             console.log("LatLong: ", result['data'][0]['capitalInfo']['latlng'][0]);
+            localStorage.setItem("capitalLocation2", [result['data'][0]['capitalInfo']['latlng'][0], result['data'][0]['capitalInfo']['latlng'][1]]);
 
 for (const [key, value] of Object.entries(selectedCountry.currency)) {
     
@@ -150,7 +151,7 @@ for (const [key, value] of Object.entries(selectedCountry.currency)) {
             selectedCountry.flag = result['data'][0]['flags']['png'];
             selectedCountry.timezones = result['data'][0]['timezones'];
             selectedCountry.location = result['data'][0]['latlng'];
-            localStorage.setItem("capitalLocation2", [result['data'][0]['capitalInfo']['latlng'][0], result['data'][0]['capitalInfo']['latlng'][1]]);
+            
            
             
 
