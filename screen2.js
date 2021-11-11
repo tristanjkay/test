@@ -32,7 +32,7 @@ setTimeout(function () {
   if(poiArray != null){
     poiArray.forEach(element => {
       if(poiIndex <= 5){
-        $('#pois').append("<div class='col-6 col-md-4'><div class='thumbnail'><a href='s3places.html'><img src='https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photo_reference=" + element['photos'][0]["photo_reference"] +"&key=AIzaSyBueIu23lPtas0qJpu5hjdpe4nkYE_nnoo' class='placecard' alt='' style='width:120rem'></a></div></div>");
+        $('#pois').append("<div class='col-6 col-md-4'><div class='thumbnail'><a href='s3places.html'><img src='https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photo_reference=" + element['photos'][0]["photo_reference"] +"&key=AIzaSyBueIu23lPtas0qJpu5hjdpe4nkYE_nnoo' class='placecard' alt='' style='width:10rem'></a></div></div>");
       }
       poiIndex++;
     });
