@@ -73,8 +73,75 @@ window.history.replaceState('','','/');
                 
             }
         });
+        
     
         selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry};
+        //RESTCountries
+$.ajax({
+    url: "php/general/restcountries.php",
+    type: 'POST',
+    dataType: 'json',
+    data: {
+        country: selectedCountry.iso_a2,
+    },
+    success: function(result) {
+ajaxCount++;
+ajaxSuccess++
+$('#intProgress').text((ajaxSuccess/62)*100);
+percentLoaded = (ajaxSuccess/62)*100;
+
+        //console.log("RESTCountries Success");
+
+        if (result.status.name == "ok") {
+            
+           
+
+            //Set Data to Country Object
+            selectedCountry.capital = result['data'][0]['capital'][0];
+            selectedCountry.region = result['data'][0]['region'];
+            selectedCountry.population = result['data'][0]['population'];
+            selectedCountry.currency = result['data'][0]['currencies'];
+            //selectedCountry.currency = result['data'][0]['currencies'][mycountry3]['name'];
+            selectedCountry.currencycode = result['data'][0]['currencies'];
+            
+            selectedCountry.currencycode = [[selectedCountry.currencycode].flat()][0][0];
+            console.log("LatLong: ", result['data'][0]['capitalInfo']['latlng'][0]);
+            localStorage.setItem("capitalLocationLat", result['data'][0]['capitalInfo']['latlng'][0]);
+            localStorage.setItem("capitalLocationLong", result['data'][0]['capitalInfo']['latlng'][1]);
+
+for (const [key, value] of Object.entries(selectedCountry.currency)) {
+    
+    return [selectedCountry.currencyabbrev = Object.getOwnPropertyNames(result['data'][0]['currencies'])[0], selectedCountry.currencycode = value['symbol'] , selectedCountry.currencyname = value['name']]
+    //console.log("This is the value: ",value['name']);
+
+  };
+    
+            //selectedCountry.currencycode = result['data'][0]['currencies'][mycountry3]['code'];
+            //selectedCountry.currencysymbol = result['data'][0]['currencies'];
+            //selectedCountry.currencysymbol = result['data'][0]['currencies'][mycountry3]['symbol'];
+            selectedCountry.currencies = result['data'][0]['currencies'];
+            selectedCountry.language = result['data'][0]['languages'];
+            selectedCountry.flag = result['data'][0]['flags']['png'];
+            selectedCountry.timezones = result['data'][0]['timezones'];
+            selectedCountry.location = result['data'][0]['latlng'];
+            
+           
+            
+
+
+            
+            
+
+        }
+    
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+ajaxCount++;
+        //console.log("RESTCountries Fail")
+
+    }
+    
+});
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         $(document).ajaxStop(function() {
         window.location.replace("loading.html");
