@@ -126,7 +126,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 
             //Set Data to Country Object
             selectedCountry.capital = result['data'][0]['capital'][0];
-            selectedCountry.capitallocation = [result['data'][0]['capitalInfo']['latlng'][0], result['data'][0]['capitalInfo']['latlng'][0]] 
+            selectedCountry.capitallocation = [result['data'][0]['capitalInfo']['latlng'][0], result['data'][0]['capitalInfo']['latlng'][1]] 
             selectedCountry.region = result['data'][0]['region'];
             selectedCountry.population = result['data'][0]['population'];
             selectedCountry.currency = result['data'][0]['currencies'];
