@@ -513,9 +513,10 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-        console.log("Dictionary Success");
+        
 
         if (result.status.name == "ok") {
+            console.log(result['data']);
             selectedCountry.pois = result['data'];
 
 
