@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, [
-	CURLOPT_URL => "https://google-flights-search.p.rapidapi.com/search?departure_airport_code=SFO&arrival_airport_code=LAX",
+	CURLOPT_URL => "http://api.travelpayouts.com/v1/prices/direct?origin=MOW&destination=LED&depart_date=2021–11&token=c45e086415e768417990780a85fa0a13",
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_FOLLOWLOCATION => true,
 	CURLOPT_ENCODING => "",
@@ -12,8 +12,7 @@ curl_setopt_array($curl, [
 	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 	CURLOPT_CUSTOMREQUEST => "GET",
 	CURLOPT_HTTPHEADER => [
-		"x-rapidapi-host: google-flights-search.p.rapidapi.com",
-		"x-rapidapi-key: 459184f5c5mshec4ad720a01f413p1b89c7jsn7258217e5ff6"
+
 	],
 ]);
 
