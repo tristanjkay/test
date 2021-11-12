@@ -53,7 +53,8 @@ $('#ph_arrivalto').html(JSON.parse(localStorage.selectedCountry).flights[0]['des
 if (JSON.parse(localStorage.selectedCountry).flights[0]['duration'] < 1440) {
   $('#ph_arrivaltime').html(JSON.parse(localStorage.selectedCountry).flights[0]['depart_date']);
 } else {
-  $('#ph_arrivaltime').html(JSON.parse(localStorage.selectedCountry).flights[0]['depart_date'].split("-")[0][1]([2]+1));
+  var splitArray= JSON.parse(localStorage.selectedCountry).flights[0]['depart_date'].split("-");
+  $('#ph_arrivaltime').html(splitArray[0] + "-" + splitArray[1] + "-" + (parseInt(splitArray[2])+1).toString());
 }
 
 //News
