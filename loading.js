@@ -518,7 +518,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-        console.log("Maps POI Returned")
+        //console.log("Maps POI Returned")
 
         if (result.status.name == "ok") {
             selectedCountry.pois = result['data'];
@@ -577,7 +577,7 @@ selectedCountry.pois.forEach(element => {
 },
     error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
-        console.log("Dictionary Fail")
+        //console.log("Dictionary Fail")
 
     }
     
