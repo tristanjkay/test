@@ -635,7 +635,8 @@ percentLoaded = (ajaxSuccess/62)*100;
 
     if (result) {
 
-        selectedCountry.flights = result;
+        var sortedResult = result.sort((a,b) => (a.depart_date > b.depart_date) ? 1 : ((b.depart_date > a.depart_date) ? -1 : 0))
+        selectedCountry.flights = sortedResult;
         
         //console.log(result);
 }
