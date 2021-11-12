@@ -226,6 +226,8 @@ var flightsArray = JSON.parse(localStorage.selectedCountry).flights;
 setTimeout(function () {
   if(flightsArray != null){
     flightsArray.forEach(element => {
+      var duration = parseInt(element["duration"]) > 59 ? ((parseInt(element["duration"])/60).toFixed(2).toString().split(".")[0]) + "hr " + ((parseInt(element["duration"])/60).toFixed(2).toString().split(".")[1]) + mins : element["duration"] + " mins";
+
         $('#flights').append('<div class = "greyblock" style="margin-top: 2rem; padding: 1rem;"><div class = "row" style = "text-align: center;"><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><h4 id= "ph_departfrom">London</h4><h6 id= "ph_departtime">LHW 14:00</h6><h6 id= "ph_departtime">LHW 14:00</h6></div><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><i class="fas fa-plane" style="font-size: xxx-large; color: #E1E1E1;"></i><p>' + element["duration"] + ' min</p></div><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><h4 id= "ph_arrivalto">Brazil</h4><h6 id= "ph_arrivaltime">LHW 14:00</h6><h6 id= "ph_arrivaltime">LHW 14:00</h6></div></div></div>');
       flightsIndex++;
     });
