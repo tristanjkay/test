@@ -47,9 +47,9 @@ setTimeout(function () {
 
 $('#ph_tourismincome').html(JSON.parse(localStorage.selectedCountry).tourismincome.value);
 $('#ph_flights').html(JSON.parse(localStorage.selectedCountry).arrivals.value);
-/*$('#ph_departtime').html(JSON.parse(localStorage.selectedCountry).flights.Places[1].IataCode + " " +  JSON.parse(localStorage.selectedCountry).flights.Dates.OutboundDates[0].QuoteDateTime.split('T')[1]);
-$('#ph_arrivalto').html(JSON.parse(localStorage.selectedCountry).name);
-$('#ph_arrivaltime').html(JSON.parse(localStorage.selectedCountry).flights.Places[0].IataCode); */
+$('#ph_departtime').html(JSON.parse(localStorage.selectedCountry).flights[0]['depart_date']);
+$('#ph_arrivalto').html(JSON.parse(localStorage.selectedCountry).flights[0]['destination']);
+//$('#ph_arrivaltime').html(JSON.parse(localStorage.selectedCountry).flights[0]['depart_date']);
 
 //News
 
