@@ -582,7 +582,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
         selectedCountry.airports = [];
-        selectedCountry.airport = "hello!";
+        selectedCountry.airport = [];
 
         //console.log("Airports Success");
 
@@ -595,7 +595,7 @@ percentLoaded = (ajaxSuccess/62)*100;
             }
             if(element.City == selectedCountry.capital){
                 console.log("Airport found!")
-                selectedCountry.airport = "element";
+                selectedCountry.airport.push(element);
             }
             });
 
