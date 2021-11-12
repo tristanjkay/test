@@ -49,7 +49,11 @@ $('#ph_tourismincome').html(JSON.parse(localStorage.selectedCountry).tourisminco
 $('#ph_flights').html(JSON.parse(localStorage.selectedCountry).arrivals.value);
 $('#ph_departtime').html(JSON.parse(localStorage.selectedCountry).flights[0]['depart_date']);
 $('#ph_arrivalto').html(JSON.parse(localStorage.selectedCountry).flights[0]['destination']);
-//$('#ph_arrivaltime').html(JSON.parse(localStorage.selectedCountry).flights[0]['depart_date']);
+if (JSON.parse(localStorage.selectedCountry).flights[0]['duration'] < 1440) {
+  $('#ph_arrivaltime').html(JSON.parse(localStorage.selectedCountry).flights[0]['depart_date']);
+} else {
+  $('#ph_arrivaltime').html(JSON.parse(localStorage.selectedCountry).flights[0]['depart_date'].split("-")[0][1]([2]+1));
+}
 
 //News
 
