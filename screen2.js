@@ -47,6 +47,7 @@ setTimeout(function () {
 
 $('#ph_tourismincome').html(JSON.parse(localStorage.selectedCountry).tourismincome.value);
 $('#ph_flights').html(JSON.parse(localStorage.selectedCountry).arrivals.value);
+$('#ph_departfrom').html(JSON.parse(localStorage.selectedCountry).flights[0]['origin']);
 $('#ph_departtime').html(JSON.parse(localStorage.selectedCountry).flights[0]['depart_date']);
 $('#ph_arrivalto').html(JSON.parse(localStorage.selectedCountry).flights[0]['destination']);
 if (JSON.parse(localStorage.selectedCountry).flights[0]['duration'] < 1440) {
