@@ -15,6 +15,11 @@ $('#ph_capital').html(JSON.parse(localStorage.selectedCountry).capital);
 $('#ph_description').html(JSON.parse(localStorage.selectedCountry).description);
 $('#ph_descriptionfull').html(JSON.parse(localStorage.selectedCountry).descriptionfull.join('<br><br>'));
 $('#ph_flag').attr("src", JSON.parse(localStorage.selectedCountry).flag);
+$('#ph_continent').html(JSON.parse(localStorage.selectedCountry).continent);
+$('#ph_size').html(JSON.parse(localStorage.selectedCountry).area); // sq km
+$('#ph_population').html(JSON.parse(localStorage.selectedCountry).population);
+//$('#ph_region').html(JSON.parse(localStorage.selectedCountry).region);
+
 
 //Economy
 $('#ph_currencyvalue').html(parseFloat(JSON.parse(localStorage.selectedCountry).exchangerate).toFixed(2));
