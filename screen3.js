@@ -226,7 +226,12 @@ var flightsArray = JSON.parse(localStorage.selectedCountry).flights;
 setTimeout(function () {
   if(flightsArray != null){
     flightsArray.forEach(element => {
-      var duration = parseInt(element["duration"]) > 59 ? ((parseInt(element["duration"])/60).toFixed(2).toString().split(".")[0]) + "hr " + ((parseInt(element["duration"])/60).toFixed(2).toString().split(".")[1]) + " mins" : element["duration"] + " mins";
+
+      var days = parseInt(element["duration"]) > 1439 ? (parseInt(element["duration"])/1440).toFixed(0) : 0;
+      var hours = (parseInt(element["duration"]) - (days*1440)) < 1439 ? ((parseInt(element["duration"])-(days*1440))/60).toFixed(0) : 0;
+      var minutes = (parseInt(element["duration"]) - (hours*60)) < 1439 ? ((parseInt(element["duration"])-(hours*60))/60).toFixed(0) : 0;
+
+      var duration = days + " days " + hours + " hours " + minutes + " mins";
 
         $('#flights').append('<div class = "greyblock" style="margin-top: 2rem; padding: 1rem;"><div class = "row" style = "text-align: center;"><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><h4 id= "ph_departfrom">London</h4><h6 id= "ph_departtime">LHW 14:00</h6><h6 id= "ph_departtime">LHW 14:00</h6></div><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><i class="fas fa-plane" style="font-size: xxx-large; color: #E1E1E1;"></i><p>' + duration + '</p></div><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><h4 id= "ph_arrivalto">Brazil</h4><h6 id= "ph_arrivaltime">LHW 14:00</h6><h6 id= "ph_arrivaltime">LHW 14:00</h6></div></div></div>');
       flightsIndex++;
