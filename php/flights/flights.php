@@ -27,6 +27,6 @@ curl_close($curl);
 $decode = json_decode($response,true);
 $output = $decode['data'];
 
-usort($output, "cmp");
+$output = usort($output, "cmp");
 
 echo json_encode($output);
