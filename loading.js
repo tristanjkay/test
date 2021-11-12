@@ -605,7 +605,7 @@ url: "php/flights/flights.php",
 type: 'POST',
 dataType: 'json',
 data: {
-    //country: selectedCountry.airport.name,
+    country: selectedCountry.airport[0]['IATA/FAA'],
 },
 success: function(result) {
 ajaxCount++;
