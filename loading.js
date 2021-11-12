@@ -605,7 +605,11 @@ url: "php/flights/flights.php",
 type: 'POST',
 dataType: 'json',
 data: {
+    
+    //TODO: MAKE ORIGIN COUNTRY DYNAMIC
+    origin: "LON",
     destination: selectedCountry.airport[0]['IATA/FAA'],
+    
 },
 success: function(result) {
 ajaxCount++;
