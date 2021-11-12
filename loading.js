@@ -49,31 +49,12 @@ window.history.replaceState('','','/');
     });
 
 
-function replaceAccents(str){
-
-    var diacritics = [
-      {char: 'A', base: /[\300-\306]/g},
-      {char: 'a', base: /[\340-\346]/g},
-      {char: 'E', base: /[\310-\313]/g},
-      {char: 'e', base: /[\350-\353]/g},
-      {char: 'I', base: /[\314-\317]/g},
-      {char: 'i', base: /[\354-\357]/g},
-      {char: 'O', base: /[\322-\330]/g},
-      {char: 'o', base: /[\362-\370]/g},
-      {char: 'U', base: /[\331-\334]/g},
-      {char: 'u', base: /[\371-\374]/g},
-      {char: 'N', base: /[\321]/g},
-      {char: 'n', base: /[\361]/g},
-      {char: 'C', base: /[\307]/g},
-      {char: 'c', base: /[\347]/g}
-    ]
-  
-    diacritics.forEach(function(letter){
-      str = str.replace(letter.base, letter.char);
-    });
-  
-    return str;
-  };
+    const replaceAccents = (str) => {
+        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Remove accents
+            .replace(/([^\w]+|\s+)/g, '-') // Replace space and other characters by hyphen
+            .replace(/\-\-+/g, '-')	// Replaces multiple hyphens by one hyphen
+            .replace(/(^-+|-+$)/, ''); // Remove extra hyphens from beginning or end of the string
+    }
 
 //Geonames
 $.ajax({
@@ -125,7 +106,7 @@ percentLoaded = (ajaxSuccess/62)*100;
            
 
             //Set Data to Country Object
-            selectedCountry.capital = result['data'][0]['capital'][0];
+            selectedCountry.capital = replaceAccents(result['data'][0]['capital'][0]);
             selectedCountry.region = result['data'][0]['region'];
             selectedCountry.population = result['data'][0]['population'];
             selectedCountry.currency = result['data'][0]['currencies'];
