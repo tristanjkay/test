@@ -622,7 +622,7 @@ url: "php/flights/flights.php",
 type: 'POST',
 dataType: 'json',
 data: {
-    country: selectedCountry.airport.name,
+    //country: selectedCountry.airport.name,
 },
 success: function(result) {
 ajaxCount++;
