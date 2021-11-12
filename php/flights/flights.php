@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://api.travelpayouts.com/v2/prices/latest?currency=usd&page=1&limit=5&show_to_affiliates=true&destination=BSB',
+  CURLOPT_URL => 'https://api.travelpayouts.com/v2/prices/latest?currency=usd&page=1&limit=5&show_to_affiliates=true&destination=' . $_REQUEST['destination'],
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,

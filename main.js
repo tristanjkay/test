@@ -3,6 +3,9 @@
     var geojsonResult = [];
     var selectedCountry;
 
+    //ORIGIN
+    var origin = "England";
+
 //URL Rewrite
 window.history.replaceState('','','/');
 
