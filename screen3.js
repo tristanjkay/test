@@ -231,9 +231,12 @@ setTimeout(function () {
       var hours = (parseInt(element["duration"]) - (days*1440)) < 1439 ? ((parseInt(element["duration"])-(days*1440))/60).toFixed(0) : 0;
       var minutes = (parseInt(element["duration"]) - (hours*60)) < 1439 ? ((parseInt(element["duration"])-(hours*60))/60).toFixed(0) : 0;
 
+      var originDate = element['depart_date'].split("-");
+      var arrivalDate = originDate[0].toString() + originDate[1].toString() + (parseInt(originDate[2])+days).toString();
+
       var duration = (days > 0 ? (days > 1 ? days + " days " : days + " day "): "")  + (hours > 0 ? (hours > 1 ? hours + " hours " : hours + " hour "): "") + (minutes > 0 ? (minutes > 1 ? minutes + " mins " : minutes + " min "): "");
 
-        $('#flights').append('<div class = "greyblock" style="margin-top: 2rem; padding: 1rem;"><div class = "row" style = "text-align: center;"><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><h4 id= "ph_departfrom">London</h4><h6 id= "ph_departtime">LHW 14:00</h6><h6 id= "ph_departtime">LHW 14:00</h6></div><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><i class="fas fa-plane" style="font-size: xxx-large; color: #E1E1E1;"></i><p style="font-size: 14px">' + duration + '</p></div><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><h4 id= "ph_arrivalto">Brazil</h4><h6 id= "ph_arrivaltime">LHW 14:00</h6><h6 id= "ph_arrivaltime">LHW 14:00</h6></div></div></div>');
+        $('#flights').append('<div class = "greyblock" style="margin-top: 2rem; padding: 1rem;"><div class = "row" style = "text-align: center;"><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><h4 id= "ph_departfrom">' + element['origin'] + '</h4><h6 id= "ph_departtime">' + element['depart_date'] + '</h6><h6 id= "ph_departtime">LHW 14:00</h6></div><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><i class="fas fa-plane" style="font-size: xxx-large; color: #E1E1E1;"></i><p style="font-size: 14px">' + duration + '</p></div><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><h4 id= "ph_arrivalto">' + element['destination'] + '</h4><h6 id= "ph_arrivaltime">' + arrivalDate + '</h6></div></div></div>');
       flightsIndex++;
     });
   }
