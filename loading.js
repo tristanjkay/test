@@ -601,6 +601,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
         selectedCountry.airports = [];
+        selectedCountry.airport = "";
 
         //console.log("Airports Success");
 
