@@ -15,6 +15,9 @@ $('#ph_capital').html(JSON.parse(localStorage.selectedCountry).capital);
 $('#ph_description').html(JSON.parse(localStorage.selectedCountry).description);
 
 //Economy
+//TODO: MAKE ORIGIN COUNTRY DYNAMIC
+$('#ph_currencycode').html("GBP");
+$('#ph_origincurrencyvalue').html(parseFloat(JSON.parse(localStorage.selectedCountry).othercurrencies['GBP']).toFixed(2));
 $('#ph_currencyvalue').html(parseFloat(JSON.parse(localStorage.selectedCountry).exchangerate).toFixed(2));
 $('#ph_currencycode').html(JSON.parse(localStorage.selectedCountry).currencyabbrev + " (" + JSON.parse(localStorage.selectedCountry).currencycode + ")");
 
