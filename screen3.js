@@ -229,11 +229,12 @@ setTimeout(function () {
 
       var days = parseInt(element["duration"]) > 1439 ? (parseInt(element["duration"])/1440).toFixed(0) : 0;
       var daysSansZero = parseInt(days);
-      console.log(daysSansZero);
+     
       var hours = (parseInt(element["duration"]) - (days*1440)) < 1439 ? ((parseInt(element["duration"])-(days*1440))/60).toFixed(0) : 0;
       var minutes = (parseInt(element["duration"]) - (hours*60)) < 1439 ? ((parseInt(element["duration"])-(hours*60))/60).toFixed(0) : 0;
 
       var originDate = element['depart_date'].split("-");
+      console.log(parseInt(originDate[2]));
       var arrivalDate = originDate[0].toString() + "-" + originDate[1].toString()  + "-" + (eval(originDate[2] += days));
 
       var duration = (days > 0 ? (days > 1 ? days + " days " : days + " day "): "")  + (hours > 0 ? (hours > 1 ? hours + " hours " : hours + " hour "): "") + (minutes > 0 ? (minutes > 1 ? minutes + " mins " : minutes + " min "): "");
