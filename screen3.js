@@ -226,7 +226,7 @@ var flightsArray = JSON.parse(localStorage.selectedCountry).flights;
 setTimeout(function () {
   if(flightsArray != null){
     flightsArray.forEach(element => {
-        $('#flights').append('<div class="row" style="padding-top: 2rem;"><div class="col greyblock" style = "margin:1rem; margin-top:.5rem; text-align: center;"><h2>'+ flightsIndex +'</h2><h6>Placeholder Text</h6></div></div>');
+        $('#flights').append('<div class="row" style="padding-top: 2rem;"><div class="col greyblock" style = "margin:1rem; margin-top:.5rem; text-align: center;"><h2>'+ flightsIndex +'</h2></div></div>');
       flightsIndex++;
     });
   }
