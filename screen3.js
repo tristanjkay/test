@@ -232,7 +232,7 @@ setTimeout(function () {
       var minutes = (parseInt(element["duration"]) - (hours*60)) < 1439 ? ((parseInt(element["duration"])-(hours*60))/60).toFixed(0) : 0;
 
       var originDate = element['depart_date'].split("-");
-      var arrivalDate = originDate[0].toString() + "-" + originDate[1].toString()  + "-" + (parseInt(originDate[2])+days).toString();
+      var arrivalDate = originDate[0].toString() + "-" + originDate[1].toString()  + "-" + (parseInt(originDate[2])+parseInt(days)).toString();
 
       var duration = (days > 0 ? (days > 1 ? days + " days " : days + " day "): "")  + (hours > 0 ? (hours > 1 ? hours + " hours " : hours + " hour "): "") + (minutes > 0 ? (minutes > 1 ? minutes + " mins " : minutes + " min "): "");
 
