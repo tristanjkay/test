@@ -600,14 +600,13 @@ percentLoaded = (ajaxSuccess/62)*100;
             });
 
             //Flights
+            //TODO: MAKE ORIGIN COUNTRY DYNAMIC
  $.ajax({
 url: "php/flights/flights.php",
 type: 'POST',
 dataType: 'json',
 data: {
-    
-    //TODO: MAKE ORIGIN COUNTRY DYNAMIC
-    origin: "LON",
+    origin: 'LON',
     destination: selectedCountry.airport[0]['IATA/FAA'],
     
 },
