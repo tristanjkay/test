@@ -1,5 +1,9 @@
 <?php
 
+function cmp($a, $b) {
+    return strcmp($a->depart_date, $b->depart_date);
+}
+
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -22,5 +26,7 @@ $response = curl_exec($curl);
 curl_close($curl);
 $decode = json_decode($response,true);
 $output = $decode['data'];
+
+usort($output, "cmp");
 
 echo json_encode($output);
