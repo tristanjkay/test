@@ -595,7 +595,7 @@ percentLoaded = (ajaxSuccess/62)*100;
             }
             if(element.City == selectedCountry.capital){
                 console.log("Airport found!")
-                selectedCountry.airport = element;
+                selectedCountry.airport = "element";
             }
             });
 
