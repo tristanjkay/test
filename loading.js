@@ -1949,6 +1949,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Renewables Output) Request Failed")
 
 }
 
@@ -1981,6 +1982,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Electric Coal Gas) Request Failed")
 
 }
 
@@ -2013,6 +2015,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Deaths by Pollution) Request Failed")
 
 }
 
@@ -2045,6 +2048,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Endangered Birds) Request Failed")
 
 }
 
@@ -2077,6 +2081,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Endangered Fish) Request Failed")
 
 }
 
@@ -2109,6 +2114,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Endangered Mammal) Request Failed")
 
 }
 
@@ -2141,6 +2147,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Endangered Plants) Request Failed")
 
 }
 
@@ -2177,6 +2184,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (CO2 Output) Request Failed")
 
 }
 
@@ -2211,6 +2219,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Air Pollution) Request Failed")
 
 }
 
@@ -2245,6 +2254,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Renewables Electricity) Request Failed")
 
 }
 
@@ -2277,6 +2287,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Expenses for Secondary) Request Failed")
 
 }
 
@@ -2309,6 +2320,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Expenses for Tertiary) Request Failed")
 
 }
 
@@ -2341,6 +2353,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Primary Completion) Request Failed")
 
 }
 
@@ -2373,6 +2386,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Teacher Pupil Ratio) Request Failed")
 
 }
 
@@ -2405,6 +2419,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Enrollment Preprimary) Request Failed")
 
 }
 
@@ -2438,6 +2453,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Enrollment Primary) Request Failed")
 
 }
 
@@ -2471,6 +2487,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Enrollment Secondary) Request Failed")
 
 }
 
@@ -2504,6 +2521,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Enrollment Tertiary) Request Failed")
 
 }
 
@@ -2537,6 +2555,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Trained Teachers Primary) Request Failed")
 
 }
 
@@ -2570,6 +2589,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Flight Tourist Arrivals) Request Failed")
 
 }
 
@@ -2605,6 +2625,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Flight Tourist Departures) Request Failed")
 
 }
 
@@ -2640,6 +2661,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Tourism Income) Request Failed")
 
 }
 
