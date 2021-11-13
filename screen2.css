@@ -101,6 +101,14 @@ option {
     color: black;
 }
 
+.leaflet-popup-content {
+  margin: 0px;
+  line-height: 0;
+  padding: 8px;
+  position: relative;
+  top: 10px
+}
+
 .popupCustom .leaflet-popup-close-button {
   display: none;
 }
