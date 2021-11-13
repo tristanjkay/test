@@ -933,7 +933,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
 
-    //console.log("WorldBank Fail")
+    console.log("WorldBank (Inflation) Request Failed")
 
 }
 
@@ -971,7 +971,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
 
-    //console.log("WorldBank Failed")
+    console.log("WorldBank (Gov Total Expense) Request Failed")
 
 }
 
@@ -1010,7 +1010,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
 
-    //console.log("WorldBank Fail")
+    console.log("WorldBank (Budget) Request Failed")
 
 }
 
@@ -1046,6 +1046,8 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+
+    console.log("WorldBank (Alcohol) Request Failed")
 
 }
 
@@ -1084,6 +1086,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Education) Request Failed")
 
 }
 
@@ -1116,6 +1119,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Electricity) Request Failed")
 
 }
 
@@ -1182,6 +1186,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Infant Mortality) Request Failed")
 
 }
 
@@ -1216,6 +1221,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Literacy) Request Failed")
 
 }
 
@@ -1248,6 +1254,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Low 10% Dist) Request Failed")
 
 }
 
@@ -1280,6 +1287,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Sanitation) Request Failed")
 
 }
 
@@ -1312,6 +1320,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Slums %) Request Failed")
 
 }
 
@@ -1344,6 +1353,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Top 10% Dist) Request Failed")
 
 }
 
@@ -1376,6 +1386,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Unemployment) Request Failed")
 
 }
 
@@ -1408,6 +1419,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Water) Request Failed")
 
 }
 
@@ -1440,6 +1452,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Logistics Performance Index) Request Failed")
 
 }
 
@@ -1474,6 +1487,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Life Expectancy) Request Failed")
 
 }
 
@@ -1506,6 +1520,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Hospital Beds) Request Failed")
 
 }
 
@@ -1538,6 +1553,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Surgical Procedures) Request Failed")
 
 }
 
@@ -1570,6 +1586,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Comm Deaths) Request Failed")
 
 }
 
@@ -1602,6 +1619,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Death Rate) Request Failed")
 
 }
 
@@ -1634,6 +1652,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Diabetes) Request Failed")
 
 }
 
@@ -1666,6 +1685,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Underweight) Request Failed")
 
 }
 
@@ -1698,6 +1718,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Road Deaths) Request Failed")
 
 }
 
@@ -1730,6 +1751,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (HIV) Request Failed")
 
 }
 
@@ -1762,6 +1784,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Overweight) Request Failed")
 
 }
 
@@ -1794,6 +1817,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Undernourishment) Request Failed")
 
 }
 
@@ -1826,6 +1850,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Contraception) Request Failed")
 
 }
 
@@ -1858,6 +1883,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Prenatal) Request Failed")
 
 }
 
@@ -1890,6 +1916,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
+console.log("WorldBank (Power Consumption) Request Failed")
 
 }
 
