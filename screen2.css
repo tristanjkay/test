@@ -91,6 +91,14 @@ option {
 }
 
 
+/* Map Stylying */
+.popupCustom .leaflet-popup-tip,
+.popupCustom .leaflet-popup-content-wrapper {
+    background: #e0e0e0;
+    color: #234c5e;
+}
+
+
 
 .col-6 {
   padding: .5rem;
