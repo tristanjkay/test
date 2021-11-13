@@ -773,60 +773,68 @@ percentLoaded = (ajaxSuccess/62)*100;
     
 
     if (result.status.name == "ok") {
-        //Formatting String
-    var rounded0 = result['data'][1][0]['value'].toFixed();
-    var length = rounded0.toString().length;
-    var thousands = (length/3).toFixed();
+        try {
+             //Formatting String
+            var rounded0 = result['data'][1][0]['value'].toFixed();
+            var length = rounded0.toString().length;
+            var thousands = (length/3).toFixed();
         
-        selectedCountry.gdp = {
-            "value": result['data'][1][0]['value'],
-            "description": result['data'][1][0]['indicator']['value'],
-            "string": "test"
-            
-        };
-        switch (thousands) {
-            case "0":
-                //Less than 1000
+            selectedCountry.gdp = {
+                "value": result['data'][1][0]['value'],
+                "description": result['data'][1][0]['indicator']['value'],
+                "string": "test"
                 
-                selectedCountry.gdp["string"] = result['data'][1][0]['value'];
-                break;
+            };
 
-            case "1":
-                //Thousand
-                selectedCountry.gdp["string"] = result['data'][1][0]['value'].toString().charAt(0) + "." + result['data'][1][0]['value'].toString().charAt(1) + result['data'][1][0]['value'].toString().charAt(2) + "K";
-                break;
+            switch (thousands) {
+                case "0":
+                    //Less than 1000
+                    
+                    selectedCountry.gdp["string"] = result['data'][1][0]['value'];
+                    break;
 
-            case "2":
-                //Million
-                selectedCountry.gdp["string"] = result['data'][1][0]['value'].toString().charAt(0) + "." + result['data'][1][0]['value'].toString().charAt(1) + result['data'][1][0]['value'].toString().charAt(2) + "M";
-                break;
+                case "1":
+                    //Thousand
+                    selectedCountry.gdp["string"] = result['data'][1][0]['value'].toString().charAt(0) + "." + result['data'][1][0]['value'].toString().charAt(1) + result['data'][1][0]['value'].toString().charAt(2) + "K";
+                    break;
 
-            case "3":
-                //Billion
-                selectedCountry.gdp["string"] = result['data'][1][0]['value'].toString().charAt(0) + "." + result['data'][1][0]['value'].toString().charAt(1) + result['data'][1][0]['value'].toString().charAt(2) + "B";
-                break;
-            
-            case "4":
-                //Trillion
-                selectedCountry.gdp["string"] = result['data'][1][0]['value'].toString().charAt(0) + "." + result['data'][1][0]['value'].toString().charAt(1) + result['data'][1][0]['value'].toString().charAt(2) + "T";
-                break;
+                case "2":
+                    //Million
+                    selectedCountry.gdp["string"] = result['data'][1][0]['value'].toString().charAt(0) + "." + result['data'][1][0]['value'].toString().charAt(1) + result['data'][1][0]['value'].toString().charAt(2) + "M";
+                    break;
 
-            case "5":
-                selectedCountry.gdp["string"] = "5";
-                break;
+                case "3":
+                    //Billion
+                    selectedCountry.gdp["string"] = result['data'][1][0]['value'].toString().charAt(0) + "." + result['data'][1][0]['value'].toString().charAt(1) + result['data'][1][0]['value'].toString().charAt(2) + "B";
+                    break;
+                
+                case "4":
+                    //Trillion
+                    selectedCountry.gdp["string"] = result['data'][1][0]['value'].toString().charAt(0) + "." + result['data'][1][0]['value'].toString().charAt(1) + result['data'][1][0]['value'].toString().charAt(2) + "T";
+                    break;
 
-            case "6":
-                selectedCountry.gdp["string"] = "6";
-                break;
-            
-            case "7":
-                selectedCountry.gdp["string"] = "7";
-                break;
+                case "5":
+                    selectedCountry.gdp["string"] = "5";
+                    break;
 
-            default:
-                //console.log("It didnt work");
-                break;
+                case "6":
+                    selectedCountry.gdp["string"] = "6";
+                    break;
+                
+                case "7":
+                    selectedCountry.gdp["string"] = "7";
+                    break;
+
+                default:
+                    //console.log("It didnt work");
+                    break;
+            }
+        } catch (error) {
+            console.log("WorldBank (GDP) Data was returned, but subsequent data cleaning failed")
+            console.log("RETURNED DATA: ")
+            console.log(result['data'])
         }
+       
         
         
 
@@ -837,7 +845,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
 
-    //console.log("WorldBank Fail")
+    console.log("WorldBank (GDP) Request Failed")
 
 }
 
