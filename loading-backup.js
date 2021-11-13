@@ -72,7 +72,6 @@ percentLoaded = (ajaxSuccess/62)*100;
 
         
         if (result.status.name == "ok") {
-
             selectedCountry.continent = result['data'][0]['continentName']; //NOPE
             selectedCountry.area = result['data'][0]['areaInSqKm']; //NOPE
             
@@ -103,7 +102,6 @@ percentLoaded = (ajaxSuccess/62)*100;
         //console.log("RESTCountries Success");
 
         if (result.status.name == "ok") {
-
             
            
 
@@ -176,7 +174,6 @@ percentLoaded = (ajaxSuccess/62)*100;
         
 
         if (result.status.name == "ok") {
-
             
             //Set Data to Country Object
 
@@ -445,7 +442,6 @@ percentLoaded = (ajaxSuccess/62)*100;
 
 
         if (result.status.name == "ok") {
-
             var rawWikiData = result['data'];
            /*  const rawWikiDataArray = rawWikiData.split("\n");
             var rawWikiDataIndex = 0;
@@ -506,7 +502,6 @@ percentLoaded = (ajaxSuccess/62)*100;
         //console.log("Maps POI Returned")
 
         if (result.status.name == "ok") {
-
             selectedCountry.pois = result['data'];
 
 
@@ -592,7 +587,6 @@ percentLoaded = (ajaxSuccess/62)*100;
         //console.log("Airports Success");
 
         if (result.status.name == "ok") {
-
             result['data'].forEach(element => {
             if(element.Country == selectedCountry.name){
                 selectedCountry.airports.push(element);
@@ -669,7 +663,6 @@ percentLoaded = (ajaxSuccess/62)*100;
         //console.log("Exchange Rate Success");
 
         if (result.status.name == "ok") {
-
             //console.log(selectedCountry.currencycode);
             if(typeof selectedCountry.currencycode != 'undefined'){
                 selectedCountry.exchangerate = result['data']['rates'][selectedCountry.currencyabbrev];
@@ -722,7 +715,6 @@ percentLoaded = (ajaxSuccess/62)*100;
         
 
         if (result.status.name == "ok") {
-            
             //console.log("News Success");
             var thenews = result['data']['response']['results'];
             var sortedNews = {};
@@ -742,11 +734,9 @@ percentLoaded = (ajaxSuccess/62)*100;
               );
             localStorage.setItem('sortedNews', JSON.stringify(sortedNews));
             selectedCountry.news = JSON.parse(localStorage.getItem('sortedNews'));
- 
+           
             
              }
-
-             
 },
     error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
@@ -835,13 +825,7 @@ percentLoaded = (ajaxSuccess/62)*100;
                     //console.log("It didnt work");
                     break;
             }
-       
-       
-        
-        
-
-
-    } catch (error) {
+        } catch (error) {
             console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
             console.log("\n");
             
@@ -880,7 +864,6 @@ percentLoaded = (ajaxSuccess/62)*100;
     //console.log("WorldBank INF Success")
 
     if (result.status.name == "ok") {
-try {
         //Formatting String
     var rounded0 = result['data'][1][0]['value'].toFixed();
     var length = rounded0.toString().length;
@@ -940,16 +923,6 @@ try {
         
         
 
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
-
     }
 
 },
@@ -979,7 +952,6 @@ percentLoaded = (ajaxSuccess/62)*100;
     //console.log("WorldBank BUD Success")
 
     if (result.status.name == "ok") {
-try {
         selectedCountry.budget = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
@@ -988,16 +960,6 @@ try {
         
         
         //$("#bud_value").html(selectedCountry.budget['value']);
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1028,7 +990,6 @@ percentLoaded = (ajaxSuccess/62)*100;
     //console.log("WorldBank BUD% Success")
 
     if (result.status.name == "ok") {
-try {
         if(result['data'][1][0]['value'] != 'null'){
             //selectedCountry.budget = {};
             selectedCountry.budget.percent = result['data'][1][0]['value']
@@ -1038,16 +999,6 @@ try {
 
         
         $("#bud_value").html(selectedCountry.budget['total']);
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1078,7 +1029,6 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.alcConsompution = {
             "value": result['data'][1][0]['value'],
@@ -1086,16 +1036,6 @@ try {
         };
         
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1126,7 +1066,6 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.education = {
             "value": result['data'][1][0]['value'],
@@ -1137,16 +1076,6 @@ try {
 
         
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1174,23 +1103,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.electricity = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1218,7 +1136,6 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.edExpense = {
             "value": result['data'][1][0]['value'],
@@ -1227,16 +1144,6 @@ try {
 
         $("#govedexpense_ph").html(selectedCountry.edExpense['value']);
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1263,23 +1170,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.infantMortality = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         $("#infantmortality_ph").html(selectedCountry.infantMortality['value']);
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1307,7 +1203,6 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.literacy = {
             "value": result['data'][1][0]['value'],
@@ -1316,16 +1211,6 @@ try {
 
         $("#literacy_ph").html(selectedCountry.literacy['value']);
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1353,23 +1238,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.worldbanklow10dist = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1397,23 +1271,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.sanitation = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1441,23 +1304,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.percentInSlums = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1485,23 +1337,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.worldbanktop10dist = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1529,23 +1370,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.unemployment = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1573,23 +1403,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.water = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1617,23 +1436,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.logisticsperfindex = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1661,7 +1469,6 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.lifeexpectancy = {
             "value": result['data'][1][0]['value'].toFixed(),
@@ -1670,16 +1477,6 @@ try {
 
         $("#lifeexpectancy_ph").html(selectedCountry.lifeexpectancy['value']);
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1707,23 +1504,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.hospitalbeds = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         $("#hospitalbeds_ph").html(selectedCountry.hospitalbeds['value']);
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1751,23 +1537,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.surgicalprocedures = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1795,23 +1570,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.commdeaths = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1839,23 +1603,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.deathrate = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1883,23 +1636,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.diabetes = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1927,23 +1669,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.underweight = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -1971,23 +1702,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.deathsroad = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2015,23 +1735,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.hiv = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2059,23 +1768,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.overweight = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2103,23 +1801,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.undernourishment = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2147,23 +1834,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.contraception = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2191,23 +1867,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.prenatal = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2235,23 +1900,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.totalpowerconsumption = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2279,23 +1933,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.renewableelectricoutput = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2323,23 +1966,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.oilgascoal = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2367,23 +1999,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.deathspollution = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2411,23 +2032,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.endangeredbirds = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2455,23 +2065,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.endangeredfish = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2499,23 +2098,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.endangeredmammal = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2543,23 +2131,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.endangeredplant = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2598,16 +2175,6 @@ percentLoaded = (ajaxSuccess/62)*100;
         $("#co2output_ph").html(selectedCountry.co2ouput['value']);
         
 
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
-
     }
 
 },
@@ -2634,7 +2201,6 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.airpollution = {
             "value": result['data'][1][0]['value'],
@@ -2643,16 +2209,6 @@ try {
 
         $("#airpollution_ph").html(selectedCountry.airpollution['value']);
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2680,7 +2236,6 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.electricityfromrenewables = {
             "value": result['data'][1][0]['value'],
@@ -2689,16 +2244,6 @@ try {
 
         $("#energyfromrenewables_ph").html(selectedCountry.electricityfromrenewables['value']);
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2726,23 +2271,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.govedexpensesecondary = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2770,23 +2304,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.govedexpensetertiary = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2814,23 +2337,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.primaryedcompletion = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2858,23 +2370,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.primaryteacherpupilratio = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2902,23 +2403,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.enrollmentpreprimary = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2947,23 +2437,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.enrollmentprimary = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -2992,23 +2471,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.enrollmentsecondary = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -3037,23 +2505,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.enrollmenttertiary = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -3082,23 +2539,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.trainedteachersprimary = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -3127,23 +2573,12 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.arrivals = {
             "value": result['data'][1][0]['value'],
             "description": result['data'][1][0]['indicator']['value']
         };
         $("#arrivals_ph").html(selectedCountry.arrivals['value']);
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -3172,7 +2607,6 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.departures = {
             "value": result['data'][1][0]['value'],
@@ -3181,16 +2615,6 @@ try {
 
         $("#departures_ph").html(selectedCountry.departures['value']);
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
@@ -3219,7 +2643,6 @@ percentLoaded = (ajaxSuccess/62)*100;
     ////console.log(result);
 
     if (result.status.name == "ok") {
-try {
 
         selectedCountry.tourismincome = {
             "value": result['data'][1][0]['value'],
@@ -3228,16 +2651,6 @@ try {
 
         $("#tourismincome_ph").html(selectedCountry.tourismincome['value']);
         
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
 
     }
 
