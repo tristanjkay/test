@@ -101,7 +101,7 @@ option {
     color: black;
 }
 
-.leaflet-popup-content {
+.popupCustom .leaflet-popup-content {
   margin: 0px;
   line-height: 0;
   padding: 8px;
