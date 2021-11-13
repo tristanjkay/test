@@ -162,7 +162,7 @@ var map = L.map('map').fitWorld();
       zoomOffset: -1
     }).addTo(map);
 
-    map.addLayer(L.marker([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))]).bindPopup('<p class="popup__header"> Test</p>' )).addTo(map)
+    map.addLayer(L.marker([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))]).bindPopup('<p class="popup__header"> Test</p>' ))
     
     map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
 
