@@ -161,6 +161,8 @@ var map = L.map('map').fitWorld();
       tileSize: 512,
       zoomOffset: -1
     }).addTo(map);
+
+    L.marker([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))]).addTo(map)
     
     map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
 
