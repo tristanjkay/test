@@ -162,5 +162,5 @@ var map = L.map('map').fitWorld();
     }).addTo(map);
     
     map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
-    map.setMinZoom( map.getBoundsZoom( map.options.maxBounds ) );
+    map.setMinZoom(5);
 
