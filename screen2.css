@@ -101,6 +101,10 @@ option {
     color: black;
 }
 
+.popupCustom .leaflet-popup-close-button {
+  display: none;
+}
+
 
 
 .col-6 {
