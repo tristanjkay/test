@@ -96,7 +96,7 @@ option {
   background: white;
 }
 .popupCustom .leaflet-popup-content-wrapper {
-    background: #e0e0e0;
+    background: white;
     border-radius: 100px;
     color: black;
 }
