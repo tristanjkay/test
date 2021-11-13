@@ -96,7 +96,8 @@ option {
   display: none;
 }
 .popupCustom .leaflet-popup-content-wrapper {
-    background: white;
+    background: transparent;
+    box-shadow: none;
     border-radius: 100px;
     color: black;
     position: relative;
