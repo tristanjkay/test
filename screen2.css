@@ -93,7 +93,7 @@ option {
 
 /* Map Stylying */
 .popupCustom .leaflet-popup-tip {
-  background: white;
+  display: none;
 }
 .popupCustom .leaflet-popup-content-wrapper {
     background: white;
