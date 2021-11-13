@@ -2587,7 +2587,7 @@ percentLoaded = (ajaxSuccess/62)*100;
     //BUG: NOT RETURNING AS "OK"
 
     if (result.status.co2ouput == "ok") {
-
+        try{
         //console.log("co2 worked!");
 
         selectedCountry.co2ouput = {
