@@ -830,9 +830,8 @@ percentLoaded = (ajaxSuccess/62)*100;
                     break;
             }
         } catch (error) {
-            console.log("WorldBank (GDP) Data was returned, but subsequent data cleaning failed")
-            console.log("RETURNED DATA: ")
-            console.log(result['data'])
+            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n', "RETURNED DATA: ", '\n', result['data']);
+            
         }
        
         
