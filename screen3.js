@@ -301,14 +301,19 @@ setTimeout(function () {
         var lastMarkerSelected=null;
 
         function clickPoi(id){
+          var divString = "img." + id;
           if(lastMarkerSelected != null){
             lastMarkerSelected.setIcon(placeIcon);
             //console.log(lastMarkerSelected);
+            
+            $(divString).css(filter,'grayscale(100%)');
           }
           map.setView([markers[id]['_latlng']['lat'],markers[id]['_latlng']['lng']], 16);
           //markers[id].options['icon'].options['html'] = '<p style="font-size: 60px; color: red z-index: 999"> &#9733;</p>';
           //console.log(markers[id].options['icon'].options['html']);
           markers[id].setIcon(selectedPlaceIcon);
+          $(divString).css(filter,'none');
+
           return (lastMarkerSelected = markers[id]);
         }
 
