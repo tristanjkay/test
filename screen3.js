@@ -268,12 +268,12 @@ var map = L.map('map').fitWorld();
     
     map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
 
-    var pathname = window.location.pathname;
-switch(pathname) {
-   case "/s3flights.html" :
+    var page = document.body.id;
+switch(page) {
+   case "flights" :
        console.log("flights");
        break;
-   case "/s3places.html" :
+   case "places" :
        console.log("places");
        break;
 }
