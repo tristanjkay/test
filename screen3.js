@@ -246,7 +246,9 @@ setTimeout(function () {
 
 }, 1000);
 
-var map = L.map('map').fitWorld();
+      //MAP SETUP
+
+      var map = L.map('map').fitWorld();
 
       const fontAwesomeIcon = L.divIcon({
         html: '<p style="font-size: 60px; z-index: 999"> &#9733;</p>',
@@ -268,13 +270,28 @@ var map = L.map('map').fitWorld();
     
     map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
 
+
     var page = document.body.id;
-switch(page) {
-   case "flights" :
-       console.log("flights");
-       break;
-   case "places" :
-       console.log("places");
-       break;
+
+
+    switch(page) {
+      case "flights" :
+        console.log("flights");
+        break;
+      case "places" :
+        console.log("places");
+        break;
+      case "general" :
+        console.log("general");
+        break;
+      case "economy" :
+        console.log("economy");
+        break;
+      case "weather" :
+        console.log("weather");
+        break;
+      case "news" :
+        console.log("news");
+        break;
 }
 
