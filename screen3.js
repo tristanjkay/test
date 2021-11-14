@@ -299,7 +299,7 @@ setTimeout(function () {
 
         var markers = {};
         var lastMarkerSelected=null;
-        var lastPanelSelected=null;
+        var lastPanelSelectedImg=null;
 
         function clickPoi(id){
           var imgdivString = '#' + id + 'img';
@@ -307,9 +307,9 @@ setTimeout(function () {
           if(lastMarkerSelected != null){
             lastMarkerSelected.setIcon(placeIcon);
             //console.log(lastMarkerSelected);
-            var panelDiv = "#" + lastMarkerSelected.Object.name;
+            var panelDiv = "#" + lastPanelSelected;
             console.log(panelDiv);
-            $(lastPanelSelected).css('filter','grayscale(100%)');
+            $(lastPanelSelectedImg).css('filter','grayscale(100%)');
             $(panelDiv).css('background','#F4F4F4');
           }
           map.setView([markers[id]['_latlng']['lat'],markers[id]['_latlng']['lng']], 16);
@@ -320,7 +320,7 @@ setTimeout(function () {
           var panelDiv = "#" + id;
           $(panelDiv).css('background','lightgrey');
 
-          return ([lastMarkerSelected = markers[id], lastPanelSelected = imgdivString]);
+          return ([lastMarkerSelected = markers[id], lastPanelSelectedImg = imgdivString, lastPanelSelected = id]);
         }
 
 
