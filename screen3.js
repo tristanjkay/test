@@ -270,6 +270,8 @@ setTimeout(function () {
     
     map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
 
+    /* L.marker([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))]).addTo(map).bindPopup('<p class="popup__header" style="font-size: 50px"> &#9733;</p>',{'autoClose':false, 'className' : 'popupCustom'}).openPopup(); */
+
 
     var page = document.body.id;
 
@@ -279,7 +281,7 @@ setTimeout(function () {
       case "general" :
         console.log("general");
 
-        L.marker([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))],{ icon:  fontAwesomeIcon}).addTo(map);
+        /* L.marker([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))],{ icon:  fontAwesomeIcon}).addTo(map); */
 
         break;
 
