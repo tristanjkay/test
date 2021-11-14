@@ -39,6 +39,7 @@ setTimeout(function () {
         poiArray.splice(element);
       }
     });
+    selectedCountry.pois = poiArray
 
     poiArray.forEach(element => {
       if(poiIndex <= 5){
