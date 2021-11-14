@@ -298,7 +298,7 @@ setTimeout(function () {
         function clickPoi(id){
           console.log(markers[id]);
           map.setView([markers[id]['_latlng']['lat'],markers[id]['_latlng']['lng']], 16);
-          markers[id].icon = capitalIcon;
+          markers[id]['icon']['options']['html'] = '<p style="font-size: 60px; color: red z-index: 999"> &#9733;</p>';
         }
 
 
