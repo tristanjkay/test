@@ -308,7 +308,7 @@ setTimeout(function () {
           var popupText = i;
           
            var markerLocation = new L.LatLng(lat, lon);
-           var marker = new L.Marker(markerLocation);
+           var marker = new L.Marker(markerLocation,{ icon:  fontAwesomeIcon});
            map.addLayer(marker);
        
            marker.bindPopup(popupText);
