@@ -306,7 +306,7 @@ setTimeout(function () {
 
                 var lon = element['geometry']['location']['lng'];
                 var lat = element['geometry']['location']['lat'];
-                var popupText = i;
+                var popupText = "test";
                 
                 var markerLocation = new L.LatLng(lat, lon);
                 var marker = new L.Marker(markerLocation,{ icon:  placeIcon});
