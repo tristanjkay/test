@@ -302,21 +302,25 @@ setTimeout(function () {
         var lastPanelSelected=null;
 
         function clickPoi(id){
-          var divString = '#' + id + 'img';
-          console.log(divString);
+          var imgdivString = '#' + id + 'img';
+          console.log(imgdivString);
           if(lastMarkerSelected != null){
             lastMarkerSelected.setIcon(placeIcon);
             //console.log(lastMarkerSelected);
-            
+            var panelDiv = "#" + lastMarkerSelected.Object.name;
+            console.log(panelDiv);
             $(lastPanelSelected).css('filter','grayscale(100%)');
+            $(panelDiv).css('background','#F4F4F4');
           }
           map.setView([markers[id]['_latlng']['lat'],markers[id]['_latlng']['lng']], 16);
           //markers[id].options['icon'].options['html'] = '<p style="font-size: 60px; color: red z-index: 999"> &#9733;</p>';
           //console.log(markers[id].options['icon'].options['html']);
           markers[id].setIcon(selectedPlaceIcon);
-          $(divString).css('filter','none');
+          $(imgdivString).css('filter','none');
+          var panelDiv = "#" + id;
+          $(panelDiv).css('background','lightgrey');
 
-          return ([lastMarkerSelected = markers[id], lastPanelSelected = divString]);
+          return ([lastMarkerSelected = markers[id], lastPanelSelected = imgdivString]);
         }
 
 
