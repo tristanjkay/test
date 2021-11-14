@@ -296,7 +296,7 @@ setTimeout(function () {
         var markers = {};
 
         function clickPoi(id){
-          console.log(markers[id]);
+          //console.log(markers[id]);
           map.setView([markers[id]['_latlng']['lat'],markers[id]['_latlng']['lng']], 16);
         }
 
