@@ -301,6 +301,19 @@ setTimeout(function () {
           console.log(element['geometry']['location']['lat']);
           console.log(element['geometry']['location']['lng']);
         }); 
+        for (var i=0; i<(JSON.parse(localStorage.getItem('selectedCountry'))['pois'].length); i++) {
+           
+          var lon = JSON.parse(localStorage.getItem('selectedCountry'))['pois'][i]['geometry']['location']['lng'];
+          var lat = JSON.parse(localStorage.getItem('selectedCountry'))['pois'][i]['geometry']['location']['lat'];
+          var popupText = i;
+          
+           var markerLocation = new L.LatLng(lat, lon);
+           var marker = new L.Marker(markerLocation);
+           map.addLayer(marker);
+       
+           marker.bindPopup(popupText);
+       
+       }
 
         break;
 
