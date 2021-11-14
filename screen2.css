@@ -104,7 +104,7 @@ option {
     top: 30px
 }
 
-.popupCustom .leaflet-div-icon {
+.leaflet-div-icon {
   background: transparent !important;
   border: none !important;
 }
