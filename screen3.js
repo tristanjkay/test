@@ -264,7 +264,7 @@ setTimeout(function () {
       zoomOffset: -1
     }).addTo(map);
 
-    L.marker([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))],{ icon:  fontAwesomeIcon}).addTo(map);
+    
 
     L.geoJSON().addTo(map).addData(JSON.parse(localStorage.getItem('selectedCountry'))['geometry']);
     
@@ -275,23 +275,32 @@ setTimeout(function () {
 
 
     switch(page) {
-      case "flights" :
-        console.log("flights");
-        break;
-      case "places" :
-        console.log("places");
-        break;
+      
       case "general" :
         console.log("general");
+
+        L.marker([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))],{ icon:  fontAwesomeIcon}).addTo(map);
+
         break;
+
       case "economy" :
         console.log("economy");
         break;
+
+      case "places" :
+        console.log("places");
+        break;
+
       case "weather" :
         console.log("weather");
         break;
+
       case "news" :
         console.log("news");
+        break;
+
+      case "flights" :
+        console.log("flights");
         break;
 }
 
