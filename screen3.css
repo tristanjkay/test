@@ -209,6 +209,7 @@ select {
     overflow-x: inherit;
     padding: 2rem;
     margin-bottom: 2rem;
+    z-index: 9999;
   }
 
   #map{
