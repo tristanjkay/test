@@ -243,6 +243,10 @@ setTimeout(function () {
         html: '<p style="font-size: 50px; z-index: 999; color: #235FB2"> &#8226;</p>',
       });
 
+      const selectedPlaceIcon = L.divIcon({
+        html: '<p style="font-size: 60px; color: red; z-index: 999"> &#8226;</p>',
+      });
+
       const capitalIcon = L.divIcon({
         html: '<p style="font-size: 60px; z-index: 999"> &#9733;</p>',
       });
