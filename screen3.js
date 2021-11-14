@@ -297,7 +297,7 @@ setTimeout(function () {
       case "places" :
         console.log("places");
         JSON.parse(localStorage.getItem('selectedCountry'))['pois'].forEach(element => {
-          L.marker(element['geometry']['location'],{ icon:  fontAwesomeIcon}).addTo(map);
+          L.marker([element['geometry']['location']['lat'], element['geometry']['location']['lng']],{ icon:  fontAwesomeIcon}).addTo(map);
           console.log(element['geometry']['location']);
         });
 
