@@ -104,6 +104,11 @@ option {
     top: 30px
 }
 
+.popupCustom .leaflet-div-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
 .popupCustom .leaflet-popup-content {
   margin: 0px;
   line-height: 0;
