@@ -132,6 +132,10 @@ option {
 img {
   border-radius: 20px;
 }
+
+.leaflet-tile-container img {
+  border-radius: 0px;
+}
 .placecard {
     border-top-left-radius: 20px;
     border-top-right-radius: 0px;
