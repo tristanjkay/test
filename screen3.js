@@ -302,6 +302,7 @@ setTimeout(function () {
 
         function clickPoi(id){
           var divString = '"img.' + id + '"';
+          console.log(divString);
           if(lastMarkerSelected != null){
             lastMarkerSelected.setIcon(placeIcon);
             //console.log(lastMarkerSelected);
