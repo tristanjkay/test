@@ -65,29 +65,7 @@ $('#ph_windspeed').html(JSON.parse(localStorage.selectedCountry).weather.windSpe
 $('#ph_winddirection').html(JSON.parse(localStorage.selectedCountry).weather.windDirection);
 $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 
-//POIs
-var poiIndex = 0;
-var poiArray = JSON.parse(localStorage.selectedCountry).pois;
 
-function clickPoi(id){
-  console.log(id);
-}
-
-
-setTimeout(function () {
-  
-  if(poiArray != null){
-    
-    poiArray.forEach(element => {
-
-        var id = (element['name']).toLowerCase().split("'").join("").split(" ").join("");
-        $('#pois').append("<div class='greyblock' id = '" + (element['name']).toLowerCase().split("'").join("").split(" ").join("") + "' style='margin-top: 1rem; padding: 0px;'> <div class='row' style='text-align: left; padding-left: 1rem; padding-top: 1rem; padding-bottom: .5rem; padding-right: 2rem;'> <div class='col-4 placecard' style='margin-top: auto; margin-bottom: auto;'> <img src='https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=" + element['photos'][0]["photo_reference"] +"&key=AIzaSyBueIu23lPtas0qJpu5hjdpe4nkYE_nnoo' alt='' style='min-height: 12rem;  width: 100%; max-height: 12rem; object-fit: cover; filter: grayscale(100%);'> </div> <div class='col-8' style='vertical-align: middle; margin-top: 2rem; margin-bottom: 2rem;'> <h4 id='ph_placetitle'>" + element.name + "</h4><div id='ph_placedescription' class='row' style='margin-left: 0px !important;'>" + (element["types"].filter(item => item !== "establishment").filter(item => item !== "tourist_attraction").filter(item => item !== "point_of_interest").map((i) => '<p style = "background-color: #EAEAEA; font-weight: normal; padding: 4px; padding-left: 6px; padding-right: 6px; border-radius: 10px; margin-right: 1rem; width: auto;">' + i.replaceAll('_',' ') + '</p>').join("")) +  "</div> </div> </div> </div>");
-        document.getElementById(id).addEventListener("click", ()=> {clickPoi(id)}, true);
-        poiIndex++;
-    });
-  }
-
-}, 1000);
 
 //News
 var news = JSON.parse(localStorage.selectedCountry).news;
@@ -311,11 +289,30 @@ setTimeout(function () {
 
       case "places" :
       
-         /* JSON.parse(localStorage.getItem('selectedCountry'))['pois'].forEach(element => {
-          L.marker([element['geometry']['location']['lat'], element['geometry']['location']['lng']],{ icon:  fontAwesomeIcon}).addTo(map);
-          console.log(element['geometry']['location']['lat']);
-          console.log(element['geometry']['location']['lng']);
-        });  */
+        //POIs
+        var poiIndex = 0;
+        var poiArray = JSON.parse(localStorage.selectedCountry).pois;
+
+        function clickPoi(id){
+          console.log(id);
+        }
+
+
+        setTimeout(function () {
+          
+          if(poiArray != null){
+            
+            poiArray.forEach(element => {
+
+                var id = (element['name']).toLowerCase().split("'").join("").split(" ").join("");
+                $('#pois').append("<div class='greyblock' id = '" + (element['name']).toLowerCase().split("'").join("").split(" ").join("") + "' style='margin-top: 1rem; padding: 0px;'> <div class='row' style='text-align: left; padding-left: 1rem; padding-top: 1rem; padding-bottom: .5rem; padding-right: 2rem;'> <div class='col-4 placecard' style='margin-top: auto; margin-bottom: auto;'> <img src='https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=" + element['photos'][0]["photo_reference"] +"&key=AIzaSyBueIu23lPtas0qJpu5hjdpe4nkYE_nnoo' alt='' style='min-height: 12rem;  width: 100%; max-height: 12rem; object-fit: cover; filter: grayscale(100%);'> </div> <div class='col-8' style='vertical-align: middle; margin-top: 2rem; margin-bottom: 2rem;'> <h4 id='ph_placetitle'>" + element.name + "</h4><div id='ph_placedescription' class='row' style='margin-left: 0px !important;'>" + (element["types"].filter(item => item !== "establishment").filter(item => item !== "tourist_attraction").filter(item => item !== "point_of_interest").map((i) => '<p style = "background-color: #EAEAEA; font-weight: normal; padding: 4px; padding-left: 6px; padding-right: 6px; border-radius: 10px; margin-right: 1rem; width: auto;">' + i.replaceAll('_',' ') + '</p>').join("")) +  "</div> </div> </div> </div>");
+                document.getElementById(id).addEventListener("click", ()=> {clickPoi(id)}, true);
+                poiIndex++;
+            });
+          }
+
+        }, 1000);
+
         for (var i=0; i<(JSON.parse(localStorage.getItem('selectedCountry'))['pois'].length); i++) {
            
           var lon = JSON.parse(localStorage.getItem('selectedCountry'))['pois'][i]['geometry']['location']['lng'];
