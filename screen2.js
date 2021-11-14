@@ -35,7 +35,7 @@ setTimeout(function () {
   if(poiArray != null){
 
     poiArray.forEach(element => {
-      console.log(element['photos'][0]["photo_reference"]);
+      console.log(element['photos']);
       if(poiIndex <= 5){
         try {
           
