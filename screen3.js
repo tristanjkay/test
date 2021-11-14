@@ -240,11 +240,11 @@ setTimeout(function () {
       var map = L.map('map').fitWorld();
 
       const placeIcon = L.divIcon({
-        html: '<p style="font-size: 50px; z-index: 999; color: #235FB2"> &#8226;</p>',
+        html: '<p style="font-size: 50px; z-index: 999; color: #235FB2; opacity: 0.5"> &#8226; </p>',
       });
 
       const selectedPlaceIcon = L.divIcon({
-        html: '<p style="font-size: 60px; color: red; z-index: 999"> &#8226;</p>',
+        html: '<p style="font-size: 60px; color: red; z-index: 999; opacity: 1"> &#8226;</p>',
       });
 
       const capitalIcon = L.divIcon({
@@ -303,7 +303,7 @@ setTimeout(function () {
         function clickPoi(id){
           if(lastMarkerSelected != null){
             lastMarkerSelected.setIcon(placeIcon);
-            console.log(lastMarkerSelected);
+            //console.log(lastMarkerSelected);
           }
           map.setView([markers[id]['_latlng']['lat'],markers[id]['_latlng']['lng']], 16);
           //markers[id].options['icon'].options['html'] = '<p style="font-size: 60px; color: red z-index: 999"> &#9733;</p>';
