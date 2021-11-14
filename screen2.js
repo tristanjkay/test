@@ -35,18 +35,17 @@ setTimeout(function () {
   if(poiArray != null){
 
     poiArray.forEach(element => {
-      if(element['photos'][0]["photo_reference"] == undefined){
-        poiArray.splice(element);
-      }
-    });
-    selectedCountry.pois = poiArray
-
-    poiArray.forEach(element => {
       if(poiIndex <= 5){
-        $('#pois').append("<div class='col-6 col-md-4'><div class='thumbnail'><a href='s3places.html'><img src='https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=" + element['photos'][0]["photo_reference"] +"&key=AIzaSyBueIu23lPtas0qJpu5hjdpe4nkYE_nnoo' class='placecard' alt='' style='width:100%; max-height: 10rem; min-height: 10rem; object-fit: cover;'></a></div></div>");
+        try {
+          $('#pois').append("<div class='col-6 col-md-4'><div class='thumbnail'><a href='s3places.html'><img src='https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=" + element['photos'][0]["photo_reference"] +"&key=AIzaSyBueIu23lPtas0qJpu5hjdpe4nkYE_nnoo' class='placecard' alt='' style='width:100%; max-height: 10rem; min-height: 10rem; object-fit: cover;'></a></div></div>");
+        } catch (error) {
+          poiArray.splice(element);
+        }
+        
       }
       poiIndex++;
     });
+    console.log("Leftover POIs:", poiArray);
   }
 
 }, 1000);
