@@ -35,7 +35,7 @@ setTimeout(function () {
   if(poiArray != null){
 
     poiArray.forEach(element => {
-      console.log(element['photos']);
+     
       if(poiIndex <= 5){
         try {
           
@@ -47,7 +47,7 @@ setTimeout(function () {
       }
       poiIndex++;
     });
-    console.log("Leftover POIs:", poiArray);
+
   }
 
 }, 1000);

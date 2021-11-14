@@ -599,7 +599,7 @@ percentLoaded = (ajaxSuccess/62)*100;
                 
             }
             if(element.City == selectedCountry.capital){
-                console.log("Airport found!")
+            
                 selectedCountry.airport.push(element);
             }
             });
@@ -622,7 +622,7 @@ $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
     selectedCountry.flights = [];
 
-    console.log("Flights Success");
+ 
 
     if (result) {
 
