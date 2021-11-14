@@ -244,7 +244,7 @@ setTimeout(function () {
       });
 
       const selectedPlaceIcon = L.divIcon({
-        html: '<p style="font-size: 60px; color: red; z-index: 999; opacity: 1"> &#8226;</p>',
+        html: '<p style="font-size: 60px; color: #235FB2; z-index: 999; opacity: 1"> &#8226;</p>',
       });
 
       const capitalIcon = L.divIcon({
