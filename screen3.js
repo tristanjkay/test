@@ -299,7 +299,7 @@ setTimeout(function () {
           
           map.setView([markers[id]['_latlng']['lat'],markers[id]['_latlng']['lng']], 16);
           markers[id]['icon']['options']['html'] = '<p style="font-size: 60px; color: red z-index: 999"> &#9733;</p>';
-          console.log(markers[id]['icon'].options);
+          console.log(markers[id]['icon']);
         }
 
 
