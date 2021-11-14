@@ -270,9 +270,7 @@ setTimeout(function () {
     
     map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
 
-    const fontAwesomeIcon = L.divIcon({
-      html: '<p style="font-size: 60px; z-index: 999"> &#9733;</p>',
-    });
+
   
 
     /* L.marker([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))]).addTo(map).bindPopup('<p class="popup__header" style="font-size: 50px"> &#9733;</p>',{'autoClose':false, 'className' : 'popupCustom'}).openPopup(); */
