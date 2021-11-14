@@ -296,7 +296,7 @@ setTimeout(function () {
         var markers = {};
 
         function clickPoi(id){
-          console.log(id);
+          console.log(markers[id]);
         }
 
 
