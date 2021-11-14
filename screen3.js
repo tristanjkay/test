@@ -315,7 +315,7 @@ setTimeout(function () {
                 marker.featureId = id;
                 map.addLayer(marker);
 
-                console.log(marker.featureId);
+                //console.log(marker.featureId);
             
                 marker.bindPopup(popupText);
 
