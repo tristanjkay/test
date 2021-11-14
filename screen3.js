@@ -128,7 +128,7 @@ Object.keys(news).forEach(key => {
 
 
 if(articleCount[0] == 0){
-  console.log("Today Removed");
+ 
   $('#articles_today').remove();
   $('#articles_today_title').remove();
 }
