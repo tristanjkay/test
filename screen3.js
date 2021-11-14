@@ -309,7 +309,7 @@ setTimeout(function () {
           //markers[id].options['icon'].options['html'] = '<p style="font-size: 60px; color: red z-index: 999"> &#9733;</p>';
           //console.log(markers[id].options['icon'].options['html']);
           markers[id].setIcon(selectedPlaceIcon);
-          return (lastMarkerSelected = marker[id]);
+          return (lastMarkerSelected = markers[id]);
         }
 
 
