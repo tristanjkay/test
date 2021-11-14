@@ -293,7 +293,7 @@ setTimeout(function () {
         var poiIndex = 0;
         var poiArray = JSON.parse(localStorage.selectedCountry).pois;
 
-        var markers = {};
+        var markers;
 
         function clickPoi(id){
           console.log(id);
@@ -315,7 +315,7 @@ setTimeout(function () {
                 var markerLocation = new L.LatLng(lat, lon);
                 var marker = new L.Marker(markerLocation,{ icon:  placeIcon});
                 marker.featureId = id;
-                markers[marker.featureId] = marker;
+                markers = marker;
                 map.addLayer(marker);
 
                 //console.log(marker.featureId);
