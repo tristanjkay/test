@@ -247,7 +247,7 @@ setTimeout(function () {
 
       var duration = (days > 0 ? (days > 1 ? days + " days " : days + " day "): "")  + (hours > 0 ? (hours > 1 ? hours + " hours " : hours + " hour "): "") + (minutes > 0 ? (minutes > 1 ? minutes + " mins " : minutes + " min "): "");
 
-        $('#flights').append('<div class = "greyblock" style="margin-top: 2rem; padding: 1rem;"><div class = "row" style = "text-align: center;"><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><h4 id= "ph_departfrom">' + element['origin'] + '</h4><h6 id= "ph_departtime">' + element['depart_date'] + '</h6></div><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><i class="fas fa-plane" style="font-size: x-large; color: #E1E1E1;"></i><p style="font-size: 14px">' + duration + '</p><p style="font-size: 14px">' + element['distance'] + ' km</p><p style="font-size: 14px">' + element['number_of_changes'] + (element['number_of_changes'] > 1 ? " changes" : " change") + '</p></div><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><h4 id= "ph_arrivalto">' + element['destination'] + '</h4><h6 id= "ph_arrivaltime">' + arrivalDate + '</h6></div></div></div>');
+        $('#flights').append('<div class = "greyblock" id = "' + element['placeid'] +  '" style="margin-top: 2rem; padding: 1rem;"><div class = "row" style = "text-align: center;"><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><h4 id= "ph_departfrom">' + element['origin'] + '</h4><h6 id= "ph_departtime">' + element['depart_date'] + '</h6></div><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><i class="fas fa-plane" style="font-size: x-large; color: #E1E1E1;"></i><p style="font-size: 14px">' + duration + '</p><p style="font-size: 14px">' + element['distance'] + ' km</p><p style="font-size: 14px">' + element['number_of_changes'] + (element['number_of_changes'] > 1 ? " changes" : " change") + '</p></div><div class= "col align-middle" style="margin-top: auto; margin-bottom: auto;"><h4 id= "ph_arrivalto">' + element['destination'] + '</h4><h6 id= "ph_arrivaltime">' + arrivalDate + '</h6></div></div></div>');
       flightsIndex++;
     });
   }
@@ -296,18 +296,18 @@ setTimeout(function () {
     switch(page) {
       
       case "general" :
-        console.log("general");
+        
 
        
 
         break;
 
       case "economy" :
-        console.log("economy");
+        
         break;
 
       case "places" :
-        console.log("places");
+      
          /* JSON.parse(localStorage.getItem('selectedCountry'))['pois'].forEach(element => {
           L.marker([element['geometry']['location']['lat'], element['geometry']['location']['lng']],{ icon:  fontAwesomeIcon}).addTo(map);
           console.log(element['geometry']['location']['lat']);
@@ -330,15 +330,15 @@ setTimeout(function () {
         break;
 
       case "weather" :
-        console.log("weather");
+     
         break;
 
       case "news" :
-        console.log("news");
+      
         break;
 
       case "flights" :
-        console.log("flights");
+      
         break;
 }
 
