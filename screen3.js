@@ -240,11 +240,11 @@ setTimeout(function () {
       var map = L.map('map').fitWorld();
 
       const placeIcon = L.divIcon({
-        html: '<p style="font-size: 50px; z-index: 999; color: #235FB2; opacity: 0.5"> &#8226; </p>',
+        html: '<p style="font-size: 60px; z-index: 999; color: #235FB2; opacity: 0.5"> &#8226; </p>',
       });
 
       const selectedPlaceIcon = L.divIcon({
-        html: '<p style="font-size: 60px; color: #235FB2; z-index: 999; opacity: 1"> &#8226;</p>',
+        html: '<p style="font-size: 70px; color: #235FB2; z-index: 999; opacity: 1"> &#8226;</p>',
       });
 
       const capitalIcon = L.divIcon({
