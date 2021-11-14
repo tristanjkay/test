@@ -494,8 +494,7 @@ $.ajax({
     type: 'GET',
     dataType: 'json',
     data: {
-        lat: localStorage.getItem("capitalLocationLat"),
-        long: localStorage.getItem("capitalLocationLong"),
+        iso2: mycountry,
     },
     success: function(result) {
 ajaxCount++;
