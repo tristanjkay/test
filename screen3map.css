@@ -95,6 +95,34 @@ option {
 
 }
 
+/* Map Stylying */
+.popupCustom .leaflet-popup-tip {
+  display: none;
+}
+.popupCustom .leaflet-popup-content-wrapper {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 100px;
+    color: black;
+    position: relative;
+    top: 30px
+}
+
+.leaflet-div-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.popupCustom .leaflet-popup-content {
+  margin: 0px;
+  line-height: 0;
+  padding: 8px;
+}
+
+.popupCustom .leaflet-popup-close-button {
+  display: none;
+}
+
 
 
 .col-6 {
