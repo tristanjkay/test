@@ -166,7 +166,7 @@ var map = L.map('map').fitWorld();
       zoomOffset: -1
     }).addTo(map);
 
-    L.marker([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))],{ icon:  fontAwesomeIcon}).addTo(map).bindPopup('<p class="popup__header" style="font-size: 50px"> &#9733;</p>',{'autoClose':false, 'className' : 'popupCustom'}).openPopup();
+    L.marker([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))],{ icon:  fontAwesomeIcon}).addTo(map);
 
     L.geoJSON().addTo(map).addData(JSON.parse(localStorage.getItem('selectedCountry'))['geometry']);
     
