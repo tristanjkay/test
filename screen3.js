@@ -305,8 +305,8 @@ setTimeout(function () {
             lastMarkerSelected.setIcon(placeIcon);
           }
           map.setView([markers[id]['_latlng']['lat'],markers[id]['_latlng']['lng']], 16);
-          markers[id].options['icon'].options['html'] = '<p style="font-size: 60px; color: red z-index: 999"> &#9733;</p>';
-          console.log(markers[id].options['icon'].options['html']);
+          //markers[id].options['icon'].options['html'] = '<p style="font-size: 60px; color: red z-index: 999"> &#9733;</p>';
+          //console.log(markers[id].options['icon'].options['html']);
           markers[id].setIcon(selectedPlaceIcon);
           return (lastMarkerSelected = marker[id]);
         }
