@@ -250,7 +250,11 @@ setTimeout(function () {
 
       var map = L.map('map').fitWorld();
 
-      const fontAwesomeIcon = L.divIcon({
+      const placeIcon = L.divIcon({
+        html: '<p style="font-size: 60px; z-index: 999"> &#8226;</p>',
+      });
+
+      const capitalIcon = L.divIcon({
         html: '<p style="font-size: 60px; z-index: 999"> &#9733;</p>',
       });
     
@@ -308,7 +312,7 @@ setTimeout(function () {
           var popupText = i;
           
            var markerLocation = new L.LatLng(lat, lon);
-           var marker = new L.Marker(markerLocation,{ icon:  fontAwesomeIcon});
+           var marker = new L.Marker(markerLocation,{ icon:  placeIcon});
            map.addLayer(marker);
        
            marker.bindPopup(popupText);
