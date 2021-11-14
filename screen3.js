@@ -314,6 +314,8 @@ setTimeout(function () {
                 var marker = new L.Marker(markerLocation,{ icon:  placeIcon});
                 marker.featureId = id;
                 map.addLayer(marker);
+
+                console.log(marker.featureId);
             
                 marker.bindPopup(popupText);
 
