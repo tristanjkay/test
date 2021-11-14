@@ -2,7 +2,7 @@
 
 	$executionStartTime = microtime(true) / 1000;
 
-	$url ='https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBueIu23lPtas0qJpu5hjdpe4nkYE_nnoo&location=' . $_REQUEST['lat'] . ',' . $_REQUEST['long'] . '&radius=8000000&type=tourist_attraction';
+	$url ='https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBueIu23lPtas0qJpu5hjdpe4nkYE_nnoo&location=' . $_REQUEST['lat'] . ',' . $_REQUEST['long'] . '&radius=8516000000&type=tourist_attraction';
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
