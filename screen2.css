@@ -129,6 +129,10 @@ img {
   border-radius: 20px;
 }
 
+.leaflet-tile-container img {
+  border-radius: 0px;
+}
+
 
 
 /* Normalize */
