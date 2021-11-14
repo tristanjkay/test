@@ -251,7 +251,7 @@ setTimeout(function () {
       var map = L.map('map').fitWorld();
 
       const placeIcon = L.divIcon({
-        html: '<p style="font-size: 60px; z-index: 999; color: #3388FF"> &#8226;</p>',
+        html: '<p style="font-size: 50px; z-index: 999; color: #3388FF"> &#8226;</p>',
       });
 
       const capitalIcon = L.divIcon({
