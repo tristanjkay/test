@@ -27,14 +27,9 @@ $request->setMethod(HTTP_Request2::METHOD_GET);
 
 $request->setBody("{body}");
 
-try
-{
-    $response = $request->send();
-    echo $response->getBody();
-}
-catch (HttpException $ex)
-{
-    echo $ex;
-}
+$response = $request->send();
+echo $response->getBody();
+
+
 
 ?>
