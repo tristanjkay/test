@@ -702,7 +702,7 @@ ajaxCount++;
 //Imports WTO
 $.ajax({
     url: "php/economy/imports.php",
-    type: 'POST',
+    type: 'GET',
     dataType: 'json',
     data: {
         //country: mycountry,
