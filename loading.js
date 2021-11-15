@@ -731,10 +731,10 @@ ajaxCount++;
         data: "{body}",
     })
     .done(function(data) {
-        alert("success");
+        console.log(data);
     })
     .fail(function() {
-        alert("error");
+        console.log("Imports Data Error");
     });
 
 
