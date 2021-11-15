@@ -465,7 +465,7 @@ setTimeout(function () {
             weight: 10
           }
 
-          var curvedPath = L.curve(
+          var curvedPath = L.Curve(
             [
               'M', latlng1,
               'Q', midpointLatLng,
