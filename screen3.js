@@ -427,7 +427,8 @@ setTimeout(function () {
               color: 'red',
               weight: 6,
               opacity: 0.5,
-              smoothFactor: 1
+              smoothFactor: 1,
+              linecap="square"
           });
           
           firstpolyline.addTo(map);
