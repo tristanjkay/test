@@ -323,7 +323,7 @@ setTimeout(function () {
         break;
 
       case "places" :
-      
+        map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
         //POIs
         var poiIndex = 0;
         var poiArray = JSON.parse(localStorage.selectedCountry).pois;
