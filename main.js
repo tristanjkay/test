@@ -78,7 +78,7 @@ window.history.replaceState('','','/');
         });
         
     
-        selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry, "wtocodes": "empty"};
+        selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry};
         
         //Imports WTO
 var params = {
