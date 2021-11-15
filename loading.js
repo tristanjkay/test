@@ -738,6 +738,9 @@ $.ajax({
     ajaxCount++;
     
         console.log("WTO (Imports) Request Failed")
+        console.log(jqXHR);
+        console.log(textStatus);
+        console.log(errorThrown);
     
     }
     
