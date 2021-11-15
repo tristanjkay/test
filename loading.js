@@ -700,51 +700,44 @@ ajaxCount++;
 });
 
 //Imports WTO
-$.ajax({
-    url: "php/economy/imports.php",
-    type: 'POST',
-    dataType: 'json',
-    data: {
-        
-    },
-    success: function(result) {
-    ajaxCount++;
-    ajaxSuccess++
-    $('#intProgress').text((ajaxSuccess/62)*100);
-    percentLoaded = (ajaxSuccess/62)*100;
-    
-        if (result.status.name == "ok") {
-    try {
-            selectedCountry.imports = "result";
-            console.log(result);
-            
-            
-            //$("#bud_value").html(selectedCountry.budget['value']);
-    
-        } catch (error) {
-                console.log('\n', "WTO (Imports) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"null: ", "null", '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-                console.log("\n");
-                
-            }
-           
-            
-            
-    
-    
-        }
-    
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-    ajaxCount++;
-    
-        console.log("WTO (Imports) Request Failed")
-        console.log(jqXHR);
-        console.log(textStatus);
-        console.log(errorThrown);
-    
-    }
-    
+
+
+    var params = {
+        // Request parameters
+        "i": "TP_A_0010",
+        "r": "all",
+        "p": "default",
+        "ps": "default",
+        "pc": "default",
+        "spc": "false",
+        "fmt": "json",
+        "mode": "full",
+        "dec": "default",
+        "off": "0",
+        "max": "500",
+        "head": "H",
+        "lang": "1",
+        "meta": "false",
+    };
+  
+    $.ajax({
+        url: "https://api.wto.org/timeseries/v1/data?" + $.param(params),
+        beforeSend: function(xhrObj){
+            // Request headers
+            xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","71e13c8a8030440e814fe17043f74a47");
+        },
+        type: "GET",
+        // Request body
+        data: "{body}",
+    })
+    .done(function(data) {
+        alert("success");
+    })
+    .fail(function() {
+        alert("error");
     });
+
+
 
 //NewsAPI
 $.ajax({
