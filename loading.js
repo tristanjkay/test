@@ -705,16 +705,13 @@ $.ajax({
     type: 'GET',
     dataType: 'json',
     data: {
-        //country: mycountry,
+        
     },
     success: function(result) {
     ajaxCount++;
     ajaxSuccess++
     $('#intProgress').text((ajaxSuccess/62)*100);
     percentLoaded = (ajaxSuccess/62)*100;
-    
-        console.log(result);
-        selectedCountry.imports = result;
     
         if (result.status.name == "ok") {
     try {
