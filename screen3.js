@@ -269,7 +269,7 @@ setTimeout(function () {
 
     L.geoJSON().addTo(map).addData(JSON.parse(localStorage.getItem('selectedCountry'))['geometry']);
     
-    map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
+    
 
 
   
@@ -286,12 +286,14 @@ setTimeout(function () {
       
       case "general" :
         
-
+        map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
        
 
         break;
 
       case "economy" :
+
+        map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
 
         //Imports
         JSON.parse(localStorage.getItem('selectedCountry'))['imports'].forEach(element => {
@@ -401,11 +403,11 @@ setTimeout(function () {
         break;
 
       case "weather" :
-     
+        map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
         break;
 
       case "news" :
-      
+        map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
         break;
 
       case "flights" :
@@ -425,7 +427,7 @@ setTimeout(function () {
           });
           
           firstpolyline.addTo(map);
-          map.setView(firstpolyline, 10);
+          map.setView(pointA, 10);
           map.fitBounds(firstpolyline.getBounds());
         });
        
