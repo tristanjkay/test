@@ -5,7 +5,7 @@ $request = new Http_Request2('https://api.wto.org/timeseries/v1/data');
 $url = $request->getUrl();
 
 $headers = array(
-    // Request headers
+ 
     'Ocp-Apim-Subscription-Key' => '71e13c8a8030440e814fe17043f74a47',
 );
 
