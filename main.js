@@ -175,8 +175,9 @@ $.ajax({
 .fail(function() {
     console.log("Imports Data Error");
 });
-        localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
+        
         $(document).ajaxStop(function() {
+            localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
             setTimeout(function () {
         window.location.replace("loading.html");
     }, 5000);
