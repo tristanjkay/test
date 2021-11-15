@@ -13,19 +13,10 @@ $headers = array(
 $request->setHeader($headers);
 
 $parameters = array(
-    // Request parameters
     'i' => 'ITS_MTV_AM',
     'r' => '036',
-    //'p' => 'default',
-    //'ps' => 'default',
-    //'pc' => 'default',
-    //'spc' => 'false',
     'fmt' => 'json',
     'mode' => 'full',
-    //'dec' => 'default',
-    //'off' => '0',
-    //'max' => '500',
-    //'head' => 'H',
     'lang' => '1',
     'meta' => 'true',
 );
