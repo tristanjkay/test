@@ -24,7 +24,7 @@ $url->setQueryVariables($parameters);
 
 $request->setMethod(HTTP_Request2::METHOD_GET);
 
-// Request body
+
 $request->setBody("{body}");
 
 try
