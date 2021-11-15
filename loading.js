@@ -725,8 +725,9 @@ ajaxCount++;
     .done(function(data) {
         console.log(data);
         var parsedData = JSON.parse(data);
-        console.log(JSON.parse(data));
-        
+        console.log(JSON.parse(data)['Dataset']);
+        console.log(parsedData[0]);
+
 
         /* for (const [key, value] of Object.entries(data)) {
             console.log(`${key}: ${value}`);
