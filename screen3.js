@@ -414,7 +414,7 @@ setTimeout(function () {
         map.on('locationfound', (e) => {
           console.log(e.latlng['lat']);
           var pointA = new L.LatLng(e.latlng['lat'], e.latlng['lng']);
-          var pointB = new L.LatLng(28.984461, 77.70641);
+          var pointB = new L.LatLng(localStorage.getItem('capitalLocationLat'), localStorage.getItem('capitalLocationLong'));
           var pointList = [pointA, pointB];
 
           var firstpolyline = new L.Polyline(pointList, {
