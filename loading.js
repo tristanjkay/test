@@ -703,6 +703,7 @@ ajaxCount++;
 
 
 //Imports WTO
+//https://apiportal.wto.org/query-builder
     
     var params = {
         // Request parameters
@@ -739,6 +740,8 @@ ajaxCount++;
     });
 
     //Exports WTO
+    //https://apiportal.wto.org/query-builder
+
     
     var params = {
         // Request parameters
