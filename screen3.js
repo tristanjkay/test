@@ -462,7 +462,7 @@ setTimeout(function () {
 
           var pathOptions = {
             color: 'red',
-            weight: 10
+            weight: 8
           }
 
           var curvedPath = L.curve(
