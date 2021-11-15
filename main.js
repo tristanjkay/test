@@ -166,7 +166,7 @@ $.ajax({
     data: "{body}",
 })
 .done(function(data) {
-    var parsedData = (data);
+    var parsedData = data;
     console.log(data);
     console.log(parsedData[0]);
     selectedCountry.wtocodes = parsedData;
