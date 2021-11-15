@@ -294,8 +294,11 @@ setTimeout(function () {
       case "economy" :
 
         //Imports
-          selectedCountry.exports.forEach(element => {
-          
+          selectedCountry.imports.forEach(element => {
+            $('#import_categorycol').append("<h3>" + element.ProductOrSector + "</h3>");
+            $('#import_amountcol').append("<h3>" + element.Value + "</h3>");
+            $('#import_yearcol').append("<h3>" + element.Year + "</h3>");
+
           });
       
 
