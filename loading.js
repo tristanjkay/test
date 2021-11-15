@@ -104,7 +104,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 
         if (result.status.name == "ok") {
 
-            console.log(result['data'][0].flags);
+            console.log(result['data'][0].flags['png']);
            
 
             //Set Data to Country Object
