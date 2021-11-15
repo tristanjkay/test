@@ -6,7 +6,7 @@
     $url='https://api.wto.org/timeseries/v1/data?i=ITS_MTV_AM&r=036&fmt=json&mode=full&lang=1&meta=true&subscription-key=71e13c8a8030440e814fe17043f74a47';
 
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_URL,$url);
 
