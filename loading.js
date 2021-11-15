@@ -132,7 +132,7 @@ for (const [key, value] of Object.entries(selectedCountry.currency)) {
             //selectedCountry.currencysymbol = result['data'][0]['currencies'][mycountry3]['symbol'];
             selectedCountry.currencies = result['data'][0]['currencies'];
             selectedCountry.language = result['data'][0]['languages'];
-            selectedCountry.flag = result['data'][0]['flags']['png'];
+            selectedCountry.flag = result['data'][0].flags['png'];
             selectedCountry.timezones = result['data'][0]['timezones'];
             selectedCountry.location = result['data'][0]['latlng'];
             
