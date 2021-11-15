@@ -103,6 +103,7 @@ $.ajax({
 .done(function(data) {
     var parsedData = data;
     //localStorage.setItem("wtocodes", JSON.stringify(parsedData.code));
+    selectedCountry.codewto = parsedData[0].code;
     console.log("parsedData:" + parsedData);
     console.log("[0]:" + parsedData[0].code);
     console.log(".code:" + parsedData.code);
