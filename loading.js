@@ -737,6 +737,41 @@ ajaxCount++;
         console.log("Imports Data Error");
     });
 
+    //Exports WTO
+    
+    var params = {
+        // Request parameters
+        "i": "ITS_MTV_AX",
+        "r": selectedCountry.wtocode,
+        "fmt": "json",
+        "mode": "full",
+        "lang": "1",
+        "meta": "false",
+    };
+  
+    $.ajax({
+        url: "https://api.wto.org/timeseries/v1/data?" + $.param(params),
+        beforeSend: function(xhrObj){
+            // Request headers
+            xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","71e13c8a8030440e814fe17043f74a47");
+        },
+        type: "GET",
+        // Request body
+        data: "{body}",
+    })
+    .done(function(data) {
+        var parsedData = (JSON.parse(data))['Dataset'];
+        //console.log(JSON.parse(data)['Dataset']);
+        //console.log(parsedData[0]);
+        selectedCountry.exports = parsedData;
+
+
+     
+    })
+    .fail(function() {
+        console.log("Exports Data Error");
+    });
+
 
 
 //NewsAPI
