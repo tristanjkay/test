@@ -409,6 +409,8 @@ setTimeout(function () {
         break;
 
       case "flights" :
+        map.on('locationfound', (e) => {L.polyline(e.latlng,[JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], {color: 'red'}).addTo(map)});
+       
       
         break;
 }
