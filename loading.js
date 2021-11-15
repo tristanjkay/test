@@ -717,8 +717,8 @@ $.ajax({
     
         if (result.status.name == "ok") {
     try {
-            selectedCountry.imports = result['data']
-            console.log(result['data']);
+            selectedCountry.imports = result;
+            console.log(result);
             
             
             //$("#bud_value").html(selectedCountry.budget['value']);
