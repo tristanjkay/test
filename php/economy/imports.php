@@ -1,29 +1,50 @@
 <?php
+// This sample uses the Apache HTTP client from HTTP Components (http://hc.apache.org/httpcomponents-client-ga/)
+require_once 'HTTP/Request2.php';
 
+$request = new Http_Request2('https://api.wto.org/timeseries/v1/data');
+$url = $request->getUrl();
 
-	$executionStartTime = microtime(true) / 1000;
+$headers = array(
+    // Request headers
+    'Ocp-Apim-Subscription-Key' => '71e13c8a8030440e814fe17043f74a47',
+);
 
-    $url='https://api.wto.org/timeseries/v1/data?i=ITS_MTV_AM&r=036&fmt=json&mode=full&lang=1&meta=true&subscription-key=71e13c8a8030440e814fe17043f74a47';
+$request->setHeader($headers);
 
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($ch, CURLOPT_URL,$url);
+$parameters = array(
+    // Request parameters
+    'i' => 'ITS_MTV_AM',
+    'r' => '036',
+    //'p' => 'default',
+    //'ps' => 'default',
+    //'pc' => 'default',
+    //'spc' => 'false',
+    'fmt' => 'json',
+    'mode' => 'full',
+    //'dec' => 'default',
+    //'off' => '0',
+    //'max' => '500',
+    //'head' => 'H',
+    'lang' => '1',
+    'meta' => 'true',
+);
 
-	$result=curl_exec($ch);
+$url->setQueryVariables($parameters);
 
-	curl_close($ch);
+$request->setMethod(HTTP_Request2::METHOD_GET);
 
-	$decode = json_decode($result,true);	
+// Request body
+$request->setBody("{body}");
 
-	$output['status']['code'] = "200";
-	$output['status']['name'] = "ok";
-	$output['status']['description'] = "success";
-	$output['status']['returnedIn'] = (microtime(true) - $executionStartTime) / 1000 . " ms";
-	$output['data'] = $decode;
-	
-	header('Content-Type: application/json; charset=UTF-8');
-
-	echo json_encode($output); 
+try
+{
+    $response = $request->send();
+    echo $response->getBody();
+}
+catch (HttpException $ex)
+{
+    echo $ex;
+}
 
 ?>
