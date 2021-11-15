@@ -425,7 +425,7 @@ setTimeout(function () {
           });
           
           firstpolyline.addTo(map);
-        
+          map.fitBounds(firstpolyline.getBounds());
         });
        
       
