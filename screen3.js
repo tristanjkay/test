@@ -292,7 +292,13 @@ setTimeout(function () {
         break;
 
       case "economy" :
-        
+
+        //Imports
+          selectedCountry.exports.forEach(element => {
+          
+          });
+      
+
         break;
 
       case "places" :
