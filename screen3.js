@@ -295,9 +295,9 @@ setTimeout(function () {
 
         //Imports
         JSON.parse(localStorage.getItem('selectedCountry'))['imports'].forEach(element => {
-            $('#import_categorycol').append("<h3 style='font-weight: 400;'>" + element.ProductOrSector + "</h3>");
-            $('#import_amountcol').append("<h3 style='font-weight: 400;'>" + element.Value + "</h3>");
-            $('#import_yearcol').append("<h3 style='font-weight: 400;'>" + element.Year + "</h3>");
+            $('#import_categorycol').append("<h3 style='font-weight: 400; margin-left: 2rem;'>" + element.ProductOrSector + "</h3>");
+            $('#import_amountcol').append("<h3 style='font-weight: 400; margin-left: 2rem;'>" + element.Value + "</h3>");
+            $('#import_yearcol').append("<h3 style='font-weight: 400; margin-left: 2rem;'>" + element.Year + "</h3>");
 
           });
       
