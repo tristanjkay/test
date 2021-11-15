@@ -13,7 +13,8 @@ window.history.replaceState('','','/');
     });
 
 //Globe
-    var selectedCountry = {"name": JSON.parse(localStorage.selectedCountry).name, "iso_a2": JSON.parse(localStorage.selectedCountry).iso_a2, "iso_a3": JSON.parse(localStorage.selectedCountry).iso_a3, "geometry": JSON.parse(localStorage.selectedCountry).geometry, "flag": "", "wtocode": selectedCountry.wtocode = JSON.parse(localStorage.getItem('wtocode'))};
+    var selectedCountry = {"name": JSON.parse(localStorage.selectedCountry).name, "iso_a2": JSON.parse(localStorage.selectedCountry).iso_a2, "iso_a3": JSON.parse(localStorage.selectedCountry).iso_a3, "geometry": JSON.parse(localStorage.selectedCountry).geometry, "flag": "", "wtocode": ""};
+    selectedCountry.wtocode = selectedCountry.wtocode = JSON.parse(localStorage.getItem('wtocode'));
     var mycountry = JSON.parse(localStorage.selectedCountry).iso_a2;
     var mycountry3 = JSON.parse(localStorage.selectedCountry).iso_a3;
     var mycountryname = JSON.parse(localStorage.selectedCountry).name;
