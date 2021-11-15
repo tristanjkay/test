@@ -704,18 +704,10 @@ ajaxCount++;
 
     var params = {
         // Request parameters
-        "i": "TP_A_0010",
-        "r": "all",
-        "p": "default",
-        "ps": "default",
-        "pc": "default",
-        "spc": "false",
+        "i": "ITS_MTV_AM",
+        "r": "036",
         "fmt": "json",
         "mode": "full",
-        "dec": "default",
-        "off": "0",
-        "max": "500",
-        "head": "H",
         "lang": "1",
         "meta": "false",
     };
