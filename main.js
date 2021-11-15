@@ -177,7 +177,9 @@ $.ajax({
 });
         localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
         $(document).ajaxStop(function() {
+            setTimeout(function () {
         window.location.replace("loading.html");
+    }, 5000);
         });
     });
 
