@@ -177,7 +177,9 @@ var map = L.map('map').fitWorld();
 
     L.marker([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))],{ icon:  fontAwesomeIcon}).addTo(map);
 
-    L.geoJSON().addTo(map).addData(JSON.parse(localStorage.getItem('selectedCountry'))['geometry']);
+    var boundary = L.geoJSON().addTo(map).addData(JSON.parse(localStorage.getItem('selectedCountry'))['geometry']);
     
-    map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
+    //map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
+
+    map.fitBounds(boundary.getBounds());
 
