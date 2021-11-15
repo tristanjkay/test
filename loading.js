@@ -719,7 +719,7 @@ $.ajax({
         if (result.status.name == "ok") {
     try {
             selectedCountry.imports = "result";
-            //console.log(result);
+            console.log(result);
             
             
             //$("#bud_value").html(selectedCountry.budget['value']);
@@ -740,7 +740,7 @@ $.ajax({
     error: function(jqXHR, textStatus, errorThrown) {
     ajaxCount++;
     
-        console.log("WorldBank (Gov Total Expense) Request Failed")
+        console.log("WTO (Imports) Request Failed")
     
     }
     
