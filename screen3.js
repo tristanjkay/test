@@ -245,6 +245,9 @@ setTimeout(function () {
 
       const placeIcon = L.divIcon({
         html: '<p style="font-size: 80px; z-index: 999; color: #dc3545; opacity: 0.5"> &#8226; </p>',
+        iconSize: [80,80],
+        iconAnchor: [40,40]
+      
       });
 
       const selectedPlaceIcon = L.divIcon({
@@ -428,7 +431,7 @@ setTimeout(function () {
               weight: 6,
               opacity: 0.5,
               smoothFactor: 1,
-              linecap: "square"
+              linecap: "square",
           });
           
           firstpolyline.addTo(map);
