@@ -729,7 +729,7 @@ ajaxCount++;
         //console.log(JSON.parse(data)['Dataset']);
         //console.log(parsedData[0]);
         var sortedResult = parsedData.sort((a,b) => (a.Year > b.Year) ? 1 : ((b.Year > a.Year) ? -1 : 0))
-        selectedCountry.imports = parsedData;
+        selectedCountry.imports = sortedResult;
 
 
      
