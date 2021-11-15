@@ -112,7 +112,6 @@ percentLoaded = (ajaxSuccess/62)*100;
             selectedCountry.region = result['data'][0]['region'];
             selectedCountry.population = result['data'][0]['population'];
             selectedCountry.currency = result['data'][0]['currencies'];
-            //selectedCountry.currency = result['data'][0]['currencies'][mycountry3]['name'];
             selectedCountry.currencycode = result['data'][0]['currencies'];
             
             selectedCountry.currencycode = [[selectedCountry.currencycode].flat()][0][0];
@@ -123,13 +122,8 @@ percentLoaded = (ajaxSuccess/62)*100;
 for (const [key, value] of Object.entries(selectedCountry.currency)) {
     
     return [selectedCountry.currencyabbrev = Object.getOwnPropertyNames(result['data'][0]['currencies'])[0], selectedCountry.currencycode = value['symbol'] , selectedCountry.currencyname = value['name']]
-    //console.log("This is the value: ",value['name']);
-
   };
     
-            //selectedCountry.currencycode = result['data'][0]['currencies'][mycountry3]['code'];
-            //selectedCountry.currencysymbol = result['data'][0]['currencies'];
-            //selectedCountry.currencysymbol = result['data'][0]['currencies'][mycountry3]['symbol'];
             selectedCountry.currencies = result['data'][0]['currencies'];
             selectedCountry.language = result['data'][0]['languages'];
             selectedCountry.flag = result['data'][0].flags['png'];
