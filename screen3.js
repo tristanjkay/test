@@ -413,7 +413,7 @@ setTimeout(function () {
         map.locate({setView: false, maxZoom: 16});
         map.on('locationfound', (e) => {
           console.log(e.latlng['lat']);
-          var pointA = new L.LatLng(28.635308, 77.22496);
+          var pointA = new L.LatLng(e.latlng['lat'], e.latlng['lng']);
           var pointB = new L.LatLng(28.984461, 77.70641);
           var pointList = [pointA, pointB];
 
