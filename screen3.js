@@ -409,6 +409,7 @@ setTimeout(function () {
         break;
 
       case "flights" :
+        console.log("flights")
         map.on('locationfound', (e) => {
           console.log(e.latlng);
           var pointA = new L.LatLng(28.635308, 77.22496);
