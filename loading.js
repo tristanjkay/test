@@ -706,12 +706,12 @@ ajaxCount++;
     
     var params = {
         // Request parameters
-        "i": "TP_A_0390",
+        "i": "WTO/ITS_MTV_AM",
         "r": selectedCountry.wtocode,
         "fmt": "json",
         "mode": "full",
         "lang": "1",
-        "meta": "false",
+        "meta": "true",
     };
   
     $.ajax({
@@ -760,7 +760,7 @@ ajaxCount++;
         data: "{body}",
     })
     .done(function(data) {
-        var parsedData = (JSON.parse(data));
+        var parsedData = (JSON.parse(data)['Dataset']);
         //console.log(JSON.parse(data)['Dataset']);
         //console.log(parsedData[0]);
         selectedCountry.exports = parsedData;
