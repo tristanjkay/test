@@ -724,7 +724,9 @@ ajaxCount++;
     })
     .done(function(data) {
         console.log(data);
-        console.log(data['Dataset']);
+        for (const [key, value] of Object.entries(data)) {
+            console.log(`${key}: ${value}`);
+          }
     })
     .fail(function() {
         console.log("Imports Data Error");
