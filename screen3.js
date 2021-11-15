@@ -295,9 +295,13 @@ setTimeout(function () {
 
         //Imports
         JSON.parse(localStorage.getItem('selectedCountry'))['imports'].forEach(element => {
+
+          if(element.Year >= 2019){
             $('#import_categorycol').append("<h3 style='font-weight: 400; margin-left: 2rem; margin-bottom: 1rem'>" + element.ProductOrSector + "</h3>");
             $('#import_amountcol').append("<h3 style='font-weight: 400; margin-bottom: 1rem'>" + element.Value + "</h3>");
             $('#import_yearcol').append("<h3 style='font-weight: 400; margin-bottom: 1rem'>" + element.Year + "</h3>");
+          }
+            
 
           });
 
