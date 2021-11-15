@@ -418,6 +418,10 @@ setTimeout(function () {
           var pointA = new L.LatLng(e.latlng['lat'], e.latlng['lng']);
           var pointB = new L.LatLng(localStorage.getItem('capitalLocationLat'), localStorage.getItem('capitalLocationLong'));
           var pointList = [pointA, pointB];
+          pointList.forEach(element => {
+            var marker = new L.Marker(element,{ icon:  placeIcon});
+            map.addLayer(marker);
+          });
 
           var firstpolyline = new L.Polyline(pointList, {
               color: 'red',
