@@ -111,6 +111,7 @@ percentLoaded = (ajaxSuccess/62)*100;
             selectedCountry.capital = replaceAccents(result['data'][0]['capital'][0]);
             selectedCountry.region = result['data'][0]['region'];
             selectedCountry.population = result['data'][0]['population'];
+            selectedCountry.flag = "test";
             selectedCountry.currency = result['data'][0]['currencies'];
             selectedCountry.currencycode = result['data'][0]['currencies'];
             
@@ -123,10 +124,10 @@ for (const [key, value] of Object.entries(selectedCountry.currency)) {
     
     return [selectedCountry.currencyabbrev = Object.getOwnPropertyNames(result['data'][0]['currencies'])[0], selectedCountry.currencycode = value['symbol'] , selectedCountry.currencyname = value['name']]
   };
-    
+            //TODO: THESE ARE NOTE BEING ADDED
             selectedCountry.currencies = result['data'][0]['currencies'];
             selectedCountry.language = result['data'][0]['languages'];
-            selectedCountry.flag = result['data'][0].flags['png'];
+            
             selectedCountry.timezones = result['data'][0]['timezones'];
             selectedCountry.location = result['data'][0]['latlng'];
             
