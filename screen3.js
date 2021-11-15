@@ -409,7 +409,22 @@ setTimeout(function () {
         break;
 
       case "flights" :
-        map.on('locationfound', (e) => {L.polyline([e.latlng[0],e.latlng[1]],[JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], {color: 'red'}).addTo(map)});
+        map.on('locationfound', (e) => {
+          console.log(e.latlng);
+          var pointA = new L.LatLng(28.635308, 77.22496);
+          var pointB = new L.LatLng(28.984461, 77.70641);
+          var pointList = [pointA, pointB];
+
+          var firstpolyline = new L.Polyline(pointList, {
+              color: 'red',
+              weight: 3,
+              opacity: 0.5,
+              smoothFactor: 1
+          });
+          
+          firstpolyline.addTo(map);
+        
+        });
        
       
         break;
