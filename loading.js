@@ -726,11 +726,10 @@ ajaxCount++;
         var parsedData = (JSON.parse(data))['Dataset'];
         console.log(JSON.parse(data)['Dataset']);
         console.log(parsedData[0]);
+        selectedCountry.imports = parsedData;
 
 
-        /* for (const [key, value] of Object.entries(data)) {
-            console.log(`${key}: ${value}`);
-          } */
+     
     })
     .fail(function() {
         console.log("Imports Data Error");
