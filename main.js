@@ -167,7 +167,7 @@ $.ajax({
 })
 .done(function(data) {
     var parsedData = data;
-    selectedCountry.test = parsedData;
+    localStorage.setItem("wto", parsedData);
 
 
  
