@@ -723,7 +723,6 @@ ajaxCount++;
         data: "{body}",
     })
     .done(function(data) {
-        console.log(data);
         var parsedData = (JSON.parse(data))['Dataset'];
         console.log(JSON.parse(data)['Dataset']);
         console.log(parsedData[0]);
