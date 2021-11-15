@@ -167,7 +167,7 @@ $.ajax({
 })
 .done(function(data) {
     var parsedData = data;
-    selectedCountry.wtocodes = parsedData;
+    selectedCountry.test = parsedData;
 
 
  
