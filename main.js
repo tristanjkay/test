@@ -80,6 +80,35 @@ window.history.replaceState('','','/');
     
         selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "geometry": geometry, "wtocodes": "empty"};
         
+        //Imports WTO
+var params = {
+    // Request parameters
+    "ig": "all",
+    "reg": "all",
+    "gp": "all",
+    "lang": "1",
+};
+
+$.ajax({
+    url: "https://api.wto.org/timeseries/v1/partners?" + $.param(params),
+    beforeSend: function(xhrObj){
+        // Request headers
+        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","71e13c8a8030440e814fe17043f74a47");
+    },
+    type: "GET",
+    // Request body
+    data: "{body}",
+})
+.done(function(data) {
+    var parsedData = data;
+    selectedCountry.wtocodes =  JSON.stringify(parsedData);
+
+
+ 
+})
+.fail(function() {
+    console.log("Imports Data Error");
+});
         
         //RESTCountries
 $.ajax({
@@ -146,35 +175,7 @@ ajaxCount++;
     
 });
 
-//Imports WTO
-var params = {
-    // Request parameters
-    "ig": "all",
-    "reg": "all",
-    "gp": "all",
-    "lang": "1",
-};
 
-$.ajax({
-    url: "https://api.wto.org/timeseries/v1/partners?" + $.param(params),
-    beforeSend: function(xhrObj){
-        // Request headers
-        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","71e13c8a8030440e814fe17043f74a47");
-    },
-    type: "GET",
-    // Request body
-    data: "{body}",
-})
-.done(function(data) {
-    var parsedData = data;
-    selectedCountry.wtocodes =  JSON.stringify(parsedData);
-
-
- 
-})
-.fail(function() {
-    console.log("Imports Data Error");
-});
         
         $(document).ajaxStop(function() {
             localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
