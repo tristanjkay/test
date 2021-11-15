@@ -428,7 +428,7 @@ setTimeout(function () {
               weight: 6,
               opacity: 0.5,
               smoothFactor: 1,
-              linecap="square"
+              linecap: "square"
           });
           
           firstpolyline.addTo(map);
