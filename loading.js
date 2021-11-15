@@ -699,6 +699,52 @@ ajaxCount++;
     
 });
 
+//Imports WTO
+$.ajax({
+    url: "php/economy/imports.php",
+    type: 'POST',
+    dataType: 'json',
+    data: {
+        //country: mycountry,
+    },
+    success: function(result) {
+    ajaxCount++;
+    ajaxSuccess++
+    $('#intProgress').text((ajaxSuccess/62)*100);
+    percentLoaded = (ajaxSuccess/62)*100;
+    
+        //console.log("WorldBank BUD Success")
+    
+        if (result.status.name == "ok") {
+    try {
+            selectedCountry.imports = result['data']
+            console.log(result['data']);
+            
+            
+            //$("#bud_value").html(selectedCountry.budget['value']);
+    
+        } catch (error) {
+                console.log('\n', "WTO (Imports) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"null: ", "null", '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
+                console.log("\n");
+                
+            }
+           
+            
+            
+    
+    
+        }
+    
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+    ajaxCount++;
+    
+        console.log("WorldBank (Gov Total Expense) Request Failed")
+    
+    }
+    
+    });
+
 //NewsAPI
 $.ajax({
     url: "php/events/news.php",
