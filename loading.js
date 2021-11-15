@@ -724,7 +724,7 @@ ajaxCount++;
     })
     .done(function(data) {
         console.log(data);
-        console.log(data[0]);
+        console.log(data['Dataset']);
     })
     .fail(function() {
         console.log("Imports Data Error");
