@@ -23,10 +23,10 @@ $('#ph_population').html(JSON.parse(localStorage.selectedCountry).population);
 
 //Economy
 $('#ph_currencyvalue').html(parseFloat(JSON.parse(localStorage.selectedCountry).exchangerate).toFixed(2));
-//$('#ph_currencycode').html(JSON.parse(localStorage.selectedCountry).currencyabbrev);
-$('#ph_currencycode').each(function(){
+$("[id=ph_currencycode]").html(JSON.parse(localStorage.selectedCountry).currencyabbrev);
+/* $('#ph_currencycode').each(function(){
   $(this).html(JSON.parse(localStorage.selectedCountry).currencyabbrev);    
-});
+}); */
 $('#ph_currencyname').html(JSON.parse(localStorage.selectedCountry).currencyname);
 $('#ph_currencyvalue_gbp').html(parseFloat(JSON.parse(localStorage.selectedCountry).othercurrencies['GBP']).toFixed(2));
 $('#ph_currencyvalue_usd').html(parseFloat(JSON.parse(localStorage.selectedCountry).othercurrencies['USD']).toFixed(2));
