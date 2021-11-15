@@ -713,12 +713,12 @@ $.ajax({
     $('#intProgress').text((ajaxSuccess/62)*100);
     percentLoaded = (ajaxSuccess/62)*100;
     
-        //console.log("WorldBank BUD Success")
+        console.log(result);
     
         if (result.status.name == "ok") {
     try {
             selectedCountry.imports = result;
-            console.log(result);
+            //console.log(result);
             
             
             //$("#bud_value").html(selectedCountry.budget['value']);
