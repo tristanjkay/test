@@ -725,8 +725,8 @@ ajaxCount++;
     })
     .done(function(data) {
         var parsedData = (JSON.parse(data))['Dataset'];
-        console.log(JSON.parse(data)['Dataset']);
-        console.log(parsedData[0]);
+        //console.log(JSON.parse(data)['Dataset']);
+        //console.log(parsedData[0]);
         selectedCountry.imports = parsedData;
 
 
