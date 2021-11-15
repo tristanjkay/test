@@ -714,10 +714,11 @@ $.ajax({
     percentLoaded = (ajaxSuccess/62)*100;
     
         console.log(result);
+        selectedCountry.imports = result;
     
         if (result.status.name == "ok") {
     try {
-            selectedCountry.imports = result;
+            selectedCountry.imports = "result";
             //console.log(result);
             
             
