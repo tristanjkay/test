@@ -410,6 +410,7 @@ setTimeout(function () {
 
       case "flights" :
         console.log("flights")
+        map.locate({setView: false, maxZoom: 16});
         map.on('locationfound', (e) => {
           console.log(e.latlng);
           var pointA = new L.LatLng(28.635308, 77.22496);
