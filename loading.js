@@ -702,9 +702,7 @@ ajaxCount++;
 
 
 //Imports WTO
-    JSON.parse(localStorage.getItem('wtocodes')).forEach(element => {
-    console.log(element["name"]);    
-    });
+
     var params = {
         // Request parameters
         "i": "ITS_MTV_AM",
