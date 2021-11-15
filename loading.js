@@ -724,9 +724,13 @@ ajaxCount++;
     })
     .done(function(data) {
         console.log(data);
-        for (const [key, value] of Object.entries(data)) {
+        var parsedData = JSON.parse(data);
+        console.log(JSON.parse(data));
+        
+
+        /* for (const [key, value] of Object.entries(data)) {
             console.log(`${key}: ${value}`);
-          }
+          } */
     })
     .fail(function() {
         console.log("Imports Data Error");
