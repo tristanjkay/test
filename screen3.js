@@ -419,7 +419,7 @@ setTimeout(function () {
 
           var firstpolyline = new L.Polyline(pointList, {
               color: 'red',
-              weight: 3,
+              weight: 6,
               opacity: 0.5,
               smoothFactor: 1
           });
