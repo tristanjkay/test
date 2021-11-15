@@ -706,7 +706,7 @@ ajaxCount++;
     
     var params = {
         // Request parameters
-        "i": "WTO/ITS_MTV_AM",
+        "i": "ITS_MTV_AM",
         "r": selectedCountry.wtocode,
         "fmt": "json",
         "mode": "full",
