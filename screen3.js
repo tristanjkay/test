@@ -300,6 +300,14 @@ setTimeout(function () {
             $('#import_yearcol').append("<h3 style='font-weight: 400; margin-bottom: 1rem'>" + element.Year + "</h3>");
 
           });
+
+          //Imports
+        JSON.parse(localStorage.getItem('selectedCountry'))['exports'].forEach(element => {
+          $('#export_categorycol').append("<h3 style='font-weight: 400; margin-left: 2rem; margin-bottom: 1rem'>" + element.ProductOrSector + "</h3>");
+          $('#export_amountcol').append("<h3 style='font-weight: 400; margin-bottom: 1rem'>" + element.Value + "</h3>");
+          $('#export_yearcol').append("<h3 style='font-weight: 400; margin-bottom: 1rem'>" + element.Year + "</h3>");
+
+        });
       
 
         break;
