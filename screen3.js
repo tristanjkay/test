@@ -247,7 +247,7 @@ setTimeout(function () {
         html: '<p style="font-size: 80px; z-index: 999; color: #dc3545; opacity: 0.5"> &#8226; </p>',
         iconSize: [80,80],
         iconAnchor: [40,40],
-        iconOff
+     
       
       });
 
