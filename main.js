@@ -84,6 +84,7 @@ window.history.replaceState('','','/');
 var params = {
     // Request parameters
     "ig": "all",
+    "name": "Albania",
     "reg": "all",
     "gp": "all",
     "lang": "1",
