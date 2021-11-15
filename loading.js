@@ -746,7 +746,7 @@ ajaxCount++;
         "fmt": "json",
         "mode": "full",
         "lang": "1",
-        "meta": "false",
+        "meta": "true",
     };
   
     $.ajax({
@@ -760,7 +760,7 @@ ajaxCount++;
         data: "{body}",
     })
     .done(function(data) {
-        var parsedData = (JSON.parse(data))['Dataset'];
+        var parsedData = (JSON.parse(data));
         //console.log(JSON.parse(data)['Dataset']);
         //console.log(parsedData[0]);
         selectedCountry.exports = parsedData;
