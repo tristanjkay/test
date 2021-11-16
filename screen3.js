@@ -271,7 +271,7 @@ setTimeout(function () {
 
     
 
-    L.geoJSON().addTo(map).addData(JSON.parse(localStorage.getItem('selectedCountry'))['geometry']);
+    var countryBounds = L.geoJSON().addTo(map).addData(JSON.parse(localStorage.getItem('selectedCountry'))['geometry']);
     
     
 
@@ -407,7 +407,7 @@ setTimeout(function () {
         break;
 
       case "weather" :
-        map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
+        map.fitBounds(countryBounds.getBounds());
         break;
 
       case "news" :
