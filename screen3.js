@@ -72,7 +72,7 @@ $('#ph_uvindex').html(JSON.parse(localStorage.selectedCountry).weather.uvIndex);
 
 
 //News
-var news = JSON.parse(localStorage.selectedCountry).news.sort();
+var news = (JSON.parse(localStorage.selectedCountry).news).sort();
 var articleCount = [0,0,0];
 
 //Date folder
