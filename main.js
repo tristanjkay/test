@@ -186,7 +186,7 @@ ajaxCount++;
             localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
             setTimeout(function () {
         window.location.replace("loading.html");
-    }, 2000);
+    }, 5000);
         });
     });
 
