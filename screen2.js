@@ -117,9 +117,9 @@ Object.keys(news).forEach(key => {
 
 });
 
-top3newsitems[0]= Object.values(sortedNews)[(Object.keys(sortedNews).length)-1];
-top3newsitems[1]= Object.values(sortedNews)[(Object.keys(sortedNews).length)-2];
-top3newsitems[2]= Object.values(sortedNews)[(Object.keys(sortedNews).length)-3];
+top3newsitems[0]= Object.values(sortedNews)[0];
+top3newsitems[1]= Object.values(sortedNews)[1];
+top3newsitems[2]= Object.values(sortedNews)[2];
 
 
 for (const [key, value] of Object.entries(top3newsitems[0])) {
