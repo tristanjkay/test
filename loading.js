@@ -807,13 +807,14 @@ percentLoaded = (ajaxSuccess/62)*100;
                 sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle]['shortDate'] = article.webPublicationDate.split("T")[0];
                 
             });
-            sortedNews = Object.keys(sortedNews).sort().reduce(
+            sortedNews = Object.keys(sortedNews).sort((a,b) => (a.obj.name > b.obj.name) ? 1 : ((b.obj.name > a.obj.name) ? -1 : 0)).reduce(
                 (obj, key) => { 
                   obj[key] = sortedNews[key]; 
                   return obj;
                 }, 
                 {}
               );
+         
             localStorage.setItem('sortedNews', JSON.stringify(sortedNews));
             selectedCountry.news = JSON.parse(localStorage.getItem('sortedNews'));
  
