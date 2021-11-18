@@ -3,7 +3,7 @@
 // This page also includes a loading bar so that the user can see visible progress, as data collection can take a few seconds.
 
 
-//Varibles-------------------------------------------------------------------||
+// Varibles-------------------------------------------------------------------||
     //Loading Progress Bar (62 requests)
         var percentLoaded = 0;
         var ajaxCount = 0;
@@ -23,36 +23,29 @@
         var mycountry3 = JSON.parse(localStorage.selectedCountry).iso_a3;
         var mycountryname = JSON.parse(localStorage.selectedCountry).name;
 
+    //Dates for lookups
+        var date = new Date();
+        var sevendaysago = new Date();
+        sevendaysago.setDate(date.getDate() - 7);
+        date = date.toLocaleDateString();
+        dateminus = date.split("/").reverse().join("-");
+        date = date.split("/").reverse().join("/");
+        sevendaysago = sevendaysago.toLocaleDateString();
+        sevendaysagominus = sevendaysago.split("/").reverse().join("-");
+        sevendaysago = sevendaysago.split("/").reverse().join("/");
+        var capitalLatLng = localStorage.getItem("capitalLocation").split(",");
+        localStorage.setItem("capitalLat", localStorage.getItem("capitalLocation").split(",")[0]);
+        localStorage.setItem("capitalLong", localStorage.getItem("capitalLocation").split(",")[1]);
 
-//Browser-------------------------------------------------------------------||
+
+// Browser-------------------------------------------------------------------||
     //URL Rewrite to remove /***.html
         window.history.replaceState('','','/');
 
-//Functions-------------------------------------------------------------------||        
-//Update progress bar    
-    $('body').on('DOMSubtreeModified', '#intProgress', function(){
-        var percentLoadedPercent = (percentLoaded+10).toString() + "%";
-        $('.progress-bar').css("width", percentLoadedPercent);
-    });
 
+// AJAX Listeners ---------------------------------------------------------------------||
 
-
-//Dates for lookups
-    var date = new Date();
-    var sevendaysago = new Date();
-    sevendaysago.setDate(date.getDate() - 7);
-    date = date.toLocaleDateString();
-    dateminus = date.split("/").reverse().join("-");
-    date = date.split("/").reverse().join("/");
-    sevendaysago = sevendaysago.toLocaleDateString();
-    sevendaysagominus = sevendaysago.split("/").reverse().join("-");
-    sevendaysago = sevendaysago.split("/").reverse().join("/");
-    var capitalLatLng = localStorage.getItem("capitalLocation").split(",");
-    localStorage.setItem("capitalLat", localStorage.getItem("capitalLocation").split(",")[0]);
-    localStorage.setItem("capitalLong", localStorage.getItem("capitalLocation").split(",")[1]);
-
-
-    $(document).ajaxStop(function() {    
+$(document).ajaxStop(function() {    
     // place code to be executed on completion of last outstanding ajax call here
         localStorage.setItem('todaysDate', date);
         localStorage.setItem('todaysDateMinus', dateminus);
@@ -67,12 +60,21 @@
     });
 
 
-    const replaceAccents = (str) => {
-        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Remove accents
-            .replace(/([^\w]+|\s+)/g, '-') // Replace space and other characters by hyphen
-            .replace(/\-\-+/g, '-')	// Replaces multiple hyphens by one hyphen
-            .replace(/(^-+|-+$)/, ''); // Remove extra hyphens from beginning or end of the string
-    }
+//Functions-------------------------------------------------------------------||        
+
+    //Update progress bar    
+        $('body').on('DOMSubtreeModified', '#intProgress', function(){
+            var percentLoadedPercent = (percentLoaded+10).toString() + "%";
+            $('.progress-bar').css("width", percentLoadedPercent);
+        });
+
+    //Replace accents and special chracters in Strings
+        const replaceAccents = (str) => {
+            return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                .replace(/([^\w]+|\s+)/g, '-')
+                .replace(/\-\-+/g, '-')	
+                .replace(/(^-+|-+$)/, '');
+        }
 
 //Geonames
 $.ajax({
