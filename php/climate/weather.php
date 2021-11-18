@@ -1,5 +1,8 @@
 <?php
 
+	// Weather API - https://www.weatherapi.com/docs/
+	// This API is given the selected countries name. The API then returns weather data from the capital of that country.
+
 	$executionStartTime = microtime(true) / 1000;
 
     $url='http://api.weatherapi.com/v1/forecast.json?key=86e31af8f3084b5b9ed104335211903&q=' . $_REQUEST['country'] . '&days=7';
