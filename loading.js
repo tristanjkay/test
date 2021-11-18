@@ -45,19 +45,19 @@
 
 // AJAX Listeners ---------------------------------------------------------------------||
 
-$(document).ajaxStop(function() {    
-    // place code to be executed on completion of last outstanding ajax call here
-        localStorage.setItem('todaysDate', date);
-        localStorage.setItem('todaysDateMinus', dateminus);
-        localStorage.setItem('sevendaysago', sevendaysago);
-        localStorage.setItem('sevendaysagominus', sevendaysagominus);
-        localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
-        localStorage.setItem('ajaxTotal', ajaxCount);
-        localStorage.setItem('ajaxSuccess', ajaxSuccess);
-        localStorage.setItem('ProgressValue',  $('#intProgress').html());
-        window.location.replace("screen2.html");
-        
-    });
+    //When all AJAX calls have completed
+    $(document).ajaxStop(function() {    
+            localStorage.setItem('todaysDate', date);
+            localStorage.setItem('todaysDateMinus', dateminus);
+            localStorage.setItem('sevendaysago', sevendaysago);
+            localStorage.setItem('sevendaysagominus', sevendaysagominus);
+            localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
+            localStorage.setItem('ajaxTotal', ajaxCount);
+            localStorage.setItem('ajaxSuccess', ajaxSuccess);
+            localStorage.setItem('ProgressValue',  $('#intProgress').html());
+            window.location.replace("screen2.html");
+            
+        });
 
 
 //Functions-------------------------------------------------------------------||        
