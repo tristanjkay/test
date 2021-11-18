@@ -9,7 +9,7 @@
         var ajaxCount = 0;
         var ajaxSuccess = 0;
     
-    //Globe
+    //Selected Country
         var selectedCountry = {
             "name": JSON.parse(localStorage.selectedCountry).name, 
             "iso_a2": JSON.parse(localStorage.selectedCountry).iso_a2, 
