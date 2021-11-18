@@ -141,7 +141,7 @@
                     selectedCountry.population = result['data'][0]['population'];
                     selectedCountry.flag = result['data'][0].flags['png'];
                     selectedCountry.currency = result['data'][0]['currencies'];
-                    selectedCountry.currencycode = (result['data'][0]['currencies']).flat()[0][0];
+                    selectedCountry.currencycode = result['data'][0]['currencies'].flat()[0][0];
                     
                 
 
