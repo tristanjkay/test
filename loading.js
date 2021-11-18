@@ -46,21 +46,21 @@
 // AJAX Listeners ---------------------------------------------------------------------||
 
     //When all AJAX calls have completed
-    $(document).ajaxStop(function() {    
-            localStorage.setItem('todaysDate', date);
-            localStorage.setItem('todaysDateMinus', dateminus);
-            localStorage.setItem('sevendaysago', sevendaysago);
-            localStorage.setItem('sevendaysagominus', sevendaysagominus);
-            localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
-            localStorage.setItem('ajaxTotal', ajaxCount);
-            localStorage.setItem('ajaxSuccess', ajaxSuccess);
-            localStorage.setItem('ProgressValue',  $('#intProgress').html());
-            window.location.replace("screen2.html");
-            
-        });
+        $(document).ajaxStop(function() {    
+                localStorage.setItem('todaysDate', date);
+                localStorage.setItem('todaysDateMinus', dateminus);
+                localStorage.setItem('sevendaysago', sevendaysago);
+                localStorage.setItem('sevendaysagominus', sevendaysagominus);
+                localStorage.setItem('selectedCountry', JSON.stringify(selectedCountry));
+                localStorage.setItem('ajaxTotal', ajaxCount);
+                localStorage.setItem('ajaxSuccess', ajaxSuccess);
+                localStorage.setItem('ProgressValue',  $('#intProgress').html());
+                window.location.replace("screen2.html");
+                
+            });
 
 
-//Functions-------------------------------------------------------------------||        
+// Functions-------------------------------------------------------------------||        
 
     //Update progress bar    
         $('body').on('DOMSubtreeModified', '#intProgress', function(){
@@ -76,98 +76,107 @@
                 .replace(/(^-+|-+$)/, '');
         }
 
-//Geonames
-$.ajax({
-    url: "php/general/geonames.php",
-    type: 'POST',
-    dataType: 'json',
-    data: {
-        country: mycountry,
-    },
-    success: function(result) {
-ajaxCount++;
-ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
-percentLoaded = (ajaxSuccess/62)*100;
+
+
+
+// API Calls -------------------------------------------------------------------||
+
+    //Geonames
+        $.ajax({
+            url: "php/general/geonames.php",
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                country: mycountry,
+            },
+
+            success: function(result) {
+                ajaxCount++;
+                ajaxSuccess++
+                $('#intProgress').text((ajaxSuccess/62)*100);
+                percentLoaded = (ajaxSuccess/62)*100;
+
+                
+                if (result.status.name == "ok") {
+
+                    selectedCountry.continent = result['data'][0]['continentName']; 
+                    selectedCountry.area = result['data'][0]['areaInSqKm']; 
+ 
+                }
+            
+            },
+
+            error: function(jqXHR, textStatus, errorThrown) {
+                ajaxCount++;
+
+            }
+            
+        });
+
+
+
+
+    //RESTCountries
+        $.ajax({
+            url: "php/general/restcountries.php",
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                country: mycountry,
+            },
+
+            success: function(result) {
+                ajaxCount++;
+                ajaxSuccess++
+                $('#intProgress').text((ajaxSuccess/62)*100);
+                percentLoaded = (ajaxSuccess/62)*100;
 
         
-        if (result.status.name == "ok") {
 
-            selectedCountry.continent = result['data'][0]['continentName']; //NOPE
-            selectedCountry.area = result['data'][0]['areaInSqKm']; //NOPE
+                if (result.status.name == "ok") {
+                
+                    
+                    selectedCountry.capital = replaceAccents(result['data'][0]['capital'][0]);
+                    selectedCountry.region = result['data'][0]['region'];
+                    selectedCountry.population = result['data'][0]['population'];
+                    selectedCountry.flag = result['data'][0].flags['png'];
+                    selectedCountry.currency = result['data'][0]['currencies'];
+                    selectedCountry.currencycode = (result['data'][0]['currencies']).flat()[0][0];
+                    
+                
+
+                    localStorage.setItem("capitalLocationLat", result['data'][0]['capitalInfo']['latlng'][0]);
+                    localStorage.setItem("capitalLocationLong", result['data'][0]['capitalInfo']['latlng'][1]);
+                    
+
+        for (const [key, value] of Object.entries(selectedCountry.currency)) {
             
-        }
-    
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-ajaxCount++;
+            return [selectedCountry.currencyabbrev = Object.getOwnPropertyNames(result['data'][0]['currencies'])[0], selectedCountry.currencycode = value['symbol'] , selectedCountry.currencyname = value['name']]
+        };
+                    //TODO: THESE ARE NOT BEING ADDED
+                    selectedCountry.currencies = result['data'][0]['currencies'];
+                    selectedCountry.language = result['data'][0]['languages'];
+                    
+                    selectedCountry.timezones = result['data'][0]['timezones'];
+                    selectedCountry.location = result['data'][0]['latlng'];
+                    
+                
+                    
+
+
+                    
+                    
+
+                }
+            
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
         ajaxCount++;
-    }
-    
-});
+                //console.log("RESTCountries Fail")
 
-//RESTCountries
-$.ajax({
-    url: "php/general/restcountries.php",
-    type: 'POST',
-    dataType: 'json',
-    data: {
-        country: mycountry,
-    },
-    success: function(result) {
-ajaxCount++;
-ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
-percentLoaded = (ajaxSuccess/62)*100;
-
-        //console.log("RESTCountries Success");
-
-        if (result.status.name == "ok") {
-
-            //console.log(result['data'][0].flags['png']);
-           
-
-            //Set Data to Country Object
-            selectedCountry.capital = replaceAccents(result['data'][0]['capital'][0]);
-            selectedCountry.region = result['data'][0]['region'];
-            selectedCountry.population = result['data'][0]['population'];
-            selectedCountry.flag = result['data'][0].flags['png'];
-            selectedCountry.currency = result['data'][0]['currencies'];
-            selectedCountry.currencycode = result['data'][0]['currencies'];
+            }
             
-            selectedCountry.currencycode = [[selectedCountry.currencycode].flat()][0][0];
-
-            localStorage.setItem("capitalLocationLat", result['data'][0]['capitalInfo']['latlng'][0]);
-            localStorage.setItem("capitalLocationLong", result['data'][0]['capitalInfo']['latlng'][1]);
-
-for (const [key, value] of Object.entries(selectedCountry.currency)) {
-    
-    return [selectedCountry.currencyabbrev = Object.getOwnPropertyNames(result['data'][0]['currencies'])[0], selectedCountry.currencycode = value['symbol'] , selectedCountry.currencyname = value['name']]
-  };
-            //TODO: THESE ARE NOT BEING ADDED
-            selectedCountry.currencies = result['data'][0]['currencies'];
-            selectedCountry.language = result['data'][0]['languages'];
-            
-            selectedCountry.timezones = result['data'][0]['timezones'];
-            selectedCountry.location = result['data'][0]['latlng'];
-            
-           
-            
-
-
-            
-            
-
-        }
-    
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-ajaxCount++;
-        //console.log("RESTCountries Fail")
-
-    }
-    
-});
+        });
 
 
 
