@@ -449,61 +449,13 @@ percentLoaded = (ajaxSuccess/62)*100;
 
             selectedCountry.pois = result['data'];
 
-
-
-//Images
-//https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=" . $_REQUEST['country'] . "&pageNumber=1&pageSize=10&autoCorrect=true
-
-//Images Array
-/* imagesArray = [];
-selectedCountry.pois.forEach(element => {
-    
-    $.ajax({
-        url: "php/general/photos.php",
-        type: 'GET',
-        dataType: 'json',
-        data: {
-            //ref: element['photos'][0]['photo_reference'],
-            ref:"Aap_uEA7vb0DDYVJWEaX3O-AtYp77AaswQKSGtDaimt3gt7QCNpdjp1BkdM6acJ96xTec3tsV_ZJNL_JP-lqsVxydG3nh739RE_hepOOL05tfJh2_ranjMadb3VoBYFvF0ma6S24qZ6QJUuV6sSRrhCskSBP5C1myCzsebztMfGvm7ij3gZT"
-        },
-        success: function(result) {
-            console.log(result);
-    ajaxCount++;
-    ajaxSuccess++
-    $('#intProgress').text((ajaxSuccess/62)*100);
-    percentLoaded = (ajaxSuccess/62)*100;
-    
-
-    
-            if (result != null) {
-                //FIX
-                    result.forEach(element => {
-                        //console.log(element);
-                      //imagesArray.push(element);  
-                    });
-                    //localStorage.setItem("images", imagesArray.toString());    
-                
-                
-                
-                
-        }
-    },
-        error: function(jqXHR, textStatus, errorThrown) {
-    ajaxCount++;
-            console.log("Dictionary Fail")
-    
-        }
-        
-    });
-
-});   */
  
             
     }
 },
     error: function(jqXHR, textStatus, errorThrown) {
-ajaxCount++;
-        //console.log("Dictionary Fail")
+        ajaxCount++;
+        console.log("Google Places API Failed")
 
     }
     
@@ -513,7 +465,10 @@ ajaxCount++;
 
 
 
-//Airports
+//Airports & Flights API
+
+//Airport API
+
 $.ajax({
     url: "php/flights/airports-fileget.php",
     type: 'POST',
@@ -529,7 +484,7 @@ percentLoaded = (ajaxSuccess/62)*100;
         selectedCountry.airports = [];
         selectedCountry.airport = [];
 
-        //console.log("Airports Success");
+     
 
         if (result.status.name == "ok") {
 
@@ -545,47 +500,46 @@ percentLoaded = (ajaxSuccess/62)*100;
             }
             });
 
-            //Flights
+            //Flights API
             //TODO: MAKE ORIGIN COUNTRY DYNAMIC
- $.ajax({
-url: "php/flights/flights.php",
-type: 'POST',
-dataType: 'json',
-data: {
-    origin: 'LON',
-    destination: selectedCountry.airport[0]['IATA/FAA'],
-    
-},
-success: function(result) {
-ajaxCount++;
-ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
-percentLoaded = (ajaxSuccess/62)*100;
-    selectedCountry.flights = [];
 
- 
+            $.ajax({
 
-    if (result) {
+                url: "php/flights/flights.php",
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    origin: 'LON',
+                    destination: selectedCountry.airport[0]['IATA/FAA'],
+                    },
+                success: function(result) {
+                    ajaxCount++;
+                    ajaxSuccess++
+                    $('#intProgress').text((ajaxSuccess/62)*100);
+                    percentLoaded = (ajaxSuccess/62)*100;
+                    selectedCountry.flights = [];
 
-        var sortedResult = result.sort((a,b) => (a.depart_date > b.depart_date) ? 1 : ((b.depart_date > a.depart_date) ? -1 : 0))
-        selectedCountry.flights = sortedResult;
+                    if (result) {
+
+                    var sortedResult = result.sort((a,b) => (a.depart_date > b.depart_date) ? 1 : ((b.depart_date > a.depart_date) ? -1 : 0))
+                    selectedCountry.flights = sortedResult;
         
-        //console.log(result);
-}
-},
-error: function(jqXHR, textStatus, errorThrown) {
-ajaxCount++;
-    //console.log("Dictionary Fail")
-}
+  
+                    }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        ajaxCount++;
+                        console.log("Flights API Failed")
+                    }
 
-}); 
+                    }); 
             
             
     }
 },
     error: function(jqXHR, textStatus, errorThrown) {
-ajaxCount++;
-        //console.log("Dictionary Fail")
+        ajaxCount++;
+        console.log("Airport API Failed")
     }
     
 });
@@ -593,57 +547,50 @@ ajaxCount++;
 
 
 //ExchangeRateAPI
-$.ajax({
-    url: "php/economy/exchangerate.php",
-    type: 'POST',
-    dataType: 'json',
-    data: {
-        country: selectedCountry.currencycode,
+    $.ajax({
+        url: "php/economy/exchangerate.php",
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            country: selectedCountry.currencycode,
+        },
+        success: function(result) {
+            ajaxCount++;
+            ajaxSuccess++
+            $('#intProgress').text((ajaxSuccess/62)*100);
+            percentLoaded = (ajaxSuccess/62)*100;
+
+        
+
+            if (result.status.name == "ok") {
+
+                if(typeof selectedCountry.currencycode != 'undefined'){
+                    selectedCountry.exchangerate = result['data']['rates'][selectedCountry.currencyabbrev];
+                    
+                }
+                
+                selectedCountry.othercurrencies = result['data']['rates'];
+
+                for (const [key, value] of Object.entries(selectedCountry.othercurrencies)) {
+
+                    selectedCountry.othercurrencies[key] = selectedCountry.exchangerate/value;
+                    
+
+                };
+                //TODO: Is this needed?
+                $('#currency').html(selectedCountry.currency);
+                $('#exchangeratevalue').html(selectedCountry.exchangerate);
+                
+                
+        }
     },
-    success: function(result) {
-ajaxCount++;
-ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
-percentLoaded = (ajaxSuccess/62)*100;
+        error: function(jqXHR, textStatus, errorThrown) {
+    ajaxCount++;
+            console.log("Exchange Rate API Failed")
 
-        //console.log("Exchange Rate Success");
-
-        if (result.status.name == "ok") {
-
-            //console.log(selectedCountry.currencycode);
-            if(typeof selectedCountry.currencycode != 'undefined'){
-                selectedCountry.exchangerate = result['data']['rates'][selectedCountry.currencyabbrev];
-                
-            }
-            
-            //console.log(selectedCountry.exchangerate);
-            selectedCountry.othercurrencies = result['data']['rates'];
-
-            for (const [key, value] of Object.entries(selectedCountry.othercurrencies)) {
-                ////console.log(`${key}: ${value}`);
-
-                //1 in other currencies = x chosen country
-                selectedCountry.othercurrencies[key] = selectedCountry.exchangerate/value;
-                
-                //Inverse
-                //selectedCountry.othercurrencies[key] = 1/value;
-
-              };
-
-            $('#currency').html(selectedCountry.currency);
-            //TODO Make this work
-            $('#exchangeratevalue').html(selectedCountry.exchangerate);
-            
-            
-    }
-},
-    error: function(jqXHR, textStatus, errorThrown) {
-ajaxCount++;
-        //console.log("Exchange Rate Fail")
-
-    }
-    
-});
+        }
+        
+    });
 
 
 
@@ -651,7 +598,7 @@ ajaxCount++;
 //https://apiportal.wto.org/query-builder
     
     var params = {
-        // Request parameters
+        
         "i": "ITS_MTV_AM",
         "r": selectedCountry.wtocode,
         "fmt": "json",
@@ -663,33 +610,27 @@ ajaxCount++;
     $.ajax({
         url: "https://api.wto.org/timeseries/v1/data?" + $.param(params),
         beforeSend: function(xhrObj){
-            // Request headers
             xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","71e13c8a8030440e814fe17043f74a47");
         },
         type: "GET",
-        // Request body
         data: "{body}",
     })
     .done(function(data) {
         var parsedData = (JSON.parse(data))['Dataset'];
-        //console.log(JSON.parse(data)['Dataset']);
-        //console.log(parsedData[0]);
         var sortedResult = parsedData.sort((a,b) => (a.Year < b.Year) ? 1 : ((b.Year < a.Year) ? -1 : 0))
         selectedCountry.imports = sortedResult;
-
-
-     
     })
     .fail(function() {
         console.log("Imports Data Error");
     });
 
-    //Exports WTO
-    //https://apiportal.wto.org/query-builder
+
+
+//Exports WTO
+//https://apiportal.wto.org/query-builder
 
     
     var params = {
-        // Request parameters
         "i": "ITS_MTV_AX",
         "r": selectedCountry.wtocode,
         "fmt": "json",
@@ -701,22 +642,16 @@ ajaxCount++;
     $.ajax({
         url: "https://api.wto.org/timeseries/v1/data?" + $.param(params),
         beforeSend: function(xhrObj){
-            // Request headers
             xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","71e13c8a8030440e814fe17043f74a47");
         },
         type: "GET",
-        // Request body
         data: "{body}",
     })
     .done(function(data) {
         var parsedData = (JSON.parse(data)['Dataset']);
-        //console.log(JSON.parse(data)['Dataset']);
-        //console.log(parsedData[0]);
         var sortedResult = parsedData.sort((a,b) => (a.Year < b.Year) ? 1 : ((b.Year < a.Year) ? -1 : 0))
         selectedCountry.exports = sortedResult;
 
-
-     
     })
     .fail(function() {
         console.log("Exports Data Error");
@@ -725,74 +660,71 @@ ajaxCount++;
 
 
 //NewsAPI
-$.ajax({
-    url: "php/events/news.php",
-    type: 'POST',
-    dataType: 'json',
-    data: {
-        country: selectedCountry.name,
-    },
-    success: function(result) {
-ajaxCount++;
-ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
-percentLoaded = (ajaxSuccess/62)*100;
+    $.ajax({
+        url: "php/events/news.php",
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            country: selectedCountry.name,
+        },
+        success: function(result) {
+            ajaxCount++;
+            ajaxSuccess++
+            $('#intProgress').text((ajaxSuccess/62)*100);
+            percentLoaded = (ajaxSuccess/62)*100;
 
-        
 
-        if (result.status.name == "ok") {
-            
-            //console.log("News Success");
-            var thenews = result['data']['response']['results'];
-            var sortedNews = {};
-            thenews.forEach(article => {
-                sortedNews[article.webPublicationDate.split("T")[0]] = {};
-                sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle] = article;
-                sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle]['textBody'] = (article.blocks.body[0].bodyTextSummary).split(" ").slice(0, 65).join(" ") + "...";
-                sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle]['shortDate'] = article.webPublicationDate.split("T")[0];
+            if (result.status.name == "ok") {
                 
-            });
-            sortedNews = Object.keys(sortedNews).sort((a,b) => (a < b) ? 1 : ((b < a) ? -1 : 0)).reduce(
-                (obj, key) => { 
-                  obj[key] = sortedNews[key]; 
-                  return obj;
-                }, 
-                {}
-              );
-         
-            localStorage.setItem('sortedNews', JSON.stringify(sortedNews));
-            selectedCountry.news = JSON.parse(localStorage.getItem('sortedNews'));
- 
+                var thenews = result['data']['response']['results'];
+                var sortedNews = {};
+                thenews.forEach(article => {
+                    sortedNews[article.webPublicationDate.split("T")[0]] = {};
+                    sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle] = article;
+                    sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle]['textBody'] = (article.blocks.body[0].bodyTextSummary).split(" ").slice(0, 65).join(" ") + "...";
+                    sortedNews[article.webPublicationDate.split("T")[0]][article.webTitle]['shortDate'] = article.webPublicationDate.split("T")[0];
+                    
+                });
+                sortedNews = Object.keys(sortedNews).sort((a,b) => (a < b) ? 1 : ((b < a) ? -1 : 0)).reduce(
+                    (obj, key) => { 
+                    obj[key] = sortedNews[key]; 
+                    return obj;
+                    }, 
+                    {}
+                );
             
-             }
+                localStorage.setItem('sortedNews', JSON.stringify(sortedNews));
+                selectedCountry.news = JSON.parse(localStorage.getItem('sortedNews'));
 
-             
-},
-    error: function(jqXHR, textStatus, errorThrown) {
-ajaxCount++;
+                }
 
-        //console.log("News Fail")
+                
+    },
+        error: function(jqXHR, textStatus, errorThrown) {
+    ajaxCount++;
 
-    }
-    
-});
+            console.log("News API Failed")
+
+        }
+        
+    });
 
 
 
 //WorldBank
 //GDP
 $.ajax({
-url: "php/worldbank/worldbankgdp.php",
-type: 'POST',
-dataType: 'json',
-data: {
-    country: mycountry,
-},
-success: function(result) {
-ajaxCount++;
-ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
-percentLoaded = (ajaxSuccess/62)*100;
+    url: "php/worldbank/worldbankgdp.php",
+    type: 'POST',
+    dataType: 'json',
+    data: {
+        country: mycountry,
+    },
+    success: function(result) {
+    ajaxCount++;
+    ajaxSuccess++
+    $('#intProgress').text((ajaxSuccess/62)*100);
+    percentLoaded = (ajaxSuccess/62)*100;
 
 
 
@@ -815,7 +747,6 @@ percentLoaded = (ajaxSuccess/62)*100;
             switch (thousands) {
                 case "0":
                     //Less than 1000
-                    
                     selectedCountry.gdp["string"] = result['data'][1][0]['value'];
                     break;
 
