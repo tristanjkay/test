@@ -81,7 +81,8 @@
 
 // API Calls -------------------------------------------------------------------||
 
-    //Geonames
+    // Geonames API - http://www.geonames.org/
+    // This API is given the selected countries name. The API then continent data and size
         $.ajax({
             url: "php/general/geonames.php",
             type: 'POST',
@@ -108,6 +109,7 @@
 
             error: function(jqXHR, textStatus, errorThrown) {
                 ajaxCount++;
+                console.log("Geonames API Failed")
 
             }
             
@@ -116,7 +118,8 @@
 
 
 
-    //RESTCountries
+    // RestCountries API - https://restcountries.com/
+    // This API is given the selected countries name. The API then returns general data for that country
         $.ajax({
             url: "php/general/restcountries.php",
             type: 'POST',
@@ -144,7 +147,7 @@
                     selectedCountry.currencycode = [[result['data'][0]['currencies']].flat()][0][0];
                     
                    
-
+                    //TODO: Use selectCountry instead
                     localStorage.setItem("capitalLocationLat", result['data'][0]['capitalInfo']['latlng'][0]);
                     localStorage.setItem("capitalLocationLong", result['data'][0]['capitalInfo']['latlng'][1]);
                     
@@ -160,19 +163,15 @@
                     selectedCountry.timezones = result['data'][0]['timezones'];
                     selectedCountry.location = result['data'][0]['latlng'];
                     
-                
-                    
 
-
-                    
-                    
 
                 }
             
             },
             error: function(jqXHR, textStatus, errorThrown) {
-        ajaxCount++;
-                //console.log("RESTCountries Fail")
+                ajaxCount++;
+                console.log("RestCountries API Failed")
+                
 
             }
             
@@ -224,7 +223,7 @@ $.ajax({
 
             
             
-            //Weather Icon
+            //Weather Icons
             switch(selectedCountry.weather.description) {
                 
                 case "Sunny":
@@ -393,6 +392,9 @@ $.ajax({
 });
 
 //WikiAPI
+//https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Chile
+//https://en.wikipedia.org/w/api.php?action=parse&page=Chile&prop=wikitext&formatversion=2&format=json
+
 $.ajax({
     url: "php/general/dictionary.php",
     type: 'POST',
@@ -406,43 +408,14 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-        //console.log("Dictionary Success");
-        //https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Chile
-        //https://en.wikipedia.org/w/api.php?action=parse&page=Chile&prop=wikitext&formatversion=2&format=json
-
-
-
 
         if (result.status.name == "ok") {
 
             var rawWikiData = result['data'];
-           /*  const rawWikiDataArray = rawWikiData.split("\n");
-            var rawWikiDataIndex = 0;
-             rawWikiDataArray.forEach(element => {
-                 if(rawWikiDataArray[rawWikiDataIndex].includes('{{')){
-                    rawWikiDataArray[rawWikiDataIndex] = element.split('{{')[1];
-                 }
-                 
-                rawWikiDataIndex++;
-                return rawWikiDataArray;
-            });
-            rawWikiDataIndex = 0;
-            rawWikiDataArray.forEach(element => {
-                if(rawWikiDataArray[rawWikiDataIndex].includes('}}')){
-                    rawWikiDataArray[rawWikiDataIndex] = element.split('}}')[0];
-                 }
-                 
-                
-                if(rawWikiDataArray[rawWikiDataIndex] == null){
-                    rawWikiDataArray.remove(rawWikiDataIndex);
-                }
-                rawWikiDataIndex++;
-                return rawWikiDataArray;
-            }); */
-            
+           
             selectedCountry.description = Object.entries(rawWikiData)[0][1]['extract'].split('.')[0] + ".";
             selectedCountry.descriptionfull = Object.entries(rawWikiData)[0][1]['extract'].split("\n");
-            //console.log(rawWikiData);
+     
             
             
             
@@ -450,14 +423,14 @@ percentLoaded = (ajaxSuccess/62)*100;
 },
     error: function(jqXHR, textStatus, errorThrown) {
 ajaxCount++;
-        //console.log("Dictionary Fail")
+        console.log("Dictionary API Failed")
     }
     
 });
 
 //POI
-//https://api.opentripmap.com/
-//API Expires
+//https://maps.googleapis.com
+
 $.ajax({
     url: "php/culture/poi_googlemaps.php",
     type: 'GET',
@@ -471,7 +444,6 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-        //console.log("Maps POI Returned")
 
         if (result.status.name == "ok") {
 
