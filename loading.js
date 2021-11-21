@@ -3200,5 +3200,3 @@ console.log("WorldBank (Tourism Income) Request Failed")
 }
 
 });
-
-  
