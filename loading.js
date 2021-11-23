@@ -16,7 +16,7 @@
             "iso_a3": JSON.parse(localStorage.selectedCountry).iso_a3, 
             "geometry": JSON.parse(localStorage.selectedCountry).geometry, 
             "flag": "", 
-            "wtocode": JSON.parse(localStorage.getItem('wtocode')).toString(),
+            "wtocode": localStorage.getItem('wtocode'),
         };
    
         var mycountry = JSON.parse(localStorage.selectedCountry).iso_a2;
