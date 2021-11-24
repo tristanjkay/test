@@ -29,7 +29,7 @@
         var mycountry3 = JSON.parse(localStorage.selectedCountry).iso_a3;
         var mycountryname = encodeURIComponent((JSON.parse(localStorage.selectedCountry).name).toString().toLowerCase());
         var mycountrycapital = replaceAccents(JSON.parse(localStorage.selectedCountry).capital);
-        
+        console.log(mycountrycapital);
 
     //Dates for lookups
         var date = new Date();
