@@ -474,7 +474,7 @@ $.ajax({
     type: 'POST',
     dataType: 'json',
     data: {
-        country: selectedCountry.iso2,
+        country: selectedCountry.iso_a2,
     },
     success: function(result) {
 ajaxCount++;
