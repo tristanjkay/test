@@ -489,15 +489,17 @@ percentLoaded = (ajaxSuccess/62)*100;
         if (result.status.name == "ok") {
 
             result['data'].forEach(element => {
-                console.log(result['data']);
+                
             if(element.Country == selectedCountry.name){
                 selectedCountry.airports.push(element);
+                console.log(element);
 
                 
             }
             if(element.City == selectedCountry.capital){
             
                 selectedCountry.airport.push(element);
+                console.log(element);
             }
             });
 
