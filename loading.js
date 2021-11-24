@@ -21,7 +21,7 @@
    
         var mycountry = JSON.parse(localStorage.selectedCountry).iso_a2;
         var mycountry3 = JSON.parse(localStorage.selectedCountry).iso_a3;
-        var mycountryname = JSON.parse(localStorage.selectedCountry).name;
+        var mycountryname = encodeURIComponent(toLowerCase(JSON.parse(localStorage.selectedCountry).name));
 
     //Dates for lookups
         var date = new Date();
@@ -189,7 +189,7 @@ $.ajax({
     type: 'POST',
     dataType: 'json',
     data: {
-        country: selectedCountry.name,
+        country: mycountryname,
     },
     success: function(result) {
         
@@ -400,7 +400,7 @@ $.ajax({
     type: 'POST',
     dataType: 'json',
     data: {
-        country: selectedCountry.name,
+        country: mycountryname,
     },
     success: function(result) {
 ajaxCount++;
@@ -665,7 +665,7 @@ percentLoaded = (ajaxSuccess/62)*100;
         type: 'POST',
         dataType: 'json',
         data: {
-            country: selectedCountry.name,
+            country: mycountryname,
         },
         success: function(result) {
             ajaxCount++;
