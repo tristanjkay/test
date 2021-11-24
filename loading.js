@@ -2,7 +2,13 @@
 // Description: Intermediate page where data is collected from API calls based on what country the user has chosen. 
 // This page also includes a loading bar so that the user can see visible progress, as data collection can take a few seconds.
 
-
+ //Replace accents and special chracters in Strings
+ const replaceAccents = (str) => {
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/([^\w]+|\s+)/g, '-')
+        .replace(/\-\-+/g, '-')	
+        .replace(/(^-+|-+$)/, '');
+}
 // Varibles-------------------------------------------------------------------||
     //Loading Progress Bar (62 requests)
         var percentLoaded = 0;
@@ -70,13 +76,7 @@
             $('.progress-bar').css("width", percentLoadedPercent);
         });
 
-    //Replace accents and special chracters in Strings
-        const replaceAccents = (str) => {
-            return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-                .replace(/([^\w]+|\s+)/g, '-')
-                .replace(/\-\-+/g, '-')	
-                .replace(/(^-+|-+$)/, '');
-        }
+   
 
 
 
