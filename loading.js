@@ -492,7 +492,7 @@ percentLoaded = (ajaxSuccess/62)*100;
                 
             if(element.Country == selectedCountry.name){
                 selectedCountry.airports.push(element);
-                console.log(element);
+                //console.log(element);
 
                 
             }
