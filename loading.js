@@ -559,7 +559,7 @@ percentLoaded = (ajaxSuccess/62)*100;
         type: 'POST',
         dataType: 'json',
         data: {
-            country: selectedCountry.currencycode,
+            country: selectedCountry.currencyabbrev,
         },
         success: function(result) {
             ajaxCount++;
