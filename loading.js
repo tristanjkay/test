@@ -490,6 +490,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 
         if (result.status.name == "ok") {
             console.log(result['data']);
+            var capital = mycountrycapital.replaceAll('-', ' ');
             result['data'].forEach(element => {
                 
                
@@ -499,7 +500,7 @@ percentLoaded = (ajaxSuccess/62)*100;
 
                 
             }
-            if(element.City == mycountrycapital){
+            if(element.City == capital){
             
                 selectedCountry.airport.push(element);
                 //console.log(element);
