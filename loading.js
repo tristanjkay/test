@@ -21,7 +21,7 @@
    
         var mycountry = JSON.parse(localStorage.selectedCountry).iso_a2;
         var mycountry3 = JSON.parse(localStorage.selectedCountry).iso_a3;
-        var mycountryname = encodeURIComponent(toLowerCase(JSON.parse(localStorage.selectedCountry).name));
+        var mycountryname = encodeURIComponent((JSON.parse(localStorage.selectedCountry).name).toString().toLowerCase());
 
     //Dates for lookups
         var date = new Date();
