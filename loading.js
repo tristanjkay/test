@@ -29,7 +29,7 @@
         var mycountry3 = JSON.parse(localStorage.selectedCountry).iso_a3;
         var mycountryname = encodeURIComponent((JSON.parse(localStorage.selectedCountry).name).toString().toLowerCase());
         var mycountrycapital = replaceAccents(JSON.parse(localStorage.selectedCountry).capital);
-        console.log(mycountrycapital);
+        //console.log(mycountrycapital);
 
     //Dates for lookups
         var date = new Date();
@@ -489,7 +489,7 @@ percentLoaded = (ajaxSuccess/62)*100;
      
 
         if (result.status.name == "ok") {
-            console.log(result['data']);
+            //console.log(result['data']);
             var capital = mycountrycapital.replaceAll('-', ' ');
             result['data'].forEach(element => {
                 
