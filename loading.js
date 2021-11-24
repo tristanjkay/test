@@ -29,7 +29,7 @@
         var mycountry3 = JSON.parse(localStorage.selectedCountry).iso_a3;
         var mycountryname = encodeURIComponent((JSON.parse(localStorage.selectedCountry).name).toString().toLowerCase());
         var mycountrycapital = replaceAccents(JSON.parse(localStorage.selectedCountry).capital);
-        console.log(mycountrycapital);
+        
 
     //Dates for lookups
         var date = new Date();
@@ -491,6 +491,7 @@ percentLoaded = (ajaxSuccess/62)*100;
         if (result.status.name == "ok") {
 
             result['data'].forEach(element => {
+                console.log(result['data']);
                
             if(element.Country == selectedCountry.name){
                 selectedCountry.airports.push(element);
