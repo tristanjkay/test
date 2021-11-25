@@ -96,7 +96,7 @@
             success: function(result) {
                 ajaxCount++;
                 ajaxSuccess++
-                $('#intProgress').text((ajaxSuccess/62)*100);
+                //$('#intProgress').text((ajaxSuccess/62)*100);
                 percentLoaded = (ajaxSuccess/62)*100;
 
                 
@@ -133,7 +133,7 @@
             success: function(result) {
                 ajaxCount++;
                 ajaxSuccess++
-                $('#intProgress').text((ajaxSuccess/62)*100);
+                //$('#intProgress').text((ajaxSuccess/62)*100);
                 percentLoaded = (ajaxSuccess/62)*100;
 
         
@@ -198,7 +198,7 @@ $.ajax({
         //Progress Indicator Update
         ajaxCount++;
         ajaxSuccess++
-        $('#intProgress').text((ajaxSuccess/62)*100);
+        //$('#intProgress').text((ajaxSuccess/62)*100);
         percentLoaded = (ajaxSuccess/62)*100;
 
         //Returned Data
@@ -407,7 +407,7 @@ $.ajax({
     success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
 
@@ -443,7 +443,7 @@ $.ajax({
     success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
 
@@ -481,7 +481,7 @@ $.ajax({
     success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
         selectedCountry.airports = [];
         selectedCountry.airport = [];
@@ -522,7 +522,7 @@ percentLoaded = (ajaxSuccess/62)*100;
                 success: function(result) {
                     ajaxCount++;
                     ajaxSuccess++
-                    $('#intProgress').text((ajaxSuccess/62)*100);
+                    //$('#intProgress').text((ajaxSuccess/62)*100);
                     percentLoaded = (ajaxSuccess/62)*100;
                     selectedCountry.flights = [];
 
@@ -564,7 +564,7 @@ percentLoaded = (ajaxSuccess/62)*100;
         success: function(result) {
             ajaxCount++;
             ajaxSuccess++
-            $('#intProgress').text((ajaxSuccess/62)*100);
+            ////$('#intProgress').text((ajaxSuccess/62)*100);
             percentLoaded = (ajaxSuccess/62)*100;
 
         
@@ -677,7 +677,7 @@ percentLoaded = (ajaxSuccess/62)*100;
         success: function(result) {
             ajaxCount++;
             ajaxSuccess++
-            $('#intProgress').text((ajaxSuccess/62)*100);
+            //$('#intProgress').text((ajaxSuccess/62)*100);
             percentLoaded = (ajaxSuccess/62)*100;
 
 
@@ -730,7 +730,7 @@ $.ajax({
     success: function(result) {
     ajaxCount++;
     ajaxSuccess++
-    $('#intProgress').text((ajaxSuccess/62)*100);
+    //$('#intProgress').text((ajaxSuccess/62)*100);
     percentLoaded = (ajaxSuccess/62)*100;
 
 
@@ -832,7 +832,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
     //console.log("WorldBank INF Success")
@@ -931,7 +931,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
     //console.log("WorldBank BUD Success")
@@ -980,7 +980,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
     //console.log("WorldBank BUD% Success")
@@ -1030,7 +1030,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
     ////console.log(result);
@@ -1078,7 +1078,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
     ////console.log(result);
@@ -1126,7 +1126,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
     ////console.log(result);
@@ -1170,7 +1170,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
     ////console.log(result);
@@ -1215,7 +1215,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
     ////console.log(result);
@@ -1259,7 +1259,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
     ////console.log(result);
@@ -1305,7 +1305,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
     ////console.log(result);
@@ -1349,7 +1349,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
     ////console.log(result);
@@ -1393,7 +1393,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
     ////console.log(result);
@@ -1437,7 +1437,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
     ////console.log(result);
@@ -1481,7 +1481,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
     ////console.log(result);
@@ -1525,7 +1525,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -1569,7 +1569,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -1613,7 +1613,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -1659,7 +1659,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -1703,7 +1703,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -1747,7 +1747,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -1791,7 +1791,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -1835,7 +1835,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -1879,7 +1879,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -1923,7 +1923,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -1967,7 +1967,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2011,7 +2011,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2055,7 +2055,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2099,7 +2099,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2143,7 +2143,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2187,7 +2187,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2231,7 +2231,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2275,7 +2275,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2319,7 +2319,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2363,7 +2363,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2407,7 +2407,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2451,7 +2451,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2495,7 +2495,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2539,7 +2539,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     //BUG: NOT RETURNING AS "OK"
@@ -2586,7 +2586,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2632,7 +2632,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2678,7 +2678,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2722,7 +2722,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2766,7 +2766,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2810,7 +2810,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2854,7 +2854,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2899,7 +2899,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2944,7 +2944,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -2989,7 +2989,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -3034,7 +3034,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -3079,7 +3079,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -3124,7 +3124,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
@@ -3171,7 +3171,7 @@ data: {
 success: function(result) {
 ajaxCount++;
 ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
+//$('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
     ////console.log(result);
