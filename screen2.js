@@ -56,8 +56,8 @@ setTimeout(function () {
 
 
 //Tourism 
-
-$('#ph_tourismincome').html(JSON.parse(localStorage.selectedCountry).tourismincome.value);
+try {
+  $('#ph_tourismincome').html(JSON.parse(localStorage.selectedCountry).tourismincome.value);
 $('#ph_flights').html(JSON.parse(localStorage.selectedCountry).arrivals.value);
 $('#ph_departfrom').html(JSON.parse(localStorage.selectedCountry).flights[0]['origin']);
 $('#ph_departtime').html(JSON.parse(localStorage.selectedCountry).flights[0]['depart_date']);
@@ -68,6 +68,10 @@ if (JSON.parse(localStorage.selectedCountry).flights[0]['duration'] < 1440) {
   var splitArray= JSON.parse(localStorage.selectedCountry).flights[0]['depart_date'].split("-");
   $('#ph_arrivaltime').html(splitArray[0] + "-" + splitArray[1] + "-" + (parseInt(splitArray[2])+1).toString());
 }
+} catch (error) {
+  console.log("Unable to update page with flights");
+}
+
 
 //News
 
