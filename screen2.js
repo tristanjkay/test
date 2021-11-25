@@ -74,6 +74,7 @@ if (JSON.parse(localStorage.selectedCountry).flights[0]['duration'] < 1440) {
 var news = JSON.parse(localStorage.selectedCountry).news;
 var sortedNews = JSON.parse(localStorage.sortedNews);
 var top3newsitems = [];
+console.log(news);
 
 //Date folder
 Object.keys(news).forEach(key => {
