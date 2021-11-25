@@ -63,7 +63,7 @@
                 localStorage.setItem('ajaxTotal', ajaxCount);
                 localStorage.setItem('ajaxSuccess', ajaxSuccess);
                 localStorage.setItem('ProgressValue',  $('#intProgress').html());
-                window.location.replace("screen2.html");
+                //window.location.replace("screen2.html");
                 
             });
 
