@@ -507,8 +507,9 @@ percentLoaded = (ajaxSuccess/62)*100;
                 
             }
             if(element.City == capital){
-            
+                if(selectedCountry.airport.length > 0){
                 selectedCountry.airport.splice(0, 1);
+                }
                 selectedCountry.airport.push(element);
                 
             }
