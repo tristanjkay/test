@@ -493,13 +493,16 @@ percentLoaded = (ajaxSuccess/62)*100;
             var capital = mycountrycapital.replaceAll('-', ' ');
             var sortedResultAirports = result['data'].sort((a,b) => (a.destinations.length < b.destinations.length) ? 1 : ((b.destinations.length < a.destinations.length) ? -1 : 0))
 
-            selectedCountry.airport.push(sortedResultAirports[0]);
+            
             sortedResultAirports.forEach(element => {
             
                
             if(element.Country == selectedCountry.name){
                 selectedCountry.airports.push(element);
                 //console.log(element);
+                if(selectedCountry.airport.length == 0){
+                    selectedCountry.airport.push(element);
+                }
 
                 
             }
