@@ -19,7 +19,7 @@ window.history.replaceState('','','/');
             success: function(result) {
                 
                 if (result.status.name == "ok") {
-                    var sortedResult = result['data'].sort((a,b) => (a.properties.name > b.properties.name) ? 1 : ((b.properties.name > a.properties.name) ? -1 : 0))
+                    result['data'].sort((a,b) => (a.properties.name > b.properties.name) ? 1 : ((b.properties.name > a.properties.name) ? -1 : 0))
                     result['data'].forEach(element => {
                         var option = document.createElement("option");
                         option.text = element.properties.name;
