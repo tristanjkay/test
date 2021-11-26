@@ -491,8 +491,11 @@ percentLoaded = (ajaxSuccess/62)*100;
         if (result.status.name == "ok") {
             //console.log(result['data']);
             var capital = mycountrycapital.replaceAll('-', ' ');
-            result['data'].forEach(element => {
-                
+            var sortedResultAirports = result['data'].sort((a,b) => (a.destinations.length > b.destinations.length) ? 1 : ((b.destinations.length > a.destinations.length) ? -1 : 0))
+
+            selectedCountry.airport.push(sortedResultAirports[0]);
+            sortedResultAirports.forEach(element => {
+            
                
             if(element.Country == selectedCountry.name){
                 selectedCountry.airports.push(element);
@@ -502,8 +505,9 @@ percentLoaded = (ajaxSuccess/62)*100;
             }
             if(element.City == capital){
             
+                selectedCountry.airport.splice(0, 1);
                 selectedCountry.airport.push(element);
-                //console.log(element);
+                
             }
             });
 
@@ -525,7 +529,7 @@ percentLoaded = (ajaxSuccess/62)*100;
                     $('#intProgress').text((ajaxSuccess/62)*100);
                     percentLoaded = (ajaxSuccess/62)*100;
                     selectedCountry.flights = [];
-
+                    
                     if (result) {
 
                     var sortedResult = result.sort((a,b) => (a.depart_date > b.depart_date) ? 1 : ((b.depart_date > a.depart_date) ? -1 : 0))
