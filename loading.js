@@ -414,7 +414,7 @@ percentLoaded = (ajaxSuccess/62)*100;
         if (result.status.name == "ok") {
 
             var rawWikiData = result['data'];
-            console.log(rawWikiData);
+          
             var string1 = Object.entries(rawWikiData)[0][1]['extract'].split('. ')[0] + ". ";
             var string1and2 = Object.entries(rawWikiData)[0][1]['extract'].split('. ')[0] + ". " + Object.entries(rawWikiData)[0][1]['extract'].split('. ')[1] + ".";
             var string1and2and3 = Object.entries(rawWikiData)[0][1]['extract'].split('. ')[0] + ". " + Object.entries(rawWikiData)[0][1]['extract'].split('. ')[1] + ". " + Object.entries(rawWikiData)[0][1]['extract'].split('. ')[2] + ".";
