@@ -84,7 +84,7 @@ window.history.replaceState('','','/');
 var params = {
     // Request parameters
     "ig": "all",
-    "name": name,
+    "name": "all",
     "reg": "all",
     "gp": "all",
     "lang": "1",
@@ -102,9 +102,15 @@ $.ajax({
 })
 .done(function(data) {
     var parsedData = data;
-    //localStorage.setItem("wtocodes", JSON.stringify(parsedData.code));
-    selectedCountry.codewto = parsedData[0].code;
-    localStorage.setItem("wtocode", parsedData[0].code);
+    parsedData.forEach(element => {
+        if (element.iso3A == selectedCountry.iso_a3) {
+            console.log("WTO CODE = ", element.code);
+            selectedCountry.codewto = element.code;
+            localStorage.setItem("wtocode", element.code);
+        }
+    });
+    //selectedCountry.codewto = parsedData[0].code;
+    //localStorage.setItem("wtocode", parsedData[0].code);
     //console.log("[0]:" + parsedData[0].code);
 
 
