@@ -211,7 +211,7 @@ if (chLine) {
 $('#ph_tourismincome').html(JSON.parse(localStorage.selectedCountry).tourismincome.value);
 $('#ph_flightarrivals').html(JSON.parse(localStorage.selectedCountry).arrivals.value);
 $('#ph_flightdepartures').html(JSON.parse(localStorage.selectedCountry).departures.value);
-//$('#ph_tourisminvestment').html(JSON.parse(localStorage.selectedCountry).departures.value); //NOPE
+
 
 //Flights
 var flightsIndex = 0;
@@ -260,8 +260,7 @@ setTimeout(function () {
       });
     
       L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-      //maxZoom: 20,
-      //minZoom: 5,
+  
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
         'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
       id: 'mapbox/streets-v11',
@@ -278,9 +277,6 @@ setTimeout(function () {
 
   
 
-    /* L.marker([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))]).addTo(map).bindPopup('<p class="popup__header" style="font-size: 50px"> &#9733;</p>',{'autoClose':false, 'className' : 'popupCustom'}).openPopup(); */
-
-     /* L.marker([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))],{ icon:  fontAwesomeIcon}).addTo(map); */
 
 
     var page = document.body.id;
@@ -328,6 +324,7 @@ setTimeout(function () {
 
       case "places" :
         map.setView([JSON.parse(localStorage.getItem('capitalLocationLat')), JSON.parse(localStorage.getItem('capitalLocationLong'))], 5);
+        
         //POIs
         var poiIndex = 0;
         var poiArray = JSON.parse(localStorage.selectedCountry).pois;
@@ -341,15 +338,14 @@ setTimeout(function () {
           console.log(imgdivString);
           if(lastMarkerSelected != null){
             lastMarkerSelected.setIcon(placeIcon);
-            //console.log(lastMarkerSelected);
+
             var panelDiv = "#" + lastPanelSelected;
             console.log(panelDiv);
             $(lastPanelSelectedImg).css('filter','grayscale(100%)');
             $(panelDiv).css('background','#F4F4F4');
           }
           map.setView([markers[id]['_latlng']['lat'],markers[id]['_latlng']['lng']], 16);
-          //markers[id].options['icon'].options['html'] = '<p style="font-size: 60px; color: red z-index: 999"> &#9733;</p>';
-          //console.log(markers[id].options['icon'].options['html']);
+
           markers[id].setIcon(selectedPlaceIcon);
           $(imgdivString).css('filter','none');
           var panelDiv = "#" + id;
@@ -385,7 +381,7 @@ setTimeout(function () {
                 markers[marker.featureId] = marker;
                 map.addLayer(marker);
 
-                //console.log(marker.featureId);
+             
             
                 marker.bindPopup(popupText);
                 
@@ -402,19 +398,7 @@ setTimeout(function () {
 
         }, 1000);
 
-        /* for (var i=0; i<(JSON.parse(localStorage.getItem('selectedCountry'))['pois'].length); i++) {
-           
-          var lon = JSON.parse(localStorage.getItem('selectedCountry'))['pois'][i]['geometry']['location']['lng'];
-          var lat = JSON.parse(localStorage.getItem('selectedCountry'))['pois'][i]['geometry']['location']['lat'];
-          var popupText = i;
-          
-           var markerLocation = new L.LatLng(lat, lon);
-           var marker = new L.Marker(markerLocation,{ icon:  placeIcon});
-           map.addLayer(marker);
-       
-           marker.bindPopup(popupText);
-       
-       } */
+
 
         break;
 
@@ -431,23 +415,7 @@ setTimeout(function () {
         map.locate({setView: true, maxZoom: 16});
         map.on('locationfound', (e) => {
           console.log(e.latlng['lat']);
-          /* var pointA = new L.LatLng(e.latlng['lat'], e.latlng['lng']);
-          var pointB = new L.LatLng(localStorage.getItem('capitalLocationLat'), localStorage.getItem('capitalLocationLong'));
-          var pointList = [pointA, pointB];
-          pointList.forEach(element => {
-            var marker = new L.Marker(element,{ icon:  placeIcon});
-            map.addLayer(marker);
-          });
 
-          var firstpolyline = new L.Polyline(pointList, {
-              color: 'red',
-              weight: 10,
-              opacity: 0.5,
-              smoothFactor: 1,
-              linecap: "square",
-          });
-          
-          firstpolyline.addTo(map); */
 
           var latlngs = [];
 
