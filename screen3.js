@@ -365,7 +365,7 @@ setTimeout(function () {
             
             poiArray.forEach(element => {
                 var allPoisAdded = document.getElementById('pois').getElementsByTagName('div');
-                var addBool = true;
+                console.log(allPoisAdded);
                 var poiElement = element;
                 allPoisAdded.forEach(element => {
                   if(element.id == (poiElement['name']).toLowerCase().split("'").join("").split(" ").join("")){
