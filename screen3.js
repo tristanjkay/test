@@ -364,7 +364,7 @@ setTimeout(function () {
           if(poiArray != null){
             
             poiArray.forEach(element => {
-                var allPoisAdded = document.getElementById('pois').getElementsByTagName('div');
+                var allPoisAdded = document.getElementById('pois').childNodes;
                 console.log(allPoisAdded);
                 var poiElement = element;
                 allPoisAdded.forEach(element => {
