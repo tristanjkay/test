@@ -631,7 +631,7 @@ percentLoaded = (ajaxSuccess/62)*100;
         data: "{body}",
     })
     .done(function(data) {
-        var parsedData = data['Dataset'];
+        var parsedData = (JSON.parse(data))['Dataset'];
         var sortedResult = parsedData.sort((a,b) => (a.Year < b.Year) ? 1 : ((b.Year < a.Year) ? -1 : 0))
         selectedCountry.imports = sortedResult;
     })
