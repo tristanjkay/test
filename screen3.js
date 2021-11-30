@@ -368,12 +368,12 @@ setTimeout(function () {
                 console.log(allPoisAdded);
                 var poiElement = element;
                 allPoisAdded.forEach(element => {
-                  if(element.id == (poiElement['name']).toLowerCase().split("'").join("").split(" ").join("")){
+                  if(element.id == (poiElement['name']).toLowerCase().split("'").join("").split(" ").join("").replaceAll(".", "")){
                     poiArray.splice((poiArray.indexOf(element)), 1);
                   }
                 });
 
-                var id = (element['name']).toLowerCase().split("'").join("").split(" ").join("");
+                var id = (element['name']).toLowerCase().split("'").join("").split(" ").join("").replaceAll(".", "");
 
                 var lon = element['geometry']['location']['lng'];
                 var lat = element['geometry']['location']['lat'];
@@ -390,7 +390,7 @@ setTimeout(function () {
                 marker.bindPopup(popupText);
                 
                 try {
-                  $('#pois').append("<div class='greyblock' id = '" + (element['name']).toLowerCase().split("'").join("").split(" ").join("") + "' style='margin-top: 1rem; padding: 0px;'> <div class='row' style='text-align: left; padding-right: 2rem;'> <div class='col-4 placecard' style='margin-top: auto; margin-bottom: auto;'> <img id = '" + (element['name']).toLowerCase().split("'").join("").split(" ").join("") + "img' src='https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=" + element['photos'][0]["photo_reference"] +"&key=AIzaSyBueIu23lPtas0qJpu5hjdpe4nkYE_nnoo' alt='' style='border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; min-height: 12rem;  width: 100%; max-height: 12rem; object-fit: cover; filter: grayscale(100%);'> </div> <div class='col-8' style='vertical-align: middle; margin-top: 1.3rem; margin-bottom: 2rem;'> <h4 id='ph_placetitle'>" + element.name + "</h4><div id='ph_placedescription' class='row' style='margin-left: 0px !important;'>" + (element["types"].filter(item => item !== "establishment").filter(item => item !== "tourist_attraction").filter(item => item !== "point_of_interest").map((i) => '<p style = "background-color: #EAEAEA; font-weight: normal; padding: 4px; padding-left: 6px; padding-right: 6px; border-radius: 10px; margin-right: 1rem; width: auto;">' + i.replaceAll('_',' ') + '</p>').join("")) +  "</div> </div> </div> </div>");
+                  $('#pois').append("<div class='greyblock' id = '" + (element['name']).toLowerCase().split("'").join("").split(" ").join("").replaceAll(".", "") + "' style='margin-top: 1rem; padding: 0px;'> <div class='row' style='text-align: left; padding-right: 2rem;'> <div class='col-4 placecard' style='margin-top: auto; margin-bottom: auto;'> <img id = '" + (element['name']).toLowerCase().split("'").join("").split(" ").join("") + "img' src='https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=" + element['photos'][0]["photo_reference"] +"&key=AIzaSyBueIu23lPtas0qJpu5hjdpe4nkYE_nnoo' alt='' style='border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; min-height: 12rem;  width: 100%; max-height: 12rem; object-fit: cover; filter: grayscale(100%);'> </div> <div class='col-8' style='vertical-align: middle; margin-top: 1.3rem; margin-bottom: 2rem;'> <h4 id='ph_placetitle'>" + element.name + "</h4><div id='ph_placedescription' class='row' style='margin-left: 0px !important;'>" + (element["types"].filter(item => item !== "establishment").filter(item => item !== "tourist_attraction").filter(item => item !== "point_of_interest").map((i) => '<p style = "background-color: #EAEAEA; font-weight: normal; padding: 4px; padding-left: 6px; padding-right: 6px; border-radius: 10px; margin-right: 1rem; width: auto;">' + i.replaceAll('_',' ') + '</p>').join("")) +  "</div> </div> </div> </div>");
                 document.getElementById(id).addEventListener("click", ()=> {clickPoi(id)}, true);
                 poiIndex++;
                 } catch (error) {
