@@ -29,7 +29,7 @@
         var mycountry3 = JSON.parse(localStorage.selectedCountry).iso_a3;
         var mycountryname = encodeURIComponent((JSON.parse(localStorage.selectedCountry).name).toString().toLowerCase());
         var mycountrycapital = replaceAccents(JSON.parse(localStorage.selectedCountry).capital);
-        //console.log(mycountrycapital);
+
 
     //Dates for lookups
         var date = new Date();
@@ -504,7 +504,7 @@ percentLoaded = (ajaxSuccess/62)*100;
      
 
         if (result.status.name == "ok") {
-            //console.log(result['data']);
+ 
             var capital = mycountrycapital.replaceAll('-', ' ');
             var sortedResultAirports = result['data'].sort((a,b) => (a.destinations.length < b.destinations.length) ? 1 : ((b.destinations.length < a.destinations.length) ? -1 : 0))
 
@@ -514,7 +514,6 @@ percentLoaded = (ajaxSuccess/62)*100;
                
             if(element.Country == selectedCountry.name){
                 selectedCountry.airports.push(element);
-                //console.log(element);
                 if(selectedCountry.airport.length == 0){
                     selectedCountry.airport.push(element);
                 }
@@ -813,7 +812,7 @@ $.ajax({
                     break;
 
                 default:
-                    //console.log("It didnt work");
+        
                     break;
             }
        
@@ -915,7 +914,7 @@ try {
                 break;
 
             default:
-                //console.log("It didnt work");
+                
                 break;
         };
         
@@ -1056,7 +1055,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1104,7 +1103,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-    ////console.log(result);
+    
 
     if (result.status.name == "ok") {
 try {
@@ -1152,7 +1151,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-    ////console.log(result);
+   
 
     if (result.status.name == "ok") {
 try {
@@ -1196,7 +1195,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-    ////console.log(result);
+  
 
     if (result.status.name == "ok") {
 try {
@@ -1241,7 +1240,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1285,7 +1284,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-    ////console.log(result);
+ 
 
     if (result.status.name == "ok") {
 try {
@@ -1331,7 +1330,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1375,7 +1374,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1419,7 +1418,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1463,7 +1462,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1507,7 +1506,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100;
 
-    ////console.log(result);
+ 
 
     if (result.status.name == "ok") {
 try {
@@ -1551,7 +1550,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1595,7 +1594,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1639,7 +1638,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1685,7 +1684,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1729,7 +1728,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1773,7 +1772,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1817,7 +1816,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1861,7 +1860,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1905,7 +1904,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1949,7 +1948,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -1993,7 +1992,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2024,50 +2023,7 @@ console.log("WorldBank (HIV) Request Failed")
 }
 
 });
-/* $.ajax({
-url: "php/worldbank/worldbankunderoverweight.php",
-type: 'POST',
-dataType: 'json',
-data: {
-    country: mycountry,
-},
-success: function(result) {
-ajaxCount++;
-ajaxSuccess++
-$('#intProgress').text((ajaxSuccess/62)*100);
-percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
-
-    if (result.status.name == "ok") {
-try {
-
-        selectedCountry.overweight = {
-            "value": result['data'][1][0]['value'],
-            "description": result['data'][1][0]['indicator']['value']
-        };
-        
-
-    } catch (error) {
-            console.log('\n', "WorldBank (GDP) Data was returned, but subsequent data cleaning failed", '\n',"[PROPERTIES]", '\n',"mycountry: ", mycountry, '\n', '\n', "[RETURNED DATA] ", '\n', result['data']);
-            console.log("\n");
-            
-        }
-       
-        
-        
-
-
-    }
-
-},
-error: function(jqXHR, textStatus, errorThrown) {
-ajaxCount++;
-console.log("WorldBank (Overweight) Request Failed")
-
-}
-
-}); */
 $.ajax({
 url: "php/worldbank/worldbankundernourishment.php",
 type: 'POST',
@@ -2081,7 +2037,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+ 
 
     if (result.status.name == "ok") {
 try {
@@ -2125,7 +2081,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+ 
 
     if (result.status.name == "ok") {
 try {
@@ -2169,7 +2125,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+    
 
     if (result.status.name == "ok") {
 try {
@@ -2213,7 +2169,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2257,7 +2213,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2301,7 +2257,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2345,7 +2301,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2389,7 +2345,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2433,7 +2389,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2477,7 +2433,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2521,7 +2477,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2565,11 +2521,11 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    //BUG: NOT RETURNING AS "OK"
+   
 
     if (result.status.co2ouput == "ok") {
         try{
-        //console.log("co2 worked!");
+  
 
         selectedCountry.co2ouput = {
             "value": result['data'][1][0]['value'],
@@ -2612,7 +2568,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+ 
 
     if (result.status.name == "ok") {
 try {
@@ -2658,7 +2614,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2704,7 +2660,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2748,7 +2704,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2792,7 +2748,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2836,7 +2792,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2880,7 +2836,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2925,7 +2881,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -2970,7 +2926,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -3015,7 +2971,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -3060,7 +3016,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -3105,7 +3061,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -3150,7 +3106,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
@@ -3197,7 +3153,7 @@ ajaxSuccess++
 $('#intProgress').text((ajaxSuccess/62)*100);
 percentLoaded = (ajaxSuccess/62)*100; 
 
-    ////console.log(result);
+
 
     if (result.status.name == "ok") {
 try {
