@@ -415,11 +415,21 @@ percentLoaded = (ajaxSuccess/62)*100;
 
             var rawWikiData = result['data'];
             console.log(rawWikiData);
-            if(Object.entries(rawWikiData)[0][1]['extract'].split('. ')[0].length < 110){
-                selectedCountry.description = Object.entries(rawWikiData)[0][1]['extract'].split('. ')[0] + ". " + Object.entries(rawWikiData)[0][1]['extract'].split('. ')[1] + ".";
+            var string1 = Object.entries(rawWikiData)[0][1]['extract'].split('. ')[0] + ". ";
+            var string1and2 = Object.entries(rawWikiData)[0][1]['extract'].split('. ')[0] + ". " + Object.entries(rawWikiData)[0][1]['extract'].split('. ')[1] + ".";
+            var string1and2and3 = Object.entries(rawWikiData)[0][1]['extract'].split('. ')[0] + ". " + Object.entries(rawWikiData)[0][1]['extract'].split('. ')[1] + ". " + Object.entries(rawWikiData)[0][1]['extract'].split('. ')[2] + ".";
+
+            if(string1.length < 100){
+                if (string1and2.length < 100) {
+                    selectedCountry.description = string1and2and3;
+                } else {
+                    selectedCountry.description = string1and2;  
+                }
             } else {
-                selectedCountry.description = Object.entries(rawWikiData)[0][1]['extract'].split('. ')[0] + ".";
+                selectedCountry.description = string1;
             }
+
+
             
             selectedCountry.descriptionfull = Object.entries(rawWikiData)[0][1]['extract'].split("\n");
      
