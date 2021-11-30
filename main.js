@@ -109,7 +109,7 @@ $.ajax({
             localStorage.setItem("wtocode", element.code);
         }
     });
-    //selectedCountry.codewto = parsedData[0].code;
+    //  selectedCountry.codewto = parsedData[0].code;
     //localStorage.setItem("wtocode", parsedData[0].code);
     //console.log("[0]:" + parsedData[0].code);
 
