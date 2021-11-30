@@ -373,7 +373,7 @@ setTimeout(function () {
                   }
                 });
 
-                var id = (element['name']).toLowerCase().split("'").join("").split(" ").join("").replaceAll(".", "");
+                var id = (element['name']).toLowerCase().split("'").join("").split(" ").join("").replaceAll(".", "").replaceAll("&", "");
 
                 var lon = element['geometry']['location']['lng'];
                 var lat = element['geometry']['location']['lat'];
