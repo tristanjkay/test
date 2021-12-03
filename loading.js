@@ -521,7 +521,7 @@ fetch('https://raw.githubusercontent.com/tristanjkay/assets/main/airports.json')
             });
             
             })
-            .then(
+            .then(data =>{
                 $.ajax({
 
                     url: "php/flights/flights.php",
@@ -553,7 +553,7 @@ fetch('https://raw.githubusercontent.com/tristanjkay/assets/main/airports.json')
     
                         })
 
-            );
+                    });
 
 /* $.ajax({
     url: "php/flights/airports-fileget.php",
