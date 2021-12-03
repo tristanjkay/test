@@ -39,6 +39,7 @@ window.history.replaceState('','','/');
         fetch('https://raw.githubusercontent.com/tristanjkay/assets/main/countryBorders.geo.json')
   .then(response => response.json())
   .then(data => {
+      console.log(data);
     data.sort((a,b) => (a.properties.name > b.properties.name) ? 1 : ((b.properties.name > a.properties.name) ? -1 : 0))
     data.forEach(element => {
         var option = document.createElement("option");
