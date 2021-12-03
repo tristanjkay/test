@@ -37,18 +37,18 @@ window.history.replaceState('','','/');
         }); */
 
         fetch('https://raw.githubusercontent.com/tristanjkay/assets/main/countryBorders.geo.json')
-  .then(response => response.json())
-  .then(data => {
-      console.log(data);
-    data['features'].sort((a,b) => (a.properties.name > b.properties.name) ? 1 : ((b.properties.name > a.properties.name) ? -1 : 0))
-    data['features'].forEach(element => {
-        var option = document.createElement("option");
-        option.text = element.properties.name;
-        option.value = element.properties.iso_a2;
-        dropdown.add(option);
-        geojsonResult[data['features'].indexOf(element)] = element;
-    });
-    });
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            data['features'].sort((a,b) => (a.properties.name > b.properties.name) ? 1 : ((b.properties.name > a.properties.name) ? -1 : 0))
+            data['features'].forEach(element => {
+                var option = document.createElement("option");
+                option.text = element.properties.name;
+                option.value = element.properties.iso_a2;
+                dropdown.add(option);
+                geojsonResult[data['features'].indexOf(element)] = element;
+            });
+            });
         
         
 
