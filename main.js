@@ -12,7 +12,7 @@ window.history.replaceState('','','/');
 //POPULATE DROPDOWN
         $.ajax({
             url: "geojson-fileget.php",
-            type: 'POST',  
+            type: 'GET',  
             dataType: 'json',
             data: {
             },
