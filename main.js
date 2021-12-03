@@ -19,7 +19,7 @@ window.history.replaceState('','','/');
             success: function(result) {
                 
                 if (result.status.name == "ok") {
-                    console.log(result['data']);
+                    
                     
                     result['data'].sort((a,b) => (a.properties.name > b.properties.name) ? 1 : ((b.properties.name > a.properties.name) ? -1 : 0))
                     result['data'].forEach(element => {
