@@ -98,11 +98,14 @@ window.history.replaceState('','','/');
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            if(element.name == name){
+            data.forEach(element => {
+                        
+                if(element.name == name){
 
-                capital = element.capital;
-                localStorage.setItem("capitalLocation", element.latlng);
-            }
+                    capital = element.capital;
+                    localStorage.setItem("capitalLocation", element.latlng);
+                }
+            });
             
             });
     
