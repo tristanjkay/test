@@ -97,8 +97,8 @@ window.history.replaceState('','','/');
         fetch('https://raw.githubusercontent.com/tristanjkay/assets/main/countryInfoRaw.json')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
-            data.forEach(element => {
+            console.log(data['features']);
+            data['features'].forEach(element => {
                         
                 if(element.name == name){
 
