@@ -2,7 +2,7 @@
 
 	$executionStartTime = microtime(true) / 1000;
 
-    $url='https://raw.githubusercontent.com/tristanjkay/gazetteer-files/main/countryBorders.geo.json';
+    $url='https://raw.githubusercontent.com/tristanjkay/assets/main/countryBorders.geo.json';
 
 	$result = file_get_contents($url);
 
@@ -13,7 +13,7 @@
 	$output['status']['description'] = "success";
 	$output['status']['returnedIn'] = (microtime(true) - $executionStartTime) / 1000 . " ms";
 
-    $output['data'] = $decode;
+    $output['data'] = $decode['features'];
 	
 	header('Content-Type: application/json; charset=UTF-8');
 
