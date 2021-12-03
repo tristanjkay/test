@@ -486,7 +486,76 @@ percentLoaded = (ajaxSuccess/62)*100;
 
 //Airport API
 
-$.ajax({
+fetch('https://raw.githubusercontent.com/tristanjkay/assets/main/airports.json')
+        .then(response => response.json())
+        .then(data => {
+            ajaxCount++;
+            ajaxSuccess++
+            $('#intProgress').text((ajaxSuccess/62)*100);
+            percentLoaded = (ajaxSuccess/62)*100;
+        selectedCountry.airports = [];
+        selectedCountry.airport = [];
+            console.log(data);
+            var capital = mycountrycapital.replaceAll('-', ' ');
+            var sortedResultAirports = data.sort((a,b) => (a.destinations.length < b.destinations.length) ? 1 : ((b.destinations.length < a.destinations.length) ? -1 : 0))
+
+            
+            sortedResultAirports.forEach(element => {
+            
+               
+            if(element.Country == selectedCountry.name){
+                selectedCountry.airports.push(element);
+                if(selectedCountry.airport.length == 0){
+                    selectedCountry.airport.push(element);
+                }
+
+                
+            }
+            if(element.City == capital){
+                if(selectedCountry.airport.length > 0){
+                selectedCountry.airport.splice(0, 1);
+                }
+                selectedCountry.airport.push(element);
+                
+            }
+            });
+            
+            })
+            .then(
+                $.ajax({
+
+                    url: "php/flights/flights.php",
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        origin: 'LON',
+                        destination: selectedCountry.airport[0]['IATA/FAA'],
+                        },
+                    success: function(result) {
+                        ajaxCount++;
+                        ajaxSuccess++
+                        $('#intProgress').text((ajaxSuccess/62)*100);
+                        percentLoaded = (ajaxSuccess/62)*100;
+                        selectedCountry.flights = [];
+                        
+                        if (result) {
+    
+                        var sortedResult = result.sort((a,b) => (a.depart_date > b.depart_date) ? 1 : ((b.depart_date > a.depart_date) ? -1 : 0))
+                        selectedCountry.flights = sortedResult;
+            
+      
+                        }
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            ajaxCount++;
+                            console.log("Flights API Failed")
+                        }
+    
+                        })
+
+            );
+
+/* $.ajax({
     url: "php/flights/airports-fileget.php",
     type: 'POST',
     dataType: 'json',
@@ -571,7 +640,7 @@ percentLoaded = (ajaxSuccess/62)*100;
         console.log("Airport API Failed")
     }
     
-});
+}); */
 
 
 
