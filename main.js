@@ -10,7 +10,7 @@
 window.history.replaceState('','','/');
 
 //POPULATE DROPDOWN
-        $.ajax({
+        /* $.ajax({
             url: "geojson-fileget.php",
             type: 'GET',  
             dataType: 'json',
@@ -34,7 +34,20 @@ window.history.replaceState('','','/');
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log("ERROR: geojson-fileget.php")
             }
-        });
+        }); */
+
+        fetch('https://raw.githubusercontent.com/tristanjkay/assets/main/countryBorders.geo.json')
+  .then(response => response.json())
+  .then(data => {
+    data.sort((a,b) => (a.properties.name > b.properties.name) ? 1 : ((b.properties.name > a.properties.name) ? -1 : 0))
+    data.forEach(element => {
+        var option = document.createElement("option");
+        option.text = element.properties.name;
+        option.value = element.properties.iso_a2;
+        dropdown.add(option);
+        geojsonResult[data.indexOf(element)] = element;
+    });
+    });
         
         
 
