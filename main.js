@@ -94,7 +94,7 @@ window.history.replaceState('','','/');
         }); */
         
 
-        fetch('https://raw.githubusercontent.com/tristanjkay/gazetteer/main/countryInfoRaw.json')
+        fetch('https://raw.githubusercontent.com/tristanjkay/assets/main/countryInfoRaw.json')
         .then(response => response.json())
         .then(data => {
             console.log(data);
