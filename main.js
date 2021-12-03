@@ -67,7 +67,7 @@ window.history.replaceState('','','/');
         var capital;
         var capitalLocation;
         
-        $.ajax({
+      /*   $.ajax({
             url: "capital-fileget.php",
             type: 'POST',  
             dataType: 'json',
@@ -91,8 +91,20 @@ window.history.replaceState('','','/');
                 console.log("ERROR: geojson-fileget.php")
                 
             }
-        });
+        }); */
         
+
+        fetch('https://raw.githubusercontent.com/tristanjkay/gazetteer/main/countryInfoRaw.json')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            if(element.name == name){
+
+                capital = element.capital;
+                localStorage.setItem("capitalLocation", element.latlng);
+            }
+            
+            });
     
         selectedCountry = {"name": name, "iso_a2": iso_a2, "iso_a3": iso_a3, "codewto": "test", "geometry": geometry};
         
