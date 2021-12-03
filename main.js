@@ -20,7 +20,7 @@ window.history.replaceState('','','/');
                 
                 if (result.status.name == "ok") {
                     console.log(result['data']);
-                    console.log("Get")
+                    
                     result['data'].sort((a,b) => (a.properties.name > b.properties.name) ? 1 : ((b.properties.name > a.properties.name) ? -1 : 0))
                     result['data'].forEach(element => {
                         var option = document.createElement("option");
